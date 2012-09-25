@@ -1,0 +1,264 @@
+\documentclass[a4paper, norsk, 12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{babel}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{tabularx}
+
+\author{KPro - Gruppe 15}
+\title{Backlog}
+\date{\today}
+
+\newcommand{\sprintPrefix}[0]{$\cdot$ }
+%\dateFormat{month}{day}{year}{delimiter}
+%\newcommand{\dateFormat}[4]{#1#4#2#4#3}
+\newcommand{\dateFormat}[4]{#2#4#1#4#3}
+
+\begin{document}
+	\maketitle
+	\pagebreak
+	\section{Backlog}
+		\begin{enumerate}
+			\item Create a backend serviceproviderinterface to provide useful services to the application and widget. 
+				This should provide serviceinterfaces for sending\&receiving message, signing\&verifying messages, 
+				getting date from other applications, CRUD persistent storage (with and without encryption) and 
+				controlling the other hardware like lights and sounds.
+				
+			\item Create a frontend low-fidelity evolutionary prototype with focus on sending, receiving and viewing plain text messages. 
+				This must be done in such a manner that it is easy extendable to handle messages containing attachments of different types e.g. images and videos and any future views necessary.
+				
+			\item	Implement the networkinterfaces for sending messages from 1. 
+				Enabling a full vertical low-fidelity prototype of the whole application.
+				Investigate server-push solutions like P-IMAP.
+				
+			\item Implement the persistenceinterface from 1. 
+				NB! Encryption is not needed at this stage, but should be easy to implement at a later stage.
+				
+			\item Extend and modify the existing frontend prototype adding support for message templates. 
+				Creation, editing and deleting should be supported.
+				
+			\item Add frontend support for login screen, addressbook, browsing previous messages.
+			
+			\item Add frontend support for sending messages with attachments with respect to the current networkconnection. 
+				NB! Video suppoprt is not needed at this stage, but should be easy to implement at a later stage.
+				
+			\item Extends frontend view for message sending to handle message priorities and other special attributes needed to comply with the requirements of XOMail.
+			
+			\item Implement the hardware abstraction layer from 1. 
+				This could include GPS, camera, video, sound, gyro, networkconnection, light ect. Extending the serviceproviderinterface as necessary.
+				
+			\item Investigate the possibility of fetching the addressbook from the server. 
+				If possible implement under the serviceproviderinterface.
+				
+			\item Extend the existing communicationimplementations to support message priorities, message types, message grading and and failed deliveries.
+			
+			\item Extend the existing communicationimplementations to support messages containing multimedia and attachments from other applications.
+				Explore restrictions based on network connection, and graceful degradation of content. 
+			
+			\item Extend the frontend view for messages to handle video attachments, and possibly getting the video without storing it to disk first.	
+			
+			\item Extend the frontend view for messages to incorporate 'answer', 'delete' and 'forward' functionality.
+			
+			\item Explore the possibilities of getting the addressbook from the server and providing it through the interfaces described in 1.
+				One possibility might be DAP/LDAP.
+			
+			\item Implement the securityprovider according to the interface described in 1. and add the possibility for encryption local data.
+				Explore the choice of possible encryption algorithms and the storage of the private key closely. Hereunder the possibility for local login.
+			
+			\item Implement a wrapper around the communicationsimplementations that is coherent to the interfaces described in 1. that allows for a secure connection to the server.
+			
+			\item Extend the securityprovider with signing and verification possibilities.
+			
+			\item Create views for program settings.
+			
+			\item Add compressalgorithm in order to minimize the datatrafic that is needed.
+				Be aware of how the recipient handles this if you are using unorthodox algorithms. Should it be device specific or not?
+			
+			\item Create a widget for quicksend messages that uses the serviceprovider.
+		\end{enumerate}
+	\pagebreak
+	\section{Sprint 1}
+		Duration: \dateFormat{08}{27}{2012}{.} - \dateFormat{09}{16}{2012}{.}\\
+		Backlog tasks: BL1, BL2, BL3, BL4, BL5 and BL6\\\\
+		\begin{tabularx}{\linewidth}{>{\setlength\hsize{1.5\hsize}}X>{\setlength\hsize{.20\hsize}}X>{\setlength\hsize{.1\hsize}}X}
+			Subtask for BL1 & Estimate & Actual\\
+			\hline
+			\sprintPrefix Setting up the project structure & 10h & N/A\\
+			&&\\
+			\sprintPrefix Create the interface for the Network module & 7h & N/A\\
+			\sprintPrefix Create the interface for the Persistence module & 3h & N/A\\
+			\sprintPrefix Create the interface for the Hardware abstraction layer module & 3h & N/A\\
+			\sprintPrefix Create the interface for the Security module & 4h & N/A\\
+			\sprintPrefix Create factoryclasses for the core modules & 2h & N/A\\
+			\sprintPrefix Create dummyclasses for each of the interfaces & 4h & N/A\\
+		\end{tabularx}
+		\\\\ \\
+		\begin{tabularx}{\linewidth}{>{\setlength\hsize{1.5\hsize}}X>{\setlength\hsize{.20\hsize}}X>{\setlength\hsize{.1\hsize}}X}
+			Subtask for BL2 & Estimate & Actual\\
+			\hline
+			\sprintPrefix Create main menu view & 8h & N/A\\
+			\sprintPrefix Create send e-mail view & 6h & N/A\\
+			&&\\
+			\sprintPrefix Create innbox view & 8h & N/A\\
+			\sprintPrefix Create view e-mail view & 6h & N/A\\
+		\end{tabularx}
+		\\\\ \\
+		\begin{tabularx}{\linewidth}{>{\setlength\hsize{1.5\hsize}}X>{\setlength\hsize{.20\hsize}}X>{\setlength\hsize{.1\hsize}}X}
+			Subtask for BL3 & Estimate & Actual\\
+			\hline
+			\sprintPrefix Implement a Network class for sending e-mail through gmail's smtp-service & 6h & N/A\\
+			\sprintPrefix Implement receiving mail from gmail's imap-service & 7h & N/A\\
+			&&\\
+			\sprintPrefix Integrate the views created from BL2 to use the implemented Network class & 4h & N/A\\
+		\end{tabularx}
+		\\\\ \\
+		\begin{tabularx}{\linewidth}{>{\setlength\hsize{1.5\hsize}}X>{\setlength\hsize{.20\hsize}}X>{\setlength\hsize{.1\hsize}}X}
+			Subtask for BL4 & Estimate & Actual\\
+			\hline
+			\sprintPrefix Decide structure and format that should be used on disk & 4h & N/A\\
+			\sprintPrefix Implement a Persistence class for saving to disk  & 8h & N/A\\
+			\sprintPrefix Implement reading from disk & 4h & N/A\\
+		\end{tabularx}
+		\\\\ \\
+		\begin{tabularx}{\linewidth}{>{\setlength\hsize{1.5\hsize}}X>{\setlength\hsize{.20\hsize}}X>{\setlength\hsize{.1\hsize}}X}
+			Subtask for BL5 & Estimate & Actual\\
+			\hline
+			\sprintPrefix Create main menu entry for message templates & 2h & N/A\\
+			\sprintPrefix Create ``list of templates''-view & 6h & N/A\\
+			\sprintPrefix Create ``new template''-view & 6h & N/A\\
+			\sprintPrefix Extend ``new template''-view to be used for editing & 4h & N/A\\
+			\sprintPrefix Add delete functionally to ``list of templates''-view & 4h & N/A\\
+		\end{tabularx}
+		\\\\ \\
+		\begin{tabularx}{\linewidth}{>{\setlength\hsize{1.5\hsize}}X>{\setlength\hsize{.20\hsize}}X>{\setlength\hsize{.1\hsize}}X}
+			Subtask for BL6 & Estimate & Actual\\
+			\hline
+			\sprintPrefix Create login view & 8h & N/A\\
+			\sprintPrefix Create main menu entry for addressbook & 2h & N/A\\
+			\sprintPrefix Create ``list of addresses''-view & 8h & N/A\\
+			%\sprintPrefix Create ``new address''-view & 8h & N/A\\
+			%\sprintPrefix Extend ``new address''-view to be used for editing & 4h & N/A\\
+			\sprintPrefix Connect the ``send mail''-view to easily make use of the addressbook & 8h & N/A\\
+		\end{tabularx}
+		
+	\section{Sprint 2}
+		Duration: \dateFormat{09}{17}{2012}{.} - \dateFormat{10}{07}{2012}{.}\\
+		Backlog tasks: Remains from Sprint 1, BL7, BL8, BL9, BL10, BL11 and BL12\\\\
+		\begin{tabularx}{\linewidth}{>{\setlength\hsize{1.5\hsize}}X>{\setlength\hsize{.20\hsize}}X>{\setlength\hsize{.1\hsize}}X}
+			Subtask remaining from Sprint 1 & Estimate & Actual\\
+			\hline
+			Will be decided during the sprint planning
+		\end{tabularx}
+		\\\\ \\
+		\begin{tabularx}{\linewidth}{>{\setlength\hsize{1.5\hsize}}X>{\setlength\hsize{.20\hsize}}X>{\setlength\hsize{.1\hsize}}X}
+			Subtask for BL7 & Estimate & Actual\\
+			\hline
+			Will be decided during the sprint planning
+		\end{tabularx}
+		\\\\ \\
+		\begin{tabularx}{\linewidth}{>{\setlength\hsize{1.5\hsize}}X>{\setlength\hsize{.20\hsize}}X>{\setlength\hsize{.1\hsize}}X}
+			Subtask for BL8 & Estimate & Actual\\
+			\hline
+			Will be decided during the sprint planning
+		\end{tabularx}
+		\\\\ \\
+		\begin{tabularx}{\linewidth}{>{\setlength\hsize{1.5\hsize}}X>{\setlength\hsize{.20\hsize}}X>{\setlength\hsize{.1\hsize}}X}
+			Subtask for BL9 & Estimate & Actual\\
+			\hline
+			Will be decided during the sprint planning
+		\end{tabularx}
+		\\\\ \\
+		\begin{tabularx}{\linewidth}{>{\setlength\hsize{1.5\hsize}}X>{\setlength\hsize{.20\hsize}}X>{\setlength\hsize{.1\hsize}}X}
+			Subtask for BL10 & Estimate & Actual\\
+			\hline
+			Will be decided during the sprint planning
+		\end{tabularx}
+		\\\\ \\
+		\begin{tabularx}{\linewidth}{>{\setlength\hsize{1.5\hsize}}X>{\setlength\hsize{.20\hsize}}X>{\setlength\hsize{.1\hsize}}X}
+			Subtask for BL11 & Estimate & Actual\\
+			\hline
+			Will be decided during the sprint planning
+		\end{tabularx}
+		\\\\ \\
+		\begin{tabularx}{\linewidth}{>{\setlength\hsize{1.5\hsize}}X>{\setlength\hsize{.20\hsize}}X>{\setlength\hsize{.1\hsize}}X}
+			Subtask for BL12 & Estimate & Actual\\
+			\hline
+			Will be decided during the sprint planning
+		\end{tabularx}
+		\\\\ \\
+	
+	\section{Sprint 3}
+		Duration: \dateFormat{10}{08}{2012}{.} - \dateFormat{10}{28}{2012}{.}\\
+		Backlog tasks: Remains from Sprint 2, BL13, BL14, BL15, BL16\\\\
+		\begin{tabularx}{\linewidth}{>{\setlength\hsize{1.5\hsize}}X>{\setlength\hsize{.20\hsize}}X>{\setlength\hsize{.1\hsize}}X}
+			Subtask remaining from Sprint 2 & Estimate & Actual\\
+			\hline
+			Will be decided during the sprint planning
+		\end{tabularx}
+		\\\\ \\
+		\begin{tabularx}{\linewidth}{>{\setlength\hsize{1.5\hsize}}X>{\setlength\hsize{.20\hsize}}X>{\setlength\hsize{.1\hsize}}X}
+			Subtask for BL13 & Estimate & Actual\\
+			\hline
+			Will be decided during the sprint planning
+		\end{tabularx}
+		\\\\ \\
+		\begin{tabularx}{\linewidth}{>{\setlength\hsize{1.5\hsize}}X>{\setlength\hsize{.20\hsize}}X>{\setlength\hsize{.1\hsize}}X}
+			Subtask for BL14 & Estimate & Actual\\
+			\hline
+			Will be decided during the sprint planning
+		\end{tabularx}
+		\\\\ \\
+		\begin{tabularx}{\linewidth}{>{\setlength\hsize{1.5\hsize}}X>{\setlength\hsize{.20\hsize}}X>{\setlength\hsize{.1\hsize}}X}
+			Subtask for BL15 & Estimate & Actual\\
+			\hline
+			Will be decided during the sprint planning
+		\end{tabularx}
+		\\\\ \\
+		\begin{tabularx}{\linewidth}{>{\setlength\hsize{1.5\hsize}}X>{\setlength\hsize{.20\hsize}}X>{\setlength\hsize{.1\hsize}}X}
+			Subtask for BL16 & Estimate & Actual\\
+			\hline
+			Will be decided during the sprint planning
+		\end{tabularx}
+	
+	\section{Sprint 4}
+		Duration: \dateFormat{10}{29}{2012}{.} - \dateFormat{11}{18}{2012}{.}\\
+		Backlog tasks: Remains from Sprint 3, BL17, BL18, BL19, BL20 and BL21\\\\
+		\begin{tabularx}{\linewidth}{>{\setlength\hsize{1.5\hsize}}X>{\setlength\hsize{.20\hsize}}X>{\setlength\hsize{.1\hsize}}X}
+			Subtask remaining from Sprint 3 & Estimate & Actual\\
+			\hline
+			Will be decided during the sprint planning
+		\end{tabularx}
+		\\\\ \\
+		\begin{tabularx}{\linewidth}{>{\setlength\hsize{1.5\hsize}}X>{\setlength\hsize{.20\hsize}}X>{\setlength\hsize{.1\hsize}}X}
+			Subtask for BL17 & Estimate & Actual\\
+			\hline
+			Will be decided during the sprint planning
+		\end{tabularx}
+		\\\\ \\
+		\begin{tabularx}{\linewidth}{>{\setlength\hsize{1.5\hsize}}X>{\setlength\hsize{.20\hsize}}X>{\setlength\hsize{.1\hsize}}X}
+			Subtask for BL18 & Estimate & Actual\\
+			\hline
+			Will be decided during the sprint planning
+		\end{tabularx}
+		\\\\ \\
+		\begin{tabularx}{\linewidth}{>{\setlength\hsize{1.5\hsize}}X>{\setlength\hsize{.20\hsize}}X>{\setlength\hsize{.1\hsize}}X}
+			Subtask for BL19 & Estimate & Actual\\
+			\hline
+			Will be decided during the sprint planning
+		\end{tabularx}
+		\\\\ \\
+		\begin{tabularx}{\linewidth}{>{\setlength\hsize{1.5\hsize}}X>{\setlength\hsize{.20\hsize}}X>{\setlength\hsize{.1\hsize}}X}
+			Subtask for BL20 & Estimate & Actual\\
+			\hline
+			Will be decided during the sprint planning
+		\end{tabularx}
+		\\\\ \\
+		\begin{tabularx}{\linewidth}{>{\setlength\hsize{1.5\hsize}}X>{\setlength\hsize{.20\hsize}}X>{\setlength\hsize{.1\hsize}}X}
+			Subtask for BL21 & Estimate & Actual\\
+			\hline
+			Will be decided during the sprint planning
+		\end{tabularx}
+
+\end {document}

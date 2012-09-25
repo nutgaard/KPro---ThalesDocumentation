@@ -1,0 +1,41 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{array}
+\begin{document}
+\title{Minutes of Meeting for Customer Meeting \#1}
+\maketitle
+\begin{tabular}{>{\bfseries}l l}	
+Project name&Formal and secure messaging on a mobile platform\\
+Calling by&Group 15\\
+Time and date&2012-08-21 HH:MI\\
+Place&KJL21\\
+Attendees&Christian, S{\o}lve and Stig from Thales\\
+& Aleksander, Ida, Kristin, Lars, Magnus and Nicklas from Group 15 \\
+Referent&Kristin from Group 15\\
+\end{tabular}
+
+\section{Agenda approved}
+Not applicable
+\section{Minutes of meeting from last customer meeting approved}
+Not applicable
+\section{The project task}
+The task given from Thales is to make an Android mail client for mobiles (from now on called "the app"), with certain extra services. Thales' work is mainly focused on military areas, but the app can also potentially be used in callouts and search operations.\\
+The main focus is on the GUI, which means that the app should be fast and easy to use, but ideally the focus should also be on security.\\
+The task is twofold: On one side the focus is on developing a prototype and on the other side to explore the possibilities for further development, e.g. what solutions exists and what is required to implement the desired security.
+\section{Details about the task}
+The app is supposed to communicate with a SMTP-server via POP3/IMAP protocols. Messages of high importance should warn the user, typically in emergency situations.\\
+Two important features the app should support are priorities of messages and security grading.\\
+The app should also support an address book, but this can be done in several ways. In Thales' current systems, the software can fetch addresses from the server one is connected to. In this project it is possible to assume that an address book exists, but the group need to find a way of fetching this.\\
+The two main features of security the group are supposed to do reasearch and possibly implementation of are signing and verification. However, sometimes it is more important that the messages arrive fast than that they are encrypted.\\
+The messages should have ability to give information about whether the message has been delivered and whether the recipient has read the message. The question is if the group needs to deal with this or if the functionality possible comes with the IMAP protocol. IMAP has certain issues when it comes to bandwidth, so the group must consider other push solutions. \\
+The group needs to document the choices being made and what third party code they want to use. It is important to keep track of the licence agreements.\\
+It is important to think about whether the phone is private or locked, routed or not.
+\section{Other issues}
+\section{Decisions}
+\section{Actions}
+\begin{enumerate}
+\item
+Thales will send suggestions of a requirements document on mail.
+\end{enumerate}
+\section{Next meeting}
+Friday 2012-08-24 12:15 at Lerkendal
+\end{document}

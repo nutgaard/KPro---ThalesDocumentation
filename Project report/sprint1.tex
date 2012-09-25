@@ -1,0 +1,114 @@
+
+
+\chapter{Sprint 1}
+
+\section{Sprint planning}
+The time leading up to Sprint 1 was spend looking into different solutions and agreeing on details such as programming language, development tools and top level architecture. We also spent a large part of the week setting up various tools on our personal computers; especially accounting for the wide variety of hardware and operating systems.
+\newline
+\newline
+Sprint 1 was our first major coding spree. We set aside some time to set up all the required software and communications on the last few computers, but most of the time was to be spend putting together a rough prototype. Our goal was to be able to send and receive messages from the phone by the end of the sprint, providing us with a functional framework we could bolt our later expansions on to. Things like security and intuitive GUI were down prioritized or saved for later sprints.
+\newline
+\newline
+As well as the coding, which was to be largely handled by three of us in this first sprint, a lot of time was scheduled for theoretical studies. Things to be implemented later had to be researched and documented, and lot of basic things like agenda templates and documentation structure had to be set up.
+
+\section{Sprint duration}
+The first scrum sprint officially began with a planning session August 27th and ended 22 days later on the September 17th. We choose to divide our time into four three week sprints, as this allowed us to divide up the 13 week project simply and evenly, with 1 week to plan and organize in the beginning.
+
+\section{Sprint goal}
+Our goal was a to have a demo ready that we could show the client, that could send and receive messages through an SSL channel. This would basically serve as a proof of concept; a demonstration of the technical possibilities. This would require two major components. First we would need a rudimentary user interface in order to display a received message and send a given message to an SMTP server. Secondly we would require some kind of listener that could keep in contact with the server and be informed when a new message is received, and retrieve that message from the server as soon as possible (preferably instantly). Finally we would need some kind of sender that could interface with a SSL protocol.
+
+\section{Sprint backlog}
+\begin{itemize}
+\item{}\textbf{Setup of Jira:} we decided to use Jiro to get an overview over all the work that we need to do. Jira also gives us an overview over what tasks are supposed to be done in each sprint. We also use Jira to assign the tasks to each of the team members.
+\item{}\textbf{Report work:} the report that are to be delivered at the end of the project needs a lot of work, and we have decided that we will use time on the report in every sprint.
+\item{}\textbf{Set up programming environment:} working with setup of software in administrative sense.
+\item{}\textbf{Group Administration:} to administer the entire group, with booking group rooms and sending e-mails to the customer, the advisor and the team to call in for meetings.
+\item{}\textbf{Meetings:} arrange meetings and the time we use on meetings.
+\begin{itemize}
+\item{}\textbf{Meetings with Thales:} we have weekly meetings with our customer so that we can get rapid feedback on what we do. To know if they agree on our decisions and to know that we haven’t misunderstood the tasks they give us.
+\item{}\textbf{Meetings with Mohnsen Anvaari:} we have regular meetings with our advisor so that he can give us feedback on how we do our work, and make sure that we do what are expected of us in the course.
+\item{}\textbf{Internal meetings:} we almost have daily meetings to know what everybody has been doing lately, and how far we have come in our task; what is left and what is done.
+\item{}\textbf{Lectures:} there are some lectures during the semester, and we are recommended to join these. In this sprint there are 3 lectures and courses that we have decided to attend.
+\end{itemize}
+\item{}\textbf{Create interfaces between Core and GUI:} code interfaces that let GUI and core to communicate in the simplest way. We need this code to be able meet our Sprint 1 milestone. We need this interfaces to make a simple model.
+\begin{itemize}
+\item{}\textbf{Persistence Service Interface:} preliminary design of interfaces for the Persistence Service module.
+\item{}\textbf{Hardware abstraction layer interface:} preliminary design of interfaces for the HAL Service module.
+\item{}\textbf{Network Service Interface:} preliminary design of interfaces for the Network Service module.
+\item{}\textbf{Security Service Interface:} preliminary design of interfaces for the Service Service module.
+\end{itemize}
+\item{}\textbf{General setup of tools:} general setup of different tools we use.
+\item{}\textbf{Meeting and agenda document writing:} to write all the minutes and agendas using the right template.
+\item{}\textbf{Starting App:} making our program good enough so that it is possible to start the program and begin browsing all features of the program.
+\begin{itemize}
+\item{}\textbf{Create Main menu:} make a simple main menu with a header showing the name of the program and a list containing all views it is possible reach from the menu.
+\item{}\textbf{Create a basic android app skeleton:} make an Android app project so that we have a running application with nothing in it.
+\item{}\textbf{Learn how Android MVC works:} find out how Android MVC works and get a general feeling of how the layout of the Android project will be.
+\end{itemize}
+\item{}\textbf{Sending a message:} the user should be able to click the “New message” button, be brought to the new message page, create a message and send it pressing the “Send” button.
+\begin{itemize}
+\item{}\textbf{Adding subject and text to a message:} create a simple GUI making the user able to create a message with a title and a text and sending it to a recipient. At first it is enough to send to a predefined receiver until the address book is made.
+\item{}\textbf{Make connection between “Send Message” button and backend:} make the GUI communicate with the backend responsible for sending the actual message.
+\item{}\textbf{Implement a Network class for sending e-mail through gmail’s smtp-server:} implementation of Network SErvice Interface so that a mail can get send from an account.
+\item{}\textbf{Create the new message view:} make it able for the user to get a view showing all fields relevant to creating a message by clicking “New message”.
+\item{}\textbf{Implement receiving mail from gmail’s imap-service:} make the app able to receive the mail automatically from gmail’s Imap, as soon as a message is received at the account. This must be done via push to client, not pull..
+\item{}\textbf{Create core bridge:} does the connection from GUI to core and returns value from implemented interface on core side.
+\end{itemize}
+\item{}\textbf{Persisting data to phone:} Implement persistence, so that the app is able to save data and retrieve it whenever it wants.
+\begin{itemize}
+\item{}\textbf{Research on structure for saving and reading data}: find a structure for saving data to the phone. What is the best way of organizing data with respect to files created by app, file settings and other files?
+\item{}\textbf{Save data to phone storage:} ensure proper saving of data to phone.
+\item{}\textbf{Read data from phone:} ensure proper saving of data to phone.
+\end{itemize}
+\end{itemize}
+
+\section{System design}
+At the end of the first sprint, the the system worked thusly: The user opens an App (XOXOmail) on his phone. He is taken directly to a menu, though the final product would begin with a login screen. In the first sprint the menu was rudimentary; designed more for ease of demonstration than for actual application use. An updated version was under development but had not yet been integrated with the application at the end of the first sprint. The menu, in this iteration, had three options: Inbox, Sent, and SendMail.
+\newline
+\newline
+Clicking inbox would bring the user to a simple list of the emails received while the app was active (persistent storage had yet to be connected to the rest of the system at the end of the first sprint). Each email was click able, leading to a detailed view with the message text as well as further clearance and sender info. The GUI here sat on top of a Activity which held references to the models as well as keeping in contact with the network adapter which listened to a server for new emails. Clicking Sent would similarly bring the user to a list of sent emails, which sat on its own Activity.
+\newline
+\newline
+SendMail would bring the user to a simple form for sending messages to the server. Details like subject, receiver, security level and priority could be specified and a text message written. The demo was capable of sending to an arbitrary email address.
+\newline
+\newline
+The system consisted of four main components. The XML coded GUI was displayed and controlled by a number of activities; together forming the main GUI layer. The GUI layer communicated with a service core (which at the time only had the network system), with in turn created instances of methods in the modeling layer to refer around the system.
+
+\section{Sprint effort}
+See tabel \ref{tab:effortweekss1} at page \pageref{tab:effortweekss1}
+\begin{table}
+\begin{tabularx}{\linewidth}{>{\setlength\hsize{.625\hsize}}X|>{\setlength\hsize{0.3\hsize}}X|>{\setlength\hsize{0.5\hsize}}X|>{\setlength\hsize{0.5\hsize}}X|>{\setlength\hsize{0.5\hsize}}X|>{\setlength\hsize{.3\hsize}}X}
+Group no: 15 Date: 27/08-16/09  \\ \hline
+\textbf{Activity} & \textbf{Start} & \textbf{W2} 27/08-02/09 & \textbf{W3} 03/09-09/09 & \textbf{W4} 10/09-16/09 & \textbf{Activity sums} \\ \hline \hline
+Management & \textbf{E:15} A:0 & \textbf{E:15/15} A:15.5/15.5 & \textbf{E:15/30} A:12.5/28 & \textbf{E:11/41} A:7.25/35.25 & \textbf{E:41} A:35.25  \\ \hline
+Lectures & \textbf{E:0} A:0 & \textbf{E:0/0} A:0/0 & \textbf{E:15/15} A:16/16 & \textbf{E:9/24} A:0/16 & \textbf{E:24 } A:16  \\ \hline
+Planning & \textbf{E:10} A:0 & \textbf{E:10/10} A:33/33 & \textbf{E:11/21} A:28/61 & \textbf{E:5/26} A:34.5/95.5 & \textbf{E:26 } A:95.5  \\ \hline
+Pre study & \textbf{E:10} A:0 & \textbf{E:10/10} A:8/8 & \textbf{E:10/20} A:0/8 & \textbf{E:14/34} A:4/12 & \textbf{E:34 } A:12  \\ \hline
+Requirement & \textbf{E:5} A:0 & \textbf{E:5/5} A:1/1 & \textbf{E:5/10} A:2/3 & \textbf{E:8/18} A:11/14 & \textbf{E:18 } A:14  \\ \hline
+Design & \textbf{E:40} A:0 & \textbf{E:40/40} A:31.5/31.5 & \textbf{E:25/65} A:4/35.5 & \textbf{E:22/87} A:12/47.5 & \textbf{E:87 } A:42.5  \\ \hline
+Implementation & \textbf{E:0} A:0 & \textbf{E:0/0} A:0/0 & \textbf{E:58/58} A:21.5/21.5 & \textbf{E:100/158} A:27/48.5 & \textbf{E:158 } A:48.5  \\ \hline
+Documentation & \textbf{E:10} A:0 & \textbf{E:10/10} A:8.5/8.5 & \textbf{E:20/30} A:11/19.5 & \textbf{E:55/85} A:67.25/86.75 & \textbf{E:85 } A:86.75  \\ \hline
+Evaluation & \textbf{E:0} A:0 & \textbf{E:0/0} A:0/0 & \textbf{E:0/0} A:0/0 & \textbf{E:0/0} A:0/0 & \textbf{E:0 } A:0  \\ \hline
+Demonstration & \textbf{E:0} A:0 & \textbf{E:0/0} A:0/0 & \textbf{E:0/0} A:0/0 & \textbf{E:0/0} A:0/0 & \textbf{E:0 } A:0  \\ \hline
+Period sums & E:90 \textbf{A:0} & E:90/90 \textbf{A:97.5/97.5} & E:159/249 \textbf{A:95/192.5} & E:224/473 \textbf{A:160/355.5} & E:473 \textbf{A:355.5}
+\end{tabularx}
+
+Period comments: 
+\newline
+\newline
+Activity comments:
+\caption{Table for effort registrations in sprint 1} \label{tab:effortweekss1}
+\end{table}
+
+\section{Customer feedback}
+The customer was largely positive about our progress in Sprint 1. They were extremely pleased that we had managed to build a working prototype. They noted that we had gotten far in already being able to send and receive messages, and that boded well for our ability to implement some “interesting” components later in the process.
+\newline
+\newline
+There was, however a number of points they felt needed work. They had a number of comments on the GUI; both the rudimentary version used in the demo and the mock up “paper” prototype that we had sent them earlier. They wanted lable (drill, exercise, etc) and the sent time/date included in the inbox display of emails, as well as security clearance. They also wanted security clearance visible in the top left corner whenever classified information was visible on the page. 
+\newline
+\newline
+They also had a number of comments about our project planning and use of Scrum. Most importantly, we had fallen into the practice of using too general posts, leading ambiguities about what parts of that post was included in the current Sprint and what was to be implemented later. We agreed to avoid this in the future, and resolved to include this in our discussions of Sprint 2. There was also some minor comments on various sub-tasks and small ambiguities to clear up, but nothing major.
+
+\section{Conclusion}
+Despite a number of setbacks, some late planning and technical problems, the first sprint was a success. We managed to create a working prototype, as well as a number of (as of yet) unconnected components. We hammered out a functional architecture, which should be more than robust enough to handle any changes forced on it in the next sprint. And we are well on schedule when it comes to the documentation; including a number of templates and designs for the type of files we produce a lot of (agendas and minutes especially). 
+

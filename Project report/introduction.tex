@@ -1,0 +1,26 @@
+\chapter{Introduction}
+
+
+This chapter is a technical introduction to our project. The purpose of this chapter is to give an overview of the task to be solved and the most important terms used in the report.
+
+\subsection*{The existing product}
+Thales has developed an information handling and transfer system called XOmail [2], which has been developed for more than twenty years. In many ways, it can be compared to the well known email system. The first and biggest difference is that it is developed aslo with groups of persons in mind, not just individuals. This makes it ideal for large organizations where many persons are getting the same message from their superiors. The army is therefore the perfect example of such an organization. This is why Thales has been delivering XOmail as a complete product to several European NATO member countries. 
+\newline
+\newline
+The messages that are being sent can be defined to have a security declaration, which means that only persons or groups with the correct grading can see the messages. A very important feature of XOmail is that it is very secure, and it has never happended that a message has been lost.
+
+\newpage
+\subsection*{What Thales wants us to make}
+Their product is today a complete messaging platform for messaging in large organizations, but this is a system that is primarily made to be used on coputers with large screens. What they want to know, is if it is possible to make a mobile messaging platform building on the existing infrastructure already in use by XOmail. It is important to note that this mobile platform will only have a subset of the functions that the original XOmail has, and the main focus is on efficiency and ease of use. 
+\newline
+\newline
+As this is a product that Thales never has tried to implement, means that this is unknown territory for them, as well as for us. They want a prototype, showing a possible solution to their problem. Of course, security is of great importance, but the main focus should be of implementing functionality that is critical for showing the concept software. 
+\newline
+\newline
+Even though XOmail primarily targets the army and other large organizations where security and security declarations are important, it is important to have in mind that this is software that also should be well suited for other groups or organizations that has a need for a ease to use portable system for sending urgent messages with a few button clicks. Paramedics, security firms etc. are all good candiates. 
+
+\subsection*{A short overview of the standards of XOmail}
+XOmail is based on the military messaging standard STANAG 4406. This standard is used for both Strategic and Tactical messaging [1]. It has a number of special protocols used to support tactical messaging to support very low bandwidth links.
+
+\newpage
+As XOmail is a huge software project developed in house by Thales, there is a lot of business secrets here, and a lot of processing happens behind the curtains. Our connection to Thales goes via a XOmail SMTP gateway. An SMTP gateway, which is shorthand for Simple Mail Transfer Protocol, is and internet standard for electronic mail transmission over IP networks. We will send messages to other users by sending a mail to the server with an address, and then the server will handle the message headers and other attributes that is important. The messages will be then be pushed to the correct recipients via Internet Message Access Protocol (IMAP) [3], which is one of the the most prevalent internet standard protocols for email retrieval.

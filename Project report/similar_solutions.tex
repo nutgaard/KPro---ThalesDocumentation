@@ -1,0 +1,47 @@
+\section{Similar solutions}
+As there is few, If any solutions that give the same capabilities as what is expected of this application, there will be given an overview of existing applications that do fullfill some of the requirements of XOXOmail. 
+\newline
+\newline
+A very important aspect of XOXOmail is the signing and verification part. This is an app that will be used by important persons with security grading, and a message from such a person should be verified. 
+
+\subsection{Signing and verification}
+In order for this to be an informative in depth analasys, it is appropriate with a general overview first, which first gives an introduction to public key encryption, then a short overview of S/MIME, and then use of SMIME in XOXOmail.
+
+\subsubsection{Public key encryption}
+Public key encryption is used when you want to secure data in such a way that only the reciever can open the message. It involves using two separate keys; one secret key and one public key. [10]
+\newline
+\newline
+If I want to send a message to, lets say John, I first have to get Johns public key. His public key is available to everyone who wants it. It is not a problem if a unwanted person gets it. This is the reason it is called public key. When he has given me his public key, I can then use it to encrypt the message. One might ask: What is the reason for using a public key? Does that give any security? The answer is yes. There is a mathematical relation between the private and public key. If you know the public key, it is nearly impossible or very expensive to calculate the private key. Therefore, by using John public key to encrypt the message, I know that he is the only one that can open it. It is only the private key of John that will open the message. 
+\newline
+\newline
+Another concern could be: How does John know that I was the sender of the message? By just using the private-public key scheme as explained above, this is not possible. But by introducing digital signing, this is possible.
+
+\subsubsection{Digital signing}
+Signing is just what it sounds like. It is a way of signing data so that the receiver of the document  knows that the sender is who he say he is [11]. In our example, this means that John wants a way of knowing that I am the sender. This is done by digital signing, which first consists of computing a message digest, which is just a hash of the message. This hash is then used to encrypt the hash. Then, when John receives the message he will use my public key to decrypt the signature, and thereby receiving the hash. If John then creates a hash of the received document, and if it matches the hash of the signature, he knows that the message is from me and that it is not tampered. So far, so good. 
+
+\subsubsection{Verification}
+But what if a third person wants to deceive me, and sends a message to John with my public key? For John knows that the message was sent by someone with my name, but are we sure that it is I that sent it? The solution to this is a Certificate Authority, also known as CA. The CA creates a digital certificate for my public key, which ensures that it really is from me. If John only approves messages that has a valid certificate, he knows that the message really does come from me.
+
+\subsubsection{S/MIME}
+S/MIME is an abbreavations for Secure/Multipurpose Internet Mail Extensions. It is a standard for public key encryption and signing of MIME data [12]. MIME content is text in character sets that differ from ASCII, non-text attachments, message bodies with multiple parts and non ACII headers. It is just an extension of the well known mail format so that it is possible to send content other than plain text.
+
+\subsubsection{Available apps with signing functionality}
+An already existing app for sendining signed messages i X509 tools.
+
+\subsubsection{X509Tools}
+This is an application that has the ability to send mail with S/MIME capabilities, but its main purpose is not for sending mails. The main purpose is to give these capabilites to external mail clients via an interface. It also has an Certificate Store which can be used to check certificates already present on the phone. 
+
+\subsection{Sending mail}
+There are many applications available for sending mail from an Android phone. This section will first give a superficial overview of other programs, and then a short summary of what these provide, that may be useful to us.
+
+\subsubsection{Built in client}
+The first and most obvious clients for sending mail is the built in Android mail client which is what one can say is abandonware. It is often outdated and lacks a lot of basic functions.
+
+\subsubsection{GMai}l
+One of the most used email clients for phones is the GMail app. It is developed by Google, and is therefore seen as secure app with a streamlined design. Unfortunately, it stops there. Google has been neglecting all problems that it has, and new features are not coming. Functions like sorting of mail is lacking and it is not very reliable. It often shows messages received for hours before the message actually is in the inbox. Fortunately, there exists a fork of GMail, called K-9
+
+\subsubsection{K-9 Mail}
+K-9 Mail has all the features that one would say is missing in GMail, and then some. Most features are configurable. It is possible to edit app polling settings, show a short exercept of the message text. The message selection checkboxes can be temporarily hidden. So can the starring of the messages. It is even possible to adjust font sizes and date formats. The clue here is configurability.
+
+\subsubsection{MailDrod}
+It has many of the same functions as in K-9 mail, but also incorporates spell checking, changing font sizes and colors on email messages

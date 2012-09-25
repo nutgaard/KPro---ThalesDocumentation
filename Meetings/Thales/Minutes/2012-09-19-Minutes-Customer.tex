@@ -1,0 +1,88 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{array}
+\usepackage{url}
+\begin{document}
+\title{Minutes of Meeting for Customer Meeting \#4}
+\maketitle
+\begin{tabular}{>{\bfseries}l l}	
+Project name&Formal and secure messaging on a mobile platform\\
+Calling by&Group 15\\
+Time and date&2012-09-12 12:15-13:15\\
+Place&Thales' offices at Lerkendal\\
+Attendees&Christian and Stig from Thales\\
+& Aleksander, Kristin, Lars, Magnus and Nicklas from Group 15 \\
+Referent&Kristin from Group 15\\
+\end{tabular}
+
+\section{Agenda approved}
+\section{Minutes of meeting from last customer meeting approved}
+\section{Sum-up of sprint 1 with demonstration}
+Group 15 admits that the first sprint was a process of trying and failing, but with a very steep learning curve.
+The group will take the new knowledge and experience and hopefully be more productive in the upcoming sprints.
+\newline
+\newline
+Group 15 showed a demonstration of the sprint result, which was a very simple 
+application that could send a message, show all received messages in a list and open a message from the list.
+The group has accomplished the basic functionality of sending and receiving messages, but the user interface has
+not been the focus and is therefore very basic.
+\section{Backlog}
+\subsection{Address book}
+Thales suggested that the group can embed the address book as a list or a text file for now. 
+A solution for later might be to send the adress book in special management messages that need to be recognized and handled by
+the application.
+\subsection{Security}
+Thales has called for a better documentation, especially of the security part of the project. The group needs to 
+think about e.g. how the signing of messages and securing of keys and password can and will be done. Thales
+has given URLs to documentation that the group can study further
+\newline
+\newline
+ Thales gave the advice to state reasons for 
+choice of design and architecture, preferrably with requirements as the basis. 
+\newline
+\newline
+Thales is mostly interested in documentation of the limitations of Android and what would need further development
+if they were to create a similar application.
+\subsection{Scrum tips}
+Thales made a comment that user stories may be split into multiple stories when a user story is too large to fit into a sprint, or if all its related functionality is considered to have a different priority.
+In Scrum, a task is either finished or not finished, in a sprint or not in a sprint. 
+\newline
+\newline
+Thales commented that "Open message" and "Send message" should be separate tasks.
+\subsection{User interface details}
+\begin{itemize}
+\item
+All views should include a security label at the top right. The labels are red or black. Unclassified levels are black, higher classifications are red. The color is included in the message headers and Thales will send examples of this on mail.
+\item
+Classification (not grading!) should always be visible in the upper right corner.
+\item
+The choices for priorities, classifications and types are static.
+\item
+Thales suggests that regular e-mail messages is omitted from the project. Standard e-mails have different priority levels (e.g. lowest, low, normal, high, highest) than military messages and differences in the headers. Adding support at a later time should be simple. 
+\item
+Operation and routine are standard type and priority. The default values for the different
+attributes may be included in a preference page.
+\item
+Attributes that should be included in the list of messages are From, Subject, Priority (perhaps a symbol), Label (short format, Thales will give examples), Time (DTG format). 
+\end{itemize}
+\section{Sprint 2}
+Thales wanted completion of the opening/reading and sending of a message to be highly prioritized. 
+The group need to pick the most important tasks (based on how much they think can be done) from what Thales thinks is most important. 
+\section{Software vs. documentation}
+It is important that the group documents assumptions and reasons for design choices and tradeoffs. 
+Thales is interested in the software, but will only get the full value of it if the group has made documentation about
+the different opportunities and the reasons for decisions made.
+\section{GUI prototype}
+Group 15 has made a simple prototype that is available on the following URL:
+\url{https://www.fluidui.com/editor/live/preview/p_u7V8Fx6ipDz6ZCHBLbR5dLTJVkGsE1TF.1347888261683}
+\newline
+NB: Backwards navigation can be done by pressing Backspace key!
+\section{Other issues}
+\section{Decisions}
+\section{Actions}
+\begin{enumerate}
+\item
+Thales will send information about security label coloring by mail.
+\end{enumerate}
+\section{Next meeting}
+Wednesday 2012-09-26 12:15 at Lerkendal (tentative, the group will notify Thales on Monday if the meeting will take place)
+\end{document}

@@ -1,0 +1,57 @@
+digraph G {
+	fontname = "Bitstream Vera Sans";
+	fontsize = 8;
+
+	node[shape=record, style=filled, fillcolor=gray95, color=black, fontname="Bitstream Vera Sans", fontsize=8];
+	edge[arrowhead="none", fontname="Bitstream Vera Sans", fontsize=8];
+
+	subgraph clusterCore {
+		label = "Service/Core";
+		style = filled;
+	
+		subgraph clusterHAL {
+			label = "Hardware Abstraction Layer";
+			style=filled;
+			HALInterface
+		}
+		subgraph clusterPersistence {
+			label = "Persistence";
+			style=filled;
+			PersistenceInterface
+		}
+		subgraph clusterSecurity {
+			label = "Security";
+			style=filled;
+			SecurityInterface
+		}
+		subgraph clusterCommunication {
+			label = "Communication";
+			style=filled;
+			CommunicationInterface
+		}
+		subgraph clusterModel {
+			label = "Models"
+			style = filled;
+			Models
+		}
+
+
+		ServiceInterface
+	}
+	subgraph clusterApplication {
+		label = "Application";
+		style = filled;
+		App
+	}
+	subgraph clusterWidget {
+		label = "Widget";
+		style = filled;
+		Widget
+	}
+	App -> ServiceInterface [arrowhead=normal];
+	Widget -> ServiceInterface [arrowhead=normal];
+	ServiceInterface -> HALInterface [arrowhead=normal];
+	ServiceInterface -> PersistenceInterface [arrowhead=normal];
+	ServiceInterface -> SecurityInterface [arrowhead=normal];
+	ServiceInterface -> CommunicationInterface [arrowhead=normal];
+}

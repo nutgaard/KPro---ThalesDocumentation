@@ -1,0 +1,77 @@
+digraph G {
+	fontname = "Bitstream Vera Sans";
+	fontsize = 8;
+
+	node[shape=record, style=filled, fillcolor=gray95, color=black, fontname="Bitstream Vera Sans", fontsize=8];
+	edge[arrowhead="none", fontname="Bitstream Vera Sans", fontsize=8];
+
+	subgraph clusterCore {
+		label = "Service/Core";
+		style = filled;
+		
+		subgraph clusterInterface {
+			label = "Interfaces"
+			style = filled;
+			
+			HALInterface
+			PersistenceInterface
+			SecurityInterface
+			NetworkInterface
+		}
+		subgraph clusterFactories {
+			label = "Factories"
+			style = filled;
+			HALFactory
+			PersistenceFactory
+			SecurityFactory
+			NetworkFactory
+		}
+		subgraph clusterImplementations {
+			label = "Implementations"
+			style = filled;
+
+			HALImplementation
+			PersistenceImplementation
+			SecurityImplementation
+			NetworkImplementation
+		}
+		subgraph clusterModels {
+			label = "Models"
+			style = filled;
+			Models
+		}
+		ServiceProvider
+
+		HALFactory -> HALInterface [style=dotted arrowhead=vee label="&#171;uses&#187;"];
+		PersistenceFactory -> PersistenceInterface [style=dotted arrowhead=vee label="&#171;uses&#187;"];
+		SecurityFactory -> SecurityInterface [style=dotted arrowhead=vee label="&#171;uses&#187;"];
+		NetworkFactory -> NetworkInterface [style=dotted arrowhead=vee label="&#171;uses&#187;"];
+
+		HALInterface -> HALImplementation [style=dotted arrowtail=onormal label="&#171;implements&#187;" dir=back];		
+		PersistenceInterface -> PersistenceImplementation [style=dotted arrowtail=onormal label="&#171;implements&#187;" dir=back];		
+		SecurityInterface -> SecurityImplementation [style=dotted arrowtail=onormal label="&#171;implements&#187;" dir=back];		
+		NetworkInterface -> NetworkImplementation [style=dotted arrowtail=onormal label="&#171;implements&#187;" dir=back];		
+
+	}
+	subgraph clusterApplication {
+		label = "Application";
+		style = filled;
+		Activities
+	}
+	subgraph clusterWidget {
+		label = "Widget";
+		style = filled;
+		Widget
+	}
+	Models -> ServiceProvider [style=dotted arrowtail=vee label="&#171;uses&#187;" dir=back];
+	Activities -> Models [style=dotted arrowhead=vee label="&#171;uses&#187;"];
+	Widget -> Models [style=dotted arrowhead=vee label="&#171;uses&#187;"];
+
+	Activities -> ServiceProvider [style=dotted arrowhead=vee label="&#171;uses&#187;"];
+	Widget -> ServiceProvider [style=dotted arrowhead=vee label="&#171;uses&#187;"];
+
+	ServiceProvider -> HALFactory [style=dotted arrowhead=vee label="&#171;uses&#187;"];
+	ServiceProvider -> PersistenceFactory [style=dotted arrowhead=vee label="&#171;uses&#187;"];
+	ServiceProvider -> SecurityFactory [style=dotted arrowhead=vee label="&#171;uses&#187;"];
+	ServiceProvider -> NetworkFactory [style=dotted arrowhead=vee label="&#171;uses&#187;"];
+}

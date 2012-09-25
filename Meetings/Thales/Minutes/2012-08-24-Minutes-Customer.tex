@@ -1,0 +1,54 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{array}
+\begin{document}
+\title{Minutes of Meeting for Customer Meeting \#2}
+\maketitle
+\begin{tabular}{>{\bfseries}l l}	
+Project name&Formal and secure messaging on a mobile platform\\
+Calling by&Group 15\\
+Time and date&2012-08-24 12:15-13:00\\
+Place&Thales' offices at Lerkendal\\
+Attendees&Christian and Stig from Thales\\
+& Aleksander, Ida, Kristin, Lars, Magnus and Nicklas from Group 15 \\
+Referent&Kristin from Group 15\\
+\end{tabular}
+\section{Agenda approved}
+Not applicable
+\section{Minutes of meeting from last customer meeting approved}
+\section{Requirements}
+\subsection{Address Book}
+A protocol for addressing is LDAP (Lightweight Directory Access Protocol). The group can assume that the address book comes as a list in a text file. Relevant information for a contact can be name, e-mail address, capabilities of their device, phone number. The group should investigate the possibilities for attaching attributes to each address.
+\subsection{Goal with the project suggested by Thales}
+\begin{itemize}
+\item
+Test user interface for message-based communication on a handheld device
+\item
+Make a prototype that can give inspiration for further product development and be used as a demonstration internally and to customers.
+\end{itemize}
+\subsection{Details about messages}
+The message size must be considered and file attachments must be supported. One can imagine limiting what content the user can send based upon network connection and type. Some attributes can be left out of Thales' format.\\
+The group asked whether it is required to implement threaded messages (a conversation), but Thales responded that this would be nice-to-have, although not necessary.\\
+Thales detailed the different priorities the messages can have, and these are (in increasing order of importance) deffered, routine, priority, immediate, flash, override. FLASH and OVERRIDE have the highest priority and must be managed in a special way.\\
+The group asked whether the subject or sender were most important, but Thales thought that they were equally important.\\
+All security gradings must be selectable (NATO, English, Norwegian), but only one can be selected per message.\\*
+The security labeling is coded on a special format. Thales will send valid headers for each of the relevant security labels, since this would require a lot of code to parse.\\
+An "outbox" (sent messages) is important because of the message status. The different statuses are whether the message is delivered and read.\\
+The group may investigate the possibility for sending SMS when there is no network available.
+\subsection{Encryption}
+The relevant protocols and standards are OpenSSL/SSL and S/MIME. The signing and verification will disappear in Thales' system, so the group should rather test through NTNU's servers or alike. It is possible to inspect encrypted network traffic in Wireshark. However, this is not straight-forward and Stig may be of help in case of problems.
+\section{Other issues}
+\section{Decisions}
+\begin{enumerate}
+\item
+Questions and meeting agendas must be sent 1-2 days prior to the meeting, and the minutes of meeting as soon as possible after the meeting.
+\item
+If something must be done (a required action), write what should be done and who should do it.
+\end{enumerate}
+\section{Actions}
+\begin{enumerate}
+\item
+Thales will send valid headers for each of the relevant security labels.
+\end{enumerate}
+\section{Next meeting}
+Group 15 will send suggestions for the next meeting on e-mail. 
+\end{document}
