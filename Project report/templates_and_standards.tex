@@ -1,5 +1,3 @@
-
-
 \section{Templates and standards}
 The group has decided to make templates and standards for the most relevant document types. Even though it will take some time to create these in the beginning, we believe to benefit on it over time.
 
@@ -107,9 +105,62 @@ paragraph{Google docs}\hfill
 We also use git so that it is easy to share all the code as well. When using git all the team members have access to shange, read and use all the code files whenever they feel like it.
 
 \paragraph{Saving in gitHub}
-All documents and Java files must compile before they are pushed to the repository.
-\textbf{Code structure}
-\textbf{LaTeX file structure}
+All documents and Java files must compile before they are pushed to the repository.\newline
+\textbf{Code repository structure}
+\begin{verbatim}
+kpro-app/
+  res/ -- application specific resources -- resources used in the application
+    drawable/ -- images for the application
+    layout/ -- layouts for the the activies
+    values/ -- common values for the application
+  src/ -- java source folder
+    main/java/no/ntnu/kpro/app -- the difference activites
+  target/ -- build folder
+kpro-instrumentation/
+  src/ -- java source folder
+    main/java/no/ntnu/kpro
+	    app/ -- gui tests folder
+		  core/service/ -- service tests folder
+  target/ -- build folder
+kpro-lib/
+  res/ -- application specific resources
+  src/ -- java source folder
+    main/
+      java/no/ntnu/kpro/core
+        model/ -- application specific models
+        service/ -- service related package
+          factories/ -- factory classes
+          implementations/  -- implementating classes
+          interfaces/ -- all relevant interfaces
+        utilities -- common javabased utilities
+    test/
+      java/no/ntnu/kpro/core/
+        service/
+          implementation/
+  target/ -- build folder
+
+\end{verbatim}
+\textbf{LaTeX repository structure}
+\begin{verbatim}
+Backlog/		-- contains the teams backlog
+Meetings/		-- agendas, feedback and minutes from every meeting
+  Internal/
+    Agendas/
+    Feedback/
+    Minutes/
+  Mohsen Anvaari/
+    Agendas/
+    Feedback/
+    Minutes/
+  Thales/
+    Agendas/
+    Feedback/
+    Minutes/
+Project report/		-- the tentative complete report
+Templates and standards/ -- templates in use
+Weekly status reports/ -- weekly timesheets
+
+\end{verbatim}
 
 
 \subsubsection{Naming of files}
@@ -142,5 +193,3 @@ Layout & lay & laySubject
 \end{tabular}
 \caption{Code naming conventions - all conventions need to have + identifer (lower camel-case) in addition to its unique three letter convention }\label{tab:namingconventions}
 \end{table}
-
-
