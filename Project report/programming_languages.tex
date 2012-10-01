@@ -1,11 +1,9 @@
 
-
 \subsection{Programming languages}
-
 We have decided to write the program in Java, and used XML for creating parts of the supporting structure of our project. At the end you will find a summary of why these choices were made.
 
 \subsubsection{Java}
-Java is a programming language originally developed by James Gosling at Sun Microsystems [2]. It is a class based, object oriented language that incorporates concurrency and is a general purpose language. The main reason Java was developed, was to create a programming language which had a simpler object model and provided fewer low-level facilities than C or C++. Even though, much of its syntax is derived from these languages.
+Java is a programming language originally developed by James Gosling at Sun Microsystems [2]. It is a class based, object oriented language that incorporates concurrency and it is a general purpose language. The main reason Java was developed, was to create a programming language which had a simpler object model and provided fewer low-level facilities than C or C++. Even though, much of its syntax is derived from these languages.
 \newline
 \newline
 Writing in Java, means that we do not have to recompile our code for every kind of Android device we want the app to run on. Our program will run on top of the Dalvik Virtual Machine, which encapsulates the android application, and makes programming a lot easier, as we do not have to worry about where our program runs, as Dalvik VM takes care of this.
@@ -13,21 +11,29 @@ Writing in Java, means that we do not have to recompile our code for every kind 
 \newline
 One of the major benefits from writing a program in Java, is that it is compiled into bytecode that can run on any Java Virtual Macine. This means, that the program can run on any architecture that Java can run on.
 
-\subsubsection{Native coding}
-It is possible to implement parts of the app using native-code languages such as C and C++ by using the Java Native Development Kit (NDK) [3]. This may be benefitial if there is good libraries written in these languages, or if you need the extra performance you get by not going through the Dalvik VM. We have chosen not to do this as as it is stated on the Android developer page for NDK: “... you should understand that the NDK will not benefit most apps.”
+\subsubsection{Native Coding}
+It is possible to implement parts of the app using native-code languages such as C and C++ by using the Java Native Development Kit (NDK) [3]. This may be beneficial if there are good libraries written in these languages, or if we need the extra performance you get by not going through the Dalvik VM. We have chosen not to do this as as it is stated on the Android developer page for NDK: “... you should understand that the NDK will not benefit most apps.”
 
-\newpage
 \subsubsection{Scripting}
-By using the Scripting Layer for Android (SL4A), it is possible to edit and execute scripts and interactive interpreters directly on the Android device [5]. By using the API's available to the full-fledged Android application, it is indeed possible to run programs using scripting. Currently available programming languages are Locale, Python, Pers, JRuby, Lua, BeanShell, JavaScript, Tcl and shell. We are not using this method, as stated by Google: “SL4A is designed for developers and is alpha quality software.” We will probably be running in to a lot of problems that is not well enough documented.
+By using the Scripting Layer for Android (SL4A), it is possible to edit and execute scripts and interactive interpreters directly on the Android device [5]. By using the APIs available to the full-fledged Android application, it is indeed possible to run programs using scripting. Currently available programming languages are Locale, Python, Pers, JRuby, Lua, BeanShell, JavaScript, Tcl and shell. We are not using this method, as stated by Google: “SL4A is designed for developers and is alpha quality software.” We will probably be running in to a lot of problems that is not well enough documented.
 
 \subsubsection{PHP}
 Programming can be done in PHP by installing the PHP for Android app and PHP library. This includes a lot of scripting to do common Android tasks, but it is certainly feasible. Documentation is a bit tricky to find, and the user community is not so big.
 
-\subsection{C \#}
-It is possible to write Android programs using C \#. By installing MonoDroid created by Xamarin [6], you can develop programs for Android. The gains of using C \# may be many, depending on the developer. If you are familiar with Visual Studio and the .NET framework, you will certainly feel at home here. The framework is well documented, so there should not be a problem to start developing using MonoDroid.
+\subsubsection{C\#}
+It is possible to write Android programs using C\#. By installing MonoDroid created by Xamarin [6], you can develop C\# programs for Android. The advantages of using C\# may be many, depending on the developer. If you are familiar with Visual Studio and the .NET framework, you will certainly feel at home here. The framework is well documented, so there should not be any problem developing our app using MonoDroid.
 \newline
 \newline
-The drawbacks of programming using MonoDroid are a few. The first drawback is the pricing, which of current date (10. september 2012) is \$399 USD for a professional licence. While MonoDroid does support a vast majority of the .NET framework, there is still some features missing, so one should be aware of this before deciding on using MonoDroid.
+The drawbacks of programming with MonoDroid are a few. The first drawback is the pricing, which of current date (10. september 2012) is \$399 USD for a professional licence. While MonoDroid does support a vast majority of the .NET framework, there is still some features missing, so one should be aware of this before deciding on using MonoDroid.
+
+\subsubsection{Conclusion}
+As we have seen, there are many ways to create software for Android. One can rely on only one language for programming, or use a combination of languages. We have chosen to develop purely on a Java platform. Why is this relevant for us, as we are creating an Android application?
+\newline
+\newline
+First, it is the most used developing language for Android, which means we are using a well tested and documented development framework. It is unlikely that we will run into big problems. Second, we are all familiar with using Java, so the learning curve will only be a bit steep for those in the group that are new at Android development.  Another benefit of using Java is that, if we decide on implementing a server part, we can create the server first and then decide if we want it to run on the phone or directly on for example a computer, be that a Linux or Windows computer or something else. This flexibility is something we only can get from Java.
+\newline
+\newline
+We chose Java as our main programming language, as this the most widespread language and has most support online. It is the language which has been pushed forward the most from Google. It is the recommended language to write Android apps.
 
 
 

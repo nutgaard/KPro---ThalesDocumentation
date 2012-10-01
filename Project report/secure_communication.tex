@@ -1,0 +1,25 @@
+\subsection{Secure communication}
+
+\subsubsection{Drivers}
+Communication channels are probably the easiest way to gain unauthorized access or internal information from the system since it does not require any physical interaction with the device.  For example a packet sniffer would easily pick up on unprotected data sent through a wifi net. In order to decrease this security issue, encryption is widely in use today, which is the topic of discussion in this section.
+
+\subsubsection{Requirements}
+In order to discuss and evaluate the different possible opportunities regarding end-to-end encryption of the communication channels it is needed to have some features to compare.
+
+\paragraph{Transparency}
+In order to provide flexibility and modifiability one should prefer a transparent implementation of the security protocol from the application's point of view. By using a protocol that is transparent to the application it allows the developers to focus on product development, and opens up for the possibility of changing the protocol at a later stage.
+
+\paragraph{Level of security vs. performance}
+Different security protocols have different levels of security and performance. It is therefore important to recognize the level of security needed and the performance penalty associated with the chosen protocols. In general a higher level of security would always be used when performance is not an issue.
+
+\paragraph{Implementation complexity}
+The implementation complexity of today's secure protocols is very high and not feasible during this project assignment. There exists, however, implementations of several secure protocols on the Android platform as it is. 
+
+\subsubsection{Discussion}
+There exists several methods which can be used to secure a communication channel, some more prominent than others. Secure communication could in theory be implemented at every level of the OSI model stack. The first option was to create our own secure protocol at the application layer that would provide a transparent wraparound of the transport layer, but this is rarely an optimal solution and will probably result in a poor and insecure imitation of an existing solution.
+\newline
+\newline
+Secondly, we choose a lower level, as to implement encryption on the network or link layer. For network layer encryption it would be possible to use IPSec, this is however not possible through java or android but would require interfering with the operating system beneath.  The same can be said about link layer solutions; it would require interference with the operating system. But compared the link layer encryption relies on the security of each link host, something that cannot be guaranteed when sending over the internet.
+\newline
+\newline
+Third we have the option of using a pre-existing application/transport layer protocol like SSL/TLS. In order to maximize security gain it is recommended to use TLS 1.2 \# which has improved security relative to earlier version of TLS and SSL.
