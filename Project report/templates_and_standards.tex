@@ -1,11 +1,22 @@
 
 
 \section{Templates and standards}
-The group has decided to make some templates and standards for the most relevant document types. Even though it will take some time to create these in the beginning, we believe to benefit on it over time.
+The group has decided to make templates and standards for the most relevant document types. Even though it will take some time to create these in the beginning, we believe to benefit on it over time.
 
 \subsection{Templates}
 
 \subsubsection{Phase documents}
+
+\paragraph{Sprint template}\hfill
+\begin{enumerate}
+\item{}Sprint Planning
+\item{}Sprint Duration
+\item{}Sprint Goal
+\item{}Sprint Backlog
+\item{}System Design
+\item{}Customer Feedback
+\item{}Conclusion
+\end{enumerate}
 
 \subsubsection{Agenda for meetings}
 
@@ -89,13 +100,20 @@ See figure \ref{fig:minutesinternal} on page \pageref{fig:minutesinternal}
 \subsection{Standards}
 
 \subsubsection{Organizing files}
-We use Google Docs to organize our files so that our entire team can change and look at all the documents we have whenever they want. We have one folder that contains our entire project, and in that folder we have subfolders to make the best overview as possible. We try not to have to many files in each folder so that finding a specific document becomes as easy as possible.
-\\
-\\
+paragraph{Google docs}\hfill
+ We use Google Docs to organize our files so that our entire team can change and look at all the documents we have whenever they want. We have one folder that contains our entire project, and in that folder we have subfolders to make the best overview as possible. We try not to have too many files in each folder so that finding a specific document becomes as easy as possible.
+
+\paragraph{Git}\hfill 
 We also use git so that it is easy to share all the code as well. When using git all the team members have access to shange, read and use all the code files whenever they feel like it.
 
+\paragraph{Saving in gitHub}
+All documents and Java files must compile before they are pushed to the repository.
+\textbf{Code structure}
+\textbf{LaTeX file structure}
+
+
 \subsubsection{Naming of files}
-All the files in our project has a name that starts with the date they were created so that they’ll be easier to find. The name also contains one or two words that explain what the documents consists.
+All the files in our project have a name that starts with the date they were created so that they’ll be easier to find. The name also contains one or two words that explain what the documents consists.
 
 \paragraph{Agendas}\hfill
 \newline
@@ -106,5 +124,23 @@ All the files in our project has a name that starts with the date they were crea
 "YYYY-MM-DD - Minutes of Meeting - [Thales/Mohsen Anvaari/Internal]"
 
 \subsubsection{Coding style}
+See \ref{tab:namingconventions} on page \pageref{tab:namingconventions} for code naming conventions.
+\begin{table}
+\begin{tabular}{l|l|l}
+\textbf{Element} & \textbf{Convention} & \textbf{Example} \\ \hline \hline
+Button & btn & btnSubject \\ \hline
+ImageButtonr & imb & imbSubject \\ \hline
+TextView & lbl & txtSubject \\ \hline
+ImageView & imv & imvSubject \\ \hline
+EditText & txt & txtSubject \\ \hline
+Spinner & spr & sprSubject \\ \hline
+ListView & lst & lstSubject \\ \hline
+CheckBox & chb & chbSubject \\ \hline
+RadioButton & rbt & rbtSubject \\ \hline
+ToggleButton & tbt & tbtSubject \\ \hline
+Layout & lay & laySubject 
+\end{tabular}
+\caption{Code naming conventions - all conventions need to have + identifer (lower camel-case) in addition to its unique three letter convention }\label{tab:namingconventions}
+\end{table}
 
 
