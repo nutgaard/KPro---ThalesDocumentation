@@ -1,0 +1,11 @@
+\section{System design}
+At the end of the first sprint, the the system worked thusly: The user opens an App (XOXOmail) on his phone. He is taken directly to a menu, though the final product would begin with a login screen. In the first sprint the menu was rudimentary; designed more for ease of demonstration than for actual application use. An updated version was under development but had not yet been integrated with the application at the end of the first sprint. The menu, in this iteration, had three options: Inbox, Sent, and SendMail.
+\newline
+\newline
+Clicking inbox would bring the user to a simple list of the emails received while the app was active (persistent storage had yet to be connected to the rest of the system at the end of the first sprint). Each email was click able, leading to a detailed view with the message text as well as further clearance and sender info. The GUI here sat on top of a Activity which held references to the models as well as keeping in contact with the network adapter which listened to a server for new emails. Clicking Sent would similarly bring the user to a list of sent emails, which sat on its own Activity.
+\newline
+\newline
+SendMail would bring the user to a simple form for sending messages to the server. Details like subject, receiver, security level and priority could be specified and a text message written. The demo was capable of sending to an arbitrary email address.
+\newline
+\newline
+The system consisted of four main components. The XML coded GUI was displayed and controlled by a number of activities; together forming the main GUI layer. The GUI layer communicated with a service core (which at the time only had the network system), with in turn created instances of methods in the modeling layer to refer around the system.
