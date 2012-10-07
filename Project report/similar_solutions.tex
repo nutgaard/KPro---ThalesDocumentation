@@ -8,47 +8,47 @@ A very important aspect of XOXOmail is the signing and verification part. This i
 In order for this to be an informative in depth analysis, it is appropriate with a general overview first, which gives an introduction to public key encryption as well as a short overview of S/MIME and the use of S/MIME in XOXOmail.
 
 \subsubsection{Public key encryption}
-Public key encryption is used when you want to secure data in such a way that only the receiver can open the message. It involves using two separate keys; one private key and one public key. [10]
+Public key encryption is used when you want to secure data in such a way that only the receiver can open the message. It involves using two separate keys; one private key and one public key [10].
 \newline
 \newline
 If I want to send a message to, let's say John, I first have to get Johns public key. His public key is available to everyone who wants it, because it is not a problem if an unwanted person gets it. This is the reason it is called public key. When he has given me his public key, I can then use it to encrypt the message. One might ask: What is the reason for using a
-public key? Does that give any security? The answer is yes. There is a mathematical relation between the private and public key. If you know the public key, it is nearly impossible or very expensive to calculate the private key. Therefore, by using John's public key to encrypt the message, I know that he is the only one that can open it. It is only the private key of John that will be able to open the message.
+public key? Does that give any security? The answer is yes. There is a mathematical relation between the private and public key. If you know the public key, it is nearly impossible or very expensive to calculate the private key. Therefore, by using John's public key to encrypt the message. I know that only he can open it, as it is only the private key of John that will be able to decrypt the message.
 \newline
 \newline
-Another concern could be: How does John know that I was the sender of the message? By just using the private-public key scheme as explained above, this is not possible. But by introducing digital signing, this is possible.
+Another concern would be: How does John know that I was the sender of the message? By just using the private-public key scheme as explained above, this is not possible. But by introducing digital signing, this is possible.
 
 \subsubsection{Digital signing}
-Signing is just what it sounds like. It is a way of signing data so that the receiver of the document knows that the sender is
+Digital signing is just what it sounds like. It is a way of signing data so that the receiver of the document knows that the sender is
 who he says he is, and that the content has not been tampered with [11]. In our example, this means that John wants a way of knowing that I am the sender. This is done by digital signing, which first consists of computing a message digest,
 which is just a hash of the message. This hash is then encrypted with my private key.
 
 
 \subsubsection{Verification}
-When John receives the message he will use my public key to decrypt the signature, and thereby receiving the hash. If John then creates a hash of the received document, and if it matches the hash of the signature, he knows that the message is not tampered with. 
+When John receives the message he will use my public key to decrypt the signature, and thereby receiving the hash. If John then creates a hash of the received document and it matches the hash of the signature, he knows that the message is not tampered with. 
 \newline
 \newline
 But what if a third person wants to deceive us, and sends a message to John claiming to be me and giving him “my” public key? John knows that the message was sent by someone with my name, but is he sure that I was the sender? The solution to this is a Certificate Authority, also known as CA. The CA creates a digital certificate for my public key, which ensures that it really is from me. To check that it really was the CA that created the certificate, John can use the CA's public key to check the signature on my certificate. It all checks out, John can now trust trust that the message was from me.
 
 \subsubsection{S/MIME}
-S/MIME is an abbreavations for Secure/Multipurpose Internet Mail Extensions. It is a standard for public key encryption and signing of MIME data [12]. MIME content is text in character sets that differ from ASCII, non-text attachments, message bodies with multiple parts and non ACII headers. It is just an extension of the well known mail format so that it is possible to send content other than plain text.
+S/MIME is an abbreavation for Secure/Multipurpose Internet Mail Extensions. It is a standard for public key encryption and signing of MIME data [12]. MIME content is text in character sets that differ from ASCII, non-text attachments, message bodies with multiple parts and non ACII headers. It is just an extension of the well known mail format so that it is possible to send content other than plain text.
 
 \subsubsection{Available apps with signing functionality}
 An already existing app for sending signed messages in X509 tools.
 
 \subsubsection{X509Tools}
-X509Tools is an application that has the ability to send mail with S/MIME capabilities, but its main purpose is not for sending mails. The main purpose is to give these capabilities to external mail clients via an interface. It also has an Certificate Store which can be used to check certificates already present on the phone. 
+X509Tools is an application that has the ability to send mail with S/MIME capabilities, but its main purpose is not for sending mails. The main purpose is to give these capabilities to external mail clients via an interface. It also has a Certificate Store which can be used to check certificates already present on the phone. 
 
 \subsection{Sending mail}
-There are many applications available for sending mail from an Android phone. This section will first give a superficial overview of other programs, and then a short summary of what these provide, that may be useful to us.
+There are many applications available for sending mail from an Android phone. This section will first give a superficial overview of other programs, and then a short summary of what these provide, and what these is useful for.
 
 \subsubsection{Built in client}
 The first and most obvious clients for sending mail is the built in Android mail client which is what one can call abandonware. It is often outdated and lacks a lot of basic functions.
 
 \subsubsection{GMail}
-One of the most used email clients for phones is the GMail app. It is developed by Google, and is therefore seen as secure app with a streamlined design. Unfortunately, it stops there. Google has been neglecting all problems that it has, and new features are not coming. Functions like sorting of mail is lacking and it is not very reliable. It often shows messages received hours before the message actually is in the inbox. Fortunately, there exists a fork of GMail, called K-9. GMail does not have S/MIME implemented on the phone version, but an extension for Firefox enables integrates reading and sending of encrypted mail directly into the Gmail interface [13].
+One of the most used email clients for phones is the GMail app. It is developed by Google, and is therefore seen as secure app with a streamlined design. Unfortunately, it stops there. Google has been neglecting all problems that it has, and new features are not emerging from complaints from existing users. Functions like sorting of mail is lacking and the app is not very reliable. It often shows messages received hours before the message is available in the inbox. Fortunately, there exists a fork of GMail, called K-9 Mail. GMail does not have S/MIME implemented on the phone version, but an extension for Firefox enables integrates reading and sending of encrypted mail directly into the Gmail interface [13].
 
 \subsubsection{K-9 Mail}
-K-9 Mail has all the features missing in GMail, and then some. Most features are configurable. It is possible to edit app polling settings, show a short excerpt of the message text. The message selection checkboxes can be temporarily hidden. So can the starring of the messages. It is even possible to adjust font sizes and date formats. The clue here is configurability. K-9 Mail does not currently have an official S/MIME implementation, but there exists some hacks around that partially or fully manages to implement it. This is therefore not seen as a fully secure alternative. An upside is that K-9 Mail is free.
+K-9 Mail has all the features the users wanted in GMail, and some extra. Most features are configurable. It is possible to edit app polling settings, show a short excerpt of the message text, and message selection checkboxes can be temporarily hidden. So can the starring of the messages and it is even possible to adjust font sizes and date formats. The clue here is configurability. K-9 Mail does not currently have an official S/MIME implementation, but there exists some hacks around that partially or fully manages to implement it. This is therefore not seen as a fully secure alternative. An upside is that K-9 Mail is free.
 
 \subsubsection{MailDroid}
 It has many of the same functions as in K-9 mail, but also incorporates spell checking, changing font sizes and colors on text and coloring on email text. It is a solid email client that will meet the needs of most users. MailDroid currently costs 111,86 NOK, which is in the high end price range of apps. Good that there also is a free ad version available. As far as we can see, MailDroid does not come with S/MIME. 
@@ -57,10 +57,10 @@ It has many of the same functions as in K-9 mail, but also incorporates spell ch
 R2Mail2 is the result of further development of X509Tools. Here, the focus is more on taking the good parts of X509Tools and integrating it into a fully functional mail client. It uses the same security libraries as used in X509Tools, and does also include digital signatures and digital encryption and decryption based on personal Soft-Token keys[14]. It has the ability to store private keys and passwords in an encrypted database known as the Key-Store. This is encrypted by a master password. The certificated can be validated by OCSP and LDAP. As it is built on top of X509Tools, it has full S/MIME support. This is a no fuzz email client where you get the ability to send encrypted and signed mails.
 
 \subsection{Conclution}
-It is very clear that a similar solution to XOXOmail is not available on the market, but there exists solutions that partially are trying to implement S/MIME, like K-9 Mail. There also exist solutions that fully implement S/MIME for external clients like X509Tools. A problem with using X509Tools, is gives poor performance to apps that utilize this S/MIME capability, as the mail message will have to be stored to disk between the mail client and X509Tools. An alternative is to use R2Mail2, which gives all one can want regarding security.
+It is very clear that a similar solution to XOXOmail is not available on the market, but there exists solutions that partially are trying to implement S/MIME, like K-9 Mail. There also exist solutions that fully implement S/MIME for external clients like X509Tools. A problem with using X509Tools, is gives poor performance to apps that utilize this S/MIME capability, as the mail message will have to be stored to disk between the mail client and X509Tools. An alternative is therefore to use R2Mail2, which gives all one can want regarding security.
 \newline
 \newline
 As an aside, it is of interest to note that we have been in direct contact with on of the developers of X509Tools and R2Mail2. His name was Stefan Selbitschka, and he was very interested in this project. If necessary, he could build us a separate version of the R2Mail2 library that incorporates e.g. header specific data that is unique to XOXOmail. This was mentioned at a meeting with Thales, but no discussion was further made on this topic. It seems that it is more important to investigate possible solutions than to brute force a fast solution to the prototype of XOXOmail.
 \newline
 \newline
-Even though there exist email clients on the market where security is important, none of these have the special needs that XOXOmail will have to fulfill. This is mainly because XOXOmail is a specialized software created for a specific user group. A general purpose app will never be able to fulfill these requirements. It is therefore clear that XOXOmail has to be implemented ground up to get the capabilities we are looking for.
+Even though there exist email clients on the market where security is important, none of these have the special needs that XOXOmail will have to fulfill. This is mainly because XOXOmail is a specialized software created for a specific user group. A general purpose app will never be able to fulfill these requirements. It is therefore clear that XOXOmail has to be implemented ground up to get the capabilities we are looking for. We can still use a lot of knowledge regarding what works well and not so well in other mail applications in our product, as the basic functionality is quite similar.
