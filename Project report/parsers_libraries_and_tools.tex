@@ -1,0 +1,31 @@
+\subsection{Parsers libraries \& tools}
+
+\subsubsection{XStream}
+XStream is a simple Java library to serialize objects to XML and back. Using XStream, you can serialize most Java objects without any mapping. Object names become element names in the XML produced, and the strings within classes form the element content of the XML.
+\newline
+\newline
+The classes that you serialize with XStream don't need to implement the Serializable interface, thanks to XStream handling all serializations. XStream is a serialization tool and not a data binding tool, which means that it doesn't perform class generation from an XML Schema Definition (XSD) file.
+\newline
+\newline
+Another feature of XStream is that it has the capability to serialize to and from JSON as well.
+
+\textbf{Features:}
+\begin{itemize}
+\item{}Ease of use: a high level facade is supplied that simplifies common use cases.
+\item{}No mappings required: most objects can be serialized without need for specifying mappings.
+\item{}Performance: speed and low memory footprint are a crucial part of the design, making it suitable for large object graphs or systems with high message throughput.
+\item{}Clean XML: no information is duplicated that can be obtained via reflection. This results in XML that is easier to read for humans and more compact than native Java serialization.
+\item{}Requires no modifications to objects: serializes internal fields, including private and final. Supports non-public and inner classes. Classes are not required to have default constructor.
+\item{}Full object graph support: duplicate references encountered in the object-model will be maintained. Supports circular references.
+\item{}Integrates with other XML APIs: by implementing an interface, XStream can serialize directly to/from any tree structure (not just XML).
+\item{}Customizable conversion strategies: strategies can be registered allowing customization of how particular types are represented as XML.
+\item{}Error messages: when an exception occurs due to malformed XML, detailed diagnostics are provided to help isolate and fix the problem.
+\item{}Alternative output format: the modular design allows other output formats. XStream ships currently with JSON support and morphing.
+\end{itemize}
+
+\textbf{Limitations:}
+\begin{itemize}
+\item{}If using the enhanced mode, XStream can re-instantiate classes that do not have a default constructor. However, if using a different JVM like an old JRockit version, a JDK 1.4 or you have restrictions because of a SecurityManager, a default constructor is required.
+\item{}The enhanced mode is also necessary to restore final fields for any JDK < 1.5. This implies deserialization of instances of an inner class.
+\item{}Auto-detection of annotations may cause race conditions. Preprocessing annotations is safe though.
+\end{itemize}
