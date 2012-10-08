@@ -7,11 +7,37 @@
 \usepackage{ltablex}
 \usepackage[T1]{fontenc}
 \usepackage{enumitem}
-\usepackage[left=2cm,top=2cm,right=2cm,foot=2cm]{geometry}
+\usepackage[margin=2cm]{geometry}
 \usepackage{array}
 \usepackage{pdfpages}
 \usepackage{appendix}
 
+\makeatletter
+\renewcommand*{\@makechapterhead}[1]{%
+  \vspace*{10\p@}%
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter%%%%% Fix for frontmatter, mainmatter, and backmatter 040920
+        \DOCH
+      \fi
+    \fi
+    \interlinepenalty\@M
+    \if@mainmatter%%%%% Fix for frontmatter, mainmatter, and backmatter 060424
+      \DOTI{#1}%
+    \else%
+      \DOTIS{#1}%
+    \fi
+  }}
+% For the case \chapter*:
+\renewcommand*{\@makeschapterhead}[1]{%
+  \vspace*{10\p@}%
+  {\parindent \z@ \raggedright
+    \normalfont
+    \interlinepenalty\@M
+    \DOTIS{#1}
+    \vskip 40\p@
+  }}
+\makeatother
 
 \begin{document}
 
@@ -58,7 +84,7 @@
 
 	%\include{detailed_phase_plans}
 
-	%\include{table_for_handling_of_risks}
+	\include{table_for_handling_of_risks}
 
 	%\include{table_for_effort_registration}
 
