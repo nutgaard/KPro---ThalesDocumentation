@@ -1,45 +1,4 @@
-\documentclass[12pt]{report}
-\usepackage{semtrans}
-\usepackage{graphicx}
-\usepackage{tabularx}
-\usepackage[utf8]{inputenc}
-\usepackage[Glenn]{fncychap}
-\usepackage{ltablex}
-\usepackage[T1]{fontenc}
-\usepackage{enumitem}
-\usepackage[margin=2cm]{geometry}
-\usepackage{array}
-\usepackage{pdfpages}
-\usepackage{appendix}
 
-\makeatletter
-\renewcommand*{\@makechapterhead}[1]{%
-  \vspace*{10\p@}%
-  {\parindent \z@ \raggedright \normalfont
-    \ifnum \c@secnumdepth >\m@ne
-      \if@mainmatter%%%%% Fix for frontmatter, mainmatter, and backmatter 040920
-        \DOCH
-      \fi
-    \fi
-    \interlinepenalty\@M
-    \if@mainmatter%%%%% Fix for frontmatter, mainmatter, and backmatter 060424
-      \DOTI{#1}%
-    \else%
-      \DOTIS{#1}%
-    \fi
-  }}
-% For the case \chapter*:
-\renewcommand*{\@makeschapterhead}[1]{%
-  \vspace*{10\p@}%
-  {\parindent \z@ \raggedright
-    \normalfont
-    \interlinepenalty\@M
-    \DOTIS{#1}
-    \vskip 40\p@
-  }}
-\makeatother
-
-\begin{document}
 
 \subsection{Risk management}
 
@@ -142,7 +101,7 @@ Responsible & Nicklas  and Ida
 \caption{Table for handling of risks} \label{tab:risks}
 \end{table}
 
-\end{document}
+
 
 
 
