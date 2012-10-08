@@ -3,4 +3,40 @@ This chapter will cover the preliminary studies carried out in this project and 
 
 \section{Problem description}
 
-The problem...
+\subsection{Thales}
+Thales wants us to develop a message service that is custom made for mobile users, with a user-interface that has good affordance and is easy and effective to use.
+\newline
+\newline
+The users of this application are people who need a reliable and secure way of communicating with more or less time dependant information. Users are also expected to only have access to either tablets or mobile phones, not computers.
+
+\subsection{Functionality}
+The application’s functionality should be similar to a normal email client, but with a user-interface that is custom made for smaller screens, short-messages, domain specific attributes, reliability adjustments and security adjustments. The application should use the normal standards for internet mail to communicate with Thales’ XOmail SMTP gateway.
+\newline
+\newline
+The application should not use bandwidth when it is not sending or receiving messages. The application should also be able to get an updated address book from the server.
+
+\subsection{The solution}
+The solution is to be implemented on Android based smartphones or tablets and the user-interface should be fitted to the screen size of the given device. It should support bandwidths as small as 64 kbps and communicate with a XOmail
+server through IMAP/POP3 and SMTP. The application should also work with normal mail servers, but with reduced functionality.
+\newline
+\newline
+The messages sent with our solution should be able to support text, pictures and video. The media should be accessed from the local storage on the phone or from other applications. A user should be able to create, edit, send, answer, forward and delete messages as well as browse and open received and sent messages.
+
+\subsection{Military attributes}
+The messages that a user sends should support certain military attributes, these include precedence, type and security label. 
+\newline
+\newline
+One should also be able to ask for a delivery report and a receipt notification from the recipient of the message sent. The one who sends the message should be able to see the status on the delivery report and receipt notification.
+
+\subsection{Instantaneous messages}
+Another message functionality is the ability to send instantaneous messages with predefined military attributes to a predefined group. These can include predefined text or information from another application. It should also be possible to send messages with content that is created by other applications on the device.
+\newline
+\newline
+When a message that is sent from the application fails, the user should get a notification and the message should be sent again automatically. These messages should also be sorted by priority.
+
+\subsection{High priority messages}
+If a high priority message arrives on a given user’s phone, the application should alert the user in a convenient way and make it easy to access the newly arrived message. The application should stop the sending of all other messages when a user sends a message with high priority, and instead give the resources to the high priority message.  
+
+\subsection{Security}
+Security is also an important issue in the application. Communication with the server should be encrypted with SSL, messages should be signed with S/MIME when being sent, S/MIME signed messages should be verified on receive and private keys for
+signing mail should not be stored in cleartext.
