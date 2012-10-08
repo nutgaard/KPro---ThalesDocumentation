@@ -1,5 +1,3 @@
-
-
 \subsection{Risk management}
 
 \textbf{R1. Illness / Unavailability:} A member or members of the group become ill or unavailable. \\
@@ -32,8 +30,12 @@ Explanation of abbreviations used in table% \ref{tab:risks}:
 %See tabel \ref{tab:risks} at page \pageref{tab:risks}
 %\newline
 %\newline
-\begin{table}
-\begin{tabularx}{\linewidth}{>{\setlength\hsize{.4\hsize}}X>{\setlength\hsize{0.6\hsize}}X}\hline
+%\begin{longtable}
+
+\begin{tabularx}
+  \label{tab:risks}
+\end{tabularx}
+\begin{tabularx}{\linewidth}{>{\setlength\hsize{.3\hsize}}X>{\setlength\hsize{0.7\hsize}}X}\hline
 Risk ID & R1 \\
 Risk factor & Illness/Unavailability \\
 Consequences & \textbf{M:} Absence may halt the project progress \\
@@ -41,6 +43,8 @@ Probability & M \\
 Strategy \& actions & \textbf{Reduce:} Involve group members in different parts of the project to avoid complete halts for certain tasks \\
 Deadline & Continuous \\
 Responsible & Aleksander and Kristin \\ \hline
+\end{tabularx}
+\begin{tabularx}{\linewidth}{>{\setlength\hsize{.3\hsize}}X>{\setlength\hsize{0.7\hsize}}X}\hline
 Risk ID & R2 \\
 Risk factor & Internal conflicts/disputes \\
 Consequences & \textbf{M:} Can result in problems with cooperation and thus causing the project progress to slow down \\
@@ -48,6 +52,8 @@ Probability & M \\
 Strategy \& actions & \textbf{Accept:} The conflict can be a constructive discusion. \textbf{Reduce:} Stop the conflict by going between the parts and try to come to a common solution fast \\
 Deadline & Continuous \\
 Responsible & Aleksander and Magnus\\ \hline
+\end{tabularx}
+\begin{tabularx}{\linewidth}{>{\setlength\hsize{.3\hsize}}X>{\setlength\hsize{0.7\hsize}}X}\hline
 Risk ID & R3 \\
 Risk factor & Problems with internal or external communication \\
 Consequences & \textbf{M:} Group members can end up doing things the wrong way or the group misunderstands the customer's wishes \\
@@ -55,13 +61,17 @@ Probability & M \\
 Strategy \& actions & \textbf{Avoid:} Have frequent internal and external meetings to discuss what has been done and what needs to be done. \textbf{Accept:} If something is done the wrong way we have to do it again \\
 Deadline & Continuous \\
 Responsible & Everyone \\ \hline
-Risk ID & R4 \\
-Risk factor & Bad technical solution \\
-Consequences & \textbf{H:} The project will not be completed before deadline \\
+\end{tabularx}
+\begin{tabularx}{\linewidth}{>{\setlength\hsize{.3\hsize}}X>{\setlength\hsize{0.7\hsize}}X}\hline
+Risk ID & R4 \hfill\\
+Risk factor & Bad technical solution                                                \\
+Consequences & \textbf{H:} The project will not be completed before deadline, or result in a poor quality \\
 Probability & M \\
 Strategy \& actions & \textbf{Avoid:} Plan well and conduct a thorough pre-study \\
 Deadline & Sprint 1 \\
 Responsible & Nicklas and Kristin \\ \hline
+\end{tabularx}\\\\
+\begin{tabularx}{\linewidth}{>{\setlength\hsize{.3\hsize}}X>{\setlength\hsize{0.7\hsize}}X}\hline
 Risk ID & R5 \\
 Risk factor & Too much priority given to a certain task \\
 Consequences & \textbf{M:} May affect the quality of other important tasks \\
@@ -69,6 +79,8 @@ Probability & M \\
 Strategy \& actions & \textbf{Avoid:} Plan the time distribution carefully \textbf{Reduce:} If we find that a task is given to much priority, let everybody on the team know about your concern, and then change the priority \\
 Deadline & Continuous \\
 Responsible & All \\ \hline
+\end{tabularx}
+\begin{tabularx}{\linewidth}{>{\setlength\hsize{.3\hsize}}X>{\setlength\hsize{0.7\hsize}}X}\hline
 Risk ID & R6 \\
 Risk factor & Technical encompetence \\
 Consequences & \textbf{H:} The group will b unable to finish the project \\
@@ -76,6 +88,8 @@ Probability & H \\
 Strategy \& actions & \textbf{Avoid:} Choose familiar solutions for the problems that occur and do a thorough investigation into unfamiliar technologies that are to be used \textbf{Transfer:} If one or more of the members get's a problem they can't solve, ask someone else \\
 Deadline & Continuous \\
 Responsible & Everyone \\ \hline
+\end{tabularx}
+\begin{tabularx}{\linewidth}{>{\setlength\hsize{.3\hsize}}X>{\setlength\hsize{0.7\hsize}}X}\hline
 Risk ID & R7 \\
 Risk factor & Inexperience with software development methods \\
 Consequences & \textbf{M:} Lack of documentation and too much time spent on administration \\
@@ -83,6 +97,8 @@ Probability & M \\
 Strategy \& actions & \textbf{Reduce:} Get familiar with the software development method early and be thorough with the documentation \\
 Deadline & Continuous \\
 Responsible & Everyone \\ \hline
+\end{tabularx}
+\begin{tabularx}{\linewidth}{>{\setlength\hsize{.3\hsize}}X>{\setlength\hsize{0.7\hsize}}X}\hline
 Risk ID & R8 \\
 Risk factor & Hardware failure \\
 Consequences & \textbf{M:} may cause unexpected delays \\
@@ -90,17 +106,24 @@ Probability & M \\
 Strategy \& actions & \textbf{Avoid:} Have version control and make information available from different locations \\
 Deadline & Continuous \\
 Responsible & Everyone \\ \hline
+\end{tabularx}
+\begin{tabularx}{\linewidth}{>{\setlength\hsize{.3\hsize}}X>{\setlength\hsize{0.7\hsize}}X}\hline
 Risk ID & R9 \\
 Risk factor & Chosen tools do not deliver \\
 Consequences & \textbf{M:} may halt the project progress \\
 Probability & M \\
 Strategy \& actions & \textbf{Reduce:} Find out what the most suited tools on the market is and choose one that is better suited. \\
 Deadline & Preliminary study \\
-Responsible & Nicklas  and Ida
+Responsible & Nicklas  and Ida\\
+\hline
+\caption{Table for handling of risks}
 \end{tabularx}
-\caption{Table for handling of risks} \label{tab:risks}
-\end{table}
-
+%\begin{tabular}{ll}
+%	\hfill&\hfill\\
+%	
+%\end{tabular}
+%\end{longtable}
+%\end{document}
 
 
 
