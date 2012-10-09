@@ -1,22 +1,21 @@
-\section{Test plan}
+\chapter{Test plan}
 
 The main part of project testing will be done as we go along. Using unit tests, each part of the code will be thoroughly tested before it is put together. Larger scale integration and instrumentation tests are done largely the same way, compounded by informal testing by group members. The sending and receiving of emails will be tested using Greenmail, while Mockito is used to handle not yet implemented classes as well as emulator free testing for Android specific classes. All of these tools are described in the section below. Towards the end of the project period, including large parts of the fourth sprint, the focus will shift from producing additional code to finding and repairing bugs. While our plan is vaguely based upon, and in large part inspired by, IEEE829 [12] we are too informal about it to be able to use such grand claims. In short, our testing plan is to test each public method both for valid and invalid input.
 
-\subsection{Test tools}
+\section{Test tools}
 \subsubsection{JUnit}
 JUnit is the industry standard for test driven development. It works by creating a separate test method for each method in the class that is to be tested. In this way one can test large portions of code independent of the other code sections. For us, it provides many benefits, especially that most of us have dealt with it before and are familiar with the concept.
 
-\subsubsection{Android Instrumentation}
+\subsection{Android Instrumentation}
 Android Instrumentation is a framework that extends JUnit, providing it with a toolkit of android specific mock classes and methods. It also provides test classes targeting Android applications, with specialized testing of everything from GUI component locations and visibility to the Activity specific onCreate and onDestroy methods. Android Instrumentation is produced by Android directly and is included in the development kit.
 
-\subsubsection{Greenmail}
+\subsection{Greenmail}
 Greenmail is an open source mail server package for testing in Java. It provides all the server side software needed to test mail sending and receiving without having an actual server.
 
-
-\subsubsection{Mockito}
+\subsection{Mockito}
 Mockito is a simple and elegant API for mocking classes. With a few lines of code an unimplemented class can be instructed to provide a valid output, allowing other parts of the code to be tested without concerns.
 
-\subsection{Design Verification}
+\section{Design Verification}
 In order to accommodate the agile development plan used by the team, our early design verification is necessarily somewhat vague. In the early stages of the project we had limited knowledge of how the final product would be structured and which features it would involve.
 \newline
 \newline
@@ -25,7 +24,7 @@ Early in the first sprint we decided upon a set of basic interfaces, which neatl
 \newline
 Later in the project this method level testing will augmented by white box and stress testing; essentially us deliberately trying to crash the system with strange inputs or action combinations. 
 
-\subsection{Why we selected these Test Tools}
+\section{Why we selected these Test Tools}
 The choice of tools was mainly based on previous experience inside the group, the framework provided by and the demands of the platform. 
 \newline
 \newline

@@ -1,45 +1,45 @@
 
 
-\section{Version control procedures}
+\subsection{Version control procedures}
 Our group has created a systematic procedure for version control for all textual  and code documents. 
 
-\subsection{Version control for code}
+\subsubsection{Version control for code}
 For source code management there are several viable options on the market, the big ones being Git and SVN. Although they do pretty much the same thing, there are some key differences in how they work which makes Git favorable over SVN. One key feature is performance, where Git greatly outperforms SVN. Git gives you the possibility of a hierarchy of repositories, which offers great flexibility. One upside being the local repository every user has on their computer. This enables the developer to work even though he does not have access to the remote repository. Lastly, and perhaps the most important difference comes with the branch/merge differences between the two tools. Git does this incredible well, while the general consensus is that SVN’s merge tool is tedious to use.  
 \newline
 \newline
 In addition to technical differences between Git and SVN, it was the experiences of the developer team that finally made the decision to use Git for this project.
 
-\subsection{Version control for code procedure}
+\subsubsection{Version control for code procedure}
 All procedures assumes the use of a terminal similar to Bash, and that the current directory is the workspace of your IDE.
 \newline
 \newline
 []: optional arguments \& <>: argument
 
-\subsubsection{Setup}
+\paragraph{Setup}
 \begin{description}
 \item[Description:] Setup of project (usually just once)
 \item[Command:] git clone <git remote repository address>
 \end{description}
 
-\subsubsection{On programming session start}
+\paragraph{On programming session start}
 \begin{description}
 \item[Description:] Whenever a developer starts programming
 \item[Command:] git pull [<remote repository> <branch>]
 \end{description}
 
-\subsubsection{On change}
+\paragraph{On change}
 \begin{description}[style=multiline]
 \item[Description:] Whenever a developer changes some small functionality, feature or structure.
 \item[Command:] git add <file> \#Repeat for all changed files \\ git commit -m “<commit message describing the changes made>” \\  \[git pull \&\& git push\] \#should only be done for if project builds
 \end{description}
 
-\subsubsection{On complete}
+\paragraph{On complete}
 \begin{description}
 \item[Description:]  Whenever a developer finishes with some functionality, feature,  structure or changes which influence 				any of the above.
 \item[Command:]  git pull [<remote repository> <branch>] \\  \#Fix any merge conflicts \\ git push [<remote repository> <branch>]
 \end{description}
 
-\subsection{Version control for documents}
+\subsubsection{Version control for documents}
 Version control for documents is divided into two bulks. In the development stage of a document it resides within Google drive (Google docs). This gives us an rapid way of writing, editing and sharing all documents related to the project. Google drive also provides the necessary version control needed at this point. When a document or part of a document is finished it is then typesetted in latex and pushed to git. Once on git, the documents work in the same way as the code.  
 
 
