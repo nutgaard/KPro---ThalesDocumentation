@@ -1,3 +1,5 @@
+
+
 \chapter{Requirements}
 
 \section{Business requirements}
@@ -8,18 +10,24 @@
 See table \ref{tab:functionalreq} at page \pageref{tab:functionalreq}.
 
 \begin{table}
-\begin{tabularx}{\linewidth}{>{\setlength\hsize{.2\hsize}}X|>{\setlength\hsize{1.8\hsize}}X|>{\setlength\hsize{0.3\hsize}}X}
+\begin{tabular}{p{1.5cm}|p{12.5cm}|p{2cm}}
 \textbf{Req.} & \textbf{Description} & \textbf{Priority} \\ \hline \hline
-\textbf{FR1} & \textbf{Starting application and logging in:} the user has to be able to start the apllication and authorize himself against an authorizing mechanism & High \\ \hline
-\textbf{FR2} & \textbf{Send a message to another user:} the user has to be able to send a simple message via regular mail protocols to a recipient of own choice & High \\ \hline
-\textbf{FR3} & \textbf{Browse received messages:} the user has to be able to browse all messages he has recieved & High \\ \hline
-\textbf{FR4} & \textbf{Browse sent messages:} the user has to able to browse all messages he has sent, and seeing the status of it, e.g "unread", "read", "action taken" & High \\ \hline
-\textbf{FR5} & \textbf{Viewing address book:} the user has to be able to view the address book with all contacts, so that he is able to choose a recipient from a list when he want to send a message & High \\ \hline
-\textbf{FR6} & \textbf{Sending and receiving message with attachments:} the user has to be able to add an attachment to the message, so that the recipient gets the attachment as well as the message. By opening the message, the attachment will also show & Medium \\ \hline
-\textbf{FR7} & \textbf{Answer, delete and forward messages:} the user can, by clicking on a message, choose if he want to answer, delete or forward the message, and be brought to the correct screen for doing selected action & Medium \\ \hline
-\textbf{FR8} & \textbf{Marking messages with a grade of precedence:} ?? & Medium \\ \hline
-\textbf{FR9} & \textbf{Settings menu:} the user can choose to alter the following settings ??? via the settings menu & Low
-\end{tabularx}
+\textbf{FR1} & \textbf{Starting application and logging in:}The user has to be able to start the application and authorize himself against an authorizing mechanism. & High \\ \hline
+\textbf{FR2} & \textbf{Send a message to another user:}The user has to be able send a simple message via regular email protocols to a recipient of own choice. & High \\ \hline
+\textbf{FR3} & \textbf{Browse received messages:} The user has to be able to browse all messages he has received. & High \\ \hline
+\textbf{FR4} & \textbf{Browse sent messages:} The user has to be able to browse all messages he has sent, and see the status of a sent message, where the relevant statuses are “message delivered” and “message read”. & High \\ \hline
+\textbf{FR5} & \textbf{Viewing address book:} The user has to be able to view the address book with all contacts, so that he is able to choose a recipient from a list when he wants to send a message. & High \\ \hline
+\textbf{FR6} & \textbf{Marking messages with a grade of importance:}The user has to be able to set Security Label, Message Priority and Message Type on a message, so that the receiver of the message knows who the message is intended for, how important it is and in what environment it is is of interest. The Message Priority will decide how intrusive XOXOmail is, that is, how much ihe app takes over the phone in order to show the user that a message has arrived.  & High \\ \hline
+\textbf{FR7} & \textbf{Sending and receiving message with attachments:}The user has to be able to add an attachment to the message, so that the recipient gets the attachment as well as the message. By opening the message, the attachments will also show. & Medium \\ \hline
+\textbf{FR8} & \textbf{Answer, delete and forward messages:}The user has to be able to, by clicking on a message, choose if he wants to answer, delete or forward the message, and be brought to the correct screen for doing the selected action. & Medium \\ \hline
+\textbf{FR9} & \textbf{Send instant message:}The user has to be able to, via very few screen interactions, send an instant message with a predefined security label and priority, to a predefined list of recipients. & Medium \\ \hline
+\textbf{FR10} & \textbf{Settings menu:}The user has to be able to alter the following settings: 
+\begin{itemize}
+\item{}Change default values of dropdown menus in the New Message window.
+\item{}What the lowest security priority is before the message is sent via SMS
+\item{}Setting text size in GUI, e.g. on received message text.
+\end{itemize}  & Low
+\end{tabular}
 \caption{Functional requirements} \label{tab:functionalreq}
 \end{table}
 
@@ -28,7 +36,7 @@ See table \ref{tab:functionalreq} at page \pageref{tab:functionalreq}.
 \paragraph{Usability}
 \subparagraph{U1 Ease of use}\hfill
 \newline
-The user should be able to use the program without a lot mistakes, e.g. pressing the wrong button  because button labels are ambiguous or too small.
+The user should be able to use the program with very few mistakes, such as pressing the wrong button because button labels are ambiguous or too small.
 \newline
 \newline
 See table \ref{tab:easeofuse} at page \pageref{tab:easeofuse}.
@@ -39,8 +47,8 @@ Source & End user \\ \hline
 Stimulus & Use system without problems \\ \hline
 Artifact & System \\ \hline
 Environment & At run time \\ \hline
-Response & Provide clean and easy to understand interface \\ \hline
-Response measure & Only 5\% of user operations were mistakes, and not what the user wanted to do
+Response & Provide clean and understandable interface \\ \hline
+Response measure & Maximum 5\% of user operations should be mistakes (another action than the user wanted).
 \end{tabularx}
 \caption{Ease of use} \label{tab:easeofuse}
 \end{table}
@@ -58,8 +66,8 @@ Source & End user \\ \hline
 Stimulus & Use system efficiently \\ \hline
 Artifact & System \\ \hline
 Environment & At run time \\ \hline
-Response & Organize application so that important functions are easy to reach from main menu \\ \hline
-Response measure & The user should never use more than 1 minute finding what he looks for
+Response & Organize application so that important functions are easy to reach from the main menu. \\ \hline
+Response measure & A user with only a quick (5 min) training course should never spend more than one minute finding what he looks for.
 \end{tabularx}
 \caption{Efficent use} \label{tab:efficentuse}
 \end{table}
@@ -73,11 +81,11 @@ See table \ref{tab:performance} at page \pageref{tab:performance}.
 \begin{tabularx}{\linewidth}{>{\setlength\hsize{.6\hsize}}X|>{\setlength\hsize{1.4\hsize}}X}
 \textbf{Portion of scenario} & \textbf{Values} \\ \hline \hline
 Source & End user \\ \hline
-Stimulus & Wants to do normal GUI operations \\ \hline
+Stimulus & Wants to open message \\ \hline
 Artifact & System \\ \hline
 Environment & Under normal operations \\ \hline
 Response & The operation is performed \\ \hline
-Response measure & With a latency of maximum 3 seconds
+Response measure & With a latency of maximum 3 seconds, the user should be able to read the message after it is received. This is the latency when we subtract the download time of message, which is dependent of the network connection.
 \end{tabularx}
 \caption{P1 Latency} \label{tab:performance}
 \end{table}
@@ -93,8 +101,8 @@ Source & Unauthorized user or app \\ \hline
 Stimulus & Wants to access data saved by our app \\ \hline
 Artifact & System \\ \hline
 Environment & Under normal operations \\ \hline
-Response & User is blocked from accessing data \\ \hline
-Response measure & No data exposed to the user or app
+Response & User is blocked from accessing data by the Android OS, as long as the user doesn’t have root access. \\ \hline
+Response measure & No data exposed to the user or app, as long as the user do not have root access.
 \end{tabularx}
 \caption{S1 Accessing locally stored data outside of app} \label{tab:s1}
 \end{table}
@@ -116,7 +124,7 @@ Response measure & No features exposed to the user - stopped by login screen
 \begin{table}
 \begin{tabularx}{\linewidth}{>{\setlength\hsize{.6\hsize}}X|>{\setlength\hsize{1.4\hsize}}X}
 \textbf{Portion of scenario} & \textbf{Values} \\ \hline \hline
-Source & Unauthorized user or app \\ \hline
+Source & Unauthorized user or app, or someone sniffing network packages \\ \hline
 Stimulus & Wants to access data stream \\ \hline
 Artifact & System \\ \hline
 Environment & Under normal operations \\ \hline
@@ -131,32 +139,74 @@ Vanilla Android is the platform of choice, compatible down to Android API 8
 
 \paragraph{Programming language} \hfill
 \newline
-Developing for Android will in this project mean code will be written in Java for the Dalvik Virtual Machine. This means there is no support for multiple inheritance, and limits design choices to some degree.
+Developing for Android will in this project mean that code will be written in Java for the Dalvik Virtual Machine. This means that there is no support for multiple inheritance, and this limits design choices to some degree. It prevents us from playing with some more complicated architectures and inheritance schemes.
 
 \paragraph{Mobile devices} \hfill
 \newline
-Android is a mobile OS, so the app will run on phones, as well as tablets.
+Android is a mobile OS, so the program will run on cell phones and potentially tablets. 
 
 \paragraph{Input methods} \hfill
 \newline
-Android phones have small screens and usually no keyboard. This means the user interface must be designed to work with small touch screens as the only input method.
+Android phones have small screens and usually no keyboard. This means that the user interface must be designed to work with small touch screens as the only input method.
 
 \paragraph{Memory}\hfill
 \newline
-Phones have limited memory. Typically 256-512 MB. The app will probably never be close to breaching this limit, as the most memory consuming components are a couple of textures, all smaller than 1280x800 pixels.
+Phones have limited memory, typically 256-512 MB. The program will probably never be close to breaking this limit, as the most memory consuming components are string based e-mails and potentially an attachment or two; very little of which has to remain in memory at the same time.
 
 \paragraph{Screen resolution/aspect ratio} \hfill
 \newline
-As the app will support different Android devices, it also has to support different resolutions as well as aspect ratios. The graphics must be programmed to scale to different formats without degrading quality or proportions.
+As the program will support different Android devices, it also has to support different resolutions as well as aspect ratios. The GUI must be programmed to scale to different formats without degrading quality or proportions.
 
 \paragraph{Bandwidth} \hfill
 \newline
-As the app probably will be downloaded from an app store over a wireless Internet connection, the package size have to be acceptable. (5-15 MB?)
-\newline
-Since the program is network based, it is important to pay attention to bandwidth usage. By compressing large data files before they are sent, we will reduce this to a minimum.
+Since the program is network based, it is important to pay attention to bandwidth usage. We want to be able to wait for incoming emails and receive them as soon as the server does without having to waste bandwidth with constant probing, especially as the program is expected to see some use outside of 3G net areas.
 
 \paragraph{Commercial off-the-shelf (COTS)} \hfill
 \newline
-As this project has sec
+This project has security requirements that require special consideration with regards to COTS. We have to be able to trust the underlying software if it ever touches unencrypted data or has access to a memory partition (either legitimately or not) that contains unencrypted data. This means some care has to be taken in regards to what COTS solutions we can use and where we can use them. 
 
+\subsubsection{Stakeholders and their concerns}
+See table \ref{tab:stakeholders} at page \pageref{tab:stakeholders}.
 
+\begin{table}
+\begin{tabular}{p{3.5cm}|p{11.5cm}}
+\textbf{Stakeholder:} & \textbf{Concern} \\ \hline \hline
+User & 
+\begin{itemize}
+\item{} Wants a program that works out of the box
+\item{} Easy to understand the flow of the app
+\item{} Installation should be easy, just download the app from   Android market, and it’s ready to use.
+\item{} Familiar user interface
+\end{itemize}\\ \hline
+Developers & 
+\begin{itemize}
+\item{}Easy to understand the goal of the app
+\item{}Easy to extend and change the app
+\item{}Want to use technology they are familiar with
+\item{}Easy to understand Requirements and Architectural description documents.
+\end{itemize}\\ \hline
+Android market & 
+\begin{itemize}
+\item{}Make sure our game complies with regulations for software being sold/provided on Android Market.
+\end{itemize}\\ \hline
+Course advisor & 
+\begin{itemize}
+\item{}Effective and healthy communication with the group.
+\item{}Easy to read documentation
+\item{}Gets all deliveries on schedule
+\end{itemize}\\ \hline
+Customer & 
+\begin{itemize}
+\item{}Effective and healthy communication with the group.
+\item{}A working prototype that gives a possible solution to the requirements.
+\item{}Wants to see what is possible on the Android platform.
+\item{}Understandable Requirements and Architectural description documents.
+\end{itemize}\\ \hline
+Graphic designers & 
+\begin{itemize}
+\item{}Understanding of how the GUI should be.
+\item{}Understand the limitation of graphics due to screen size.
+\end{itemize}
+\end{tabular}
+\caption{Stakeholders and their concerns} \label{tab:stakeholders}
+\end{table}
