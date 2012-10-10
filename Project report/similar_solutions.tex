@@ -13,8 +13,8 @@ In order for this to be an informative in depth analysis, it is appropriate with
 Public key encryption is used when you want to secure data in such a way that only the receiver can open the message. It involves using two separate keys; one private key and one public key [10].
 \newline
 \newline
-If I want to send a message to, let's say John, I first have to get Johns public key. His public key is available to everyone who wants it, because it is not a problem if an unwanted person gets it. This is the reason it is called public key. When he has given me his public key, I can then use it to encrypt the message. One might ask: What is the reason for using a
-public key? Does that give any security? The answer is yes. There is a mathematical relation between the private and public key. If you know the public key, it is nearly impossible or very expensive to calculate the private key. Therefore, by using John's public key to encrypt the message. I know that only he can open it, as it is only the private key of John that will be able to decrypt the message.
+If I want to send a message to, let's say John, I first have to get John's public key. His public key is available to everyone who wants it, because it is not a problem if an unwanted person gets it. This is the reason it is called public key. When he has given me his public key, I can then use it to encrypt the message. One might ask: What is the reason for using a
+public key? Does that give any security? The answer is yes. There is a mathematical relation between the private and public key. Even if you know the public key, it is nearly impossible or very expensive to calculate the private key. Therefore, by using John's public key to encrypt the message. I know that only he can open it, as it is only the private key of John that will be able to decrypt the message.
 \newline
 \newline
 Another concern would be: How does John know that I was the sender of the message? By just using the private-public key scheme as explained above, this is not possible. But by introducing digital signing, this is possible.
