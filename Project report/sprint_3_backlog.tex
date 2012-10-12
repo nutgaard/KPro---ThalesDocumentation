@@ -18,23 +18,23 @@
 \end{itemize}
 \item{}\textbf{Iteration network service:} as a programmer I should extend the communication implementation to support more features, so that we can have message priorities, message types, message grading, message status and notification of failed deliveries.
 \begin{itemize}
-\item{}\textbf{Implement threaded SMTP queue:}
-\item{}\textbf{Implement stripping of message based on network connection:}
-\item{}\textbf{Implement usage IMAP specific attributes:}
-\item{}\textbf{Save messages downloaded from server:}
-\item{}\textbf{Update message IMAP message status:}
-\item{}\textbf{Implement pull strategy:}
-\item{}\textbf{Implement push strategy:}
-\item{}\textbf{Implement handling for pre-send processing of messages:}
-\item{}\textbf{Implement handling for control-messages:}
+\item{}\textbf{Implement threaded SMTP queue:} Implement all SMTP related method to run in a separate thread other then the gui-thread, in order to ensure responsive user interface.
+\item{}\textbf{Implement stripping of message based on network connection:} Implement a pre-sending processing step for XOMessage which removes possible attachment based on the network connection at the current time. This should be done through the use of interfaces to ensure modifiability. 
+\item{}\textbf{Implement usage IMAP specific attributes:} Implement the usage of IMAP states into NetworkService so that the phone and server is in a consistent state. E.g SEEN flag ect. 
+\item{}\textbf{Save messages downloaded from server:} Persist a number of the latest received messages locally on the device. The number of messages that are to be persisted should be determined by an option in the settings menu.
+\item{}\textbf{Update message IMAP message status:} Update flags on messages whenever the state changes, e.g. the messages is opened locally on the device and this change should be reflected on the server as well.
+\item{}\textbf{Implement pull strategy:} Implement a pull strategy for periodically pulling the mail server for new messages.
+\item{}\textbf{Implement push strategy:} Implement a push strategy using the IMAP-Idle command in order to get the server to push messages to the device. 
+\item{}\textbf{Implement handling for pre-send processing of messages:} Implement a pre-send processing of messages that handles template codes. e.g. #GPS : will fetch the gps data and inject them into the message before sending. 
+\item{}\textbf{Implement handling for control-messages:} Implement a onReceive handler the stops control-messages of getting through to the user, and in addition responds to the control-message in the correct way.
 \end{itemize}
 \item{}\textbf{Sending message with attachments:} the user should be able to send a message containing different attachments.
 \begin{itemize}
 \item{}\textbf{Study:} figure out how to fetch images, i.e. from the phone, or another app on the phone. How does it work on android?
 \item{}\textbf{Find what attachments we should support:} based on how difficult it is to get images, GPS coordinates etc, make a decision on what kind of attachments we should support. Maybe there is some things we should be careful about using, maybe it isn't. Find out!
 \item{}\textbf{Documentation of choice for attachments:} make documentation about why we chose the attachments we chose.
-\item{}\textbf{Implement:}
-\item{}\textbf{Implement GUI:}
+\item{}\textbf{Implement:} Imlement sending attachments based on what found out in the study. What this tasks means, depends on which attachments we are to send. A picture will be sent differently than GPS coordinates. Maybe the coordinates should be implemented into the message body, whilst the image will be shown by a button. All this should be reveiled during the Study of this main task. 
+\item{}\textbf{Implement GUI:} Implement the gui-side of sending messages with attachments based on the conclusion of the study. How to send gps vs binary data.
 \end{itemize}
 \item{}\textbf{Answer and forward a message:} as a user I want to be able to utilize the "Answer" and "Forward" buttons that is associated with each message so that i am brought to the correct screen for each of these operations.
 \begin{itemize}
@@ -42,10 +42,10 @@
 \end{itemize}
 \item{}\textbf{Add signing to messages:} as a programmer I should be able to create or use an existing library for digital signing of messages, so that only signed messages are identified by the recipient as a valid message.
 \begin{itemize}
-\item{}\textbf{Implement a keystore for saving and loading trusted keys:}
-\item{}\textbf{SPIKE: bouncycastle for android :}
-\item{}\textbf{Implement S/MIME signing of messages:}
-\item{}\textbf{Implement verification of signing messages:}
+\item{}\textbf{Implement a keystore for saving and loading trusted keys:} Implement a way of safely storing keys and key derivatives locally on the device. 
+\item{}\textbf{SPIKE: bouncycastle for android :} Research the use of bouncycastle on an android device in order to find out if this is a possible solution for encryption, signing and verification of messages.
+\item{}\textbf{Implement S/MIME signing of messages:} Bases on the bouncycastle spike, implement the signing of messages. 
+\item{}\textbf{Implement verification of signing messages:} Based on the bouncycastle spike, implement the verification of signing messages.
 \end{itemize}
 \item{}\textbf{Settings menu:} as a user, I should be able to utilize the settings menu to alter different settings of the app, so that the settings are set to what I prefer.
 \begin{itemize}
@@ -75,9 +75,9 @@
 \end{itemize}
 \item{}\textbf{Delete message:} the user should be able to delete a message that is received.
 \begin{itemize}
-\item{}\textbf{Delete from local storage:}
-\item{}\textbf{Delete from mail server:}
-\item{}\textbf{Update GUI:}
+\item{}\textbf{Delete from local storage:} Implement the response of deleting a message locally whenever a user wants to delete the message.
+\item{}\textbf{Delete from mail server:} Implement the response of deleting a message from the mail server whenever a user wants to delete the message.
+\item{}\textbf{Update GUI:} Implement the response of removing a message from the gui whenever a delete operation is completed. 
 \end{itemize}
 \item{}\textbf{GUI-Issues:} revisions of the GUI based on input from Thales.
 \begin{itemize}
