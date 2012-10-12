@@ -11,6 +11,14 @@
 \usepackage{array}
 \usepackage{pdfpages}
 \usepackage{appendix}
+\usepackage{titling}
+\usepackage[cc]{titlepic}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+}
 
 \makeatletter
 \renewcommand*{\@makechapterhead}[1]{%
@@ -41,8 +49,17 @@
 
 \begin{document}
 
-\title{Project report}
-\author{Group 15}
+\title{XOXOmail}
+\subtitle{Formal and secure messaging on a mobile platform}
+
+\titlepic{
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.1]{logo}
+\end{center}
+\end{figure}}
+
+\author{Formal and secure messaging on a mobile platform\\ \\ \\ Kristin Tønnesen\\ Ida Katrine Thoresen\\ Nicklas Utgaard\\ Aleksander Sjåfjell\\ Lars Høysæter\\ Magnus Ulstein}
 \maketitle
 \clearpage
 
@@ -132,7 +149,7 @@
 
 	\include{user_stories}
 
-	\include{product_backlog}
+	\include{requirements_from_customer}
 
 %\chapter{Test plan}
 
@@ -188,6 +205,10 @@
 
 \chapter{Sprint 3}
 
+	\include{sprint_3_concrete_project_work_plan}
+
+	\include{sprint_3_backlog}
+
 \chapter{Sprint 4}
 
 \chapter{Changelog}
@@ -202,7 +223,7 @@
 \part{Appendices}
 
 	\appendix
-	\include{requirements_from_customer}
+	
 
 	
 	

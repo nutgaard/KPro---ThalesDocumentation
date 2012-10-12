@@ -1,0 +1,65 @@
+\section{Sprint 3 - Backlog}
+
+\begin{itemize}
+\item{}\textbf{Report work:} the report that is to be delivered at the end of the project needs a lot of work, and we have decided that we will use time on the report in every sp
+\item{}\textbf{Group Administration:}to administrate on behalf of the entire group, with booking group rooms and sending e-mails to the customer, the advisor and the team to call in for meetings.
+\item{}\textbf{Meetings:}arranging meetings and the time we use on meetings.
+\begin{itemize}
+\item{}\textbf{Meetings with Thales:} we have weekly meetings with our customer so that we can get rapid feedback on what we do. To know if they agree with our decisions and that we haven't misunderstood the task thay have given us.
+\item{}\textbf{Meetings with Mohnsen Anvaari:} we have regular meetings with our advisor so that he can give us feedback on how we are doing our work, and make sure that we do what are expected of us in the course.
+\item{}\textbf{Internal meetings:} we have almost daily meetings to learn what everybody has been doing lately, and how far we have come in our tasks; what is left and what is done.
+\item{}\textbf{Lectures:} there are some lectures during the semester, and we are adviced to paticipate in these. In this sprint there are 2 lectures and courses that we have decided to attend.
+\end{itemize}
+\item{}\textbf{Log in to app:}as a user I should be able to log in via the login screen so that i after this process is an authorized user inside the program.
+\begin{itemize}
+\item{}\textbf{Create basic GUI:} create a basic GUI for login. This means a GUI that has a username and password field, and a "Log in" button!
+\item{}\textbf{Find solution for encrypting the login information:} figure out what solution we are going to use for save the login information. This means that we need to decide for an implementation based on Mangus' documentation. The best is if we can make a solution that is so good that we don’t need to revise it.
+\item{}\textbf{Persist and fetch login data:} implement the saving and fetching of the login data, making the login functionality complete.
+\end{itemize}
+\item{}\textbf{Extend communication interface:} as a programmer I should extend the communication implementation to support more features, so that we can have message priorities, message types, message grading, message status and notification of failed deliveries.
+\item{}\textbf{Sending message with attachments:} the user should be able to send a message containing different attachments.
+\begin{itemize}
+\item{}\textbf{Study:} figure out how to fetch images, i.e. from the phone, or another app on the phone. How does it work on android?
+\item{}\textbf{Find what attachments we should support:} based on how difficult it is to get images, GPS coordinates etc, make a decision on what kind of attachments we should support. Maybe there is some things we should be careful about using, maybe it isn't. Find out!
+\item{}\textbf{Documentation of choice for attachments:} make documentation about why we chose the attachments we chose.
+\end{itemize}
+\item{}\textbf{Answer and forward a message:} as a user I want to be able to utilize the "Answer" and "Forward" buttons that is associated with each message so that i am brought to the correct screen for each of these operations.
+\begin{itemize}
+\item{}\textbf{Locking security label on reply and forward:} the user should not be able to set the security label of a message when he/she replies or forwards.
+\end{itemize}
+\item{}\textbf{Add signing to messages:} as a programmer I should be able to create or use an existing library for digital signing of messages, so that only signed messages are identified by the recipient as a valid message.
+\item{}\textbf{Settings menu:} as a user, I should be able to utilize the settings menu to alter different settings of the app, so that the settings are set to what I prefer.
+\begin{itemize}
+\item{}\textbf{Set update interval for checking of mail to avoid pulling:} this is a setting making it possible for the user to chose to have push or pull solution for mail. If they chose to use push, the app always have a connection up to the server. If the user don’t have an internet connection, the app will try to set up the connection all the time and use a lot of battery. If the user chose pull, the app uses a predefined interval for how often the app should check for mail. So one solution could be a radio button list: "Push", "Pull".
+\item{}\textbf{Set security labels available:} the user should be able to choose which Security Labels he will find available in the dropdown when sending a new message.
+\item{}\textbf{Standard receiver of instant message:} the user should be able to set a standard receiver for using when sending an instant message.
+\end{itemize}
+\item{}\textbf{Compression:} as a programmer I want to be able to create or find a library that minimize data traffic that is needed to send a message, so that the messages are sent faster over low speed internet connections.
+\item{}\textbf{Receiving message with attachment:} as a user I should be able to receive a message with an attachment and to see the attachment.
+\begin{itemize}
+\item{}\textbf{Study:} how should we show the different attachments? Use some embedded features of android or use or own? Are the attachments shown immediately or do we click a button to show it? Do some studies so that you are able to answer all the questions above.
+\item{}\textbf{Implement:} implement showing attachments based on what was found out in the study. What this task involves, depends on which attachments we receive. A picture will be shown differently than GPS coordinates. Maybe the coordinates should be implemented into the message body, while the image will be shown by a button, as figured in the above study task.
+\item{}\textbf{Document:} document the different options that are found as relevant for the solution of the task, but was excluded due to complexity or because it was a bad alternative.
+\end{itemize}
+\item{}\textbf{Wireshark study:} do a study on wireshark and network traffic of our app.
+\begin{itemize}
+\item{}\textbf{Learn Wireshark:} figure out how Wireshark works, and learn to use it.
+\item{}\textbf{Document Wireshark:} an important part of the Wireshark study is to document how Wireshark works, what the reason is that we are using Wireshark in this project and what results we get it. create statistics on the gathered results.
+\item{}\textbf{Filter traffic:} find out how to filter out traffic from only our app. This can be done by a combination of Mac-address, port number and content of data sent (if possible).
+\item{}\textbf{Analyse traffic:} find out how the data from all the traffic from our app should be analyzed. How much is regular package data that always will flow when sending a mail, how much of it is the content, and how much is data that we don’t need to send, e.g. what data is unnecessary polling, if any?
+\item{}\textbf{Discussion:} do a discussion on the findings of the data gathering. We will not be able to do a conclusion yet, as we have not implemented sending of messages with pictures, videos etc. Document your thoughts.
+\end{itemize}
+\item{}\textbf{Instant message:} the user should be able to send an instant message using only three touches.
+\begin{itemize}
+\item{}\textbf{Find design solution:} find out how to implement the instant message feature. Where should the instant message button be placed? What is the fastest solution? How should the send instant message window look like?
+\item{}\textbf{Incorporate instant message button into GUI:} get a working button in the GUI that takes the user to the instant message view.
+\item{}\textbf{Create send instant message view:} create a view that is to be used for sending an instant message, based on what is found to be the best design solution.
+\end{itemize}
+\item{}\textbf{Delete message:} the user should be able to delete a message that is received.
+\item{}\textbf{GUI-Issues:} revisions of the GUI based on input from Thales.
+\begin{itemize}
+\item{}\textbf{Menu:} the top menu bar must be made smaller by removing the text, and only use pictures.
+\item{}\textbf{Header:} remove the header saying XO-mail. It is not necessary.
+\item{}\textbf{Change security labels to upper case:} all the security labels should be of the format CAPS\_LOCK! Upper case and underscore for spaces.
+\end{itemize}
+\end{itemize}
