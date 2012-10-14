@@ -1,7 +1,7 @@
-\subsection{Secure storage}
+\section{Secure storage}
 The application we are developing will need to store some information that is private and should not be easy to access. In order to do this we need to make the users log in with a username and a password. The password is used to encrypt the private information and make it unavailable to unwanted eyes.  
 
-\subsubsection{No retyping of username and password}
+\subsection{No retyping of username and password}
 A feature that would be nice for our application to have is to not have to retype your username and password every time the application is started.
 \newline
 \newline
@@ -11,26 +11,18 @@ A a way to do this is to store the username and password locally on the phone. I
 The problem with this solution is that if an attacker should in some way gain physical access to your phone he may still be able to get the data. If you are already logged in, the perpetrator could just open up the app and view the data he wants. Even if you weren’t logged in the attacker could root the phone and gain access to the values saved in SharedPreferences. The values could be encrypted but it would not help, because an attacker that has access to the values in SharedPreferences is also likely to have access to the application’s binary, and thus the keys to decrypt the password.
 
 
-\subsubsection{Creating a custom account type and server side authentication}
+\subsection{Creating a custom account type and server side authentication}
 Another solution to avoid retyping of username and password is to create an online user account and add this to the centralized AccountManager registry. The user can then type in his username and password once, and gain access to the various resources online. The credentials are here authenticated on the server and we can therefore store the credentials as a cryptographically secure token on the device. This would make sure that an attacker would not get access to your actual username and password.
 \newline
 \newline
 This solution also suffers from the fact that if the user is already logged in, an attacker could view all the information. One could solve this by implementing a timeout on the application (If the user does not perform an action after x minutes, the app is terminated and the user gets disconnected).
 
-\subsubsection{Symmetric encryption with retyping of username and password}
+\subsection{Symmetric encryption with retyping of username and password}
 Symmetric encryption is also a possible solution for securing the data. If we are going to use this type of encryption we can’t store the keys because of the lacking general purpose, system-level secure storage.
 \newline
 \newline
-A way to solve this is to derive the keys from a user-entered password. To make sure the keys derived are random and hard to brute-force we need to use a standard PBE key derivation method. For android applications this is called PBKDF2WithHmacSHA1.
+A way to solve this is to derive the keys from a user-entered password. To make sure the keys derived is random and hard to brute-force we need to use a standard PBE key derivation method. For Android applications this is called PBKDF2WithHmacSHA1.
 \newline
 \newline
 This could be a suitable solution, at least for the parts of the application that does not need to happen instantaneously (since the password and username is not stored).
 
-\subsubsection{Discussion}
-If we chose to create custom account types it would involve a lot of server side implementation that would be time consuming and problematic. So we should try to avoid this solution. The two other possibilities are both valid ones if we make certain assumptions.
-\newline
-\newline
-If we are going to implement the version where username and password is saved in the local storage we would need to assume that no unwanted physical access to the phone will occur. Given this assumption this would be the best and easiest solution to implement.
-\newline
-\newline
-To implement the secure storage with derived keys we need to assume there will be no problem for the user to log in every time he starts the application. This will make sure the information is secure even though the phone should get misplaced or stolen, but this is more complicated to implement than saving the credentials locally.

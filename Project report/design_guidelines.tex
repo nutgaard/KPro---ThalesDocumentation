@@ -1,0 +1,32 @@
+\subsection{Design guidelines}
+
+\subsubsection{External resources}
+\begin{itemize}
+\item{}Create all strings in res/values/strings.xml for easy access and modifiability
+\item{}Create all colors in res/values/colors.xml 
+\item{}Use the same style for similar components throughout the application, and preferrably create styles in the res/values folder
+\item{}Provide assets for all, e.g. images for low, medium and high screen densities
+\item{}Consider using separate XML files for portrait and landscape mode to optimize for both views
+\item{}Font sizes: Use 12 sp (scale independent pixels) for micro sized text, 14 sp for small, 18 sp for medium and 22 sp for large. 
+\item{}Be careful with the use of colors
+\end{itemize}
+
+\subsubsection{General from Android}
+\begin{itemize}
+\item{}If it looks the same, it should act the same
+\item{}Only interrupt the user if it is important
+\item{}Keep texts brief 
+\item{}Try to use pictures instead of long texts
+\item{}Make important things fast
+\item{}Be gentle if the user does something wrong and give clear recovery instructions
+\end{itemize}
+
+\subsubsection{Pure Android} 
+\begin{itemize}
+\item{}Do not mimic UI elements from other platforms
+\item{}Do not carry over platform-specific icons
+\item{}Do not use bottom tab bars
+\item{}Do not hardcode links to other apps
+\item{}Do not use labeled “Back” buttons on actions bars
+\item{}Do not use right-pointing cares on line items 
+\end{itemize}

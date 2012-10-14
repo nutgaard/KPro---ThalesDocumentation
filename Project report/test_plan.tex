@@ -7,7 +7,7 @@ The main part of project testing will be done as we go along. Using unit tests, 
 JUnit is the industry standard for test driven development. It works by creating a separate test method for each method in the class that is to be tested. In this way one can test large portions of code independent of the other code sections. For us, it provides many benefits, especially that most of us have dealt with it before and are familiar with the concept.
 
 \subsection{Android Instrumentation}
-Android Instrumentation is a framework that extends JUnit, providing it with a toolkit of android specific mock classes and methods. It also provides test classes targeting Android applications, with specialized testing of everything from GUI component locations and visibility to the Activity specific onCreate and onDestroy methods. Android Instrumentation is produced by Android directly and is included in the development kit.
+Android Instrumentation is a framework that extends JUnit, providing it with a toolkit of Android specific mock classes and methods. It also provides test classes targeting Android applications, with specialized testing of everything from GUI component locations and visibility to the activity specific onCreate and onDestroy methods. Android Instrumentation is produced by Android directly and is included in the development kit.
 
 \subsection{Greenmail}
 Greenmail is an open source mail server package for testing in Java. It provides all the server side software needed to test mail sending and receiving without having an actual server.
@@ -24,14 +24,14 @@ Early in the first sprint we decided upon a set of basic interfaces, which neatl
 \newline
 Later in the project this method level testing will augmented by white box and stress testing; essentially us deliberately trying to crash the system with strange inputs or action combinations. 
 
-\section{Why we selected these Test Tools}
+\section{Why we selected these test tools}
 The choice of tools was mainly based on previous experience inside the group, the framework provided by and the demands of the platform. 
 \newline
 \newline
-JUnit was chosen because of our previous experience and the fact that the android instrumentation framework is based on JUnit. Bundled with Mockito it also gives us the possibility to test otherwise android dependent modules in a java environment with the android specifics mocked up. This can greatly reduce the build cycle time, since the tests no longer need to be pushed onto a device in order to run. 
+JUnit was chosen because of our previous experience and the fact that the Android instrumentation framework is based on JUnit. Bundled with Mockito it also gives us the possibility to test otherwise Android dependent modules in a Java environment with the Android specifics mocked up. This can greatly reduce the build cycle time, since the tests no longer need to be pushed onto a device in order to run. 
 \newline
 \newline
-Android instrumentation was chosen as a way to enable testing of GUI; provided with the SKD and recommended by Google, it was the only tool providing us with the functionality we needed.
+Android instrumentation was chosen as a way to enable testing of GUI; provided with the SDK and recommended by Google, it was the only tool providing us with the functionality we needed.
 \newline
 \newline
-Greenmail was chosen based on the need to test the mail module in our project, ease of use and fast response time. If the code passes the Greenmail tests, the code is then tested against gmail’s mail server to ensure it functions with external servers as well. 
+Greenmail was chosen based on the need to test the mail module in our project, ease of use and fast response time. If the code passes the Greenmail tests, the code is then tested against gmail’s mail server to ensure that functions with external servers as well. 
