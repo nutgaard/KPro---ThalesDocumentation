@@ -54,6 +54,9 @@
 \makeatother
 
 \begin{document}
+\setlength{\parindent}{0in}
+
+\renewcommand{\thepage}{\roman{page}}
 
 \title{XOXOmail}
 \subtitle{Formal and secure messaging on a mobile platform}
@@ -82,6 +85,9 @@
 
 \include{detailed_contents}
 
+\renewcommand{\thepage}{\arabic{page}}
+\setcounter{page}{1}
+
 \part{Planning \& Requirements}
 
 %\chapter{Introduction}
@@ -105,6 +111,8 @@
 	\include{sprint-summary}
 
 	\include{project_organization}
+
+	\include{wbs}
 
 	\include{quality_assurance}
 
@@ -142,7 +150,7 @@
 
 	\include{remote_vs_local_service}
 
-	\include{securing_credentials}
+	%\include{securing_credentials}
 
 	\include{security_requirements}
 
@@ -196,6 +204,8 @@
 
 	\include{sprint_1_effort}
 
+	\include{sprint_1_burndown}
+
 	\include{sprint_1_customer_feedback}
 
 	\include{sprint_1_conclusion}
@@ -214,6 +224,8 @@
 
 	\include{sprint_2_effort}
 
+	\include{sprint_2_burndown}
+
 	\include{sprint_2_customer_feedback}
 
 	\include{sprint_2_conclusion}
@@ -223,6 +235,8 @@
 	\include{sprint_3_concrete_project_work_plan}
 
 	\include{sprint_3_backlog}
+
+	\include{sprint_3_effort}
 
 \chapter{Sprint 4}
 
@@ -262,6 +276,84 @@
 	\include{agendas}
 
 	\include{minutes}
+
+\begin{thebibliography}{99}
+\bibitem{bib:xomail} XOmail. Retrieved 2012-09-12 from <http://www.xomail.com>
+\bibitem{bib:stanag} Stanag 4406. Retrieved 2012-09-12 from <http://www.isode.com/solutions/military-messaging.html>
+\bibitem{bib:smtp} Simple Mail Transfer Protocol. Retrieved 2012-09-12 from <http://en.wikipedia.org/wiki/Smtp>
+\bibitem{bib:imap} Internet Message Access Protocol. Retrieved 2012-09-12 from <http://en.wikipedia.org/wiki/Imap>
+\bibitem{bib:thales} Thales Norway AS. Retrieved 2012-08-28 from <http://www.thales.no/pub/sites/index.php?siteID=4\&m=1>
+\bibitem{bib:git} Git \& GitHub. Retrieved 2012-09-10 from <https://github.com/>
+\bibitem{bib:android} http://developer.android.com/design/get-started/principles.html
+\bibitem{bib:pandroid} http://developer.android.com/design/patterns/pure-android.html
+\bibitem{bib:pke} Public Key Encryption. Retrieved 2012-09-18 from <http://en.wikipedia.org/wiki/Public\_key>
+\bibitem{bib:ds} Digital signing. Retrieved 2012-09-18 from <http://en.wikipedia.org/wiki/Digital\_signature>
+\bibitem{bib:smime} S/MIME. Retrieved 2012-09-18 from <http://en.wikipedia.org/wiki/S/MIME>
+\bibitem{bib:gmail} Gmail and S/Mime. Retrieved 2012-09-23 from <http://www.scientificcomputing.com/is-your-e-mail-secure.aspx>
+\bibitem{bib:r2mail2} R2Mail2. Retrieved 2012-09-23 from <https://play.google.com/store/apps/details?id=at.rundquadrat.android.r2mail2\&hl=no>
+\bibitem{bib:waterfall} Waterfall Model. Retrieved 2012-09-23 from <en.wikipedia.org/wiki/Waterfall\_model>
+\bibitem{bib:agile} Agile Development. Retrieved 2012-10-13 from <http://en.wikipedia.org/wiki/Agile\_development>
+\bibitem{bib:kanban} Kanban. Retrieved 2012-10-13 from <http://en.wikipedia.org/wiki/Kanban\_(development)>
+\bibitem{bib:asdas} Agile Software Development And Scrum. Retrieved 2012-09-10 from <http://www.mountaingoatsoftware.com/topics/scrum>
+\bibitem{bib:scrum} Scrum (Development). Retrieved 2012-09-10 from <en.wikipedia.org/wiki/Scrum\_(development)>
+\bibitem{bib:java} Java (Programming Language). Retrieved 2012-09-10 from
+<http://en.wikipedia.org/wiki/Java\_programming\_language>
+\bibitem{bib:andk} Android Native Development Kit (NDK). Retrieved 2012-09-10 from <http://developer.android.com/tools/sdk/ndk/index.html>
+\bibitem{bib:slfa} Scripting Layer for Android (SL4A). Retrieved 2012-09-10 from <http://code.google.com/p/android-scripting/>
+\bibitem{bib:php} PHP for Android (PFA). Retrieved 2012-09-10 from <http://phpforandroid.net/manual/en/index/faq>
+\bibitem{bib:mbx} Monodroid by Xamarin. Retrieved 2012-09-10 from <http://xamarin.com/monoforandroid>
+\bibitem{bib:xml} Extensible Markup Language (XML). Retrieved 2012-09-10 from <http://en.wikipedia.org/wiki/Xml>
+\bibitem{bib:json} JavaScript Object Notation (JSON). Retrieved 2012-09-10 from <http://www.json.org/xml.html>
+\bibitem{bib:xstream} Xstream. Retrieved 2012-10-27 from http://xstream.codehaus.org/
+\bibitem{bib:ibm} Xstream. Retrieved 2012-10-27 from http://www.ibm.com/developerworks/java/library/x-xstream/index.html
+\bibitem{bib:kolawa} Kolawa, Adam; Huizinga, Dorota (2007). Automated Defect Prevention: Best Practices in Software Management. Wiley-IEEE Computer Society Press. p. 426. ISBN 0-470-04212-5
+\bibitem{bib:junit} Junit. Retrieved 2012-10-01 from http://en.wikipedia.org/wiki/JUnit
+\bibitem{bib:mock} Mock objects. Retrieved 2012-10-01 from http://en.wikipedia.org/wiki/Mock\_object
+\bibitem{bib:mockito} "Features and Motivations". Retrieved 2010-12-29
+\bibitem{bib:mocks} Fowler, Martin (2007). "Mocks Aren't Stubs". Retrieved 2010-12-29.
+\bibitem{bib:greenmail} Greenmail. Retrieved 2012-10-01 from http://www.icegreen.com/greenmail/
+\bibitem{bib:latex} LaTeX. Retrieved 2012-09-25 from http://www.latex-project.org/intro.html
+\bibitem{bib:atlassian} Jira overview. Retrieved 2012-09-25 from http://www.atlassian.com/software/jira/overview
+\bibitem{bib:jira} Jira. Retrieved 2012-09-25 from http://en.wikipedia.org/wiki/JIRA
+\bibitem{bib:green} Grennhopper. Retrieved 2012-09-25 from http://www.atlassian.com/software/greenhopper/overview
+\bibitem{bib:netbeans} NetBeans. Retrieved 2012-09-25 from http://netbeans.org/features/index.html
+\bibitem{bib:ide} NetBeans IDE. Retrieved 2012-09-25 from http://en.wikipedia.org/wiki/NetBeans\#NetBeans\_IDE
+\bibitem{bib:service} Service. Retrieved 2012-09-08 from http://developer.android.com/reference/android/app/Service.html
+\bibitem{bib:aidl} AIDL. Retrieved 2012-09-08 from http://developer.android.com/guide/components/aidl.html
+\bibitem{bib:ibinder} IBinder. Retrieved 2012-09-08 from http://developer.android.com/reference/android/os/IBinder.html
+\bibitem{bib:techtarget} Techtarget. Retrieved 2012-09-25 from http://searchsecurity.techtarget.com/definition/link-encryption
+\bibitem{bib:ispec} IPSec. Retrieved 2012-09-25 from http://stackoverflow.com/questions/3960802/implementing-ipsec-protocol-in-java
+\bibitem{bib:ssl} TLS. Retrieved 2012-09-25 from http://en.wikipedia.org/wiki/Secure\_Sockets\_Layer
+\bibitem{bib:nli} NetBeans license. Retrieved 2012-10-08 from http://netbeans.org/about/legal/product-licences.html
+\bibitem{bib:ali} Android license. Retrieved 2012-10-08 from http://developer.android.com/license.html
+\bibitem{bib:amli} Andoid-maven-plugin. Retrieved 2012-10-08 from http://code.google.com/p/maven-android-plugin/
+\bibitem{bib:mli} Maven license. Retrieved 2012-10-08 from http://maven.apache.org/license.html
+\bibitem{bib:jli} Junit license. Retrieved 2012-10-08 from http://www.junit.org/license
+\bibitem{bib:gli} GreenMail license. Retrieved 2012-10-08 from http://www.icegreen.com/greenmail/
+\bibitem{bib:jmli} JavaMail-android. Retrieved 2012-10-08 from http://code.google.com/p/javamail-android/
+\bibitem{bib:xli} Xstream license. Retrieved 2012-10-08 from http://xstream.codehaus.org/license.html
+\bibitem{bib:bcli} BouncyCastle license. Retrieved 2012-10-08 from http://www.bouncycastle.org/licence.html
+\bibitem{bib:lli} MiKTeX license. Retrieved 2012-10-08 from http://miktex.org/copying
+\bibitem{bib:gili} Git license. Retrieved 2012-10-08 from http://git-scm.com/about/free-and-open-source
+\bibitem{bib:cli} Cygwin license. Retrieved 2012-10-08 from http://cygwin.com/licensing.html
+\bibitem{bib:apli} Apache 2.0 license. Retrieved 2012-10-08 from http://www.apache.org/licenses/LICENSE-2.0
+\bibitem{bib:gpl1} GPL-1.0 license. Retrieved 2012-10-08 from http://www.gnu.org/licenses/gpl-1.0.html
+\bibitem{gpl2} GPL-2.0 license. Retrieved 2012-10-08 from http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+\bibitem{bib:gplw} GPL-2.0 w/Classpath Exception license. Retrieved 2012-10-08 from http://openjdk.java.net/legal/gplv2+ce.html
+\bibitem{bib:mit} MIT X11 license. Retrieved 2012-10-08 from http://opensource.org/licenses/mit-license.php
+\bibitem{bib:cddl} CDDL-1.0 license. Retrieved 2012-10-08 from http://opensource.org/licenses/cddl-1.0
+\bibitem{bib:cpl} CPL-1.0 license. Retrieved 2012-10-08 from http://www.junit.org/license
+\bibitem{bib:bsd} BSD license. Retrieved 2012-10-08 from http://en.wikipedia.org/wiki/BSD\_licenses
+\bibitem{bib:ieee} IEEE829. Retrieved  2012-09-30 from http://gerrardconsulting.com/tkb/guidelines/ieee829/main.html
+\bibitem{bib:vm} Kruchten, Philippe (1995, November). Architectural Blueprints — The “4+1” View Model of Software Architecture. IEEE Software 12 (6), pp. 42-50.
+\bibitem{bib:crypto} Android crypto implementation. Retrieved 2012-10-07 from http://source.android.com/tech/encryption/android\_crypto\_implementation.html
+\bibitem{bib:tech} Security. Retrieved 2012-10-07 from http://source.android.com/tech/security/index.html
+\bibitem{bib:aas} Android activity states. Retrieved 2012-10-13 from http://developer.android.com/reference/android/app/Activity.html
+\bibitem{bib:alc} Activity life cycle. Retrieved 2012-10-13 from http://developer.android.com/guide/components/activities.html
+\bibitem{bib:aman} Android manifest. Retrieved 2012-10-13 from http://developer.android.com/guide/topics/manifest/manifest-intro.html
+\bibitem{bib:imap} IMAP. Retrieved 2012-10-07 from http://www.isode.com/whitepapers/imap-idle.html
+
+\end{thebibliography}
 
 \end{document}
 
