@@ -12,10 +12,10 @@
 \usepackage[table]{xcolor}
 \usepackage{pdfpages}
 \usepackage{appendix}
-\usepackage[toc]{glossary}
 \usepackage{titling}
 \usepackage[cc]{titlepic}
 \usepackage{hyperref}
+\usepackage[nonumberlist]{glossaries}
 \hypersetup{
     colorlinks=false,
     pdfborder={0 0 0},
@@ -54,7 +54,48 @@
   }}
 \makeatother
 
-\makeglossary
+\makeglossaries
+\newglossaryentry{stanag}{name=Stanag 4406, description={The NATO standard for Military Messaging based on X.400}}
+\newglossaryentry{smtp}{name=SMTP, description={"Simple Mail Tranfer Protocol" defined by RFC 5321}}
+\newglossaryentry{ip}{name=IP, description={"Internet protocol" defined by RFC 791}}
+\newglossaryentry{pami}{name=IMAP, description={"Internet message access protocol" defined by RFC 3501}}
+\newglossaryentry{git}{name=Git, description={Distributed version control system}}
+\newglossaryentry{ide}{name=IDE, description={Integrated development environment}}
+\newglossaryentry{xml}{name=XML, description={Extensible Markup Language}}
+\newglossaryentry{svn}{name=SVN, description={"SubVersion", centralized version control}}
+\newglossaryentry{pop}{name=POP3, description={"Post Office Protocol, version 3" defined by RFC 1081}}
+\newglossaryentry{ssl}{name=SSL/TLS, description={"Secure sockets layer/transport layer security" defined by RFC 6101 and RFC 5246}}
+\newglossaryentry{emims}{name=S/MIME, description={"Secure/Miltipurpose Internet Mail Extensions", defined by RFC 3369, RFC 3370, RFC 3850 and RFC 3851}}
+\newglossaryentry{mime}{name=MIME, description={"Multipurpose Internet Mail Extensions", defined by RFC 2045, RFC 2046, RFC 2047, RFC 4288, RFC 4289 and RFC 2049}}
+\newglossaryentry{ocsp}{name=OCSP, description={"Online Certificate Status Protocol", defined by RFC 2560}}
+\newglossaryentry{ldap}{name=LDAP, description={"Lightweight Directory Access Protocol", defined by RFC 4511}}
+\newglossaryentry{ndk}{name=NDK, description={Native Development Kit}}
+\newglossaryentry{sl}{name=SL4A, description={Scripting Layer for Android}}
+\newglossaryentry{api}{name=API, description={Application programming interface}}
+\newglossaryentry{php}{name=PHP, description={Hypertext Preprocessor}}
+\newglossaryentry{vm}{name=VM, description={Virtual machine}}
+\newglossaryentry{json}{name=JSON, description={JavaScript Object Notation}}
+\newglossaryentry{xsd}{name=XSD, description={XML Schema Definition}}
+\newglossaryentry{jvm}{name=JVM, description={Java Virtual Machine}}
+\newglossaryentry{jdk}{name=JDK, description={Java Development Kit}}
+\newglossaryentry{jar}{name=JAR, description={Java ARchive}}
+\newglossaryentry{cvs}{name=CVS, description={Concurrent Versions System}}
+\newglossaryentry{pbe}{name=PBE, description={Password Based Encryption}}
+\newglossaryentry{pbkdf}{name=PBKDF2, description={Password-Based Key Derivation Function 2}}
+\newglossaryentry{osi}{name=OSI, description={Open Systems Interconnection}}
+\newglossaryentry{rfc}{name=RFC 5321, description={Definition of SMTP}}
+\newglossaryentry{rfc4}{name=RFC 4409, description={Definition of a mail submission agent (MSA)}}
+\newglossaryentry{rfc5}{name=RFC 5322, description={Definition of Internet Message Format}}
+\newglossaryentry{rfc2}{name=RFC 2156, description={Definition of Mime Internet X.400 Enhanced Relay.  A mapping between X.400 and RFC 822/MIME}}
+\newglossaryentry{rfc6}{name=RFC 6477, description={Definition of Registration of Military Message Handling System (MMHS)}}
+\newglossaryentry{gps}{name=GPS, description={Global Positioning System}}
+\newglossaryentry{gui}{name=GUI, description={Graphical User Interface}}
+\newglossaryentry{ui}{name=UI, description={User Interface}}
+\newglossaryentry{aes}{name=AES, description={Advanced Encryption Standard}}
+\newglossaryentry{cbc}{name=CBC, description={Cipher-Block Chaining}}
+\newglossaryentry{essiv}{name=ESSIV, description={Encrypted salt-sector initialization vector}}
+\newglossaryentry{sha}{name=SHA256, description={Secure Hash Algorithm}}
+\newglossaryentry{css}{name=CSS, description={Cascading style sheets, RFC 2318}}
 
 \begin{document}
 \setlength{\parindent}{0in}
@@ -249,10 +290,8 @@
 
 \chapter{Reflection}
 
-\glossary{name={Stanag 4406}, description={The NATO standard for Military Messaging based on X.400}}
-\glossary{name={SMTP}, description={"Simple Mail Tranfer Protocol" defined by RFC 5321}}
-
-\printglossary
+\printglossaries
+\addcontentsline{toc}{chapter}{Glossary}
 
 \begin{thebibliography}{99}
 \bibitem{bib:xomail} XOmail. Retrieved 2012-09-12 from <http://www.xomail.com>
@@ -327,9 +366,52 @@
 \bibitem{bib:tech} Security. Retrieved 2012-10-07 from http://source.android.com/tech/security/index.html
 \bibitem{bib:aas} Android activity states. Retrieved 2012-10-13 from http://developer.android.com/reference/android/app/Activity.html
 \bibitem{bib:alc} Activity life cycle. Retrieved 2012-10-13 from http://developer.android.com/guide/components/activities.html
-\bibitem{bib:aman} Android manifest. Retrieved 2012-10-13 from http://developer.android.com/guide/topics/manifest/manifest-intro.html
-\bibitem{bib:imap} IMAP. Retrieved 2012-10-07 from http://www.isode.com/whitepapers/imap-idle.html
+\bibitem{bib:aman} Android. Retrieved 2012-10-13 from http://developer.android.com/guide/topics/manifest/manifest-intro.html
+\bibitem{bib:imapi} IMAP. Retrieved 2012-10-07 from http://www.isode.com/whitepapers/imap-idle.html
 \end{thebibliography}
+
+\gls{stanag}
+\gls{smtp}
+\gls{ip}
+\gls{pami}
+\gls{git}
+\gls{ide}
+\gls{xml}
+\gls{svn}
+\gls{pop}
+\gls{ssl}
+\gls{emims}
+\gls{mime}
+\gls{ocsp}
+\gls{ldap}
+\gls{ndk}
+\gls{sl}
+\gls{api}
+\gls{php}
+\gls{vm}
+\gls{json}
+\gls{xsd}
+\gls{jvm}
+\gls{jdk}
+\gls{jar}
+\gls{cvs}
+\gls{pbe}
+\gls{pbkdf}
+\gls{osi}
+\gls{rfc}
+\gls{rfc4}
+\gls{rfc5}
+\gls{rfc2}
+\gls{rfc6}
+\gls{gps}
+\gls{gui}
+\gls{ui}
+\gls{aes}
+\gls{cbc}
+\gls{essiv}
+\gls{sha}
+\gls{css}
+
 
 \part{Appendices}
 
