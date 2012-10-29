@@ -12,6 +12,7 @@
 \usepackage[table]{xcolor}
 \usepackage{pdfpages}
 \usepackage{appendix}
+\usepackage[toc]{glossary}
 \usepackage{titling}
 \usepackage[cc]{titlepic}
 \usepackage{hyperref}
@@ -52,6 +53,8 @@
     \vskip 40\p@
   }}
 \makeatother
+
+\makeglossary
 
 \begin{document}
 \setlength{\parindent}{0in}
@@ -246,36 +249,10 @@
 
 \chapter{Reflection}
 
-%\chapter{Sources}
-	\include{sources}
+\glossary{name={Stanag 4406}, description={The NATO standard for Military Messaging based on X.400}}
+\glossary{name={SMTP}, description={"Simple Mail Tranfer Protocol" defined by RFC 5321}}
 
-\part{Appendices}
-
-	\appendix
-	
-	\include{YYYY-MM-DD-Agenda-Advisor}
-
-	
-	\include{YYYY-MM-DD-Agenda-Customer}
-
-	
-	\include{YYYY-MM-DD-Agenda-Internal}
-
-	
-	\include{YYYY-MM-DD-WeeklyStatusReport-WeekWW}
-
-	
-	\include{YYYY-MM-DD-Minutes-Advisor}
-
-	
-	\include{YYYY-MM-DD-Minutes-Customer}
-
-	
-	\include{YYYY-MM-DD-Minutes-Internal}
-
-	\include{agendas}
-
-	\include{minutes}
+\printglossary
 
 \begin{thebibliography}{99}
 \bibitem{bib:xomail} XOmail. Retrieved 2012-09-12 from <http://www.xomail.com>
@@ -352,8 +329,37 @@
 \bibitem{bib:alc} Activity life cycle. Retrieved 2012-10-13 from http://developer.android.com/guide/components/activities.html
 \bibitem{bib:aman} Android manifest. Retrieved 2012-10-13 from http://developer.android.com/guide/topics/manifest/manifest-intro.html
 \bibitem{bib:imap} IMAP. Retrieved 2012-10-07 from http://www.isode.com/whitepapers/imap-idle.html
-
 \end{thebibliography}
+
+\part{Appendices}
+
+	\appendix
+	
+	\include{YYYY-MM-DD-Agenda-Advisor}
+
+	
+	\include{YYYY-MM-DD-Agenda-Customer}
+
+	
+	\include{YYYY-MM-DD-Agenda-Internal}
+
+	
+	\include{YYYY-MM-DD-WeeklyStatusReport-WeekWW}
+
+	
+	\include{YYYY-MM-DD-Minutes-Advisor}
+
+	
+	\include{YYYY-MM-DD-Minutes-Customer}
+
+	
+	\include{YYYY-MM-DD-Minutes-Internal}
+
+	\include{agendas}
+
+	\include{minutes}
+
+
 
 \end{document}
 
