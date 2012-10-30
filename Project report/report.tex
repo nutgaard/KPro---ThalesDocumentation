@@ -2,6 +2,8 @@
 \usepackage{semtrans}
 \usepackage{graphicx}
 \usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{ltxtable}
 \usepackage[utf8]{inputenc}
 \usepackage[Glenn]{fncychap}
 \usepackage{ltablex}
@@ -12,9 +14,11 @@
 \usepackage[table]{xcolor}
 \usepackage{pdfpages}
 \usepackage{appendix}
+\usepackage{newclude}
 \usepackage{titling}
 \usepackage[cc]{titlepic}
 \usepackage{hyperref}
+\usepackage{wrapfig}
 \usepackage[nonumberlist]{glossaries}
 \hypersetup{
     colorlinks=false,
@@ -145,89 +149,91 @@
 
 %\chapter{Planning}
 
-	\include{measurement_of_project_effects}
+	\include*{measurement_of_project_effects}
 
-	\include{limitations}
+	\include*{limitations}
 
-	\include{tool_selection}
+	\include*{tool_selection}
 
-	\include{concrete_project_work_plan}
+	\include*{concrete_project_work_plan}
 
-	\include{sprint-summary}
+	\include*{sprint-summary}
 
-	\include{project_organization}
+	\include*{project_organization}
 
-	\include{wbs}
+	\include*{wbs}
 
-	\include{quality_assurance}
+	\include*{quality_assurance}
 
-	\include{templates_and_standards}
+	\include*{templates_and_standards}
 
-	\include{version_control_procedures}
+	\include*{version_control_procedures}
 
-	\include{design_guidelines}
+	\include*{design_guidelines}
 
-	\include{table_for_handling_of_risks}
+	\include*{table_for_handling_of_risks}
+
+	\LTXtable{\textwidth}{risktable.tex}
 
 %\chapter{Preliminary study}
 
 	\include{problem_description}
 
-	\include{current_system}
+	\include*{current_system}
 
-	\include{planned_solution}
+	\include*{planned_solution}
 
-	\include{similar_solutions}
+	\include*{similar_solutions}
 
-	\include{waterfall_vs_agile}
+	\include*{waterfall_vs_agile}
 
-	\include{programming_languages}
+	\include*{programming_languages}
 
-	\include{markup_languages}
+	\include*{markup_languages}
 
-	\include{parsers_libraries_and_tools}
+	\include*{parsers_libraries_and_tools}
 
-	\include{unit_testing_frameworks}
+	\include*{unit_testing_frameworks}
 
-	\include{user_documentation_tools}
+	\include*{user_documentation_tools}
 
-	\include{integrated_development_environment}
+	\include*{integrated_development_environment}
 
-	\include{remote_vs_local_service}
+	\include*{remote_vs_local_service}
 
 	%\include{securing_credentials}
 
-	\include{security_requirements}
+	\include*{security_requirements}
 
-	\include{secure_communication}
+	\include*{secure_communication}
 
-	\include{secure_storage}
+	\include*{secure_storage}
 
-	\include{evaluation_criteria}
+	\include*{evaluation_criteria}
 
-	\include{ip_rights_and_licenses}
+	\include*{ip_rights_and_licenses}
 
 %\chapter{Requirements}
 
 	\include{business_requirements}
 
-	\include{use_cases}
+	\include*{use_cases}
 
 	%\include{user_stories}
 
-	\include{requirements_from_customer}
+	\include*{requirements_from_customer}
 
 %\chapter{Test plan}
 
 	\include{test_plan}
 
-	\include{test_cases}
+	\include*{test_cases}
 
 %\chapter{Architectural description}
 	
 	\include{architecture}
 
-	 \include{fulfillment_of_requirements}
+	 \include*{fulfillment_of_requirements}
 
 \part{Scrum process}
 
@@ -239,49 +245,49 @@
 
 	\include{sprint_1_planning}
 
-	\include{sprint_1_concrete_project_work_plan}
+	\include*{sprint_1_concrete_project_work_plan}
 
-	\include{sprint_1_duration_and_goal}
+	\include*{sprint_1_duration_and_goal}
 
-	\include{sprint_1_backlog}
+	\include*{sprint_1_backlog}
 
-	\include{sprint_1_system_design}
+	\include*{sprint_1_system_design}
 
-	\include{sprint_1_effort}
+	\include*{sprint_1_effort}
 
-	\include{sprint_1_burndown}
+	\include*{sprint_1_burndown}
 
-	\include{sprint_1_customer_feedback}
+	\include*{sprint_1_customer_feedback}
 
-	\include{sprint_1_conclusion}
+	\include*{sprint_1_conclusion}
 
 %\chapter{Sprint 2}
 
 	\include{sprint_2_planning}
 
-	\include{sprint_2_concrete_project_work_plan}
+	\include*{sprint_2_concrete_project_work_plan}
 
-	\include{sprint_2_duration_and_goal}
+	\include*{sprint_2_duration_and_goal}
 
-	\include{sprint_2_backlog}
+	\include*{sprint_2_backlog}
 
-	\include{sprint_2_system_design}
+	\include*{sprint_2_system_design}
 
-	\include{sprint_2_effort}
+	\include*{sprint_2_effort}
 
-	\include{sprint_2_burndown}
+	\include*{sprint_2_burndown}
 
-	\include{sprint_2_customer_feedback}
+	\include*{sprint_2_customer_feedback}
 
-	\include{sprint_2_conclusion}
+	\include*{sprint_2_conclusion}
 
 \chapter{Sprint 3}
 
 	\include{sprint_3_concrete_project_work_plan}
 
-	\include{sprint_3_backlog}
+	\include*{sprint_3_backlog}
 
-	\include{sprint_3_effort}
+	\include*{sprint_3_effort}
 
 \chapter{Sprint 4}
 

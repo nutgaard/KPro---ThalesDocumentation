@@ -10,7 +10,7 @@ A very important aspect of XOXOmail is the signing and verification part. This i
 In order for this to be an informative in depth analysis, it is appropriate with a general overview first, which gives an introduction to public key encryption as well as a short overview of S/MIME and the use of S/MIME in XOXOmail.
 
 \subsubsection{Public key encryption}
-Public key encryption is used when you want to secure data in such a way that only the receiver can open the message. It involves using two separate keys; one private key and one public key.\cite{bib:pke}
+Public key encryption is used when you want to secure data in such a way that only the receiver can open the message. It involves using two separate keys; one private key and one public key \cite{bib:pke}.
 \newline
 \newline
 If I want to send a message to, let's say John, I first have to get John's public key. His public key is available to everyone who wants it, because it is not a problem if an unwanted person gets it. This is the reason it is called public key. When he has given me his public key, I can then use it to encrypt the message. One might ask: What is the reason for using a
@@ -20,32 +20,32 @@ public key? Does that give any security? The answer is yes. There is a mathemati
 Another concern would be: How does John know that I was the sender of the message? By just using the private-public key scheme as explained above, this is not possible. But by introducing digital signing, this is possible.
 
 \subsubsection{Digital signing}
-Digital signing is just what it sounds like. It is a way of signing data so that the receiver of the document knows that the sender is who he says he is, and that the content has not been tampered with.\cite{bib:ds} In our example, this means that John wants a way of knowing that I am the sender. This is done by digital signing, which first consists of computing a message digest, which is just a hash of the message. This hash is then encrypted with my private key.
+Digital signing is just what it sounds like. It is a way of signing data so that the receiver of the document knows that the sender is who he says he is, and that the content has not been tampered with \cite{bib:ds}. In our example, this means that John wants a way of knowing that I am the sender. This is done by digital signing, which first consists of computing a message digest, which is just a hash of the message. This hash is then encrypted with my private key.
 
 
 \subsubsection{Verification}
 When John receives the message he will use my public key to decrypt the signature, and thereby receiving the hash. If John then creates a hash of the received document and it matches the hash of the signature, he knows that the message is not tampered with. 
 \newline
 \newline
-But what if a third person wants to deceive us, and sends a message to John claiming to be me and giving him “my” public key? John knows that the message was sent by someone with my name, but is he sure that I was the sender? The solution to this is a Certificate Authority, also known as CA. The CA creates a digital certificate for my public key, which ensures that it really is from me. To check that it really was the CA that created the certificate, John can use the CA's public key to check the signature on my certificate. If it all checks out, John can now trust trust that the message was from me.
+But what if a third person wants to deceive us, and sends a message to John claiming to be me and giving him “my” public key? John knows that the message was sent by someone with my name, but is he sure that I was the sender? The solution to this is a Certificate Authority, also known as a CA. The CA creates a digital certificate for my public key, which ensures that it really is from me. To check that it really was the CA that created the certificate, John can use the CA's public key to check the signature on my certificate. If it all checks out, John can now trust trust that the message was from me.
 
 \subsubsection{S/MIME}
-S/MIME is an abbreviation for Secure/Multipurpose Internet Mail Extensions. It is a standard for public key encryption and signing of MIME data\cite{bib:smime}. MIME content is text in character sets that differ from ASCII, non-text attachments, message bodies with multiple parts and non ASCII headers. It is just an extension of the well known mail format so that it is possible to send content other than plain text.
+S/MIME is an abbreviation for Secure/Multipurpose Internet Mail Extensions. It is a standard for public key encryption and signing of MIME data \cite{bib:smime}. MIME content is text in character sets that differ from ASCII, non-text attachments, message bodies with multiple parts and non ASCII headers. It is just an extension of the well known mail format so that it is possible to send content other than plain text.
 
 \subsubsection{Available apps with signing functionality}
-An already existing app for sending signed messages in X509 tools.
+An already existing app for sending signed messages is X509Tools.
 
 \subsubsection{X509Tools}
-X509Tools is an application that has the ability to send mail with S/MIME capabilities, but its main purpose is not for sending mails. The main purpose is to give these capabilities to external mail clients via an interface. It also has a Certificate Store which can be used to check certificates already present on the phone. 
+X509Tools is an application that can send mail with S/MIME capabilities, but its main purpose is not sending mails. The main purpose is to give these capabilities to external mail clients via an interface. It also has a Certificate Store which can be used to check certificates already present on the phone. 
 
 \subsection{Sending mail}
-There are many applications available for sending mail from an Android phone. This section will first give a superficial overview of other programs, and then a short summary of what these provide, and what these is useful for.
+There are many applications available for sending mail from an Android phone. This section will first give a superficial overview of other programs, and then a short summary of what these provide, and what these are useful for.
 
 \subsubsection{Built in client}
-The first and most obvious clients for sending mail is the built in Android mail client which is what one can call abandonware. It is often outdated and lacks a lot of basic functions.
+The first and most obvious client for sending mail is the built in Android mail client which is what one can call abandonware. It is often outdated and lacks a lot of basic functions.
 
 \subsubsection{GMail}
-One of the most used email clients for phones is the GMail app. It is developed by Google, and is therefore seen as secure app with a streamlined design. Unfortunately, it stops there. Google has been neglecting all problems that it has, and new features are not emerging from complaints from existing users. Functions like sorting of mail is lacking and the app is not very reliable. Fortunately, there exists a fork of GMail, called K-9 Mail. GMail does not have S/MIME implemented on the phone version, but an extension for Firefox enables integrates reading and sending of encrypted mail directly into the Gmail interface\cite{bib:gmail}.
+One of the most used email clients for phones is the GMail app. It is developed by Google, and is therefore seen as secure app with a streamlined design. Unfortunately, it stops there. Google has been neglecting all problems that it has, and new features are not emerging from complaints from existing users. Functions like sorting of mail is lacking and the app is not very reliable. Fortunately, there exists a fork of GMail, called K-9 Mail. GMail does not have S/MIME implemented on the phone version, but an extension for Firefox enables integrates reading and sending of encrypted mail directly into the Gmail interface \cite{bib:gmail}.
 
 \subsubsection{K-9 Mail}
 K-9 Mail has all the features the users wanted in GMail, and some extra. Most features are configurable. It is possible to edit app polling settings, show a short excerpt of the message text, and message selection checkboxes can be temporarily hidden. So can the starring of the messages and it is even possible to adjust font sizes and date formats. The clue here is configurability. K-9 Mail does not currently have an official S/MIME implementation, but there exist some hacks around that partially or fully manages to implement it. This is therefore not seen as a fully secure alternative. An upside is that K-9 Mail is free.
@@ -54,5 +54,5 @@ K-9 Mail has all the features the users wanted in GMail, and some extra. Most fe
 It has many of the same functions as in K-9 mail, but also incorporates spell checking, changing font sizes and colors on text and coloring on email text. It is a solid email client that will meet the needs of most users. MailDroid currently costs 111,86 NOK, which is in the high end price range of apps. Good that there also is a free ad version available. As far as we can see, MailDroid does not come with S/MIME. 
 
 \subsubsection{R2Mail2}
-R2Mail2 is the result of further development of X509Tools. Here, the focus is more on taking the good parts of X509Tools and integrating it into a fully functional mail client. It uses the same security libraries as used in X509Tools, and does also include digital signatures and digital encryption and decryption based on personal Soft-Token keys\cite{bib:r2mail2}. It has the ability to store private keys and passwords in an encrypted database known as the Key-Store. This is encrypted by a master password. The certificated can be validated by OCSP and LDAP. As it is built on top of X509Tools, it has full S/MIME support. This is a no fuzz email client where you get the ability to send encrypted and signed mails.
+R2Mail2 is the result of further development of X509Tools. Here, the focus is more on taking the good parts of X509Tools and integrating it into a fully functional mail client. It uses the same security libraries as used in X509Tools, and does also include digital signatures and digital encryption and decryption based on personal Soft-Token keys\cite{bib:r2mail2}. It has the ability to store private keys and passwords in an encrypted database known as the Key-Store. This is encrypted by a master password. The certificated can be validated by OCSP and LDAP. As it is built on top of X509Tools, it has full S/MIME support. This is a no nonsense email client which provides the ability to send encrypted and signed mails.
 
