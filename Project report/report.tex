@@ -19,6 +19,8 @@
 \usepackage[cc]{titlepic}
 \usepackage{hyperref}
 \usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{subcaption}
 \usepackage[nonumberlist]{glossaries}
 \hypersetup{
     colorlinks=false,
@@ -244,7 +246,7 @@
 
 %\chapter{Sprint 1}
 
-	\include{sprint_1_planning}
+	\include*{sprint_1_planning}
 
 	\include*{sprint_1_concrete_project_work_plan}
 
@@ -264,7 +266,7 @@
 
 %\chapter{Sprint 2}
 
-	\include{sprint_2_planning}
+	\include*{sprint_2_planning}
 
 	\include*{sprint_2_concrete_project_work_plan}
 
@@ -282,13 +284,27 @@
 
 	\include*{sprint_2_conclusion}
 
-\chapter{Sprint 3}
+%\chapter{Sprint 3}
 
-	\include{sprint_3_concrete_project_work_plan}
+	\include*{sprint_3_planning}
+
+	\include*{sprint_3_concrete_project_work_plan}
+
+	\LTXtable{\textwidth}{concrete3table.tex}
+
+	\include*{sprint_3_duration_and_goal}
 
 	\include*{sprint_3_backlog}
 
+	\include*{sprint_3_system_design}
+
 	\include*{sprint_3_effort}
+
+	\include*{sprint_3_burndown}
+
+	\include*{sprint_3_customer_feedback}
+
+	\include*{sprint_3_conclusion}
 
 \chapter{Sprint 4}
 
@@ -350,7 +366,7 @@
 \bibitem{bib:ssl} TLS. Retrieved 2012-09-25 from http://en.wikipedia.org/wiki/Secure\_Sockets\_Layer
 \bibitem{bib:nli} NetBeans license. Retrieved 2012-10-08 from http://netbeans.org/about/legal/product-licences.html
 \bibitem{bib:ali} Android license. Retrieved 2012-10-08 from http://developer.android.com/license.html
-\bibitem{bib:amli} Andoid-maven-plugin. Retrieved 2012-10-08 from http://code.google.com/p/maven-android-plugin/
+\bibitem{bib:amli} Andoid--plugin. Retrieved 2012-10-08 from http://code.google.com/p/maven-android-plugin/
 \bibitem{bib:mli} Maven license. Retrieved 2012-10-08 from http://maven.apache.org/license.html
 \bibitem{bib:jli} Junit license. Retrieved 2012-10-08 from http://www.junit.org/license
 \bibitem{bib:gli} GreenMail license. Retrieved 2012-10-08 from http://www.icegreen.com/greenmail/
@@ -425,26 +441,30 @@
 \part{Appendices}
 
 	\appendix
+
+	\include{user_manual}
 	
-	\include{YYYY-MM-DD-Agenda-Advisor}
+	%\include{YYYY-MM-DD-Agenda-Advisor}
 
 	
-	\include{YYYY-MM-DD-Agenda-Customer}
+	%\include{YYYY-MM-DD-Agenda-Customer}
 
 	
-	\include{YYYY-MM-DD-Agenda-Internal}
+	%\include{YYYY-MM-DD-Agenda-Internal}
 
 	
-	\include{YYYY-MM-DD-WeeklyStatusReport-WeekWW}
+	%\include{YYYY-MM-DD-WeeklyStatusReport-WeekWW}
 
 	
-	\include{YYYY-MM-DD-Minutes-Advisor}
+	%\include{YYYY-MM-DD-Minutes-Advisor}
 
 	
-	\include{YYYY-MM-DD-Minutes-Customer}
+	%\include{YYYY-MM-DD-Minutes-Customer}
 
 	
-	\include{YYYY-MM-DD-Minutes-Internal}
+	%\include{YYYY-MM-DD-Minutes-Internal}
+
+	\include{templates}
 
 	\include{agendas}
 
