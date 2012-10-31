@@ -15,10 +15,10 @@ The architecture has in no way changed due to the usability requirements.
 “No data exposed to the user or app, as long as the user do not have root access.” S1 - Quality requirements
 \newline
 \newline
-This requirement is fulfilled by the PersistenceImpl, (figure in graphical view of architecture), which keeps track of all the models currently in use in the application. If the malicious user or application does not have root access, then the data will be secure just by using android provided features like sandboxing processes and private storage. We can not however guarantee that this will always be the case, and another layer of security is therefore needed. 
+This requirement is fulfilled by the PersistenceImpl, figure \ref{fig:logicalGUIview}, which keeps track of all the models currently in use in the application. If the malicious user or application does not have root access, then the data will be secure just by using android provided features like sandboxing processes and private storage. We can not however guarantee that this will always be the case, and another layer of security is therefore needed. 
 \newline
 \newline
-There are three possible scenarios when looking at this requirement. First off, a malicious user/application find a locked/encrypted device, where the owner is not logged in to the device. In this case, the android hardware encryption will successfully mitigate any malicious intent.
+There are three possible scenarios when looking at this requirement. First off, a malicious user/application finds a locked/encrypted device, where the owner is not logged in to the device. In this case, the android hardware encryption will successfully mitigate any malicious intent.
 Secondly, a malicious user/application find an unlocked device, but the owner is not logged into the XOXOmail. Under normal circumstances, without an additional layer of security, the malicious user could gain access to the application and application data, circumventing the android private storage access control due to the users root privileges. In order to mitigate this, all XOXOmail specific data will be encrypted before stored into the private storage section. 
 Thirdly, a malicious user/application find an unlocked device, where the owner is logged into the XOXOmail application. In this case the malicious user is given some possible ways of exploiting the application by sending predefined flash messages. But it would still require the malicious user to type in the owner password in order to browse any other messages. 
 
@@ -28,7 +28,7 @@ Thirdly, a malicious user/application find an unlocked device, where the owner i
 \newline
 \newline
 This requirement is fulfilled by the ServiceProvider along with the graphical user interface. There are two possible scenarios when looking at this requirement. First off, the service backend is not started and a user starts the app. In this case no privileges will be given until the user types in the correct username and password. In fact, the application itself does not have the possibility to decrypt any data without this information.
-Secondly, the service is started, but not open. In this case a malicious user could send predefined flash messages, but not view any messages, or get access to the system as a whole. 
+Second, the service is started, but not open. In this case a malicious user could send predefined flash messages, but not view any messages, or get access to the system as a whole. 
 
 \paragraph{Trying to access the apps external data trafic}\hfill
 \newline

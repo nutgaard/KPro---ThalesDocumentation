@@ -55,7 +55,7 @@ See figure \ref{fig:securityview} at page \pageref{fig:securityview}.
 \textbf{Android platform}, most of the security provided by the Android platform is provided by the Linux kernel, but not necessary used in normal conditions. The application sandbox is one of these things. And since the sandboxing operation is located at kernel level, it is hard to break out of. 
 \newline
 \newline
-\textbf{Application data encryption} is a response to the possibility of rooted devices. Normally an android application will not run with root access on the device, this however is not the case on rooted devices. In which case the application and user will have full access to all applications and all application data. By adding our own encryption layer with the key stored off-device we can ensure data security even with root access to the phone\cite{bib:tech}. The encryption we opted for is an AES based encryption with a user-password derived key by PBKDF2-HMAC-SHA1.
+\textbf{Application data encryption} is a response to the possibility of rooted devices. Normally an android application will not run with root access on the device, this however is not the case on rooted devices. In which case the application and user will have full access to all applications and all application data. By adding our own encryption layer with the key stored off-device we can ensure data security even with root access to the phone\cite{bib:tech}. The encryption we opted for is an AES based encryption with a user-password derived key by \gls{pbsha}.
 Regarding communication with external resources as a mail-server, it will be done over a secure communication channel providing SSL or TLS. 
 \newline
 \newline
