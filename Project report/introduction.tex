@@ -26,12 +26,14 @@ XOmail is based on the \gls{nato} military messaging standard \gls{stanag}. This
 \newline
 The standard is based on binary encoded data, and there are limited libraries freely available for these protocols. Special attributes like information sensitivity and priority are defined by extensions to the Internet Mail RFCs. Our connection to Thales’ system goes through a XOmail \gls{smtp} gateway. \gls{smtp}, which is shorthand for Simple Mail Transfer Protocol \cite{bib:smtp}, is an Internet standard for electronic mail transmission over \gls{ip} networks. Messages to other users are sent by sending an email to the server with an address, and then the server handles the message headers and other important attributes. The messages are then pushed to the correct recipients via \gls{pami} \cite{bib:imap}, which is an abbreviation for Internet Message Access Protocol, and is one of the most prevalent Internet standard protocols for email retrieval. 
 
-\begin{tabular}{l|l}
-What Thales has&What Thales wants\\ \hline
+\begin{table}
+\begin{tabularx}{\linewidth}{>{\setlength\hsize{.5\hsize}}X|>{\setlength\hsize{0.5\hsize}}X}
+What Thales has&What Thales wants\\ \hline \hline
 An information handling and transfer system developed for large formal organizations and military messaging procedures&A system for handheld devices with a subset of the existing functions\\ \hline
 A large number of ways of giving a message attributes&Focus on security label, priority and type\\ \hline
 Extensive focus on security and reliability&Focus on security and usability\\ \hline
 Support for a broad range of attachments&Support for images, text and video\\ \hline
+\end{tabularx}
 \caption{Thales' current and wanted situation}
 \label{tab:introcomparison}
-\end{tabular}
+\end{table}
