@@ -21,7 +21,7 @@ This solution also suffers from the fact that if the user is already logged in, 
 Symmetric encryption is also a possible solution for securing the data. If we are going to use this type of encryption we can’t store the keys because of the lacking general purpose, system-level secure storage.
 \newline
 \newline
-A way to solve this is to derive the keys from a user-entered password. To make sure the keys derived is random and hard to brute-force we need to use a standard PBE key derivation method. For Android applications this is called PBKDF2WithHmacSHA1.
+A way to solve this is to derive the keys from a user-entered password. To make sure the keys derived is random and hard to brute-force we need to use a standard \gls{pbe} key derivation method. For Android applications this is called PBKDF2WithHmacSHA1.
 \newline
 \newline
 This could be a suitable solution, at least for the parts of the application that does not need to happen instantaneously (since the password and username is not stored).

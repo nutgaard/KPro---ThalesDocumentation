@@ -24,8 +24,8 @@ See table \ref{tab:functionalreq} at page \pageref{tab:functionalreq}.
 \textbf{FR10} & \textbf{Settings menu:} The user has to be able to alter the following settings: 
 \begin{itemize}
 \item{}Change default values of dropdown menus in the New Message window.
-\item{}What the lowest security priority is before the message is sent via SMS
-\item{}Setting text size in GUI, e.g. on received message text.
+\item{}What the lowest security priority is before the message is sent via \gls{sms}
+\item{}Setting text size in \gls{gui}, e.g. on received message text.
 \end{itemize}  & Low \\ \hline
 \end{tabular}
 \caption{Functional requirements} \label{tab:functionalreq}
@@ -149,19 +149,19 @@ Android phones have small screens and usually no keyboard. This means that the u
 
 \paragraph{Memory}\hfill
 \newline
-Phones have limited memory, typically 256-512 MB. The program will probably never be close to breaking this limit, as the most memory consuming components are string based e-mails and potentially an attachment or two; very little of which has to remain in memory at the same time.
+Phones have limited memory, typically 256-512 \gls{mb}. The program will probably never be close to breaking this limit, as the most memory consuming components are string based e-mails and potentially an attachment or two; very little of which has to remain in memory at the same time.
 
 \paragraph{Screen resolution/aspect ratio} \hfill
 \newline
-As the program will support different Android devices, it also has to support different resolutions as well as aspect ratios. The GUI must be programmed to scale to different formats without degrading quality or proportions.
+As the program will support different Android devices, it also has to support different resolutions as well as aspect ratios. The \gls{gui} must be programmed to scale to different formats without degrading quality or proportions.
 
 \paragraph{Bandwidth} \hfill
 \newline
 Since the program is network based, it is important to pay attention to bandwidth usage. We want to be able to wait for incoming emails and receive them as soon as the server does without having to waste bandwidth with constant polling, especially as the program is expected to see some use outside of 3G net areas.
 
-\paragraph{Commercial off-the-shelf (COTS)} \hfill
+\paragraph{Commercial off-the-shelf (\gls{cots})} \hfill
 \newline
-This project has security requirements that require special consideration with regards to COTS. We have to be able to trust the underlying software if it ever touches unencrypted data or has access to a memory partition (either legitimately or not) that contains unencrypted data. This means some care has to be taken in regards to what COTS solutions we can use and where we can use them. 
+This project has security requirements that require special consideration with regards to \gls{cots}. We have to be able to trust the underlying software if it ever touches unencrypted data or has access to a memory partition (either legitimately or not) that contains unencrypted data. This means some care has to be taken in regards to what \gls{cots} solutions we can use and where we can use them. 
 
 \subsubsection{Stakeholders and their concerns}
 See table \ref{tab:stakeholders} at page \pageref{tab:stakeholders}.
@@ -173,7 +173,7 @@ User &
 \begin{itemize}
 \item{} Wants a program that works out of the box
 \item{} Easy to understand the flow of the app
-\item{} Installation should be easy, just download the app from   Android market, and it’s ready to use.
+\item{} Installation should be easy, just download the app from Android market, and it’s ready to use.
 \item{} Familiar user interface
 \end{itemize}\\ \hline
 Developers & 
@@ -198,7 +198,7 @@ Customer &
 \end{itemize}\\ \hline
 Graphic designers & 
 \begin{itemize}
-\item{}Understanding of how the GUI should be.
+\item{}Understanding of how the \gls{gui} should be.
 \item{}Understand the limitation of graphics due to screen size.
 \end{itemize}
 \end{tabular}

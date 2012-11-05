@@ -11,14 +11,14 @@ Thales wants us to develop a message service that is custom made for mobile user
 The users of this application are people who need a reliable and secure way of communicating with more or less time dependent information. Users are also expected to only have access to either tablets or mobile phones, not computers.
 
 \subsection{Functionality}
-The application’s functionality should be similar to a normal email client, but with a user-interface that is custom made for smaller screens, short-messages, domain specific attributes, reliability adjustments and security adjustments. The application should use the normal standards for Internet mail to communicate with Thales’ XOmail SMTP gateway.
+The application’s functionality should be similar to a normal email client, but with a user-interface that is custom made for smaller screens, short-messages, domain specific attributes, reliability adjustments and security adjustments. The application should use the normal standards for Internet mail to communicate with Thales’ XOmail \gls{smtp} gateway.
 \newline
 \newline
 The application should not use bandwidth when it is not sending or receiving messages. The application should also be able to get an updated address book from the server.
 
 \subsection{The solution}
 The solution is to be implemented on Android based smartphones or tablets and the user-interface should be fitted to the screen size of the given device. It should support bandwidths as small as 64 kbps and communicate with a XOmail
-server through IMAP/POP3 and SMTP. The application should also work with normal mail servers, but with reduced functionality.
+server through \gls{pami}/\gls{pop} and \gls{smtp}. The application should also work with normal mail servers, but with reduced functionality.
 \newline
 \newline
 The messages sent with our solution should be able to support text, pictures and video attachments. The media should be accessed from the local storage on the phone or from other applications. A user should be able to create, edit, send, answer, forward and delete messages as well as browse and open received and sent messages.
@@ -39,5 +39,5 @@ When a message that is sent from the application fails, the user should get a no
 If a high priority message arrives on a given user’s phone, the application should alert the user in a convenient way and make it easy to access the newly arrived message. The application should stop the sending of all other messages when a user sends a message with high priority, and instead give the resources to the high priority message.  
 
 \subsection{Security}
-Security is also an important issue in the application. Communication with the server should be encrypted with SSL, messages should be signed with S/MIME when being sent, S/MIME signed messages should be verified on receive and private keys for
+Security is also an important issue in the application. Communication with the server should be encrypted with \gls{ssl1}, messages should be signed with \gls{emims} when being sent, \gls{emims} signed messages should be verified on receive and private keys for
 signing mail should not be stored in cleartext.
