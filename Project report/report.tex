@@ -60,6 +60,15 @@
   }}
 \makeatother
 
+\newcommand{\sprintPrefix}[0]{$\cdot$ }
+%\dateFormat{month}{day}{year}{delimiter}
+%\newcommand{\dateFormat}[4]{#1#4#2#4#3}
+%\newcommand{\dateFormat}[4]{#2#4#1#4#3}
+\newcommand{\dateFormat}[3]{#3.#1.#2}
+\newcommand{\JIRA}[1]{\\JIRA reference: #1}
+\newcommand{\JIRAS}[1]{(#1)}
+\newcommand{\SP}[1]{(#1 SP)}
+
 \makeglossaries
 \newglossaryentry{kds}{name=SDK, description={Software Development Kit}}
 \newglossaryentry{ascii}{name=ASCII, description={American Standard Code for Information Interchange}}
