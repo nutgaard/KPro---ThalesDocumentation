@@ -65,3 +65,18 @@ If we are going to implement the version where username and password is saved in
 \newline
 \newline
 To implement the secure storage with derived keys we need to assume there will be no problem for the user to log in every time he starts the application. This will make sure the information is secure even though the phone should get misplaced or stolen, but this is more complicated to implement than saving the credentials locally.
+
+\subsection{Wireshark conclusion}
+Sending and receiving messages with our application over GSM seems to work in a respectable manner. The time it takes to receive and send messages is pretty good considering this was done over 14.4 kbits/s. The TLS protocol also seems to be working as intended for both sending and receiving messages. The initial handshake is completed and the following data is encrypted as it should be. 
+\newline
+\newline
+The only problem we could find is that the amount of data sent when considering both the sending and receiving functionality appears to be much larger than the actual size of the message when you inspect it in clear text. The receiving part of the application had an increase of 66.47% whilst the sending part had an increase of 42.7%. 
+\newline
+\newline
+At first we thought this could be a result of the TLS encryption of the data, but if the encryption is working as intended the only part of the encryption that could create some overflow is the initial handshake. This was not included in the calculation, only the actual application data sent or received was included. The actual encrypted TLS packages are based on relatively efficient symmetric ciphers and should not take up a lot more space than unencrypted packages.  
+\newline
+\newline
+It is difficult to pinpoint the exact reason for this large increase in data transferred at this point, but it was sent in a reasonable time and according to protocol, and those are the most important attributes for our client.  
+
+\subsection{Compression of data conclusion}
+We have now gone through a lot of methods for both lossy and lossless compression and it is evident that there are many choices. The intention of this compression study was merely to give an overview of what exists. We have not listed all options, but just peeked into some of the most interesting methods. In order to give a qualified answer to what is the best algorithms, a more thorough study has to be done in order to find the requirements on compression time in relation with connection speed, what Android devices will be using the algorithms and what algorithms that have a working implementation for android.  

@@ -1,1 +1,24 @@
-\chapter{User manual}
+\chapter{How to build project}
+
+\begin{enumerate}
+\item{}Checkout from github (github.com/nutgaard/KPro---Thales)
+\item{}Install Maven 3.0.4, (http://maven.apache.org/)
+\item{}Install dependencies not located in Maven repository (Only needed the first time), all the commands below should be run while in the KPro---Thales directory.
+\begin{enumerate}
+\item{}Install mail.jar
+\begin{enumerate}
+\item{}mvn install:install-file -Dfile=mail.jar -DgroupId=javax.mail -DartifactId=mail -Dversion=1.0 -Dpackaging=jar
+\end{enumerate}
+\item{}Install activation.jar
+\begin{enumerate}
+\item{}mvn install:install-file -Dfile=activation.jar -DgroupId=javax.mail -DartifactId=activation -Dversion=1.0 -Dpackaging=jar
+\end{enumerate}	
+\item{}Install additionnal.jar
+\begin{enumerate}
+\item{}mvn install:install-file -Dfile=additionnal.jar -DgroupId=javax.mail -DartifactId=additionnal -Dversion=1.0 -Dpackaging=jar
+\end{enumerate}
+\end{enumerate}
+\item{}Start emulator or connect a phone. A successful connection can be verified by the command 'adb devices', which should return a list of all the connected devices. 
+\item{}Run 'mvn clean install \&\& cd kpro-app \&\& mvn android:deploy android:run' from KPro-Thales directory.
+This command builds the application completely from scratch, runs the tests, deploys it to all available devices and starts the application on the devices.
+\end{enumerate}
