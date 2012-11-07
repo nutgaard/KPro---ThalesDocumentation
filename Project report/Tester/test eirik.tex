@@ -1,0 +1,246 @@
+
+\section{GUI testing}
+
+See table \ref{tab:case1} - \ref{tab:case11} at page \pageref{tab:case1} - \pageref{tab:case11} for test cases.
+\begin{table}
+\begin{tabular}{l|p{10cm}}
+Test case ID & 1 \\ \hline
+Name & Test login functionality\\ \hline
+Requirement & \\ \hline
+Description & Test the login functionality\\ \hline
+Preconditions & The app has started\\ \hline
+Flow of events & 
+\begin{enumerate}
+\item{}Enter username "user"
+\item{}Enter password "test"
+\item{}Press login button
+\end{enumerate} \\ \hline
+Expected results & The login screen disappear and the main site appear\\ \hline \hline
+Actual results & fikk kommet inn\\ \hline
+Comments & veldig langt passord, men gikk helt fint,v var akkurat som det burde\\ \hline
+Status & 
+\end{tabular}
+\caption{Test case 1} \label{tab:case1}
+\end{table}
+
+\begin{table}
+\begin{tabular}{l|p{10cm}}
+Test case ID & 2 \\ \hline
+Name & Test sending of message with default values\\ \hline
+Requirement & \\ \hline
+Description & Test sending of message with default values\\ \hline
+Preconditions & The user is logged in\\ \hline
+Flow of events & 
+\begin{enumerate}
+\item{}Navigate to the view for sending a new message
+\item{}Enter email address "kprothales@gmail.com"
+\item{}Enter subject "Hello"
+\item{}Select security label "Unclassified" from the list
+\item{}Press send button
+\end{enumerate} \\ \hline
+Expected results & A toast notification that says "Message sent" and clearing of all fields\\ \hline \hline
+Actual results & fikk message sent opp på skjermen og mottok 1 new message\\ \hline
+Comments & ble litt overrasket over å ikke skrive tekst. teit at det ikke kom noen ny skjerm, følte at det ikke var bekreftet at mailen var sent. hva med en "neste field?? \\ \hline
+Status & 
+\end{tabular}
+\caption{Test case 2} \label{tab:case2}
+\end{table}
+
+\begin{table}
+\begin{tabular}{l|p{10cm}}
+Test case ID & 3 \\ \hline
+Name & Test sending of message with header values\\ \hline
+Requirement & \\ \hline
+Description & Test sending of message with header values\\ \hline
+Preconditions & The user is logged in\\ \hline
+Flow of events & 
+\begin{enumerate}
+\item{}Navigate to the view for sending a new message
+\item{}Enter email address "kprothales@gmail.com"
+\item{}Enter subject "Hello"
+\item{}Select security label "Unclassified" from the list
+\item{}Select priority "Deferred"
+\item{}Select type "Exercise"
+\item{}Press send button
+\end{enumerate} \\ \hline
+Expected results & A toast notification that says "Message sent" and clearing of all fields\\ \hline \hline
+Actual results & \\ \hline
+Comments & samme som forrige. irritrende at du ikke går til hovedskjerm eller noe feks når du har trykket send. hopper opp på toppen når du har valgt en priority. irrierende, må skrolle mange ganger\\ \hline
+Status & 
+\end{tabular}
+\caption{Test case 3} \label{tab:case3}
+\end{table}
+
+\begin{table}
+\begin{tabular}{l|p{10cm}}
+Test case ID & 4 \\ \hline
+Name & Test sending of message with attachments\\ \hline
+Requirement & 3a \& 3b\\ \hline
+Description & Test sending of message with attachments\\ \hline
+Preconditions & The user is logged in\\ \hline
+Flow of events & 
+\begin{enumerate}
+\item{}Navigate to the view for sending a new message
+\item{}Enter email address "kprothales@gmail.com"
+\item{}Enter subject "Hello"
+\item{}Select security label "Unclassified" from the list
+\item{}Press add attachment button
+\item{}select "Image" and take a picture with your phone
+\item{}Press send button
+\end{enumerate} \\ \hline
+Expected results & A toast notification that says "Message sent" and clearing of all fields\\ \hline \hline
+Actual results & har trykket send en del ganger, men skjønner ikke at det skjer noe, for tar veldig lang tid til man får beskjed om sent.\\ \hline
+Comments & ikke klart hvilken av kamera tingene som skal velges. blaing er veldig slitsom, hver gang man kommer i kontakt med en ting kommer man inn der. ut av et tekstfelt så forsvinner ikke tastaturet\\ \hline
+Status & 
+\end{tabular}
+\caption{Test case 4} \label{tab:case4}
+\end{table}
+
+\begin{table}
+\begin{tabular}{l|p{10cm}}
+Test case ID & 5 \\ \hline
+Name & Read message\\ \hline
+Requirement & \\ \hline
+Description & Read message\\ \hline
+Preconditions & The user is logged in and there is at least one message in the inbox folder\\ \hline
+Flow of events & 
+\begin{enumerate}
+\item{}Navigate to the folders and make sure you view inbox messages
+\item{}Press a message in the message list
+\end{enumerate} \\ \hline
+Expected results & The message view appears and shows the sender, subject, security label, priority, type, attachments if any and the message body\\ \hline \hline
+Actual results & fikk åpnet og sett både melding og vedlegg \\ \hline
+Comments & inimellom når man blar komer mann inn i en mel, slitsomt. \\ \hline
+Status & 
+\end{tabular}
+\caption{Test case 5} \label{tab:case5}
+\end{table}
+
+\begin{table}
+\begin{tabular}{l|p{10cm}}
+Test case ID & 6 \\ \hline
+Name & Test attachments received\\ \hline
+Requirement & \\ \hline
+Description & Test reading and opening of a message with attachments\\ \hline
+Preconditions & The user is logged in and there is at least one message with an image attached\\ \hline
+Flow of events & 
+\begin{enumerate}
+\item{}Navigate to the folders and make sure you view inbox messages
+\item{}Press a message in the message list
+\item{}Press an image in the attachment list
+\end{enumerate} \\ \hline
+Expected results & The correct program for opening an image is started and the image is shown\\ \hline \hline
+Actual results & omg i clicked melding kommer, litt rart kanskje?\\ \hline
+Comments & tenk om jeg åpner en mel uten attachments i??\\ \hline
+Status & 
+\end{tabular}
+\caption{Test case 6} \label{tab:case6}
+\end{table}
+
+\begin{table}
+\begin{tabular}{l|p{10cm}}
+Test case ID & 7 \\ \hline
+Name & Test sending message to a predefined contact\\ \hline
+Requirement & \\ \hline
+Description & Test sending massage to a predefined contact\\ \hline
+Preconditions & The user is logged in\\ \hline
+Flow of events & 
+\begin{enumerate}
+\item{}Navigate to the send message view
+\item{}Press the button next to the subject field and select a contact from the list of contacts
+\item{}Enter subject "hello"
+\item{}Select security label "Unclassified"
+\item{}Press send button
+\end{enumerate} \\ \hline
+Expected results & A toast notification that says "Message sent" and clearing of all fields\\ \hline \hline
+Actual results & fikk message sent mel \\ \hline
+Comments & \\ \hline
+Status & 
+\end{tabular}
+\caption{Test case 7} \label{tab:case7}
+\end{table}
+
+\begin{table}
+\begin{tabular}{l|p{10cm}}
+Test case ID & 8 \\ \hline
+Name & Test sending of an instant message\\ \hline
+Requirement & \\ \hline
+Description & Test sending of an instant message\\ \hline
+Preconditions & The user is logged in\\ \hline
+Flow of events & 
+\begin{enumerate}
+\item{}Navigate to the instant message view
+\item{}Select template from list
+\end{enumerate} \\ \hline
+Expected results & The message is sent instantly. Toast notification that says "instant message sent" and reset of list\\ \hline \hline
+Actual results & \\ \hline
+Comments & forstod ikke symbolet før brukte menu. trodde det var en warning. hvilken liste?? finnes ingen liste!! Meny forsvinner og header forsvinner hvis man navigerer med menyen og ikke ved top meny. hvorfor er ikke kontakts i headeren??jeg bruker egentlig aldri menyen, kan bli vanskelig å finne kontakter får ikke sendt, for tastaturet forsvinner ikke.. hvem er det sendt til\\ \hline
+Status & 
+\end{tabular}
+\caption{Test case 8} \label{tab:case8}
+\end{table}
+
+\begin{table}
+\begin{tabular}{l|p{10cm}}
+Test case ID & 9 \\ \hline
+Name & Test receiving of an instant message\\ \hline
+Requirement & \\ \hline
+Description & Test receiving of an instant message\\ \hline
+Preconditions & The user is logged in\\ \hline
+Flow of events & 
+\begin{enumerate}
+\item{}A screen that list the subject and ? appear
+\item{}Click open message
+\end{enumerate} \\ \hline
+Expected results & An instant message is shown\\ \hline \hline
+Actual results & \\ \hline
+Comments & gikk fint, men klarer ikke å forstå hvordan man kan bla gjennom instant message meldinger, vanskelig når man ikke ser en oversikt over alle\\ \hline
+Status & 
+\end{tabular}
+\caption{Test case 9} \label{tab:case9}
+\end{table}
+
+\begin{table}
+\begin{tabular}{l|p{10cm}}
+Test case ID & 10 \\ \hline
+Name & Contants\\ \hline
+Requirement & \\ \hline
+Description & To test whether a user can see all its contacts\\ \hline
+Preconditions & The user is logged in\\ \hline
+Flow of events & 
+\begin{enumerate}
+\item{}Navigate to address book
+\item{}A list of all the contacts should appear
+\item{}Scroll up and down to see all the contacts
+\end{enumerate} \\ \hline
+Expected results & The user should be able to see all the contacts saved in the address book\\ \hline \hline
+Actual results & \\ \hline
+Comments & var veldig heldig og fant de i stad, får sett alle. men adressebok er veldig gjemt. viktigere med adressebok en settings, og på settings kommer heler ikke many opp \\ \hline
+Status & 
+\end{tabular}
+\caption{Test case 10} \label{tab:case10}
+\end{table}
+
+\begin{table}
+\begin{tabular}{l|p{10cm}}
+Test case ID & 11 \\ \hline
+Name & Security label settings\\ \hline
+Requirement & \\ \hline
+Description & Test the ability to set available security labels\\ \hline
+Preconditions & The user is logged in\\ \hline
+Flow of events & 
+\begin{enumerate}
+\item{}Navigate to settings
+\item{}A screen with all the different settings should appear
+\item{}Select security labels
+\item{}Select all the labels you would like to be available when sending a message
+\item{}Navigate to send message
+\item{}Check what security labels are available now
+\end{enumerate} \\ \hline
+Expected results & Only the security labels sat in the settings menu should appear when choosing a security label in the send message view\\ \hline \hline
+Actual results & \\ \hline
+Comments & setter ingen som aktive, men kan fortsatt velge alle. fungerer ikke for 1 heller! fungerer altså ikke. ikoner i header er ikke midtstilt, ser litt rart ut. få padding lik oppe og nede.\\ \hline
+Status & 
+\end{tabular}
+\caption{Test case 11} \label{tab:case11}
+\end{table}
