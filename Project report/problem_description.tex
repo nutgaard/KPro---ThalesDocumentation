@@ -11,10 +11,10 @@ Thales wants us to develop a message service that is custom made for mobile user
 The users of this application are people who need a reliable and secure way of communicating with more or less time dependent information. Users are also expected to only have access to either tablets or mobile phones, not computers.
 
 \subsection{Functionality}
-The application’s functionality should be similar to a normal email client, but with a user-interface that is custom made for smaller screens, short-messages, domain specific attributes, reliability adjustments and security adjustments. The application should use the normal standards for Internet mail to communicate with Thales’ XOmail \gls{smtp} gateway.
+The application's functionality should be similar to a normal email client, but with a user-interface that is custom-made for smaller screens, short messages, military domain specific  attributes, reliability adjustments for field use and security adjustments for handling classified information. The application should use the Simple Mail Transfer Protocol to communicate with Thales' XOmail \gls{smtp} gateway.
 \newline
 \newline
-The application should not use bandwidth when it is not sending or receiving messages. The application should also be able to get an updated address book from the server.
+The application should not use bandwidth when it is not sending or receiving messages. The application should also be able to receive an updated address book from the server.
 
 \subsection{The solution}
 As per the customer requirements, the solution is to be implemented on Android based smartphones or tablets (Requirement 1.1 and 1.2) and the user-interface should be fitted to the screen size of the given device (2.1). It should support bandwidths as small as 64 kbps (2.2) and communicate with a XOmail server through \gls{pami}/\gls{pop} and \gls{smtp}(1.4 and 2.3). The application should also work with normal mail servers, but with reduced functionality (2.4).

@@ -1,16 +1,26 @@
 \subsection{Limitations}
 
-\subsubsection{Technical Limitations}
+\subsubsection{Technical limitations}
 
 \paragraph{Android}\hfill
 \newline
 Android is a quite new platform and none of us have been doing much programming in it before starting on this project. So learning how Android works and finding technical tools that Android supports is going to be a time consuming task. We will develop our project in Android version 2.2 with \gls{api} level 8. The reason for choosing this version of Android is that we do not want to depend on features that only exist in the newer versions of Android, and 2.2 is a version that is very common.
 
+\paragraph{Android security limitations}\hfill
+\newline
+There are a number of limitations that stem from our use of android as a platform. For one thing, we have a small and easy to lose device rather than a fixed installation. For another, we are relying on existing civilian network, rather than purpose built military communication channels.
+\newline
+\newline
+A major issue for our security considerations is the mobility of our application. Our small, easily stealable device could easily fall into the wrong hands, so security has to take this into account. We do this through, as a first step, encrypting the entire phone and requiring a login on system resume, with a short timer.
+\newline
+\newline
+An android based application is problematic in that it communicates over the internet. Thus it is conceivable that someone could listen in to our transmissions. We resolved this through the use of network layer encryption through \gls{ssl1}. 
+
 \paragraph{Screen}\hfill
 \newline
 The mail client will be used on devices with relatively small touch screens which means that the application must be carefully designed to accommodate the limited size. In addition we need to put a lot of thought into the design so that it becomes easy to use. The application must be designed to scale well with different screen resolutions.
 
-\subsubsection{Non-technical Limitations}
+\subsubsection{Non-technical limitations}
 
 \paragraph{Language}\hfill
 \newline
