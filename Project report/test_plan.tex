@@ -1,13 +1,16 @@
 \chapter{Test plan}
 
-The main part of project testing will be done as we go along. Using unit tests, each part of the code will be thoroughly tested before it is put together. Larger scale integration and instrumentation tests are done largely the same way, compounded by informal testing by group members. The sending and receiving of emails will be tested using Greenmail, while Mockito is used to handle not yet implemented classes as well as emulator free testing for Android specific classes. All of these tools are described in the section below. Towards the end of the project period, including large parts of the fourth sprint, the focus will shift from producing additional code to finding and repairing bugs. While our plan is vaguely based upon, and in large part inspired by, IEEE829 \cite{bib:ieee} we are too informal about it to be able to use such grand claims. In short, our testing plan is to test each public method both for valid and invalid input.
-	
+The main part of project testing will be done as we go along. Using unit tests, each part of the code will be thoroughly tested before it is put together. Larger scale integration and instrumentation tests are done largely the same way, compounded by informal testing by group members. The sending and receiving of emails will be tested using Greenmail, while Mockito is used to handle not yet implemented classes as well as emulator free testing for Android specific classes. All of these tools are described in the section below. Towards the end of the project period, including large parts of the fourth sprint, the focus will shift from producing additional code to finding and repairing bugs. While our plan is vaguely based upon, and in large part inspired by, IEEE829 \cite{bib:ieee} we are too informal about it to be able to use such grand claims. In short, our testing plan is to test each public method both for valid and invalid input, and then run larger scale integration tests between modules.
+By using dependency injection and Mockito, we will also be able to test top level modules without testing the building blocks of that module. 
+
 \section{Test tools}
 \subsubsection{JUnit}
 JUnit is the industry standard for test driven development. It works by creating a separate test method for each method in the class that is to be tested. In this way one can test large portions of code independent of the other code sections. For us, it provides many benefits, especially that most of us have dealt with it before and are familiar with the concept.
 
-%\subsection{Android Instrumentation}
-%Android Instrumentation is a framework that extends JUnit, providing it with a toolkit of Android specific mock classes and methods. It also provides test classes targeting Android applications, with %specialized testing of everything from \gls{gui} component locations and visibility to the activity specific onCreate and onDestroy methods. Android Instrumentation is produced by Android directly and %is included in the development kit.
+\subsection{Cobertura}
+Cobertura is a tool for calculating the code covered by our tests, and generate a report based on this. While all other testing tools are automatically run at each build cycle, this is not the case with
+Cobertura, which need to be invoked by a seperate command. 
+
 \subsection{Mockito}
 Mockito is a simple and elegant \gls{api} for mocking classes. With a few lines of code an unimplemented class can be instructed to provide a valid output, allowing other parts of the code to be tested without concerns.
 
