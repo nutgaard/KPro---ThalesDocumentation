@@ -24,5 +24,6 @@ Symmetric encryption is also a possible solution for securing the data. If we ar
 A way to solve this is to derive the keys from a user-entered password. To make sure the keys derived is random and hard to brute-force we need to use a standard \gls{pbe} key derivation method. For Android applications this is called PBKDF2WithHmacSHA1.
 \newline
 \newline
-This could be a suitable solution, at least for the parts of the application that does not need to happen instantaneously (since the password and username is not stored).
+This could be a suitable solution, at least for the parts of the application that does not need to happen instantaneously because the password never should be stored in plain text.
+
 

@@ -1,19 +1,19 @@
 \chapter{Test plan}
 
 The main part of project testing will be done as we go along. Using unit tests, each part of the code will be thoroughly tested before it is put together. Larger scale integration and instrumentation tests are done largely the same way, compounded by informal testing by group members. The sending and receiving of emails will be tested using Greenmail, while Mockito is used to handle not yet implemented classes as well as emulator free testing for Android specific classes. All of these tools are described in the section below. Towards the end of the project period, including large parts of the fourth sprint, the focus will shift from producing additional code to finding and repairing bugs. While our plan is vaguely based upon, and in large part inspired by, IEEE829 \cite{bib:ieee} we are too informal about it to be able to use such grand claims. In short, our testing plan is to test each public method both for valid and invalid input.
-
+	
 \section{Test tools}
 \subsubsection{JUnit}
 JUnit is the industry standard for test driven development. It works by creating a separate test method for each method in the class that is to be tested. In this way one can test large portions of code independent of the other code sections. For us, it provides many benefits, especially that most of us have dealt with it before and are familiar with the concept.
 
-\subsection{Android Instrumentation}
-Android Instrumentation is a framework that extends JUnit, providing it with a toolkit of Android specific mock classes and methods. It also provides test classes targeting Android applications, with specialized testing of everything from \gls{gui} component locations and visibility to the activity specific onCreate and onDestroy methods. Android Instrumentation is produced by Android directly and is included in the development kit.
-
-\subsection{Greenmail}
-Greenmail is an open source mail server package for testing in Java. It provides all the server side software needed to test mail sending and receiving without having an actual server.
-
+%\subsection{Android Instrumentation}
+%Android Instrumentation is a framework that extends JUnit, providing it with a toolkit of Android specific mock classes and methods. It also provides test classes targeting Android applications, with %specialized testing of everything from \gls{gui} component locations and visibility to the activity specific onCreate and onDestroy methods. Android Instrumentation is produced by Android directly and %is included in the development kit.
 \subsection{Mockito}
 Mockito is a simple and elegant \gls{api} for mocking classes. With a few lines of code an unimplemented class can be instructed to provide a valid output, allowing other parts of the code to be tested without concerns.
+
+\subsection{Greenmail}
+Greenmail is an open source mail server package for testing in Java. It provides all the server side software needed to test simple sending and receiving of mail without having an actual server. 
+It does, however, not supprt the \gls{pami} IDLE, which in turn forced us to test this feature manually.
 
 \section{Design Verification}
 In order to accommodate the agile development plan used by the team, our early design verification is necessarily somewhat vague. In the early stages of the project we had limited knowledge of how the final product would be structured and which features it would involve.
@@ -28,10 +28,33 @@ Later in the project this method level testing will augmented by white box and s
 The choice of tools was mainly based on previous experience inside the group, the framework provided by and the demands of the platform. 
 \newline
 \newline
-JUnit was chosen because of our previous experience and the fact that the Android instrumentation framework is based on JUnit. Bundled with Mockito it also gives us the possibility to test otherwise Android dependent modules in a Java environment with the Android specifics mocked up. This can greatly reduce the build cycle time, since the tests no longer need to be pushed onto a device in order to run. 
+JUnit was chosen because of our previous experience and the fact that the Android instrumentation framework is based on JUnit. Bundled with Mockito it also gives us the possibility to test otherwise Android dependent modules in a Java environment with the Android specifics mocked up. This can greatly reduce the build cycle time, since the tests no longer need to be pushed onto a device in order to run. Mockito also provides another benefit, in that you can test a component without testing its dependencies. This allows for highly specific testing of just one class, component or module.
 \newline
 \newline
 Android instrumentation was chosen as a way to enable testing of \gls{gui}; provided with the \gls{kds} and recommended by Google, it was the only tool providing us with the functionality we needed.
 \newline
 \newline
 Greenmail was chosen based on the need to test the mail module in our project, ease of use and fast response time. If the code passes the Greenmail tests, the code is then tested against gmail’s mail server to ensure that functions with external servers as well. 
+
+\section{Templates for testing}
+\begin{table}
+\begin{tabular}{l|p{10cm}}
+Test case ID & id \\ \hline
+Name & Shortname for the test\\ \hline
+Requirement & Requirement reference\\ \hline
+Description & Description of test\\ \hline
+Preconditions & The conditions of the application before the tests are started\\ \hline
+Flow of events & The list of steps necessary to complete the test \\ \hline
+Expected results & The end result if everything works as expected\\ \hline \hline
+\end{tabular}
+\caption{Test case template} \label{tab:casetemp}
+\end{table}
+\begin{table}
+	\begin{tabular}{l|p{10cm}}
+		Test case ID & id \\ \hline
+		Actual results & The end result\\ \hline
+		Comments & What went wrong, what could been the cause\\ \hline
+		Status & 
+	\end{tabular}
+	\caption{Test report template} \label{tab:casereporttemp}
+\end{table}
