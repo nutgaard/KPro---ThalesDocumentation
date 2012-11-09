@@ -13,22 +13,17 @@ Thales’ existing product is a complete messaging platform for messaging in lar
 \newline
 \newline
 Since Thales has not tried to implement XOmail on mobile platforms, there is no existing framework to start with. Thales wants a prototype that demonstrates a possible solution to their problem. Security is of great importance, but the main focus should be on implementing functionality that is critical for showing the concept software.  
-\newline
-\newline
+
+\newpage
+
 Even though XOmail primarily targets the military and other large organizations where security and security declarations are important, it is important to keep in mind that this software also should be well suited for other groups or organizations that have a need for a user-friendly portable system for sending urgent messages. A few of the possible candidates include paramedics, security firms and joint civilan-military operations or exercises.
 \newline
 \newline
-For a summary of what Thales already has and what they want, see table \ref{tab:introcomparison} at page \pageref{tab:introcomparison}.
+For a summary of what Thales already has and what they want, see the table below.
 
-\subsection*{A short overview of the standards of XOmail}
-XOmail is based on the \gls{nato} military messaging standard \gls{stanag}. This standard is used for both Strategic and Tactical messaging \cite{bib:stanag}. It has a number of special protocols used to support tactical messaging to support links with very low bandwidth.
-\newline
-\newline
-The standard is based on binary encoded data, and there are limited libraries freely available for these protocols. Special attributes like information sensitivity and priority are defined by extensions to the Internet Mail RFCs. Our connection to Thales’ system goes through a XOmail \gls{smtp} gateway. \gls{smtp}, which is shorthand for Simple Mail Transfer Protocol \cite{bib:smtp}, is an Internet standard for electronic mail transmission over \gls{ip} networks. Messages to other users are sent by sending an email to the server with an address, and then the server handles the message headers and other important attributes. The messages are then pushed to the correct recipients via \gls{pami} \cite{bib:imap}, which is an abbreviation for Internet Message Access Protocol, and is one of the most prevalent Internet standard protocols for email retrieval. 
-
-\begin{table}
-\begin{tabularx}{\linewidth}{>{\setlength\hsize{.5\hsize}}X|>{\setlength\hsize{0.5\hsize}}X}
-What Thales has&What Thales wants\\ \hline \hline
+\begin{table}[h!]
+\begin{tabularx}{\linewidth}{>{\setlength\hsize{.5\hsize}}X|>{\setlength\hsize{0.5\hsize}}X}\hline
+\textbf{What Thales has} & \textbf{What Thales wants}\\ \hline \hline
 An information handling and transfer system developed for large formal organizations and military messaging procedures&A system for handheld devices with a subset of the existing functions\\ \hline
 A large number of ways of giving a message attributes&Focus on security label, priority and type\\ \hline
 Extensive focus on security and reliability&Focus on security and usability\\ \hline
@@ -37,3 +32,11 @@ Support for a broad range of attachments&Support for images, text and video\\ \h
 \caption{Thales' current and wanted situation}
 \label{tab:introcomparison}
 \end{table}
+
+\subsection*{A short overview of the standards of XOmail}
+XOmail is based on the \gls{nato} military messaging standard \gls{stanag}. This standard is used for both Strategic and Tactical messaging \cite{bib:stanag}. It has a number of special protocols used to support tactical messaging to support links with very low bandwidth.
+\newline
+\newline
+The standard is based on binary encoded data, and there are limited libraries freely available for these protocols. Special attributes like information sensitivity and priority are defined by extensions to the Internet Mail RFCs. Our connection to Thales’ system goes through a XOmail \gls{smtp} gateway. \gls{smtp}, which is shorthand for Simple Mail Transfer Protocol \cite{bib:smtp}, is an Internet standard for electronic mail transmission over \gls{ip} networks. Messages to other users are sent by sending an email to the server with an address, and then the server handles the message headers and other important attributes. The messages are then pushed to the correct recipients via \gls{pami} \cite{bib:imap}, which is an abbreviation for Internet Message Access Protocol, and is one of the most prevalent Internet standard protocols for email retrieval. 
+
+

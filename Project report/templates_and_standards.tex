@@ -15,6 +15,8 @@ We use Google Docs to organize our files so that our entire team can look at and
 \newline
 We also use git so that it is easy to share all the code and documents as well. When using \gls{git} all the team members have access to change, read and use all the code files whenever they feel like it.
 
+\newpage
+
 \subparagraph{Saving files on gitHub}\hfill
 \newline
 All documents and Java files must compile before they are pushed to the repository.
@@ -52,8 +54,10 @@ kpro-lib/
         service/
           implementation/
   target/ -- build folder
-
 \end{verbatim}
+
+\newpage
+
 \textbf{LaTeX repository structure}
 \begin{verbatim}
 Backlog/		-- contains the teams backlog
@@ -88,10 +92,13 @@ All the files in our project have a name that starts with the date they were cre
 \newline
 "YYYY-MM-DD - Minutes of Meeting - [Customer/Advisor/Internal]"
 
+\newpage
+
 \paragraph{Coding style}\hfill
 \newline
-See table \ref{tab:namingconventions} on page \pageref{tab:namingconventions} for an overview of the naming conventions for the UI elements.
-\begin{table}
+See table \ref{tab:namingconventions} below for an overview of the naming conventions for the UI elements.
+\begin{table}[h!]
+\begin{center}
 \begin{tabular}{l|l|l} \hline
 \textbf{Element} & \textbf{Convention} & \textbf{Example} \\ \hline \hline
 Button & btn & btnSubject \\
@@ -106,5 +113,7 @@ RadioButton & rbt & rbtSubject \\
 ToggleButton & tbt & tbtSubject \\
 Layout & lay & laySubject \\ \hline 
 \end{tabular}
+\end{center}
 \caption{Code naming conventions - all conventions need to have + identifer (lower camel-case) in addition to its unique three letter convention }\label{tab:namingconventions}
 \end{table}
+
