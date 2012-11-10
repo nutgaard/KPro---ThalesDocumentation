@@ -6,8 +6,17 @@
 The “4+1 view model” \cite{bib:vm} by Philippe Kruchten suggest four different view, logical, process, development and physical. In the case of XOXOmail we are going to use the logical, process and development view. The rationale behind removing the physical view is that XOXOmail will run on a single physical device and only utilize one process, a security view, describing the layers of security, will be added instead.
 
 \subsection{Logical view (Object oriented deomposition)}
-“The logical architecture primarily supports the functional requirements --- what the system should provide in terms of services to its users. The system is decomposed into a set of key abstractions, taken from the problem domain, in the form of objects or object classes” \cite{bib:vm}. A common way to represent this view is with a class diagram that shows a set of classes and their relationships.
+“The logical architecture primarily supports the functional requirements --- what the system should provide in terms of services to its users. The system is decomposed into a set of key abstractions, taken from the problem domain, in the form of objects or object classes” \cite{bib:vm}. A common way to represent this view is with a class diagram that shows a set of classes and their relationships. As you can see, we have chosen to divide the logical view into three parts: GUI, Service and Model. 
 See figure \ref{fig:logicalview} at page \pageref{fig:logicalview}.
+
+\subsubsection{GUI}
+The GUI represents the Android frontend, which is made up of activities. This is what the user actually sees. All the activities extends WrapperActivity, which is the GUI connection to the service part of our app.
+
+\subsubsection{Service}
+ This is what holds the main logic of the app and all services are available from the ServiceProvider. Hardware abstraction layer (HAL), Persistence, Security and Network is available from here. 
+
+\subsubsection{Model}
+Here you will find all classes that wrap information that is needed throughout the app. The models include objects for current user, for the XOMessage which holds the message itself and all its attributes. And of course we also have all of the settings for our app here, just to name a few. 
 
 \begin{figure}
 	\includegraphics[width=\textwidth]{logicalview.png}
@@ -16,8 +25,8 @@ See figure \ref{fig:logicalview} at page \pageref{fig:logicalview}.
 \end{figure}
 
 \subsection{Development view (Subsystem decomposition)}
-The development view is a step up from the logical view and focuses on software modules instead of classes. These subsystems/modules are organized in a hierarchy of layers where each layer provides a well-defined interface to layers above. “The complete development architecture can only be described when all the elements of the software have been identified. It is, however, possible to list the rules that govern the development architecture: partitioning, grouping, visibility" \cite{bib:vm}.
-See figure \ref{fig:developmentview} at page \pageref{fig:developmentview}.
+The development view is a step up from the logical view and focuses on software modules instead of classes. These subsystems/modules are organized in a hierarchy of layers where each layer provides a well-defined interface to layers above. “The complete development architecture can only be described when all the elements of the software have been identified. It is, however, possible to list the rules that govern the development architecture: partitioning, grouping, visibility" \cite{bib:vm}. 
+See figure \ref{fig:developmentview} at page \pageref{fig:developmentview}. As you can see, the Backend Service Connects to all parts of our app. The main focus of this view is to show that it is also the connector to the external part of the app, the SMTP Gateway. This gateway is implemented by Thales, and all we have to do is connect to it using well known protocols.
 
 \begin{figure}
 	\includegraphics[width=\textwidth]{developmentview.png}
