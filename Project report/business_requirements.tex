@@ -6,10 +6,126 @@
 
 \subsection{Quality requirements}
 
+
+
+\subsubsection{Quality requirements}
+
+\paragraph{Usability}
+\subparagraph{U1 Ease of use}\hfill
+\newline
+The user should be able to use the program with very few mistakes, such as pressing the wrong button because button labels are ambiguous or too small.
+See table \ref{tab:easeofuse} below.
+\begin{table}[h!]
+\begin{center}
+\begin{tabularx}{\linewidth}{>{\setlength\hsize{.3\hsize}}X|>{\setlength\hsize{0.7\hsize}}X} \hline
+\textbf{Portion of scenario} & \textbf{Values} \\ \hline \hline
+Source & End user \\ \hline
+Stimulus & Use system without problems \\ \hline
+Artifact & System \\ \hline
+Environment & At run time \\ \hline
+Response & Provide clean and understandable interface \\ \hline
+Response measure & Maximum 5\% of user operations should be mistakes (another action than the user wanted) \\ \hline
+\end{tabularx}
+\end{center}
+\caption{Ease of use} \label{tab:easeofuse}
+\end{table}
+
+\newpage
+
+\subparagraph{U2 Efficent use}\hfill
+\newline
+The user should be able to use the main features of the program with as few clicks as possible. Streamlined design is therefore of great importance.
+See table \ref{tab:efficentuse} below.
+\begin{table}[h!]
+\begin{center}
+\begin{tabularx}{\linewidth}{>{\setlength\hsize{.6\hsize}}X|>{\setlength\hsize{1.4\hsize}}X} \hline
+\textbf{Portion of scenario} & \textbf{Values} \\ \hline \hline
+Source & End user \\ \hline
+Stimulus & Use system efficiently \\ \hline
+Artifact & System \\ \hline
+Environment & At run time \\ \hline
+Response & Organize application so that important functions are easy to reach from the main menu. \\ \hline
+Response measure & A user with only a quick (5 min) training course should never spend more than one minute finding what he looks for. \\ \hline
+\end{tabularx}
+\end{center}
+\caption{Efficent use} \label{tab:efficentuse}
+\end{table}
+
+\paragraph{Performance}
+\hfill
+\newline
+See table \ref{tab:performance} below.
+\begin{table}[h!]
+\begin{center}
+\begin{tabularx}{\linewidth}{>{\setlength\hsize{.6\hsize}}X|>{\setlength\hsize{1.4\hsize}}X}\hline
+\textbf{Portion of scenario} & \textbf{Values} \\ \hline \hline
+Source & End user \\ \hline
+Stimulus & Wants to open message \\ \hline
+Artifact & System \\ \hline
+Environment & Under normal operations \\ \hline
+Response & The operation is performed \\ \hline
+Response measure & With a latency of maximum 3 seconds, the user should be able to read the message after it is received. This is the latency when we subtract the download time of message, which is dependent of the network connection. \\ \hline
+\end{tabularx}
+\end{center}
+\caption{P1 Latency} \label{tab:performance}
+\end{table}
+
+\newpage
+
+\paragraph{Security}
+\hfill
+\newline
+See table \ref{tab:s1}, \ref{tab:s2} below.
+\begin{table}[h!]
+\begin{center}
+\begin{tabularx}{\linewidth}{>{\setlength\hsize{.6\hsize}}X|>{\setlength\hsize{1.4\hsize}}X} \hline
+\textbf{Portion of scenario} & \textbf{Values} \\ \hline \hline
+Source & Unauthorized user or app \\
+Stimulus & Wants to access data saved by our app \\
+Artifact & System \\
+Environment & Under normal operations \\
+Response & User is blocked from accessing data by the Android OS. \\
+Response measure & No data exposed to the user or app. \\ \hline
+\end{tabularx}
+\end{center}
+\caption{S1 Accessing locally stored data outside of app} \label{tab:s1}
+\end{table}
+
+\begin{table}[h!]
+\begin{center}
+\begin{tabularx}{\linewidth}{>{\setlength\hsize{.6\hsize}}X|>{\setlength\hsize{1.4\hsize}}X}\hline
+\textbf{Portion of scenario} & \textbf{Values} \\ \hline \hline
+Source & Unauthorized user \\
+Stimulus & Wants to use app features \\
+Artifact & System \\
+Environment & Under normal operations \\
+Response & User is blocked from using functions \\
+Response measure & No features exposed to the user - stopped by login screen\\ \hline
+\end{tabularx}
+\end{center}
+\caption{S2 Trying to use app with wrong privileges} \label{tab:s2}
+\end{table}
+
+\begin{table}[h!]
+\begin{center}
+\begin{tabularx}{\linewidth}{>{\setlength\hsize{.6\hsize}}X|>{\setlength\hsize{1.4\hsize}}X}\hline
+\textbf{Portion of scenario} & \textbf{Values} \\ \hline \hline
+Source & Unauthorized user or app, or someone sniffing network packages \\
+Stimulus & Wants to access data stream \\
+Artifact & System \\
+Environment & Under normal operations \\
+Response & Is unable to get useful information because of SSL encryption \\
+Response measure & No useful data exposed to the user\\ \hline
+\end{tabularx}
+\end{center}
+\caption{S3 Trying to access the apps external data traffic} \label{tab:s3}
+\end{table}
+
 \subsubsection{Functional requirements}
 See table \ref{tab:functionalreq} at page \pageref{tab:functionalreq}.
 
-\begin{table}
+\begin{table}[hbt]
+\begin{center}
 \begin{tabular}{p{1.5cm}|p{12.5cm}|p{2cm}} \hline
 \textbf{Req.} & \textbf{Description} & \textbf{Priority} \\ \hline \hline
 \textbf{FR1} & \textbf{Starting application and logging in:} The user has to be able to start the application and authorize himself against an authorizing mechanism. & High \\ \hline
@@ -28,108 +144,8 @@ See table \ref{tab:functionalreq} at page \pageref{tab:functionalreq}.
 \item{}Setting text size in \gls{gui}, e.g. on received message text.
 \end{itemize}  & Low \\ \hline
 \end{tabular}
+\end{center}
 \caption{Functional requirements} \label{tab:functionalreq}
-\end{table}
-
-\subsubsection{Quality requirements}
-
-\paragraph{Usability}
-\subparagraph{U1 Ease of use}\hfill
-\newline
-The user should be able to use the program with very few mistakes, such as pressing the wrong button because button labels are ambiguous or too small.
-\newline
-\newline
-See table \ref{tab:easeofuse} at page \pageref{tab:easeofuse}.
-\begin{table}
-\begin{tabularx}{\linewidth}{>{\setlength\hsize{.3\hsize}}X|>{\setlength\hsize{0.7\hsize}}X} \hline
-\textbf{Portion of scenario} & \textbf{Values} \\ \hline \hline
-Source & End user \\
-Stimulus & Use system without problems \\
-Artifact & System \\
-Environment & At run time \\
-Response & Provide clean and understandable interface \\
-Response measure & Maximum 5\% of user operations should be mistakes (another action than the user wanted) \\ \hline
-\end{tabularx}
-\caption{Ease of use} \label{tab:easeofuse}
-\end{table}
-
-\subparagraph{U2 Efficent use}\hfill
-\newline
-The user should be able to use the main features of the program with as few clicks as possible. Streamlined design is therefore of great importance.
-\newline
-\newline
-See table \ref{tab:efficentuse} at page \pageref{tab:efficentuse}.
-\begin{table}
-\begin{tabularx}{\linewidth}{>{\setlength\hsize{.6\hsize}}X|>{\setlength\hsize{1.4\hsize}}X} \hline
-\textbf{Portion of scenario} & \textbf{Values} \\ \hline \hline
-Source & End user \\
-Stimulus & Use system efficiently \\
-Artifact & System \\
-Environment & At run time \\
-Response & Organize application so that important functions are easy to reach from the main menu. \\
-Response measure & A user with only a quick (5 min) training course should never spend more than one minute finding what he looks for. \\ \hline
-\end{tabularx}
-\caption{Efficent use} \label{tab:efficentuse}
-\end{table}
-
-\paragraph{Performance}
-\hfill
-\newline
-See table \ref{tab:performance} at page \pageref{tab:performance}.
-\begin{table}
-\begin{tabularx}{\linewidth}{>{\setlength\hsize{.6\hsize}}X|>{\setlength\hsize{1.4\hsize}}X}\hline
-\textbf{Portion of scenario} & \textbf{Values} \\ \hline \hline
-Source & End user \\
-Stimulus & Wants to open message \\
-Artifact & System \\
-Environment & Under normal operations \\
-Response & The operation is performed \\
-Response measure & With a latency of maximum 3 seconds, the user should be able to read the message after it is received. This is the latency when we subtract the download time of message, which is dependent of the network connection. \\ \hline
-\end{tabularx}
-\caption{P1 Latency} \label{tab:performance}
-\end{table}
-
-\paragraph{Security}
-\hfill
-\newline
-See table \ref{tab:s1}, \ref{tab:s2} and \ref{tab:s3} at page \pageref{tab:s1}.
-\begin{table}
-\begin{tabularx}{\linewidth}{>{\setlength\hsize{.6\hsize}}X|>{\setlength\hsize{1.4\hsize}}X} \hline
-\textbf{Portion of scenario} & \textbf{Values} \\ \hline \hline
-Source & Unauthorized user or app \\
-Stimulus & Wants to access data saved by our app \\
-Artifact & System \\
-Environment & Under normal operations \\
-Response & User is blocked from accessing data by the Android OS. \\
-Response measure & No data exposed to the user or app. \\ \hline
-\end{tabularx}
-\caption{S1 Accessing locally stored data outside of app} \label{tab:s1}
-\end{table}
-
-\begin{table}
-\begin{tabularx}{\linewidth}{>{\setlength\hsize{.6\hsize}}X|>{\setlength\hsize{1.4\hsize}}X}\hline
-\textbf{Portion of scenario} & \textbf{Values} \\ \hline \hline
-Source & Unauthorized user \\
-Stimulus & Wants to use app features \\
-Artifact & System \\
-Environment & Under normal operations \\
-Response & User is blocked from using functions \\
-Response measure & No features exposed to the user - stopped by login screen\\ \hline
-\end{tabularx}
-\caption{S2 Trying to use app with wrong privileges} \label{tab:s2}
-\end{table}
-
-\begin{table}
-\begin{tabularx}{\linewidth}{>{\setlength\hsize{.6\hsize}}X|>{\setlength\hsize{1.4\hsize}}X}\hline
-\textbf{Portion of scenario} & \textbf{Values} \\ \hline \hline
-Source & Unauthorized user or app, or someone sniffing network packages \\
-Stimulus & Wants to access data stream \\
-Artifact & System \\
-Environment & Under normal operations \\
-Response & Is unable to get useful information because of SSL encryption \\
-Response measure & No useful data exposed to the user\\ \hline
-\end{tabularx}
-\caption{S3 Trying to access the apps external data traffic} \label{tab:s3}
 \end{table}
 
 \subsubsection{Component and Technology related constraints}
@@ -167,7 +183,7 @@ This project has security requirements that require special consideration with r
 See table \ref{tab:stakeholders} at page \pageref{tab:stakeholders}.
 
 \begin{table}
-\begin{tabular}{p{3.5cm}|p{11.5cm}}
+\begin{tabular}{p{3.5cm}|p{11.5cm}} \hline
 \textbf{Stakeholder:} & \textbf{Concern} \\ \hline \hline
 User & 
 \begin{itemize}
@@ -200,7 +216,7 @@ Graphic designers &
 \begin{itemize}
 \item{}Understanding of how the \gls{gui} should be.
 \item{}Understand the limitation of graphics due to screen size.
-\end{itemize}
+\end{itemize} \\ \hline
 \end{tabular}
 \caption{Stakeholders and their concerns} \label{tab:stakeholders}
 \end{table}

@@ -148,22 +148,29 @@ This is an extension to the MPEG-4 standard which enables lossless encoding of a
 \subsection{Discussion}
 As we can see, there are two main methods for compression. What we can see from the previous sections, is that it exists a lot of methods for doing both lossy and lossless compression. Some of these methods are not so heavy, while others require a lot of processing power. The heaviest compression algorithms, processing wise, are those that operate on video streams. It is not trivial to compress images and text, but it is often very fast.
 
-\paragraph{Choice of algorithms}
+\paragraph{Choice of algorithms}\hfill
+\newline
 When choosing a compression algorithm, it is important to use a compression algorithm that gives good enough compression rate within the acceptable time frame. It is always good to compress data if the compression time is close to zero. This is seldom the case.
 \newline
 \newline
 Often we do not know how good XOXOmail's connection to the internet is. This can be calculated by taking the time it takes for data to be sent to / received from a server. If we then have some statistics on the compression time for, lets say 30 seconds of video, we can do some number crunching. If we know that with the current connection speed, the transfer of the compressed video will take 2 minutes to the mail server and 1 minute to get downloaded to the receiver (if assuming download rate is twice of upload, and that the receiver has the same connection as the sender) and it takes 20 seconds to check the connection speed, the total time used is then 3 minutes and 50 seconds. For the compression to be benefitial, the time used on compression and bandwith checking should be less than the time difference between sending and receiving the uncompressed and the compressed video.
 
-\paragraph{Compressing Text}
+\paragraph{Compressing Text} \hfill
+\newline
 It is quite obvious that if we are to compress text sent via XOXO-mail, it has to be lossless. If we loose data on the way, the message received will look completely different than the one sent. This is not a result that we are interested in. One important thing to notice, is that the text size on the message sent via XOXOmail is often trivial. The sender often wants to convey a few sentences, together with the current coordinates and maybe an image. The text size compared to the image is negligble, so the effort of compressing the text is often not worth it. Of course, if we were to send large text files, then it would be another story.
 
-\paragraph{Compressing Images}
+\paragraph{Compressing Images} \hfill
+\newline
 Compression of images is in this setting more resource demanding than compression of text, and can with good algorithms be compressed to 20 per cent of original size, without too much degradation of the original content. Implementation of image compression methods are often compact and not so hard to implement. It is just a matter of finding the compression method which has the wanted end result.
 
-\paragraph{Compressing Video}
+\newpage
+
+\paragraph{Compressing Video} \hfill
+\newline
 Compression of video is one of the most resource demanding tasks that a phone can do. There exists a lot of algorithms for this, but unfortunately not so many for android. Fortunately, it is a possiblity in android to choose the video quality before starting to record the video. This can be done based on connection speed, but this does require that bandwidth is tested. This will result in creating a video with lower quality, so no compression has to be done. One must then do a judgement on how good video is good enough for showing what you intend to show via video. If the low settings of android video is not good enough, then an algorithm needs to be used, either by a third party vendor or be implemented from scratch for android. If a compression is chosen for getting wanted quality, then a choice on whether to use lossless or lossy compression also has to be made.
 
-\paragraph{Compressing Sound}
+\paragraph{Compressing Sound}\hfill
+\newline
 Compression of sound can be done with varying results. If you want to keep the original quality, lossless is the only alternative. There are a lot of alternatives for both lossy and lossless audio encoding. Some of them do not have licence fees, while others have. There exist some libraries that do what you want, but this of course depends on the format of the sound you are trying to send.
 
 
