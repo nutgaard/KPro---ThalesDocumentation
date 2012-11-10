@@ -42,11 +42,13 @@ First, it is the most used developing language for Android, which means we are u
 \newline
 We chose Java as our main programming language as this is the most widespread language and has most support online. It is the language which has been pushed forward the most from Google, and is the recommended language to write Android apps.
 
-\subsubsection{Markup languages conclusion}
+\subsection{Markup languages conclusion}
 \gls{xml} is a widespread exchange format which has a lot of libraries that can be used to generate \gls{xml} data. Even though, it is known that \gls{xml} is primarily a document exchange format, where as \gls{json} is better suited for data exchange. This means that \gls{json} often is much more readable, as the mapping between objects in programming and \gls{json} representation is much more alike. As a result, the \gls{json} code is easier for machines to read and write. \gls{json} is becoming more and more common, and is now widely adopted by the computer industry. Still, the format is irrelevant for us, as we will be using a serializer and deserializer that ensures that syntax is correct, so we will use a \gls{xml}-serializer. 
 
 \subsection{Remote vs. local service conclusion}
 There was little that supported the use of a remote service for this application, so the natural choice is the local service, both for its ease of use and performance.
+
+\newpage
 
 \subsection{Secure communication conclusion}
 There exist several methods which can be used to secure a communication channel, some more prominent than others. Secure communication could in theory be implemented at every level of the TCP/IP 5-layer reference model \cite{bib:cn}/"Internet model" \cite{bib:rfc1122}. The first option was to create our own secure protocol at the application layer that would provide a transparent wraparound of the transport layer, but this is rarely an optimal solution and will probably result in a poor and insecure imitation of an existing solution.
@@ -65,6 +67,8 @@ If we are going to implement the version where username and password is saved in
 \newline
 \newline
 To implement the secure storage with derived keys we need to assume there will be no problem for the user to log in every time he starts the application. This will make sure the information is secure even though the phone should get misplaced or stolen, but this is more complicated to implement than saving the credentials locally.
+
+\newpage
 
 \subsection{Wireshark conclusion}
 Sending and receiving messages with our application over GSM seems to work in a respectable manner. The time it takes to receive and send messages is pretty good considering this was done over 14.4 kbits/s. The TLS protocol also seems to be working as intended for both sending and receiving messages. The initial handshake is completed and the following data is encrypted as it should be. 

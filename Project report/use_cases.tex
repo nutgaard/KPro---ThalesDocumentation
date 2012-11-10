@@ -4,9 +4,9 @@
 An actor specifies a role that are to be played by an external person interacting with our application. We have only one actor, and that is the regular user:  A person who don’t have much education in using our app, but who will use it regularly in his workday.
 
 \subsection{Use case diagrams}
-See figure \ref{fig:usecase} at page \pageref{fig:usecase}.
+See figure \ref{fig:usecase} below.
 
-\begin{figure}
+\begin{figure}[h!]
 \begin{center}
 \includegraphics[width=\textwidth]{kpro-use-case}
 \caption{Use case diagram} \label{fig:usecase}
@@ -16,11 +16,13 @@ See figure \ref{fig:usecase} at page \pageref{fig:usecase}.
 \subsection{Textual use cases}
 Each of the use cases is described below, so that the use case diagram will be easier to understand. See table \ref{tab:viewmessages} - \ref{tab:settings} starting at page \pageref{tab:viewmessages} for a more detailed explanation of the use cases.
 
-
 \begin{table}
-\begin{tabular}{p{3cm}p{12cm}}
-& \includegraphics{view_messages}\\ \hline
-Element & Description \\ \hline
+\begin{center}
+\begin{center}
+\includegraphics[width=\textwidth]{view_messages}
+\end{center}
+\begin{tabular}{p{3cm}|p{12cm}}\hline
+\textbf{Element} & \textbf{Description} \\ \hline \hline
 Use case name & View messages \\
 Goal & View received and sent messages \\
 Summary &The user would like to view received and sent messages \\
@@ -34,15 +36,19 @@ Flow of Events &
 \item{}The user selects a message from either the inbox or sent messages.
 \item{}Message is showed to user.
 \end{enumerate} \\ \hline
-Exceptions & There are no existing messages.
+Exceptions & There are no existing messages.\\ \hline
 \end{tabular}
+\end{center}
 \caption{View messages textual use case} \label{tab:viewmessages}
 \end{table}
 
 \begin{table}
-\begin{tabular}{p{3cm}p{12cm}}
-& \includegraphics{reply_forward_delete}\\ \hline
-Element & Description \\ \hline
+\begin{center}
+\begin{center}
+\includegraphics[width=\textwidth]{reply_forward_delete}
+\end{center}
+\begin{tabular}{p{3cm}|p{12cm}} \hline
+\textbf{Element} & \textbf{Description} \\ \hline \hline
 Use case name & Reply, forward and delete \\
 Goal & Reply, forward and delete messages\\
 Summary & The user would like to reply to a message, forward it or delete it. \\
@@ -57,18 +63,22 @@ Flow of Events &
 \item{}Message is showed to user.
 \item{}User chooses to reply, forward or delete the message. 
 \end{enumerate} \\ \hline
-Exceptions & There are no existing messages.
+Exceptions & There are no existing messages.\\ \hline
 \end{tabular}
-\caption{Reply, forward and delete textual use case} \label{tab:viewmessages}
+\end{center}
+\caption{Reply, forward and delete textual use case} \label{tab:reply}
 \end{table}
 
 \begin{table}
-\begin{tabular}{p{3cm}p{12cm}}
-& \includegraphics{view_message_folders}\\ \hline
-Element & Description \\ \hline
-Use case name & View message folders \\
-Goal & View inbox and sent messages \\
-Summary &The user would like to view the inbox and a list of sent messages \\
+\begin{center}
+\begin{center}
+\includegraphics[width=\textwidth]{view_message_folders}
+\end{center}
+\begin{tabular}{p{3cm}|p{12cm}} \hline
+\textbf{Element} & \textbf{Description} \\ \hline \hline
+Use case name & View message folders \\ \hline
+Goal & View inbox and sent messages \\ \hline
+Summary &The user would like to view the inbox and a list of sent messages \\ \hline
 Preconditions &
 \begin{enumerate}
 \item{}The application is running.
@@ -79,15 +89,19 @@ Flow of Events &
 \item{}The user enters the inbox or sent messages.
 \item{}The list of messages in the inbox or sent messages is presented to the user.
 \end{enumerate} \\ \hline
-Exceptions & There are no existing messages.
+Exceptions & There are no existing messages.\\ \hline
 \end{tabular}
-\caption{View message folders use case} \label{tab:viewmessages}
+\end{center}
+\caption{View message folders use case} \label{tab:viewmessagefolders}
 \end{table}
 
 \begin{table}
-\begin{tabular}{p{3cm}p{12cm}}
-& \includegraphics{create_message}\\ \hline
-Element & Description \\ \hline
+\begin{center}
+\begin{center}
+\includegraphics[width=\textwidth]{create_message}
+\end{center}
+\begin{tabular}{p{3cm}|p{12cm}} \hline
+\textbf{Element} & \textbf{Description} \\ \hline \hline
 Use case name & Create message \\
 Goal & User creates and sends a complete message \\
 Summary &The user would like to create/send a message to a receiver with a subject and text. The user would also like to set the priority, security label and type of the message as well as being able to add an attachment from other applications. \\
@@ -103,15 +117,19 @@ Flow of Events &
 \item{}The user sets the priority, security label and type.
 \item{}The user adds attachments if needed.
 \end{enumerate} \\ \hline
-Exceptions & The user does not set priority, security label and type and default values are set.
+Exceptions & The user does not set priority, security label and type and default values are set.\\ \hline
 \end{tabular}
+\end{center}
 \caption{Create message textual use case} \label{tab:createmessage}
 \end{table}
 
 \begin{table}
-\begin{tabular}{p{3cm}p{12cm}}
-& \includegraphics{send_instant_message}\\ \hline
-Element & Description \\ \hline
+\begin{center}
+\begin{center}
+\includegraphics[width=\textwidth]{send_instant_message}
+\end{center}
+\begin{tabular}{p{3cm}|p{12cm}} \hline
+\textbf{Element} & \textbf{Description} \\ \hline \hline
 Use case name & Send instant message \\
 Goal & User sends an instant message \\
 Summary & The user sends an instant message with predefined content to predefined receivers \\
@@ -125,14 +143,18 @@ Flow of Events &
 \item{}User selects new instant message.
 \item{}The user sends the message.
 \end{enumerate} \\ \hline
-Exceptions & The predefined values have not been set.
+Exceptions & The predefined values have not been set.\\ \hline
 \end{tabular}
+\end{center}
 \caption{Send instant message textual use case} \label{tab:createmessage}
 \end{table}
 
 \begin{table}
-\begin{tabular}{p{3cm}p{12cm}}
-& \includegraphics{view_instant_message}\\ \hline
+\begin{center}
+\begin{center}
+\includegraphics[width=\textwidth]{view_instant_message}
+\end{center}
+\begin{tabular}{p{3cm}|p{12cm}} \hline
 Element & Description \\ \hline
 Use case name & View instant message \\
 Goal & User views an instant message \\
@@ -149,13 +171,17 @@ Flow of Events &
 \item{}User presses the popup and views the instant message.
 \end{enumerate} \\ \hline
 \end{tabular}
+\end{center}
 \caption{View instant message textual use case} \label{tab:createmessage}
 \end{table}
 
 \begin{table}
-\begin{tabular}{p{3cm}p{12cm}}
-& \includegraphics{view_address_book}\\ \hline
-Element & Description \\ \hline
+\begin{center}
+\begin{center}
+\includegraphics[width=\textwidth]{view_address_book}
+\end{center}
+\begin{tabular}{p{3cm}|p{12cm}} \hline
+\textbf{Element} & \textbf{Description} \\ \hline \hline
 Use case name & View and interact with address book \\
 Goal & User can view and interact with the address book \\
 Summary &The user enters the address book and is able to view, add, edit and delete contacts. \\
@@ -169,16 +195,20 @@ Flow of Events &
 \item{}User selects address book.
 \item{}User either adds a new contact or selects an existing one.
 \item{}If the user selects an existing contact, he can either edit that contact or delete it.
-\end{enumerate}
+\end{enumerate} \\ \hline
 \end{tabular}
+\end{center}
 \caption{View and interact textual use case} \label{tab:viewandinteract}
 \end{table}
 
 \begin{table}
-\begin{tabular}{p{3cm}p{12cm}}
-& \includegraphics{login}\\ \hline
-Element & Description \\ \hline
-Use case name & Log in \\
+\begin{center}
+\begin{center}
+\includegraphics[width=\textwidth]{login}
+\end{center}
+\begin{tabular}{p{3cm}|p{12cm}} \hline
+\textbf{Element} & \textbf{Description} \\ \hline \hline
+Use case name & Log in \\ 
 Goal & User logs in with a username and password. \\
 Summary &The user is prompted with a login screen and must type in his username and password. \\
 Preconditions &
@@ -192,15 +222,19 @@ Flow of Events &
 \item{}User types in username and password and presses the login button.
 \item{}User gains access to the application data and functionality.
 \end{enumerate} \\ \hline
-Exceptions & User types wrong username and password and is denied access.
+Exceptions & User types wrong username and password and is denied access.\\ \hline
 \end{tabular}
+\end{center}
 \caption{Log in textual use case} \label{tab:login}
 \end{table}
 
 \begin{table}
-\begin{tabular}{p{3cm}p{12cm}}
-& \includegraphics{search}\\ \hline
-Element & Description \\ \hline
+\begin{center}
+\begin{center}
+\includegraphics[width=\textwidth]{search}
+\end{center}
+\begin{tabular}{p{3cm}|p{12cm}} \hline
+\textbf{Element} & \textbf{Description} \\ \hline \hline
 Use case name & Search \\
 Goal & User receives search results for a given search text. \\
 Summary & The user search in the application for mail, contacts etc through a search field at the top of the screen. \\
@@ -214,15 +248,19 @@ Flow of Events &
 \item{}User highlights search field and inserts his the text he wants to search for.
 \item{}User presses the search button.
 \item{}Application shows search results to the user.
-\end{enumerate}
+\end{enumerate}\\ \hline
 \end{tabular}
+\end{center}
 \caption{Search textual use case} \label{tab:search}
 \end{table}
 
 \begin{table}
-\begin{tabular}{p{3cm}p{12cm}}
-& \includegraphics{sort}\\ \hline
-Element & Description \\ \hline
+\begin{center}
+\begin{center}
+\includegraphics[width=\textwidth]{sort}
+\end{center}
+\begin{tabular}{p{3cm}|p{12cm}} \hline
+\textbf{Element} & \textbf{Description} \\ \hline \hline
 Use case name & Sort \\
 Goal & User sorts the messages in his inbox. \\
 Summary & The user chosoes a value that he wishes the messages to be sorted by. \\
@@ -236,17 +274,21 @@ Flow of Events &
 \begin{enumerate}
 \item{}The user selects the value he wishes the messages to be sorted by.
 \item{}The application sorts the messages and displays them to the user.
-\end{enumerate}
+\end{enumerate} \\ \hline
 \end{tabular}
+\end{center}
 \caption{Sort textual use case} \label{tab:search}
 \end{table}
 
 \begin{table}
-\begin{tabular}{p{3cm}p{12cm}}
-& \includegraphics{settings}\\ \hline
-Element & Description \\ \hline
-Use case name & Settings \\
-Goal & The user can alter settings. \\
+\begin{center}
+\begin{center}
+\includegraphics[width=\textwidth]{settings}
+\end{center}
+\begin{tabular}{p{3cm}|p{12cm}} \hline
+\textbf{Element} & \textbf{Description} \\ \hline \hline
+Use case name & Settings \\ 
+Goal & The user can alter settings. \\ 
 Summary & The user enters the settings menu and alter the settings to suit his own preferences. \\
 Preconditions &
 \begin{enumerate}
@@ -258,7 +300,8 @@ Flow of Events &
 \item{}User presses the settings button.
 \item{}User alters the settings he wishes to.
 \item{}Application saves the alterations.
-\end{enumerate}
+\end{enumerate} \\ \hline
 \end{tabular}
+\end{center}
 \caption{Settings textual use case} \label{tab:settings}
 \end{table}
