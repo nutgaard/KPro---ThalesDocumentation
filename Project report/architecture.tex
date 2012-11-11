@@ -35,8 +35,8 @@ See figure \ref{fig:developmentview} at page \pageref{fig:developmentview}. As y
 \end{figure}
 
 \subsection{Process View}
-The process view is concerned with how different tasks bind together to form one executable unit. More specifically, the communication between threads/processes and on which thread/process is a task executed. We will differentiate between major and minor tasks, where major tasks are architectural elements open through a public interface, and minor tasks being tasks introduced in order to implement some functionality in one class or module.
-See figure \ref{fig:processview} at page \pageref{fig:processview}.
+The process view is concerned with how different tasks bind together to form one executable unit. More specifically, the communication between threads/processes and on which thread/process is a task executed. We will differentiate between major and minor tasks, where major tasks are architectural elements open through a public interface, and minor tasks being tasks introduced in order to implement some functionality in one class or module.  
+See figure \ref{fig:processview} at page \pageref{fig:processview}. As an example, you can here see that IMAPThread og IMAPIdleThread are minor tasks, because theay are just tasks that need to be implemented for making a bigger functionality work, namely the ServiceProvider.
 
 \begin{figure}
 	\includegraphics[width=\textwidth]{processview.png}
