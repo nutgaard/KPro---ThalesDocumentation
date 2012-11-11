@@ -71,11 +71,6 @@ Regarding communication with external resources as a mail-server, it will be don
 \textbf{Input validation} is always necessary in order to provide a secure service. All input to the XOXOMail application should be validated, this is includes received mail, user-input etc. For mail validation we are going to use \gls{emims} signing and verification provided by bouncycastle. 
 
 \subsection{GUI}
-\begin{figure}
-	\includegraphics[width=\textwidth]{Android_GUI_flow_chart_2}
-	\caption{The logical view of the GUI architecture}
-	\label{fig:logicalGUIview}
-\end{figure}
 
 \subsubsection{Introduction}
 The Android platform specifies a certain way of organizing the application, which we have tried to follow.
@@ -109,6 +104,16 @@ The life cycle of an activity can be seen in figure \ref{fig:lifecycle} at page 
 \end{figure}
 
 All the methods starting with on (onCreate etc.) can be overwritten to administrate what the application should do in the changes of state.
+
+\paragraph{How we did it in our app}
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{Android_GUI_flow_chart_2}
+	\caption{The logical view of the GUI architecture}
+	\label{fig:logicalGUIview}
+\end{figure}
+
+Figure \ref{fig:logicalGUIview} at page \pageref{fig:logicalGUIview} shows the flow in our app. It all starts in the upper left corner at "Start app". The first activity you see is the \textsc{Login Activity}. The user is granted access if a correct username and matching password is entered. He is then sent directly to the main menu, where he can choose to either see messages, send a new message or alter settings. Which messages are shown are based on if you choose \textsc{Sent}, \textsc{Outbox} or \textsc{Inbox}. By pressing \textsc{Sort} he can choose to alter the way the messages are shown. Choosing to send a message can either be done by going into the regular send message view, or the instant message view. Either way, for a message to be sent, it has to be validated. When all fields are valid, the message is sent to the correct recipient. By pressing return button when inside app we are minimizing the app. It will still be running in the background.
 
 \subsubsection{The Android manifest}
 The Android manifest \cite{bib:aman} is what binds the applicaiton together. It is defined in \gls{xml} and details the structure and metadata of the application, its components and requirements. The manifest needs to have nodes for each of the components, which in our case are activities and services. Relevant metadata is the application name, icon and theme. The manifest also declares the permissions the application needs to access protected parts of the \gls{api} and interact with other applications.
