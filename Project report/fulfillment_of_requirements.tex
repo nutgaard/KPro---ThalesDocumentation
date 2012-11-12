@@ -15,7 +15,7 @@ In order to insure that our app was simple to use, we worked closely with our cu
 “No data exposed to the user or app, as long as the user do not have root access.” S1 - Quality requirements
 \newline
 \newline
-This requirement is fulfilled by the service implementing the PersistenceService interface, see section \ref{ch:logicalview} on page \pageref{ch:logicalview}, which keeps track of all the models currently in use in the application. If the malicious user or application does not have root access, then the data will be secure just by using android provided features like sandboxing processes and private storage. We can not however guarantee that this will always be the case, and another layer of security is therefore needed. 
+This requirement is fulfilled by the service implementing the PersistenceService interface, see section \ref{ch:logicalview} on page \pageref{ch:logicalview}, which keeps track of all the models currently in use in the application, in the case of XOXOmail these models will mainly consist of messages sent and received in the application, but also the users themself have a model representation. If the malicious user or application does not have root access, then the data will be secure just by using android provided features like sandboxing processes and private storage. We can not however guarantee that this will always be the case, and another layer of security is therefore needed. 
 \newline
 \newline
 There are three possible scenarios when looking at this requirement. First off, a malicious user /application finds a locked/encrypted device, where the owner is not logged in to the device. In this case, the android hardware encryption will successfully mitigate any malicious intent.
