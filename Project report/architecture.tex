@@ -15,7 +15,7 @@ Figure \ref{fig:developmentview} at page \pageref{fig:developmentview} shows the
 
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{developmentview.png}
-	\caption{Development View}
+	\caption{Development view}
 	\label{fig:developmentview}
 \end{figure}
 
@@ -58,7 +58,7 @@ The intended purpose of each of the different services is somewhat given by thei
 		\label{fig:logicalfrontpackview}
 	\end{figure}	
 	
-\subsection{Process View}
+\subsection{Process view}
 The process view is concerned with how different tasks bind together to form one executable unit. More specifically, the communication between threads/processes and on which thread/process is a task executed. We will differentiate between major and minor tasks, where major tasks are architectural elements open through a public interface, and minor tasks being tasks introduced in order to implement some functionality in one class or module.
 In figure \ref{fig:processview} at page \pageref{fig:processview}, you can differentiate between minor and major tasks by looking at the \textit{SMTP} branch of \textit{NetworkService}, here \textit{SMTPSender} is a minor task, while both \textit{SMTP} and \textit{NetworkService} is considered major tasks. 
 
@@ -70,7 +70,7 @@ In figure \ref{fig:processview} at page \pageref{fig:processview}, you can diffe
 
 One thing to note about the communications paths is that all communication between the \textit{frontent component} and \textit{service component} is between two wrapper classes, \textit{WrapperActivity} at the frontend, and \textit{ServiceProvider} at the backend. 
 
-\subsection{Security View}
+\subsection{Security view}
 The security view is concerned with how the system as a whole is secured. This involves intercommunication, storage and communication with external sources. The view is not however concerned about implementation, just the layers of security.
 See figure \ref{fig:securityview} at page \pageref{fig:securityview}.
 
