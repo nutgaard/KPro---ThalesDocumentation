@@ -1,12 +1,12 @@
 \section{Fulfillment of requirements}
 
 \subsection{Functional quality requirements}
-All of the functional requirements listed in section ???, require two things from the application and architecture, a frontend graphical user interface for the user to interact with, and backend service providing the frontend with data and functionality. The fulfillment of functional requirement will therefore not be investigated any further.
+All of the functional requirements listed in chapter \ref{ch:requirements} at page \pageref{ch:requirements}, require two things from the application and architecture, a frontend graphical user interface for the user to interact with, and backend service providing the frontend with data and functionality. The fulfillment of functional requirement will therefore not be investigated any further.
 
 \subsection{Non-functional quality requirements}
 
 \subsubsection{Usability}
-The architecture has in no way changed due to the usability requirements. 
+In order to insure that our app was simple to use, we worked closely with our customer when designing our GUI. The design went through several iterations based on their comments and concerns. Towards the end of the development cycle, when most of the required back end components were in place, we tested the usability of the app by letting friends try their hands at it and noting down their comments. This gave us a lot of data on how we could make further adjustments to fit with our goals.
 
 \subsubsection{Security}
 
@@ -15,12 +15,12 @@ The architecture has in no way changed due to the usability requirements.
 “No data exposed to the user or app, as long as the user do not have root access.” S1 - Quality requirements
 \newline
 \newline
-This requirement is fulfilled by the PersistenceImpl, figure \ref{fig:logicalGUIview}, which keeps track of all the models currently in use in the application. If the malicious user or application does not have root access, then the data will be secure just by using android provided features like sandboxing processes and private storage. We can not however guarantee that this will always be the case, and another layer of security is therefore needed. 
+This requirement is fulfilled by the service implementing the PersistenceService interface, see section \ref{ch:logicalview} on page \pageref{ch:logicalview}, which keeps track of all the models currently in use in the application. If the malicious user or application does not have root access, then the data will be secure just by using android provided features like sandboxing processes and private storage. We can not however guarantee that this will always be the case, and another layer of security is therefore needed. 
 \newline
 \newline
-There are three possible scenarios when looking at this requirement. First off, a malicious user/application finds a locked/encrypted device, where the owner is not logged in to the device. In this case, the android hardware encryption will successfully mitigate any malicious intent.
+There are three possible scenarios when looking at this requirement. First off, a malicious user /application finds a locked/encrypted device, where the owner is not logged in to the device. In this case, the android hardware encryption will successfully mitigate any malicious intent.
 Secondly, a malicious user/application find an unlocked device, but the owner is not logged into the XOXOmail. Under normal circumstances, without an additional layer of security, the malicious user could gain access to the application and application data, circumventing the android private storage access control due to the users root privileges. In order to mitigate this, all XOXOmail specific data will be encrypted before stored into the private storage section. 
-Thirdly, a malicious user/application find an unlocked device, where the owner is logged into the XOXOmail application. In this case the malicious user is given some possible ways of exploiting the application by sending predefined flash messages. But it would still require the malicious user to type in the owner password in order to browse any other messages. 
+Thirdly, a malicious user/application find an unlocked device, where the owner is logged into the XOXOmail application. In this case the malicious user is given some possible ways of exploiting the application by sending predefined instant messages. But it would still require the malicious user to type in the owner password in order to browse any other messages. 
 
 \paragraph{Trying to use app with wrong privileges} \hfill
 \newline
