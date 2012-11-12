@@ -1,13 +1,13 @@
 \chapter{Architectural description}
 	This chapter will revolve around the final architecture of the prototype created during this project. In our definition of architecture, will have choosen to follow the definition carved out by
-	Len Bass, Paul Clements and Rick Kazman. ``The software architecture of a program or computing system is the sructure of structures of the system, which comprise software elements, the externally visible properties of those elements, and the relationships between them''\cite[p. 3]{bib:archi}
+	Len Bass, Paul Clements and Rick Kazman. "The software architecture of a program or computing system is the sructure of structures of the system, which comprise software elements, the externally visible properties of those elements, and the relationships between them''\cite[p. 3]{bib:archi}
 	In the first part of this chapter we will focus on architectural drivers and viewpoints, before we move on to discussing how the android platform behaves on the frontend part of our application, how we tried to utilize these android features and how the activity flow of our application is set up. We will end this chapter with the architectural tactics and patterns implemented in our application. 
 	
 \section{Architectural Drivers}
 	From the nature of the assignment and the requirements received from the customer, we decided that Security had to be one of our quality attributes. After the first couple of meeting with the customer, it became clear that usability also was something of interest to them, and we decided to add Usability to our quality attributes as well. It should however be noted that	all of the quality attributes specified in Len Bass's book 'Software Architecture in Practice'\cite{bib:archi} had their place within this project. Especially Modifiability was one of those that, though not of out main attributes, was given a fairly large amout of consideration in order to ease development at later stages of the project. The reason as to why Modifiability was not one of our main attributes comes down to the expected lifespan of the prototype, which in this case comes down to the success of the project, and what conclusions the customer sees when presented with the final prototype and documentation. However, the project revolves around making a prototype and documenting the steps taken to complete that process, and it is therefore safe to assume that the lifespan of the prototype will be relatively short. 
 
 \section{Architectural viewpoints}
-The ``4+1 view model''ù \cite{bib:vm} by Philippe Kruchten suggest four different views, logical, process, development and physical. In the case of XOXOmail we are going to use the logical, process and development view. The rationale behind removing the physical view is that XOXOmail will run on a single physical device and only utilize one process, a security view, describing the layers of security, will be added instead.
+The "4+1 view model'' \cite{bib:vm} by Philippe Kruchten suggest four different views, logical, process, development and physical. In the case of XOXOmail we are going to use the logical, process and development view. The rationale behind removing the physical view is that XOXOmail will run on a single physical device and only utilize one process, a security view, describing the layers of security, will be added instead.
 
 \subsection{Development view (Subsystem decomposition)}
 The development view is a step up from the logical view and focuses on software modules instead of classes. These subsystems/modules are organized in a hierarchy of layers where each layer provides a well-defined interface to layers above. ``The complete development architecture can only be described when all the elements of the software have been identified. It is, however, possible to list the rules that govern the development architecture: partitioning, grouping, visibility'' \cite{bib:vm}. 
@@ -19,7 +19,7 @@ Figure \ref{fig:developmentview} at page \pageref{fig:developmentview} shows the
 	\label{fig:developmentview}
 \end{figure}
 
-\subsection{Logical view (Object oriented deomposition)}
+\subsection{Logical view (Object oriented deomposition)}\label{ch:logicalview}
 ``The logical architecture primarily supports the functional requirements --- what the system should provide in terms of services to its users. The system is decomposed into a set of key abstractions, taken from the problem domain, in the form of objects or object classes''\cite{bib:vm}. A common way to represent this view is with a class diagram that shows a set of classes and their relationships, we have however used a slightly modified varient, in order to make all the figures more readable.\newline\newline
 	\subsubsection{Backend}
 \begin{figure}[H]
@@ -68,7 +68,7 @@ In figure \ref{fig:processview} at page \pageref{fig:processview}, you can diffe
 	\label{fig:processview}
 \end{figure}
 
-One thing to note about the communications paths is that all communication between the \textit{frontent component} and \textit{service component} is between two wrapper classes, \texit{WrapperActivity} at the frontend, and \textit{ServiceProvider} at the backend. 
+One thing to note about the communications paths is that all communication between the \textit{frontent component} and \textit{service component} is between two wrapper classes, \textit{WrapperActivity} at the frontend, and \textit{ServiceProvider} at the backend. 
 
 \subsection{Security View}
 The security view is concerned with how the system as a whole is secured. This involves intercommunication, storage and communication with external sources. The view is not however concerned about implementation, just the layers of security.
@@ -94,7 +94,7 @@ See figure \ref{fig:securityview} at page \pageref{fig:securityview}.
 Regarding communication with external resources as a mail-server, it will be done over a secure communication channel providing \gls{ssl1} or \gls{tls}. 
 \newline
 \newline
-\textbf{Input validation} is always necessary in order to provide a secure service. All input to the XOXOMail application should be validated, this is includes received mail, user-input etc. For mail validation we are going to use \gls{emims} signing and verification provided by bouncycastle. 
+\textbf{Input validation} is always necessary in order to provide a secure service. All input to the XOXOMail application should be validated, this is includes received mail, user-input etc. For mail validation we are going to use \gls{emims} signing and verification provided by an android ported version of \gls{bouncy} called \gls{spongy}.
 
 \section{Frontend}
 

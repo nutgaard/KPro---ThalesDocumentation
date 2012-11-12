@@ -149,6 +149,8 @@
 \newglossaryentry{ieee829}{name=IEEE829, description={The 829 Standard for Software and System Test Documentation}}
 \newglossaryentry{junit}{name=Junit, description={A unit testing framework for the Java programming language}}
 \newglossaryentry{acid}{name=ACID, description={Atomicity, consistency, isolation, durability}}
+\newglossaryentry{bouncy}{name=BouncyCastle, description={Java Cryptography Library}}
+\newglossaryentry{spongy}{name=SpongyCastle, description={Repackage of \gls{bouncy} for Android}}
 \begin{document}
 \setlength{\parindent}{0in}
 
@@ -165,6 +167,9 @@
 \end{figure}}
 
 \author{Formal and secure messaging on a mobile platform\\ \\ \\  Lars Smørås Høysæter \\ Aleksander Aas Sjåfjell \\ Ida Katrine Børstad Thoresen \\ Kristin Tønnesen\\ Magnus Hertzberg Ulstein \\ Nicklas Sørlie Utgaard}
+
+
+
 \maketitle
 \clearpage
 
@@ -223,6 +228,16 @@
 	\include*{table_for_handling_of_risks}
 
 	\LTXtable{\textwidth}{risktable.tex}
+	
+%\chapter{Requirements}
+
+	\include{business_requirements}
+
+	\include*{use_cases}
+
+	%\include{user_stories}
+
+	\include*{requirements_from_customer}
 
 %\chapter{Project study}
 
@@ -269,16 +284,6 @@
 	\include*{evaluation_criteria}
 
 	\include*{ip_rights_and_licenses}
-
-%\chapter{Requirements}
-
-	\include{business_requirements}
-
-	\include*{use_cases}
-
-	%\include{user_stories}
-
-	\include*{requirements_from_customer}
 
 %\chapter{Test plan}
 
@@ -468,6 +473,7 @@
 \bibitem{bib:jmli} JavaMail-android. Retrieved 2012-10-08 from http://code.google.com/p/javamail-android/
 \bibitem{bib:xli} Xstream license. Retrieved 2012-10-08 from http://xstream.codehaus.org/license.html
 \bibitem{bib:bcli} BouncyCastle license. Retrieved 2012-10-08 from http://www.bouncycastle.org/licence.html
+\bibitem{bib:spongy} SpongyCastle, http://rtyley.github.com/spongycastle/
 \bibitem{bib:lli} MiKTeX license. Retrieved 2012-10-08 from http://miktex.org/copying
 \bibitem{bib:gili} Git license. Retrieved 2012-10-08 from http://git-scm.com/about/free-and-open-source
 \bibitem{bib:cli} Cygwin license. Retrieved 2012-10-08 from http://cygwin.com/licensing.html
@@ -480,7 +486,7 @@
 \bibitem{bib:cpl} CPL-1.0 license. Retrieved 2012-10-08 from http://www.junit.org/license
 \bibitem{bib:bsd} BSD license. Retrieved 2012-10-08 from http://en.wikipedia.org/wiki/BSD\_licenses
 \bibitem{bib:ieee} IEEE829. Retrieved  2012-09-30 from http://gerrardconsulting.com/tkb/guidelines/ieee829/main.html
-\bibitem{bib:vm} Kruchten, Philippe (1995, November). Architectural Blueprints — The “4+1” View Model of Software Architecture. IEEE Software 12 (6), pp. 42-50.
+\bibitem{bib:vm} Kruchten, Philippe (1995, November). Architectural Blueprints — The "4+1" View Model of Software Architecture. IEEE Software 12 (6), pp. 42-50.
 \bibitem{bib:archi} Bass, Len; Clements, Paul; Kazman, Rick. Software Architecture in Practice, Second Edition.
 \bibitem{bib:crypto} Android crypto implementation. Retrieved 2012-10-07 from http://source.android.com/tech/encryption/android\_crypto\_implementation.html
 \bibitem{bib:tech} Security. Retrieved 2012-10-07 from http://source.android.com/tech/security/index.html
@@ -554,9 +560,9 @@
 
 	\include{templates}
 
-	\include{agendas}
+	%\include{agendas}
 
-	\include{minutes}
+	%\include{minutes}
 
 
 

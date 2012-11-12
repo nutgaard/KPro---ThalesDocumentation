@@ -1,0 +1,621 @@
+\section{Functional tests}
+		See table \ref{tab:case1} - \ref{tab:case28} at page \pageref{tab:case1} - \pageref{tab:case28} for test cases.
+		\begin{table}
+			\begin{tabular}{l|p{10cm}}
+				Test case ID & 1 \\ \hline
+				Name & Login\\ \hline
+				Requirement & ? \\ \hline
+				Description & Test the login functionality\\ \hline
+				Preconditions & The app has started\\ \hline
+				Flow of events & 
+					\begin{enumerate}
+						\item{}Enter username "kprotesting"
+						\item{}Enter password "kprotest"
+						\item{}Press login button
+					\end{enumerate} \\ \hline
+				Expected results & The login screen disappear and the inbox appear\\ \hline
+				Actual results & Correct\\ \hline
+				Comments & -\\ \hline
+				Status & OK\\ \hline
+			\end{tabular}
+			\caption{Test case 1} \label{tab:case1}
+		\end{table}
+
+		\begin{table}
+			\begin{tabular}{l|p{10cm}}
+				Test case ID & 2 \\ \hline
+				Name & Send regular message\\ \hline
+				Requirement & 3.3\\ \hline
+				Description & Test sending of message with default values\\ \hline
+				Preconditions & The user is logged in\\ \hline
+				Flow of events & 
+					\begin{enumerate}
+						\item{}Navigate to the tab for sending a new message
+						\item{}Enter email address "kprothales@gmail.com"
+						\item{}Enter subject "Hello"
+						\item{}Select security label "Unclassified" from the list
+						\item{}Enter the text "Hello world!" in the message body area
+						\item{}Press send button
+					\end{enumerate} \\ \hline
+				Expected results & A toast notification that says "Message sent" and sent back to the inbox. The message 						should now be in the "Sent" folder\\ \hline
+				Actual results & Correct\\ \hline
+				Comments & -\\ \hline
+				Status & OK\\ \hline
+			\end{tabular}
+			\caption{Test case 2} \label{tab:case2}
+		\end{table}
+
+		\begin{table}
+			\begin{tabular}{l|p{10cm}}
+				Test case ID & 3 \\ \hline
+				Name & Send message to contact from the address book\\ \hline
+				Requirement & 6.1\\ \hline
+				Description & Test sending of message to a contact from the address book\\ \hline
+				Preconditions & The user is logged in\\ \hline
+				Flow of events & 
+					\begin{enumerate}
+						\item{}Navigate to the view for sending a new message
+						\item{}Press the contacts button
+						\item{}Select "kprothales@gmail.com" from the contacts list
+						\item{}Enter subject "Hello"
+						\item{}Select security label "Unclassified" from the list
+						\item{}Press send button
+					\end{enumerate} \\ \hline
+				Expected results & A toast notification that says "Message sent" and sent back to the inbox. The message 					should now be in the "Sent" folder\\ \hline
+				Actual results & Correct\\ \hline
+				Comments & -\\ \hline
+				Status & OK\\ \hline
+			\end{tabular}
+			\caption{Test case 3} \label{tab:case3}
+		\end{table}
+
+		\begin{table}
+			\begin{tabular}{l|p{10cm}}
+				Test case ID & 4 \\ \hline
+				Name & Send full message\\ \hline
+				Requirement & 3.3-5\\ \hline
+				Description & Test sending of message with attributes set\\ \hline
+				Preconditions & The user is logged in\\ \hline
+				Flow of events & 
+					\begin{enumerate}
+						\item{}Navigate to the view for sending a new message
+						\item{}Press the contacts button
+						\item{}Select "kprothales@gmail.com" from the contacts list
+						\item{}Enter subject "Hello"
+						\item{}Select security label "Unclassified" from the list
+						\item{}Select priority "Deferred"
+						\item{}Select type "Exercise"
+						\item{}Enter the text "Hello world!" in the message body area
+						\item{}Press send button
+					\end{enumerate} \\ \hline
+				Expected results & A toast notification that says "Message sent" and sent back to inbox. The message 							should now be in the "Sent" folder\\ \hline
+				Actual results & Correct\\ \hline
+				Comments &-\\ \hline
+				Status &OK \\ \hline
+			\end{tabular}
+			\caption{Test case 4} \label{tab:case4}
+		\end{table}
+
+		\begin{table}
+			\begin{tabular}{l|p{10cm}}
+				Test case ID & 5 \\ \hline
+				Name & Sent messages folder\\ \hline
+				Requirement & ?\\ \hline
+				Description & Test sent messages folder\\ \hline
+				Preconditions & The user is logged in and at least 3 message has been sent\\ \hline
+				Flow of events & 
+					\begin{enumerate}
+						\item{}Navigate to the view for the folders
+						\item{}Change the folder from "Inbox" to "Sent"
+						\item{}Press one of the message items
+					\end{enumerate} \\ \hline
+				Expected results & There should be 3 messages in the folder. The message opens with all the correct 							attributes and text\\ \hline
+				Actual results & Correct\\ \hline
+				Comments &-\\ \hline
+				Status &OK \\ \hline
+			\end{tabular}
+			\caption{Test case 5} \label{tab:case5}
+		\end{table}
+
+		\begin{table}
+			\begin{tabular}{l|p{10cm}}
+				Test case ID & 6 \\ \hline
+				Name & Read and browse messages\\ \hline
+				Requirement & 3.3\\ \hline
+				Description & Read and browse messages\\ \hline
+				Preconditions & The user is logged in and there are at least two message in the inbox folder\\ \hline
+				Flow of events & 
+					\begin{enumerate}
+						\item{}Navigate to the folders view and look in the inbox folder
+						\item{}Press a message in the message list
+						\item{}Browse between the messages (to previous and/or next message)
+					\end{enumerate} \\ \hline
+				Expected results & The message view appears and shows the sender, subject, security label, priority, 							type, attachments if any and the message body. The message view changes the fields according to 						what message the user is viewing \\ \hline
+				Actual results & Correct\\ \hline
+				Comments & -\\ \hline
+				Status & OK\\ \hline
+			\end{tabular}
+			\caption{Test case 6} \label{tab:case6}
+		\end{table}
+
+		\begin{table}
+			\begin{tabular}{l|p{10cm}}
+				Test case ID & 7 \\ \hline
+				Name & Send attachment (camera)\\ \hline
+				Requirement & 3.1-2\\ \hline
+				Description & Test sending of image from camera\\ \hline
+				Preconditions & The user is logged in\\ \hline
+				Flow of events & 
+					\begin{enumerate}
+						\item{}Navigate to the view for sending a new message
+						\item{}Press the contacts button
+						\item{}Select "kprotesting@gmail.com" (yourself) from the contacts list
+						\item{}Enter subject "Hello"
+						\item{}Select security label "Unclassified" from the list
+						\item{}Press the button for adding an attachment
+						\item{}Take a picture with the camera
+						\item{}Press the send button
+					\end{enumerate} \\ \hline
+				Expected results & A toast notification that says "Message sent" and sent back to inbox\\ \hline
+				Actual results & Correct\\ \hline
+				Comments & -\\ \hline
+				Status &OK \\ \hline
+			\end{tabular}
+			\caption{Test case 7} \label{tab:case7}
+		\end{table}
+
+		\begin{table}
+			\begin{tabular}{l|p{10cm}}
+				Test case ID & 8 \\ \hline
+				Name & Send attachment (gallery)\\ \hline
+				Requirement & 3.1-2\\ \hline
+				Description & Test sending of image from gallery\\ \hline
+				Preconditions & The user is logged in and has at least one image in the gallery\\ \hline
+				Flow of events & 
+					\begin{enumerate}
+						\item{}Navigate to the view for sending a new message
+						\item{}Press the contacts button
+						\item{}Select "kprotesting@gmail.com" (yourself) from the contacts list
+						\item{}Enter subject "Hello"
+						\item{}Select security label "Unclassified" from the list
+						\item{}Press the button for adding an attachment
+						\item{}Select an image from the gallery
+						\item{}Press the send button
+					\end{enumerate} \\ \hline
+				Expected results & A toast notification that says "Message sent" and sent back to inbox\\ \hline
+				Actual results & Correct\\ \hline
+				Comments & -\\ \hline
+				Status &OK \\ \hline
+			\end{tabular}
+			\caption{Test case 8} \label{tab:case8}
+		\end{table}
+
+		\begin{table}
+			\begin{tabular}{l|p{10cm}}
+				Test case ID & 9 \\ \hline
+				Name & Send attachment (GPS)\\ \hline
+				Requirement & 3.1-2\\ \hline
+				Description & Test sending of GPS coordinates\\ \hline
+				Preconditions & The user is logged in\\ \hline
+				Flow of events & 
+					\begin{enumerate}
+						\item{}Navigate to the view for sending a new message
+						\item{}Press the contacts button
+						\item{}Select "kprotest@gmail.com" (yourself) from the contacts list
+						\item{}Enter subject "Hello"
+						\item{}Select security label "Unclassified" from the list
+						\item{}Press the button for adding an attachment
+						\item{}Add location (GPS-coordinates)
+						\item{}Press the send button
+					\end{enumerate} \\ \hline
+				Expected results & The message text should be filled out with the current location. A toast notification that says "Message sent" and sent back to inbox\\ \hline
+				Actual results &Correct\\ \hline
+				Comments &-\\ \hline
+				Status &OK\\ \hline
+			\end{tabular}
+			\caption{Test case 9} \label{tab:case9}
+		\end{table}
+
+		\begin{table}
+			\begin{tabular}{l|p{10cm}}
+				Test case ID & 10 \\ \hline
+				Name & Attachments received\\ \hline
+				Requirement & 3.1-3\\ \hline
+				Description & Test reading and opening of a message with attachments\\ \hline
+				Preconditions & The user is logged in and there is at least one message with attachements\\ \hline
+				Flow of events & 
+					\begin{enumerate}
+						\item{}Navigate to the folders and make sure you view inbox messages
+						\item{}Press a message that has an attachment (e.g. one of the messages you sent to yourself in previous tests)
+						\item{}Press the button to show the attachments
+						\item{}Open the image that is attached
+					\end{enumerate} \\ \hline
+				Expected results & The correct program for opening an image is started and the image is shown \\ \hline
+				Actual results &Correct\\ \hline
+				Comments &-\\ \hline
+				Status &OK \\ \hline
+			\end{tabular}
+			\caption{Test case 10} \label{tab:case10}
+		\end{table}
+
+		\begin{table}
+			\begin{tabular}{l|p{10cm}}
+				Test case ID & 11 \\ \hline
+				Name & Instant message settings\\ \hline
+				Requirement & 3.8\\ \hline
+				Description & Test instant message settings\\ \hline
+				Preconditions & The user is logged in\\ \hline
+				Flow of events & 
+					\begin{enumerate}
+						\item{}Navigate to the settings view and view the settings for instant message attributes
+						\item{}Set "kprothales@gmail.com" as standard receiver
+						\item{}Set "Restricted" as standard security label
+						\item{}Set "Flash" as standard priority
+						\item{}Set "Drill" as standard type
+						\item{}Navigate back to the instant message view
+					\end{enumerate} \\ \hline
+				Expected results & The instant message view should have fields corresponding to the settings chosen \\ \hline
+				Actual results &Correct\\ \hline
+				Comments &-\\ \hline
+				Status & OK\\ \hline
+			\end{tabular}
+			\caption{Test case 11} \label{tab:case11}
+		\end{table}
+
+		\begin{table}
+			\begin{tabular}{l|p{10cm}}
+				Test case ID & 12\\ \hline
+				Name & Message retrival strategy settings\\ \hline
+				Requirement & 4.3\\ \hline
+				Description & Test settings for push/pull strategy\\ \hline
+				Preconditions & The user is logged in\\ \hline
+				Flow of events & 
+					\begin{enumerate}
+						\item{}Navigate to the settings view and view the settings for message retrieval
+						\item{}Change the strategy to "pull"
+						\item{}Set the poll interval to 1 minute
+					\end{enumerate} \\ \hline
+				Expected results & The app should now change strategy from push (default) to pull \\ \hline
+				Actual results & The app still uses push strategy\\ \hline
+				Comments & Unknown, has tried to debug\\ \hline
+				Status & Failed\\ \hline
+			\end{tabular}
+			\caption{Test case 12} \label{tab:case12}
+		\end{table}
+
+		\begin{table}
+			\begin{tabular}{l|p{10cm}}
+				Test case ID & 13\\ \hline
+				Name & Security labels settings\\ \hline
+				Requirement & ?\\ \hline
+				Description & Test settings for available security labels\\ \hline
+				Preconditions & The user is logged in\\ \hline
+				Flow of events & 
+					\begin{enumerate}
+						\item{}Navigate to the settings view and view the settings for security labels
+						\item{}Check the checkboxes for "RESTRICTED" and "NATO UNCLASSIFIED"
+						\item{}Uncheck the rest
+						\item{}Navigate to the send message view
+					\end{enumerate} \\ \hline
+				Expected results & The dropdown list of security labels should be filled out according to the choices in the settings \\ \hline
+				Actual results &All the security labels are still shown\\ \hline
+				Comments & Known deficiency, has not been implemented\\ \hline
+				Status &Failed\\ \hline
+			\end{tabular}
+			\caption{Test case 13} \label{tab:case13}
+		\end{table}
+
+		\begin{table}
+			\begin{tabular}{l|p{10cm}}
+				Test case ID & 14 \\ \hline
+				Name & Send instant message\\ \hline
+				Requirement & 3.8\\ \hline
+				Description & Test sending of an instant message\\ \hline
+				Preconditions & The user is logged in\\ \hline
+				Flow of events & 
+					\begin{enumerate}
+						\item{}Navigate to the instant message view
+						\item{}Enter the text "Hello World" in the message body text area
+						\item{}Press the send button
+					\end{enumerate} \\ \hline
+				Expected results & The fields in the view are filled out according to the settings. The message is sent instantly. Toast notification that says "Message sent" and sent back to the inbox \\ \hline
+				Actual results & Correct\\ \hline
+				Comments &-\\ \hline
+				Status &OK \\ \hline
+			\end{tabular}
+			\caption{Test case 14} \label{tab:case14}
+		\end{table}
+
+		\begin{table}
+			\begin{tabular}{l|p{10cm}}
+				Test case ID & 15 \\ \hline
+				Name & Receive of an flash/override message\\ \hline
+				Requirement & 4.2\\ \hline
+				Description & Test receiving of an high priority message\\ \hline
+				Preconditions & The user is logged in and someone has sent a high-priority message to the user\\ \hline
+				Flow of events & 
+					\begin{enumerate}
+						\item{}A red box takes over the screen
+						\item{}Click open message
+					\end{enumerate} \\ \hline
+				Expected results & The message is shown in the regular message view\\ \hline
+				Actual results & Correct\\ \hline
+				Comments & -\\ \hline
+				Status & OK \\ \hline
+			\end{tabular}
+			\caption{Test case 15} \label{tab:case15}
+		\end{table}
+
+		\begin{table}
+			\begin{tabular}{l|p{10cm}}
+				Test case ID & 16 \\ \hline
+				Name & Send instant message with attachments\\ \hline
+				Requirement & 3.8\\ \hline
+				Description & Test sending of instant message with attachments\\ \hline
+				Preconditions & The user is logged in and has at least one image in the gallery\\ \hline
+				Flow of events & 
+					\begin{enumerate}
+						\item{}Navigate to the instant message view
+						\item{}Check if the predefined values are set (if not set them in settings)
+						\item{}Press the button for add attachment
+						\item{}Select an image from the gallery
+						\item{}Press the button for adding attachment again	
+						\item{}Add GPS coordinates to the message
+						\item{}Press the send button
+					\end{enumerate} \\ \hline
+				Expected results & The message is sent instantly.  Toast notification that says "Message sent" and sent 							back to the inbox\\ \hline
+				Actual results &GPS coordinates is attached, but the message attributes somehow get wrong\\ \hline
+				Comments &Unknown\\ \hline
+				Status &Image OK, GPS failed\\ \hline
+			\end{tabular}
+			\caption{Test case 16} \label{tab:case16}
+		\end{table}
+
+		\begin{table}
+			\begin{tabular}{l|p{10cm}}
+				Test case ID & 17 \\ \hline
+				Name & Receive instant message outside the application\\ \hline
+				Requirement & 4.2\\ \hline
+				Description & Test receiving of instant message outside the application\\ \hline
+				Preconditions & The user is logged in and the application is in the background\\ \hline
+				Flow of events & 
+					\begin{enumerate}
+						\item{}A red box takes over the screen
+						\item{}Click open message
+					\end{enumerate} \\ \hline
+				Expected results & The message is shown in the regular message view\\ \hline
+				Actual results &Correct\\ \hline
+				Comments &-\\ \hline
+				Status & OK\\ \hline
+			\end{tabular}
+			\caption{Test case 17} \label{tab:case17}
+		\end{table}
+
+		\begin{table}
+			\begin{tabular}{l|p{10cm}}
+				Test case ID & 18 \\ \hline
+				Name & Widget for instant message\\ \hline
+				Requirement & 3.8\\ \hline
+				Description & Test the widget for sending an instant message\\ \hline
+				Preconditions & The user is logged in and the widget is placed on the home screen\\ \hline
+				Flow of events & 
+					\begin{enumerate}
+						\item{}Click the widget
+					\end{enumerate} \\ \hline
+				Expected results & The app opens and the view for sending an instant message is opened\\ \hline
+				Actual results & Correct\\ \hline
+				Comments &-\\ \hline
+				Status &OK \\ \hline
+			\end{tabular}
+			\caption{Test case 18} \label{tab:case18}
+		\end{table}
+
+		\clearpage
+
+		\begin{table}
+			\begin{tabular}{l|p{10cm}}
+				Test case ID & 19 \\ \hline
+				Name & Reply\\ \hline
+				Requirement & 3.3\\ \hline
+				Description & Test reply of a message\\ \hline
+				Preconditions & The user is logged in and has at least one message in the inbox\\ \hline
+				Flow of events & 
+					\begin{enumerate}
+						\item{}Navigate to the folders view and look at the inbox
+						\item{}Click on a message in the list
+						\item{}Press the reply button
+					\end{enumerate} \\ \hline
+				Expected results & The send message view opens with the correct fields filled out, the security label is fixed and "Re:" stands before the subject. \\ \hline
+				Actual results &The correct actions happen, but one gets sent out of the tab system\\ \hline
+				Comments & This feature has not been implemented perfect\\ \hline
+				Status & OK-\\ \hline
+			\end{tabular}
+			\caption{Test case 19} \label{tab:case19}
+		\end{table}
+
+		\begin{table}
+			\begin{tabular}{l|p{10cm}}
+				Test case ID & 20 \\ \hline
+				Name & Forward\\ \hline
+				Requirement & 3.3\\ \hline
+				Description & Test forwarding of a message\\ \hline
+				Preconditions & The user is logged in and has at least one message in the inbox\\ \hline
+				Flow of events & 
+					\begin{enumerate}
+						\item{}Navigate to the folders view and look at the inbox
+						\item{}Click on a message in the list
+						\item{}Press the forward button
+					\end{enumerate} \\ \hline
+				Expected results & The send message view opens with the correct fields filled out, the security label is fixed and "Fwd:" before the subject. \\ \hline
+				Actual results & The correct actions happen, but one gets sent out of the tab system\\ \hline
+				Comments & OK-\\ \hline
+				Status & \\ \hline
+			\end{tabular}
+			\caption{Test case 20} \label{tab:case20}
+		\end{table}
+
+		\begin{table}
+			\begin{tabular}{l|p{10cm}}
+				Test case ID & 21 \\ \hline
+				Name & Delete\\ \hline
+				Requirement & 3.3\\ \hline
+				Description & Test deleting of a message\\ \hline
+				Preconditions & The user is logged in and has at least one message in the inbox\\ \hline
+				Flow of events & 
+					\begin{enumerate}
+						\item{}Navigate to the folders view and look at the inbox
+						\item{}Click on a message in the list
+						\item{}Press the menu button
+						\item{}Press delete on the popup menu that shows at the lower part of the screen
+					\end{enumerate} \\ \hline
+				Expected results & The view changes to the inbox and the message has disappeared from the list. \\ \hline
+				Actual results &The message disappears at first, but is still there if you log out and in\\ \hline
+				Comments &Known deficiency, problems with the Android file system\\ \hline
+				Status &Failed \\ \hline
+			\end{tabular}
+			\caption{Test case 21} \label{tab:case21}
+		\end{table}
+
+		\begin{table}
+			\begin{tabular}{l|p{10cm}}
+				Test case ID & 22 \\ \hline
+				Name & Delivery report and receipt notification\\ \hline
+				Requirement & 3.6\\ \hline
+				Description & Test sending of a message where one has requested delivery report and receipt notification\\ \hline
+				Preconditions & The user is logged in\\ \hline
+				Flow of events & 
+					\begin{enumerate}
+						\item{}Navigate to the send message view
+						\item{}Set "kprothales@gmail.com" as receiver
+						\item{}Set "Hello world" as subject
+						\item{}Set "UNCLASSIFIED" as security label
+						\item{}Enter "Hello everybody" in the message text.
+						\item{}Request delivery report and receipt notification
+						\item{}Press the send button
+					\end{enumerate} \\ \hline
+				Expected results & A toast notification that says "Message sent" and sent back to inbox \\ \hline
+				Actual results & Feature not implemented\\ \hline
+				Comments &Feature not implemented\\ \hline
+				Status &Failed \\ \hline
+			\end{tabular}
+			\caption{Test case 22} \label{tab:case22}
+		\end{table}
+
+		\begin{table}
+			\begin{tabular}{l|p{10cm}}
+				Test case ID & 23 \\ \hline
+				Name & Status of delivery report and receipt notification\\ \hline
+				Requirement & 3.7\\ \hline
+				Description & Test checking status on a message where one has requested delivery report and receipt notification\\ \hline
+				Preconditions & The user is logged in and has at least one sent message that has a request for delivery report and receipt notification\\ \hline
+				Flow of events & 
+					\begin{enumerate}
+						\item{}Navigate to the sent messages
+						\item{}Click on a message that has a request for delivery report and receipt notification
+						\item{}View the status of the delivery report and receipt notification
+					\end{enumerate} \\ \hline
+				Expected results & The message has fields with these attributes, which is red at first but changes to green when the status is updated to deliverd/read \\ \hline
+				Actual results &Not implemented\\ \hline
+				Comments & Not implemented\\ \hline
+				Status & Failed\\ \hline
+			\end{tabular}
+			\caption{Test case 23} \label{tab:case23}
+		\end{table}
+
+		\begin{table}
+			\begin{tabular}{l|p{10cm}}
+				Test case ID & 24 \\ \hline
+				Name & Sort\\ \hline
+				Requirement & 3.6\\ \hline
+				Description & Test sorting of messages in the inbox based on different criterias\\ \hline
+				Preconditions & The user is logged in and has at least 4 different messages in the inbox\\ \hline
+				Flow of events & 
+					\begin{enumerate}
+						\item{}Navigate to folders view 
+						\item{}Press the sort button and choose different sorting algorithms
+					\end{enumerate} \\ \hline
+				Expected results & The inbox messages are sorted correct according to the sorting criteria\\ \hline
+				Actual results &Correct\\ \hline
+				Comments &-\\ \hline
+				Status &OK \\ \hline
+			\end{tabular}
+			\caption{Test case 24} \label{tab:case24}
+		\end{table}
+
+		\begin{table}
+			\begin{tabular}{l|p{10cm}}
+				Test case ID & 25 \\ \hline
+				Name & Search\\ \hline
+				Requirement & 3.6\\ \hline
+				Description & Test searching of messages in folders\\ \hline
+				Preconditions & The user is logged in and has at least 4 different messages in the inbox\\ \hline
+				Flow of events & 
+					\begin{enumerate}
+						\item{}Navigate to folders view 
+						\item{}Enter text in the search field and press Enter
+					\end{enumerate} \\ \hline
+				Expected results & The folder is filtrated to show only the items that match the search condition\\ \hline
+				Actual results & Not implemented\\ \hline
+				Comments & Not implemented\\ \hline
+				Status & Failed\\ \hline
+			\end{tabular}
+			\caption{Test case 25} \label{tab:case25}
+		\end{table}
+
+			\begin{table}
+			\begin{tabular}{l|p{10cm}}
+				Test case ID & 26\\ \hline
+				Name & Login incorrect input\\ \hline
+				Requirement & ?\\ \hline
+				Description&Test how the app reacts to incorrect login input\\ \hline
+				Preconditions&The app has started\\ \hline
+				Tasks&\begin{enumerate}
+						\item{}Enter bogus username and password
+						\item{}Leave the username field empty
+						\item{}Leave the password field empty
+						\item{}Leave both fields empty
+					\end{enumerate} \\ \hline
+				Expected result&An error message showing "Incorrect login information" and the user do not get logged in\\ \hline
+				Actual result& Tasks 1-4 gives the correct error message and the login is not allowed\\ \hline
+				Comments&- \\ \hline
+				Status& OK\\ \hline 
+			\end{tabular}
+			\caption{Test case 26} \label{tab:case26}
+			\end{table}
+
+				\begin{table}
+			\begin{tabular}{l|p{10cm}}
+				Test case ID & 27\\ \hline
+				Name & Receiver incorrect input\\ \hline
+				Requirement & 3.1\\ \hline
+				Description&Test how the app reacts to incorrect receiver input\\ \hline
+				Preconditions&The user is logged in and looks at the send message view\\ \hline
+				Tasks&\begin{enumerate}
+						\item{}Leave the receiver field empty
+						\item{}Enter several words with an arbitrary separator
+					\end{enumerate} \\ \hline
+				Expected result&A validation error message in the text field that says "The address is not valid. Please check again". \\ \hline
+				Actual result&Tasks 1-2 correct\\ \hline
+				Comments&-\\ \hline
+				Status& OK\\ \hline 
+			\end{tabular}
+			\caption{Test case 27} \label{tab:case27}
+			\end{table}
+
+				\begin{table}
+			\begin{tabular}{l|p{10cm}}
+				Test case ID & 28\\ \hline
+				Name &Security label incorrect input\\ \hline
+				Requirement & 3.5\\ \hline
+				Description&Test how the app reacts to incorrect security label input\\ \hline
+				Preconditions&The user is logged in and looks at the send message view\\ \hline
+				Tasks&\begin{enumerate}
+						\item{}Do net set a value for the security label
+					\end{enumerate} \\ \hline
+				Expected result&An error message showing "You need to set a security label" and the message does not get sent\\ \hline
+				Actual result& Correct\\ \hline
+				Comments&- \\ \hline
+				Status& OK\\ \hline 
+			\end{tabular}
+			\caption{Test case 28} \label{tab:case28}
+			\end{table}
