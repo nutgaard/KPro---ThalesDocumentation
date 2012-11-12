@@ -1,54 +1,80 @@
 \chapter{Architectural description}
+	This chapter will revolve around the final architecture of the prototype created during this project. In our definition of architecture, will have choosen to follow the definition carved out by
+	Len Bass, Paul Clements and Rick Kazman. "The software architecture of a program or computing system is the sructure of structures of the system, which comprise software elements, the externally visible properties of those elements, and the relationships between them''\cite[p. 3]{bib:archi}
+	In the first part of this chapter we will focus on architectural drivers and viewpoints, before we move on to discussing how the android platform behaves on the frontend part of our application, how we tried to utilize these android features and how the activity flow of our application is set up. We will end this chapter with the architectural tactics and patterns implemented in our application. 
+	
+\section{Architectural Drivers}
+	From the nature of the assignment and the requirements received from the customer, we decided that Security had to be one of our quality attributes. After the first couple of meeting with the customer, it became clear that usability also was something of interest to them, and we decided to add Usability to our quality attributes as well. It should however be noted that	all of the quality attributes specified in Len Bass's book 'Software Architecture in Practice'\cite{bib:archi} had their place within this project. Especially Modifiability was one of those that, though not of out main attributes, was given a fairly large amout of consideration in order to ease development at later stages of the project. The reason as to why Modifiability was not one of our main attributes comes down to the expected lifespan of the prototype, which in this case comes down to the success of the project, and what conclusions the customer sees when presented with the final prototype and documentation. However, the project revolves around making a prototype and documenting the steps taken to complete that process, and it is therefore safe to assume that the lifespan of the prototype will be relatively short. 
 
-\section{Architecure}
-
-\subsection{Architectural viewport selection}
-The “4+1 view model” \cite{bib:vm} by Philippe Kruchten suggest four different view, logical, process, development and physical. In the case of XOXOmail we are going to use the logical, process and development view. The rationale behind removing the physical view is that XOXOmail will run on a single physical device and only utilize one process, a security view, describing the layers of security, will be added instead.
-
-\subsection{Logical view (Object oriented deomposition)}
-“The logical architecture primarily supports the functional requirements --- what the system should provide in terms of services to its users. The system is decomposed into a set of key abstractions, taken from the problem domain, in the form of objects or object classes” \cite{bib:vm}. A common way to represent this view is with a class diagram that shows a set of classes and their relationships. As you can see, we have chosen to divide the logical view into three parts: GUI, Service and Model. 
-See figure \ref{fig:logicalview} at page \pageref{fig:logicalview}.
-
-\subsubsection{GUI}
-The GUI represents the Android frontend, which is made up of activities. This is what the user actually sees. All the activities extends WrapperActivity, which is the GUI connection to the service part of our app.
-
-\subsubsection{Service}
- This is what holds the main logic of the app and all services are available from the ServiceProvider. Hardware abstraction layer (HAL), Persistence, Security and Network is available from here. 
-
-\subsubsection{Model}
-Here you will find all classes that wrap information that is needed throughout the app. The models include objects for current user, for the XOMessage which holds the message itself and all its attributes. And of course we also have all of the settings for our app here, just to name a few. 
-
-\begin{figure}
-	\includegraphics[width=\textwidth]{logicalview.png}
-	\caption{The logical view of the architecture}
-	\label{fig:logicalview}
-\end{figure}
+\section{Architectural viewpoints}
+The "4+1 view model'' \cite{bib:vm} by Philippe Kruchten suggest four different views, logical, process, development and physical. In the case of XOXOmail we are going to use the logical, process and development view. The rationale behind removing the physical view is that XOXOmail will run on a single physical device and only utilize one process, a security view, describing the layers of security, will be added instead.
 
 \subsection{Development view (Subsystem decomposition)}
-The development view is a step up from the logical view and focuses on software modules instead of classes. These subsystems/modules are organized in a hierarchy of layers where each layer provides a well-defined interface to layers above. “The complete development architecture can only be described when all the elements of the software have been identified. It is, however, possible to list the rules that govern the development architecture: partitioning, grouping, visibility" \cite{bib:vm}. 
-See figure \ref{fig:developmentview} at page \pageref{fig:developmentview}. As you can see, the Backend Service Connects to all parts of our app. The main focus of this view is to show that it is also the connector to the external part of the app, the SMTP Gateway. This gateway is implemented by Thales, and all we have to do is connect to it using well known protocols.
+The development view is a step up from the logical view and focuses on software modules instead of classes. These subsystems/modules are organized in a hierarchy of layers where each layer provides a well-defined interface to layers above. ``The complete development architecture can only be described when all the elements of the software have been identified. It is, however, possible to list the rules that govern the development architecture: partitioning, grouping, visibility'' \cite{bib:vm}. 
+Figure \ref{fig:developmentview} at page \pageref{fig:developmentview} shows the Backend Service Connects to all parts of our app. The main focus of this view is to show that it is also the connector to the external part of the app, the SMTP Gateway. This gateway is implemented by Thales, and all we have to do is connect to it using well known protocols.
 
-\begin{figure}
+\begin{figure}[H]
 	\includegraphics[width=\textwidth]{developmentview.png}
 	\caption{Development View}
 	\label{fig:developmentview}
 \end{figure}
 
-\subsection{Process View}
-The process view is concerned with how different tasks bind together to form one executable unit. More specifically, the communication between threads/processes and on which thread/process is a task executed. We will differentiate between major and minor tasks, where major tasks are architectural elements open through a public interface, and minor tasks being tasks introduced in order to implement some functionality in one class or module.  
-See figure \ref{fig:processview} at page \pageref{fig:processview}. As an example, you can here see that IMAPThread og IMAPIdleThread are minor tasks, because theay are just tasks that need to be implemented for making a bigger functionality work, namely the ServiceProvider.
+\subsection{Logical view (Object oriented deomposition)}
+``The logical architecture primarily supports the functional requirements --- what the system should provide in terms of services to its users. The system is decomposed into a set of key abstractions, taken from the problem domain, in the form of objects or object classes''\cite{bib:vm}. A common way to represent this view is with a class diagram that shows a set of classes and their relationships, we have however used a slightly modified varient, in order to make all the figures more readable.\newline\newline
+	\subsubsection{Backend}
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{packageDiagram.png}
+	\caption{The logical package view of the architecture}
+	\label{fig:logicalpackview}
+\end{figure}
+Figure \ref{fig:logicalpackview} shown at page \pageref{fig:logicalpackview}, shows a package overview over the project backend. Though very generic, it shows the basic structure of the architecture, and the communication paths between packages. On thing to note, is that in order to add a new service to the architecture, one would need to implement three different objects, a factory for creating the service, an interface describing the service, and the service implementation itself. In the case of XOXOmail, we planned out four different services, the \textit{NetworkService}~(Fig.~\ref{fig:logicalnetworkpackview}~p.~\pageref{fig:logicalnetworkpackview}), \textit{PersistenceService}~(Fig.~\ref{fig:logicalpersistencepackview}~p.~\pageref{fig:logicalpersistencepackview}), \textit{HALService} and \textit{SecurityService}. The two latter was though never used, and their diagrams are therefore omitted here, alongside the diagram for our \textit{Utiliteis} class. The structure of our models can be seen in figure~\ref{fig:logicalmodelpackview} at page \pageref{fig:logicalmodelpackview}
 
-\begin{figure}
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{NetworkService.png}
+	\caption{The logical view of the NetworkServicePackage}
+	\label{fig:logicalnetworkpackview}
+\end{figure}
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{persistenceService.png}
+	\caption{The logical view of the PersistenceService}
+	\label{fig:logicalpersistencepackview}
+\end{figure}
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{modelPackage.png}
+	\caption{The logical view of the model package}
+	\label{fig:logicalmodelpackview}
+\end{figure}
+
+The intended purpose of each of the different services is somewhat given by their respective names, but in order to avoid any ambiguity there will be a short recap of their purpose.
+\begin{description}
+	\item[NetworkService] The \textit{NetworkService}'s reponsebility is to provide the core functionality of sending and receiving mail. 
+	\item[PersistenceService] The \textit{PersistenceService}'s responsebility is to keep track of objects being changes, and reflect these changes in a persistent way in case of system failure, or the application is shut down. 
+\end{description}
+
+\subsubsection{Frontend}
+	\begin{figure}[H]
+		\includegraphics[width=\textwidth]{FrontendClasses.png}
+		\caption{The logical view of the frontend activities package}
+		\label{fig:logicalfrontpackview}
+	\end{figure}	
+	
+\subsection{Process View}
+The process view is concerned with how different tasks bind together to form one executable unit. More specifically, the communication between threads/processes and on which thread/process is a task executed. We will differentiate between major and minor tasks, where major tasks are architectural elements open through a public interface, and minor tasks being tasks introduced in order to implement some functionality in one class or module.
+In figure \ref{fig:processview} at page \pageref{fig:processview}, you can differentiate between minor and major tasks by looking at the \textit{SMTP} branch of \textit{NetworkService}, here \textit{SMTPSender} is a minor task, while both \textit{SMTP} and \textit{NetworkService} is considered major tasks. 
+
+\begin{figure}[H]
 	\includegraphics[width=\textwidth]{processview.png}
 	\caption{Process view}
 	\label{fig:processview}
 \end{figure}
 
+One thing to note about the communications paths is that all communication between the \textit{frontent component} and \textit{service component} is between two wrapper classes, \textit{WrapperActivity} at the frontend, and \textit{ServiceProvider} at the backend. 
+
 \subsection{Security View}
 The security view is concerned with how the system as a whole is secured. This involves intercommunication, storage and communication with external sources. The view is not however concerned about implementation, just the layers of security.
 See figure \ref{fig:securityview} at page \pageref{fig:securityview}.
 
-\begin{figure}
+\begin{figure}[H]
 	\includegraphics[width=\textwidth]{securityview.png}
 	\caption{Security view}
 	\label{fig:securityview}
@@ -68,23 +94,23 @@ See figure \ref{fig:securityview} at page \pageref{fig:securityview}.
 Regarding communication with external resources as a mail-server, it will be done over a secure communication channel providing \gls{ssl1} or \gls{tls}. 
 \newline
 \newline
-\textbf{Input validation} is always necessary in order to provide a secure service. All input to the XOXOMail application should be validated, this is includes received mail, user-input etc. For mail validation we are going to use \gls{emims} signing and verification provided by bouncycastle. 
+\textbf{Input validation} is always necessary in order to provide a secure service. All input to the XOXOMail application should be validated, this is includes received mail, user-input etc. For mail validation we are going to use \gls{emims} signing and verification provided by an android ported version of \gls{bouncy} called \gls{spongy}.
 
-\subsection{GUI}
+\section{Frontend}
 
-\subsubsection{Introduction}
+\subsection{Introduction}
 The Android platform specifies a certain way of organizing the application, which we have tried to follow.
 
-\subsubsection{External resources}
+\subsection{External resources}
 The user interface elements, ranging from whole screens (called layouts) to the structure and look of a single list element, are defined in \gls{xml} (Extensible Markup Language) and stored external to the application. An Android project contains a folder named “res” where all external resources are placed. User interface elements are stored in a sub folder called “layouts”. Other resources, e.g. colors or images, are stored inside separate sub folders. The advantage of declaring the user interface and other resources in \gls{xml} is that it enables decoupling of the presentation of the application and the code that controls the application.
 \newline
 \newline
-All resources must be assigned an \gls{id} if they are to be referenced in the application code. All resource \gls{id}s are defined as public constants in the project’s R.class, which is a class that is automatically generated during build and contains subclasses for the types of resources where we have defined at least one resource, e.g. R.layout (for user interface elements) or R.color (for definition of colors). The resources can be referenced both inside other resources and in the application code.
+All resources must be assigned an \gls{id} if they are to be referenced in the application code. All resource \gls{id}s are defined as public constants in the project's R.class, which is a class that is automatically generated during build and contains subclasses for the types of resources where we have defined at least one resource, e.g. R.layout (for user interface elements) or R.color (for definition of colors). The resources can be referenced both inside other resources and in the application code.
 \newline
 \newline
 We also want to use styles, which are collections of properties specifying the look of a layout or a component. It can be compared to the mindset of \gls{css}, where one separate design and content. We might also consider using a theme for our application, which is a style applied to an entire activity or application. The reason behind using styles and themes would be to ensure consistent appearance across the application. 
 
-\subsubsection{Activities}
+\subsection{Activities}
 Activities are components that provide a screen that the user can interact with, and are classes written in Java. Each activity has a window where the user interface is drawn. One activity is specified as the main activity and is the start screen of the application. Each activity can start another activity to perform different actions. The activities inflate the \gls{xml} layouts to form the user interface and controls the behaviour of the elements. It is also possible to create layout elements programmatically, but we have chosen not to do this as we want the decoupling mentioned above.
 \newline
 \newline
@@ -109,14 +135,62 @@ All the methods starting with on (onCreate etc.) can be overwritten to administr
 
 \begin{figure}
 	\includegraphics[width=\textwidth]{Android_GUI_flow_chart_2}
-	\caption{The logical view of the GUI architecture}
+	\caption{The activity flow for XOXOmail}
 	\label{fig:logicalGUIview}
 \end{figure}
 
 Figure \ref{fig:logicalGUIview} at page \pageref{fig:logicalGUIview} shows the flow in our app. It all starts in the upper left corner at "Start app". The first activity you see is the \textsc{Login Activity}. The user is granted access if a correct username and matching password is entered. He is then sent directly to the main menu, where he can choose to either see messages, send a new message or alter settings. Which messages are shown are based on if you choose \textsc{Sent}, \textsc{Outbox} or \textsc{Inbox}. By pressing \textsc{Sort} he can choose to alter the way the messages are shown. Choosing to send a message can either be done by going into the regular send message view, or the instant message view. Either way, for a message to be sent, it has to be validated. When all fields are valid, the message is sent to the correct recipient. By pressing return button when inside app we are minimizing the app. It will still be running in the background.
 
-\subsubsection{The Android manifest}
+\subsection{The Android manifest}
 The Android manifest \cite{bib:aman} is what binds the applicaiton together. It is defined in \gls{xml} and details the structure and metadata of the application, its components and requirements. The manifest needs to have nodes for each of the components, which in our case are activities and services. Relevant metadata is the application name, icon and theme. The manifest also declares the permissions the application needs to access protected parts of the \gls{api} and interact with other applications.
 
-\subsubsection{Supporting different hardware and internationalization}
+\subsection{Supporting different hardware and internationalization}
 By conforming to using external resources on can easily build applications that support differences such as varying screen sizes and languages. For example, it is possible to create a low, medium and high dpi (dots per inch, a measure of screen density) version of an image and Android will select the correct version based on the screen size. Android can pick layouts based on the screen orientation, where the possibilities are that the phone is an portrait or landscape mode. It is also possible to have Android decide what language to use based on location, but this is not relevant to this project. 
+
+\section{Architectural tactics}
+	This section will in general be a discussing about and around tactics found in 'Software Architecture in Practice'\cite{bib:archi}. 
+	\subsection{Security}
+		Tactics for ensuring the security of an application and its data is of often divided into three seperate ways of operating, resisting attacks, detecting attacks and recovering from an attack. 
+		In the case of XOXOmail, resisting attacks will be the main focus. As seen in figure~\ref{fig:securityview} on page~\pageref{fig:securityview}, we have opted for a layered security in order to best secure the application data. In terms of what is listed in 'Software Architecture in Practice'\cite[p. 119]{bib:archi}, XOXOmail will in one way or another touch upon all of the six tactics listed. 
+		\begin{description}
+			\item[Authenticate Users] XOXOmail will keep a users credential stored after the first time login. The first time login authentication procedure consists of trying to login to mail gateway.
+			\item[Authorize Users] After authenication, a folder is allocated for the user. All data within this folder will be encrypted using a derivative of the users password. 
+			\item[Maintain data confidentiality] The local data storage will be secured by encryption, as described in the previous point. Network data will also be encrypted using \gls{ssl}. 
+			\item[Maintain Integrity] Data integrity is a concern at three points, the updating of a model, storing of data and network communication. Data integrity when updating a model will be assured by encapsulation, network communication will be secured by \gls{ssl} running on top of \gls{tcp}, the mail content will in addition be signed using \gls{emims}. For the storing of data the \gls{acid} properties of the \textit{PersistenceService} should ensure integrity. 
+			\item[Limit Exposure] The exposure of services within XOXOmail is limited by the authenication of user, since no services are available before the user is successfully authenicated.
+			\item[Limit access] Given two different views of access, XOXOmail tries to prevent both. In the case of physical access to the device, an authentication process must be completed. Attempting to gain access through network communication will be prevented by a trust manager, only accepting connections to gateways with a known certificate. 
+		\end{description}
+		
+	\subsection{Usability}
+		``Usability is concerned with how easy it is for the user to accomplish a desired task and the kind of user support the system provides.''\cite[p. 90]{bib:archi} The paragraph goes on to explain areas fo interest like; learnability, efficiency, error prevention, system adaptations and user confidence and satisfaction. Though usability itself has few tactics that can be implemented, there are some general stategies as to how a designer can increase each of these areas quantitative value, seen in table \ref{tab:uidesign} on page \pageref{tab:uidesign}. 
+		
+		\begin{table}[H]
+		\begin{description}
+			\item[Consistency of data display] Terminology, abbreviations, formats, colors and so on should be standardized.
+			\item[Efficient information assimilation by the user] The format should be familiar to the user. 
+			\item[Minimal memory load on the user] Users should not be required to remember information from one screen for use on another screen.
+			\item[Compatibility of data display with data entry] The format of displayed information should be linked clearly to the format of the data entry.
+			\item[Flexibility for user control of data display] Users should be able to get the information from the display in the form most convenient for the task on which they are working.
+		\end{description}
+		\caption{Paraphrased table from 'Designing the User Interface'\cite[p. 77]{bib:uidesign}}
+		\label{tab:uidesign}
+		\end{table}
+		In most cases making a good user interfaces requires several iterations with designing and testing. Hence a easily modifiable user interface is prefered, this can be achived by separating the user interface from the rest of the application. This separation can be achived by numerous tactics, most known is perhaps the Model-View-Controller pattern. Though not directly applicable to the android platform, it carries some general principles which can be used in order to achive the general notion of a MCV architecture. 
+		
+	\subsection{Modifiability}
+		Even though modifiability was not one of the choosen quality attributes, it has had a significant impact on the overall architecture and is therefore included here. From 'Software Architecture in Practice'\cite[p. 111]{bib:archi} it is listed three main areas for modifiability tactics, which each has several tactics. The ones XOXOmail uses are as listed in table~\ref{tab:modtac} on page~\pageref{tab:modtac}.
+		\begin{table}[H]
+			\begin{description}
+				\item[Localize change] In an attempt to maximize the systems functional cohesion several tactics where utilized. The network service in XOXOmail utilizes a tactic known as \textit{Generalize Module} as it make use of dependency injection to function instead of multiple fairly similar functions. This allows for a more general use of the module by changing the input parameters to it, instead of the module itself. Another tactic used is \textit{abstract common services}, which can be seen on both the frontend and backend part of the application. Frontend, all activities inherit from a wrapper class which manages the connection to the backendservice. Backend, all services inherit from an abstract service which manages all commonalities between each service. 
+				\item[Prevention of ripple effect] The prevention if done mainly by the use of interfaces, supplemented by a factory pattern for easy creating of services. 
+				\item[Defer binding time] The concept of configuration files is utilized by XOXOmail when the application is first starting up. The user also has the possibility to change the configuration files through the user interface, and make the application in the most suitable way. 
+			\end{description}
+			\caption{Modifiability tactics in use in XOXOmail}
+			\label{tab:modtac}
+		\end{table}
+		
+	\subsection{Testability}
+		One of the problem with testing when creating an android application is the android dependent code and long build-test-cycle time, which in many cases discourages testing. As a biproduct of the tactics mentioned in the previous sections, both these problems were handled. By keeping the modules as close to pure java as possible it is possible to run tests locally on your computer, without the need of compiling the complete application and pushing it to the phone, which in turn greatly reduces the build-test-cycle time. This was of course made possible through very generalized modules, were allmost every dependency were injected into the module. 
+		
+\section{Architectural patterns}
+	XOXOmail is built up of several architectural pattern working together to create the best possible experience for every stakeholder involved in this project. The most prominent being our own derivation of the Model-View-Controller pattern, where the whole frontend has taken the part of being a view-controller, models are still models, and the backend service a pure controller. A great amount of modifiability is achived with this pattern, and by using interfaces to describe modules and their respective callbacks. 
