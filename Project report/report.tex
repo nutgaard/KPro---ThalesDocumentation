@@ -22,6 +22,7 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage[nonumberlist]{glossaries}
+\usepackage{float}
 \hypersetup{
     colorlinks=false,
     pdfborder={0 0 0},
@@ -99,6 +100,7 @@
 \newglossaryentry{ssl}{name=SSL/TLS, description={"Secure sockets layer/transport layer security" defined by RFC 6101 and RFC 5246}}
 \newglossaryentry{ssl1}{name=SSL, description={"Secure sockets layer" defined by RFC 6101 and RFC 5246}}
 \newglossaryentry{tls}{name=TLS, description={"Transport layer security" defined by RFC 6101 and RFC 5246}}
+\newglossaryentry{tcp}{name=TCP, description={"Transmission Control Protocol" first specified by RFC 675}}
 \newglossaryentry{emims}{name=S/MIME, description={"Secure/Miltipurpose Internet Mail Extensions", defined by RFC 3369, RFC 3370, RFC 3850 and RFC 3851}}
 \newglossaryentry{mime}{name=MIME, description={"Multipurpose Internet Mail Extensions", defined by RFC 2045, RFC 2046, RFC 2047, RFC 4288, RFC 4289 and RFC 2049}}
 \newglossaryentry{ocsp}{name=OCSP, description={"Online Certificate Status Protocol", defined by RFC 2560}}
@@ -146,6 +148,7 @@
 \newglossaryentry{jrock}{name=JRockit, description={A proprietary Java Virtual Machine}}
 \newglossaryentry{ieee829}{name=IEEE829, description={The 829 Standard for Software and System Test Documentation}}
 \newglossaryentry{junit}{name=Junit, description={A unit testing framework for the Java programming language}}
+\newglossaryentry{acid}{name=ACID, description={Atomicity, consistency, isolation, durability}}
 \begin{document}
 \setlength{\parindent}{0in}
 
@@ -478,6 +481,7 @@
 \bibitem{bib:bsd} BSD license. Retrieved 2012-10-08 from http://en.wikipedia.org/wiki/BSD\_licenses
 \bibitem{bib:ieee} IEEE829. Retrieved  2012-09-30 from http://gerrardconsulting.com/tkb/guidelines/ieee829/main.html
 \bibitem{bib:vm} Kruchten, Philippe (1995, November). Architectural Blueprints — The “4+1” View Model of Software Architecture. IEEE Software 12 (6), pp. 42-50.
+\bibitem{bib:archi} Bass, Len; Clements, Paul; Kazman, Rick. Software Architecture in Practice, Second Edition.
 \bibitem{bib:crypto} Android crypto implementation. Retrieved 2012-10-07 from http://source.android.com/tech/encryption/android\_crypto\_implementation.html
 \bibitem{bib:tech} Security. Retrieved 2012-10-07 from http://source.android.com/tech/security/index.html
 \bibitem{bib:aas} Android activity states. Retrieved 2012-10-13 from http://developer.android.com/reference/android/app/Activity.html
@@ -549,9 +553,9 @@
 
 	\include{templates}
 
-	\include{agendas}
+	%\include{agendas}
 
-	\include{minutes}
+	%\include{minutes}
 
 
 

@@ -1,6 +1,7 @@
 \chapter{Architectural description}
 	This chapter will revolve around the final architecture of the prototype created during this project. In our definition of architecture, will have choosen to follow the definition carved out by
 	Len Bass, Paul Clements and Rick Kazman. ``The software architecture of a program or computing system is the sructure of structures of the system, which comprise software elements, the externally visible properties of those elements, and the relationships between them''\cite[p. 3]{bib:archi}
+	In the first part of this chapter we will focus on architectural drivers and viewpoints, before we move on to discussing how the android platform behaves on the frontend part of our application, how we tried to utilize these android features and how the activity flow of our application is set up. We will end this chapter with the architectural tactics and patterns implemented in our application. 
 	
 \section{Architectural Drivers}
 	From the nature of the assignment and the requirements received from the customer, we decided that Security had to be one of our quality attributes. After the first couple of meeting with the customer, it became clear that usability also was something of interest to them, and we decided to add Usability to our quality attributes as well. It should however be noted that	all of the quality attributes specified in Len Bass's book 'Software Architecture in Practice'\cite{bib:archi} had their place within this project. Especially Modifiability was one of those that, though not of out main attributes, was given a fairly large amout of consideration in order to ease development at later stages of the project. The reason as to why Modifiability was not one of our main attributes comes down to the expected lifespan of the prototype, which in this case comes down to the success of the project, and what conclusions the customer sees when presented with the final prototype and documentation. However, the project revolves around making a prototype and documenting the steps taken to complete that process, and it is therefore safe to assume that the lifespan of the prototype will be relatively short. 
@@ -95,7 +96,7 @@ Regarding communication with external resources as a mail-server, it will be don
 \newline
 \textbf{Input validation} is always necessary in order to provide a secure service. All input to the XOXOMail application should be validated, this is includes received mail, user-input etc. For mail validation we are going to use \gls{emims} signing and verification provided by bouncycastle. 
 
-\section{GUI}
+\section{Frontend}
 
 \subsection{Introduction}
 The Android platform specifies a certain way of organizing the application, which we have tried to follow.
@@ -134,7 +135,7 @@ All the methods starting with on (onCreate etc.) can be overwritten to administr
 
 \begin{figure}
 	\includegraphics[width=\textwidth]{Android_GUI_flow_chart_2}
-	\caption{The logical view of the GUI architecture}
+	\caption{The activity flow for XOXOmail}
 	\label{fig:logicalGUIview}
 \end{figure}
 
@@ -145,3 +146,20 @@ The Android manifest \cite{bib:aman} is what binds the applicaiton together. It 
 
 \subsection{Supporting different hardware and internationalization}
 By conforming to using external resources on can easily build applications that support differences such as varying screen sizes and languages. For example, it is possible to create a low, medium and high dpi (dots per inch, a measure of screen density) version of an image and Android will select the correct version based on the screen size. Android can pick layouts based on the screen orientation, where the possibilities are that the phone is an portrait or landscape mode. It is also possible to have Android decide what language to use based on location, but this is not relevant to this project. 
+
+\section{Architectural tactics}
+	This section will in general be a discussing about and around tactics found in 'Software Architecture in Practice'\cite{bib:archi}. 
+	\subsection{Security}
+		Tactics for ensuring the security of an application and its data is of often divided into three seperate ways of operating, resisting attacks, detecting attacks and recovering from an attack. 
+		In the case of XOXOmail, resisting attacks will be the main focus. As seen in figure~\ref{fig:securityview} on page~\pageref{fig:securityview}, we have opted for a layered security in order to best secure the application data. In terms of what is listed in 'Software Architecture in Practive'\cite[p. 119]{bib:archi}, XOXOmail will in one way or another touch upon all of the six tactics listed. 
+		\begin{description}
+			\item[Authenticate Users] XOXOmail will keep a users credential stored after the first time login. The first time login authentication procedure consists of trying to login to mail gateway.
+			\item[Authorize Users] After authenication, a folder is allocated for the user. All data within this folder will be encrypted using a derivative of the users password. 
+			\item[Maintain data confidentiality] The local data storage will be secured by encryption, as described in the previous point. Network data will also be encrypted using SSL\gls{ssl} and/or TLS\gls{tls}. 
+			\item[Maintain Integrity] Data integrity is a concern at three points, the updating of a model, storing of data and network communication. Data integrity when updating a model will be assured by encapsulation, network communication will be secured by SSL/TLS running on top of TCP\gls{tcp}, the mail content will in addition be signed using S/MIME\gls{emims}. For the storing of data the ACID\gls{acid} properties of the \textit{PersistenceService} should ensure integrity. 
+			\item[Limit Exposure] The exposure of services within XOXOmail is limited by the authenication of user, since no services are available before the user is successfully authenicated.
+			\item[Limit access] Given two different views of access, XOXOmail tries to prevent both. In the case of physical access to the device, an authentication process must be completed. Attempting to gain access through network communication will be prevented by a trust manager, only accepting connections to gateways with a known certificate. 
+		\end{description}
+		
+	\subsection{Usability}
+		
