@@ -47,7 +47,7 @@ Figure \ref{fig:logicalpackview} shown at page \pageref{fig:logicalpackview}, sh
 
 The intended purpose of each of the different services is somewhat given by their respective names, but in order to avoid any ambiguity there will be a short recap of their purpose.
 \begin{description}
-	\item[NetworkService] The \textit{NetworkService}'s reponsebility is to provide the core functionality of sending and receiving mail. 
+	\item[NetworkService] The \textit{NetworkService}'s reponsebility is to provide the core functionality of sending and receiving messages. 
 	\item[PersistenceService] The \textit{PersistenceService}'s responsebility is to keep track of objects being changes, and reflect these changes in a persistent way in case of system failure, or the application is shut down. 
 \end{description}
 
@@ -94,7 +94,7 @@ See figure \ref{fig:securityview} at page \pageref{fig:securityview}.
 Regarding communication with external resources as a mail-server, it will be done over a secure communication channel providing \gls{ssl1} or \gls{tls}. 
 \newline
 \newline
-\textbf{Input validation} is always necessary in order to provide a secure service. All input to the XOXOMail application should be validated, this is includes received mail, user-input etc. For mail validation we are going to use \gls{emims} signing and verification provided by an android ported version of \gls{bouncy} called \gls{spongy}.
+\textbf{Input validation} is always necessary in order to provide a secure service. All input to the XOXOMail application should be validated, this includes received mail, user-input etc. For messagel validation we are going to use \gls{emims} signing and verification provided by an android ported version of \gls{bouncy} called \gls{spongy}.
 
 \section{Frontend}
 
@@ -156,7 +156,7 @@ By conforming to using external resources on can easily build applications that 
 			\item[Authenticate Users] XOXOmail will keep a users credential stored after the first time login. The first time login authentication procedure consists of trying to login to mail gateway.
 			\item[Authorize Users] After authenication, a folder is allocated for the user. All data within this folder will be encrypted using a derivative of the users password. 
 			\item[Maintain data confidentiality] The local data storage will be secured by encryption, as described in the previous point. Network data will also be encrypted using \gls{ssl}. 
-			\item[Maintain Integrity] Data integrity is a concern at three points, the updating of a model, storing of data and network communication. Data integrity when updating a model will be assured by encapsulation, network communication will be secured by \gls{ssl} running on top of \gls{tcp}, the mail content will in addition be signed using \gls{emims}. For the storing of data the \gls{acid} properties of the \textit{PersistenceService} should ensure integrity. 
+			\item[Maintain Integrity] Data integrity is a concern at three points, the updating of a model, storing of data and network communication. Data integrity when updating a model will be assured by encapsulation, network communication will be secured by \gls{ssl} running on top of \gls{tcp}, the messagel content will in addition be signed using \gls{emims}. For the storing of data the \gls{acid} properties of the \textit{PersistenceService} should ensure integrity. 
 			\item[Limit Exposure] The exposure of services within XOXOmail is limited by the authenication of user, since no services are available before the user is successfully authenicated.
 			\item[Limit access] Given two different views of access, XOXOmail tries to prevent both. In the case of physical access to the device, an authentication process must be completed. Attempting to gain access through network communication will be prevented by a trust manager, only accepting connections to gateways with a known certificate. 
 		\end{description}
