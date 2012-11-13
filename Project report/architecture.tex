@@ -199,7 +199,7 @@ By conforming to using external resources on can easily build applications that 
 	The sequence diagrams below show the general sequence of executed methods when the application is running normally. It is however somewhat simplified in order to best convey the general notion of the sequence, while the implementation make use of multiple concurrent threads, and uses callbacks instead of return values to methods. 
 	\subsection{The login sequence}
 	The key element in the login sequence is the query to the \textsc{UserManager} object, which allows for offline login to the application. This is however only possible if the user has been logged in on that particular device before. In the case that a user has never logged in before, the gateway server is used to verify the user credentials, they are then stored if they are correct. 
-	\begin{figure}
+	\begin{figure}[H]
 		\includegraphics[width=\textwidth]{LoginSequence}
 		\caption{The login sequence}
 		\label{fig:lifecycle}
@@ -207,15 +207,16 @@ By conforming to using external resources on can easily build applications that 
 	
 \subsection{The send message sequence}
 	In this sequence diagram you see the general flow when sending a message. One thing to note is the \textsc{reportMessage}s in the diagram, these are implemented as callback functions in XOXOmail. The reasoning for this is that every time consuming task run in a separate thread, hence a introducing the need for asynchronous callbacks. These callbacks also follows the \textsc{Observable pattern}\cite{bib:observer}, which allows for multiple observers. 
-	\begin{figure}
+	\begin{figure}[H]
 		\includegraphics[width=\textwidth]{SendSequence}
 		\caption{The send message sequence}
 		\label{fig:lifecycle}
 	\end{figure}
 \subsection{The retrieve message sequence}
-	
-	\begin{figure}
+	The sequence diagram for retrieving messages show the general setup of the \gls{imapi} strategy. The thing to notice here is the loop structure within the sequence diagram, this is to illustrate the continuality of the idle command issued to the server. 
+	\begin{figure}[H]
 		\includegraphics[width=\textwidth]{IMAPPushSequence}
 		\caption{The imap push sequence}
 		\label{fig:lifecycle}
 	\end{figure}
+	
