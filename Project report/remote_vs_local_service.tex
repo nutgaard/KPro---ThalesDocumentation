@@ -12,6 +12,8 @@ As stated above, a remote service will run in its own process. This means that t
 \subsection{Communication with service}
 For a remote service you will have to use some sort of  interprocess communication(\gls{ipc}). On the Android platform this is solved by the use of `Android Interface Definition Language`(\gls{ldia}) \cite{bib:aidl}, whereas for a local service a simple IBinder \cite{bib:ibinder} is needed. With respect to modifiability the latter is the best solution since the developer does not update \gls{ldia} files whenever an interface changes, nor does he/she have manage the intricate process of breaking down object used in the application down to primary types for sending over \gls{ipc}.
 
+\subsection{Remote vs. local service conclusion}
+There was little that supported the use of a remote service for this application, so the natural choice is the local service, both for its ease of use and performance.
 
 
 
