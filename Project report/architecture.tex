@@ -96,12 +96,37 @@ Regarding communication with external resources as a mail-server, it will be don
 \newline
 \textbf{Input validation} is always necessary in order to provide a secure service. All input to the XOXOMail application should be validated, this includes received mail, user-input etc. For messagel validation we are going to use \gls{emims} signing and verification provided by an android ported version of \gls{bouncy} called \gls{spongy}.
 
+
+
+
+
 \section{Frontend}
 
 \subsection{Introduction}
-The Android platform specifies a certain way of organizing the application, which we have tried to follow.
+This section will describe the process of how the user interface came into being, how the Android framework has specified implementing an app and what elements we conformed to in this specification, and how the user interface looks like and why.
 
-\subsection{External resources}
+\subsection{The design process}
+This section will outline the design process from the requirements and prototyping to implementation and testing.
+
+\subsubsection{Planning from the requirements}
+First of all, we looked at the requirements specification and use cases to get an overview of what screens we needed and the basic functionality each screen should have. 
+
+\subsubsection{Prototyping}
+Secondly, we started to create simple sketches of each screen and trying to outline the flow between the screens. In this phase we had several suggestions as to the layout and main form of navigation. We settled for one method, namely the tab navigation pattern. We then tried using an online prototyping tool FLUIDUI SOURCE that we shared with the customer to give them an early insight into what direction we were headed with the design. 
+
+\subsubsection{Continuous feedback and implementation}
+We kept an open dialog with the customer about what they wanted of functionality and feedback on the user interface. The implementation was split up in iterations according to the sprints where we implemented functionaliy that we had planned and the customer gave feedback at the end of each sprint and demonstration. 
+\newline
+\newline
+Even though we had tried to dig into the Android framework, as outlined in the REFERANSE, we did not have a full overview over what was possible in the framework. Implementing each view as we wanted became a process of trial and error and we learnt a lot as we went. We tried to stick to Android's specified way of doing things and using the built-in architecture and components, to avoid the effort of creating custom components from scratch, as we did not have that much time available. 
+
+\subsubsection{Testing}
+We wrote a lot of black-box functional tests that are described in REFERANSE. We also conducted a usability study to investigate whether we had succeeded in creating a usable user interface. These tests, in addition to the results, are also described in REFERANSE.
+
+\subsection{The Android framework}
+This section describes the certain way the Android framework has specified of organizing the application, which we have tried to follow.
+
+\subsubsection{External resources}
 The user interface elements, ranging from whole screens (called layouts) to the structure and look of a single list element, are defined in \gls{xml} (Extensible Markup Language) and stored external to the application. An Android project contains a folder named “res” where all external resources are placed. User interface elements are stored in a sub folder called “layouts”. Other resources, e.g. colors or images, are stored inside separate sub folders. The advantage of declaring the user interface and other resources in \gls{xml} is that it enables decoupling of the presentation of the application and the code that controls the application.
 \newline
 \newline
@@ -110,7 +135,7 @@ All resources must be assigned an \gls{id} if they are to be referenced in the a
 \newline
 We also want to use styles, which are collections of properties specifying the look of a layout or a component. It can be compared to the mindset of \gls{css}, where one separate design and content. We might also consider using a theme for our application, which is a style applied to an entire activity or application. The reason behind using styles and themes would be to ensure consistent appearance across the application. 
 
-\subsection{Activities}
+\subsubsection{Activities}
 Activities are components that provide a screen that the user can interact with, and are classes written in Java. Each activity has a window where the user interface is drawn. One activity is specified as the main activity and is the start screen of the application. Each activity can start another activity to perform different actions. The activities inflate the \gls{xml} layouts to form the user interface and controls the behaviour of the elements. It is also possible to create layout elements programmatically, but we have chosen not to do this as we want the decoupling mentioned above.
 \newline
 \newline
@@ -131,7 +156,25 @@ The life cycle of an activity can be seen in figure \ref{fig:lifecycle} at page 
 
 All the methods starting with on (onCreate etc.) can be overwritten to administrate what the application should do in the changes of state.
 
-\paragraph{How we did it in our app}
+\subsubsection{The Android manifest}
+The Android manifest \cite{bib:aman} is what binds the application together. It is defined in \gls{xml} and details the structure and metadata of the application, its components and requirements. The manifest needs to have nodes for each of the components, which in our case are activities and services. Relevant metadata is the application name, icon and theme. The manifest also declares the permissions the application needs to access protected parts of the \gls{api} and interact with other applications.
+
+\subsubsection{Supporting different hardware and internationalization}
+By conforming to using external resources on can easily build applications that support differences such as varying screen sizes and languages. For example, it is possible to create a low, medium and high dpi (dots per inch, a measure of screen density) version of an image and Android will select the correct version based on the screen size. Android can pick layouts based on the screen orientation, where the possibilities are that the phone is an portrait or landscape mode. It is also possible to have Android decide what language to use based on location, but this is not relevant to this project. 
+
+\subsection{Our solution}
+
+This chapter describes our solution with regards to the user interface and the reason behind the most important choices. The evolution of the user interface during the different sprints is documented in REFERANSE.
+
+\subsubsection{The most important design choices}
+
+\paragraph{The tab navigation system}
+\paragraph{The inbox}
+\paragraph{Messages}
+\paragraph{Sending a message}
+\paragraph{Instant message}
+
+\subsubsection{Activities and flow between them}
 
 \begin{figure}
 	\includegraphics[width=\textwidth]{Android_GUI_flow_chart_2}
@@ -141,11 +184,9 @@ All the methods starting with on (onCreate etc.) can be overwritten to administr
 
 Figure \ref{fig:logicalGUIview} at page \pageref{fig:logicalGUIview} shows the flow in our app. It all starts in the upper left corner at "Start app". The first activity you see is the \textsc{Login Activity}. The user is granted access if a correct username and matching password is entered. He is then sent directly to the main menu, where he can choose to either see messages, send a new message or alter settings. Which messages are shown are based on if you choose \textsc{Sent}, \textsc{Outbox} or \textsc{Inbox}. By pressing \textsc{Sort} he can choose to alter the way the messages are shown. Choosing to send a message can either be done by going into the regular send message view, or the instant message view. Either way, for a message to be sent, it has to be validated. When all fields are valid, the message is sent to the correct recipient. By pressing return button when inside app we are minimizing the app. It will still be running in the background.
 
-\subsection{The Android manifest}
-The Android manifest \cite{bib:aman} is what binds the applicaiton together. It is defined in \gls{xml} and details the structure and metadata of the application, its components and requirements. The manifest needs to have nodes for each of the components, which in our case are activities and services. Relevant metadata is the application name, icon and theme. The manifest also declares the permissions the application needs to access protected parts of the \gls{api} and interact with other applications.
 
-\subsection{Supporting different hardware and internationalization}
-By conforming to using external resources on can easily build applications that support differences such as varying screen sizes and languages. For example, it is possible to create a low, medium and high dpi (dots per inch, a measure of screen density) version of an image and Android will select the correct version based on the screen size. Android can pick layouts based on the screen orientation, where the possibilities are that the phone is an portrait or landscape mode. It is also possible to have Android decide what language to use based on location, but this is not relevant to this project. 
+
+
 
 \section{Architectural tactics}
 	This section will in general be a discussing about and around tactics found in 'Software Architecture in Practice'\cite{bib:archi}. 
