@@ -94,4 +94,16 @@ When sending a message from the application it acts in a similar manner to the r
 \newline
 \newline
 Sending a single message takes 4.056 seconds and transfers 6320 bytes between the server and client. This is not bad for a GSM connection. The message sent from the client to the server had a size of 3150 bytes. The data sent from the client to the server was 1348 bytes.
-This is an increase of data by 42.7%. During this transmission there was only one duplicate packet sent from the client to the server.
+This is an increase of data by 42.7 \%. During this transmission there was only one duplicate packet sent from the client to the server.
+
+\subsection{Wireshark conclusion}
+Sending and receiving messages with our application over GSM seems to work in a respectable manner. The time it takes to receive and send messages is pretty good considering this was done over 14.4 kbits/s. The TLS protocol also seems to be working as intended for both sending and receiving messages. The initial handshake is completed and the following data is encrypted as it should be. 
+\newline
+\newline
+The only problem we could find is that the amount of data sent when considering both the sending and receiving functionality appears to be much larger than the actual size of the message when you inspect it in clear text. The receiving part of the application had an increase of 66.47 \% whilst the sending part had an increase of 42.7 \%. 
+\newline
+\newline
+At first we thought this could be a result of the TLS encryption of the data, but if the encryption is working as intended the only part of the encryption that could create some overflow is the initial handshake. This was not included in the calculation, only the actual application data sent or received was included. The actual encrypted TLS packages are based on relatively efficient symmetric ciphers and should not take up a lot more space than unencrypted packages.  
+\newline
+\newline
+It is difficult to pinpoint the exact reason for this large increase in data transferred at this point, but it was sent in a reasonable time and according to protocol, and those are the most important attributes for our client.  

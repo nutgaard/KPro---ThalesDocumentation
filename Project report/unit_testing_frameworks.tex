@@ -15,20 +15,6 @@ One of the criticisms of mock objects are that there is a tight coupling of the 
 \subsection{GreenMail}
 GreenMail is the first and only library that offers a test framework for both receiving and retrieving emails from Java.It is an open source, intuitive and easy-to-use suite of email servers used for testing purposes. It supports SMTP, POP3 and IMAP with SSL socket support \cite{bib:greenmail}.
 
-\subsubsection{Useful for:}
-\begin{itemize}
-\item{}Test your sending code: 
-\begin{itemize}
-\item{}GreenMail responds like a regular SMTP server but does not deliver any email, which enables it to be used in real life applications and real test cases. 
-\item{}Messages can easily be extracted, verified, and modified. 
-\item{}GreenMail is an excellent choice for unit testing code that needs to send email with a succinct, efficient way to wait for messages to arrive, retrieve, verify, and modify messages. 
-\end{itemize}
-\item{}Test your retrieving code: 
-\begin{itemize}
-\item{}GreenMail can be used for system or unit testing an application that needs to use POP3 or IMAP, by responding like a standard compliant POP3 or IMAP server. 
-\item{}Messages can be placed directly in user mailboxes or by using SMTP.
-\end{itemize}
-\end{itemize}
 
 \subsubsection{Sending and Retrieving}
 GreenMail can easily be configured to use all or a combination of ports, protocols, and bind addresses. It  is possible to run GreenMail on SMTP, POP3, POP3S and IMAPS ports as easily as only with SMTP. Many systems might already be running these servers or don’t allow non root users to open the default ports which is why GreenMail ships with a special configuration for testing.
