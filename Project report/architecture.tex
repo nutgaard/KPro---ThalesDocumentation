@@ -27,7 +27,7 @@ Figure \ref{fig:developmentview} at page \pageref{fig:developmentview} shows the
 	\caption{The logical package view of the architecture}
 	\label{fig:logicalpackview}
 \end{figure}
-Figure \ref{fig:logicalpackview} shown at page \pageref{fig:logicalpackview}, shows a package overview over the project backend. Though very generic, it shows the basic structure of the architecture, and the communication paths between packages. On thing to note, is that in order to add a new service to the architecture, one would need to implement three different objects, a factory for creating the service, an interface describing the service, and the service implementation itself. In the case of XOXOmail, we planned out four different services, the \textit{NetworkService}~(Fig.~\ref{fig:logicalnetworkpackview}~p.~\pageref{fig:logicalnetworkpackview}), \textit{PersistenceService}~(Fig.~\ref{fig:logicalpersistencepackview}~p.~\pageref{fig:logicalpersistencepackview}), \textit{HALService} and \textit{SecurityService}. The two latter was though never used, and their diagrams are therefore omitted here, alongside the diagram for our \textit{Utiliteis} class. The structure of our models can be seen in figure~\ref{fig:logicalmodelpackview} at page \pageref{fig:logicalmodelpackview}
+Figure \ref{fig:logicalpackview} shown at page \pageref{fig:logicalpackview}, shows a package overview over the project backend. Though very generic, it shows the basic structure of the architecture, and the communication paths between packages. On thing to note, is that in order to add a new service to the architecture, one would need to implement three different objects, a factory for creating the service, an interface describing the service, and the service implementation itself. In the case of XOXOmail, we planned out four different services, the \textsc{NetworkService}~(Fig.~\ref{fig:logicalnetworkpackview}~p.~\pageref{fig:logicalnetworkpackview}), \textsc{PersistenceService}~(Fig.~\ref{fig:logicalpersistencepackview}~p.~\pageref{fig:logicalpersistencepackview}), \textsc{HALService} and \textsc{SecurityService}. The two latter was though never used, and their diagrams are therefore omitted here, alongside the diagram for our \textsc{Utiliteis} class. The structure of our models can be seen in figure~\ref{fig:logicalmodelpackview} at page \pageref{fig:logicalmodelpackview}
 
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{NetworkService.png}
@@ -60,7 +60,7 @@ The intended purpose of each of the different services is somewhat given by thei
 	
 \subsection{Process view}
 The process view is concerned with how different tasks bind together to form one executable unit. More specifically, the communication between threads/processes and on which thread/process is a task executed. We will differentiate between major and minor tasks, where major tasks are architectural elements open through a public interface, and minor tasks being tasks introduced in order to implement some functionality in one class or module.
-In figure \ref{fig:processview} at page \pageref{fig:processview}, you can differentiate between minor and major tasks by looking at the \textit{SMTP} branch of \textit{NetworkService}, here \textit{SMTPSender} is a minor task, while both \textit{SMTP} and \textit{NetworkService} is considered major tasks. 
+In figure \ref{fig:processview} at page \pageref{fig:processview}, you can differentiate between minor and major tasks by looking at the \textsc{SMTP} branch of \textsc{NetworkService}, here \textsc{SMTPSender} is a minor task, while both \textsc{SMTP} and \textsc{NetworkService} is considered major tasks. 
 
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{processview.png}
@@ -68,7 +68,7 @@ In figure \ref{fig:processview} at page \pageref{fig:processview}, you can diffe
 	\label{fig:processview}
 \end{figure}
 
-One thing to note about the communications paths is that all communication between the \textit{frontent component} and \textit{service component} is between two wrapper classes, \textit{WrapperActivity} at the frontend, and \textit{ServiceProvider} at the backend. 
+One thing to note about the communications paths is that all communication between the \textsc{frontent component} and \textsc{service component} is between two wrapper classes, \textsc{WrapperActivity} at the frontend, and \textsc{ServiceProvider} at the backend. 
 
 \subsection{Security view}
 The security view is concerned with how the system as a whole is secured. This involves intercommunication, storage and communication with external sources. The view is not however concerned about implementation, just the layers of security.
@@ -156,7 +156,7 @@ By conforming to using external resources on can easily build applications that 
 			\item[Authenticate Users] XOXOmail will keep a users credential stored after the first time login. The first time login authentication procedure consists of trying to login to mail gateway.
 			\item[Authorize Users] After authenication, a folder is allocated for the user. All data within this folder will be encrypted using a derivative of the users password. 
 			\item[Maintain data confidentiality] The local data storage will be secured by encryption, as described in the previous point. Network data will also be encrypted using \gls{ssl}. 
-			\item[Maintain Integrity] Data integrity is a concern at three points, the updating of a model, storing of data and network communication. Data integrity when updating a model will be assured by encapsulation, network communication will be secured by \gls{ssl} running on top of \gls{tcp}, the messagel content will in addition be signed using \gls{emims}. For the storing of data the \gls{acid} properties of the \textit{PersistenceService} should ensure integrity. 
+			\item[Maintain Integrity] Data integrity is a concern at three points, the updating of a model, storing of data and network communication. Data integrity when updating a model will be assured by encapsulation, network communication will be secured by \gls{ssl} running on top of \gls{tcp}, the message content will in addition be signed using \gls{emims}. For the storing of data the \gls{acid} properties of the \textit{PersistenceService} should ensure integrity. 
 			\item[Limit Exposure] The exposure of services within XOXOmail is limited by the authenication of user, since no services are available before the user is successfully authenicated.
 			\item[Limit access] Given two different views of access, XOXOmail tries to prevent both. In the case of physical access to the device, an authentication process must be completed. Attempting to gain access through network communication will be prevented by a trust manager, only accepting connections to gateways with a known certificate. 
 		\end{description}
@@ -181,7 +181,7 @@ By conforming to using external resources on can easily build applications that 
 		Even though modifiability was not one of the choosen quality attributes, it has had a significant impact on the overall architecture and is therefore included here. From 'Software Architecture in Practice'\cite[p. 111]{bib:archi} it is listed three main areas for modifiability tactics, which each has several tactics. The ones XOXOmail uses are as listed in table~\ref{tab:modtac} on page~\pageref{tab:modtac}.
 		\begin{table}[H]
 			\begin{description}
-				\item[Localize change] In an attempt to maximize the systems functional cohesion several tactics where utilized. The network service in XOXOmail utilizes a tactic known as \textit{Generalize Module} as it make use of dependency injection to function instead of multiple fairly similar functions. This allows for a more general use of the module by changing the input parameters to it, instead of the module itself. Another tactic used is \textit{abstract common services}, which can be seen on both the frontend and backend part of the application. Frontend, all activities inherit from a wrapper class which manages the connection to the backendservice. Backend, all services inherit from an abstract service which manages all commonalities between each service. 
+				\item[Localize change] In an attempt to maximize the systems functional cohesion several tactics where utilized. The network service in XOXOmail utilizes a tactic known as \textsc{Generalize Module} as it make use of dependency injection to function instead of multiple fairly similar functions. This allows for a more general use of the module by changing the input parameters to it, instead of the module itself. Another tactic used is \textsc{abstract common services}, which can be seen on both the frontend and backend part of the application. Frontend, all activities inherit from a wrapper class which manages the connection to the backendservice. Backend, all services inherit from an abstract service which manages all commonalities between each service. 
 				\item[Prevention of ripple effect] The prevention if done mainly by the use of interfaces, supplemented by a factory pattern for easy creating of services. 
 				\item[Defer binding time] The concept of configuration files is utilized by XOXOmail when the application is first starting up. The user also has the possibility to change the configuration files through the user interface, and make the application in the most suitable way. 
 			\end{description}
@@ -194,3 +194,29 @@ By conforming to using external resources on can easily build applications that 
 		
 \section{Architectural patterns}
 	XOXOmail is built up of several architectural pattern working together to create the best possible experience for every stakeholder involved in this project. The most prominent being our own derivation of the Model-View-Controller pattern, where the whole frontend has taken the part of being a view-controller, models are still models, and the backend service a pure controller. A great amount of modifiability is achived with this pattern, and by using interfaces to describe modules and their respective callbacks. 
+	
+\section{The sequence of operations}
+	The sequence diagrams below show the general sequence of executed methods when the application is running normally. It is however somewhat simplified in order to best convey the general notion of the sequence, while the implementation make use of multiple concurrent threads, and uses callbacks instead of return values to methods. 
+	\subsection{The login sequence}
+	The key element in the login sequence is the query to the \textsc{UserManager} object, which allows for offline login to the application. This is however only possible if the user has been logged in on that particular device before. In the case that a user has never logged in before, the gateway server is used to verify the user credentials, they are then stored if they are correct. 
+	\begin{figure}[H]
+		\includegraphics[width=\textwidth]{LoginSequence}
+		\caption{The login sequence}
+		\label{fig:lifecycle}
+	\end{figure}
+	
+\subsection{The send message sequence}
+	In this sequence diagram you see the general flow when sending a message. One thing to note is the \textsc{reportMessage}s in the diagram, these are implemented as callback functions in XOXOmail. The reasoning for this is that every time consuming task run in a separate thread, hence a introducing the need for asynchronous callbacks. These callbacks also follows the \textsc{Observable pattern}\cite{bib:observer}, which allows for multiple observers. 
+	\begin{figure}[H]
+		\includegraphics[width=\textwidth]{SendSequence}
+		\caption{The send message sequence}
+		\label{fig:lifecycle}
+	\end{figure}
+\subsection{The retrieve message sequence}
+	The sequence diagram for retrieving messages show the general setup of the \gls{imapi} strategy. The thing to notice here is the loop structure within the sequence diagram, this is to illustrate the continuality of the idle command issued to the server. 
+	\begin{figure}[H]
+		\includegraphics[width=\textwidth]{IMAPPushSequence}
+		\caption{The imap push sequence}
+		\label{fig:lifecycle}
+	\end{figure}
+	
