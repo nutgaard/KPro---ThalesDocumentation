@@ -23,6 +23,13 @@
 \usepackage{subcaption}
 \usepackage[nonumberlist]{glossaries}
 \usepackage{float}
+%\usepackage{titlesec}
+
+
+%\titleformat*{\subsubsection}{0.4em}
+%\titleformat*{\subparagraph}{0.3em}
+
+
 \hypersetup{
     colorlinks=false,
     pdfborder={0 0 0},
@@ -292,6 +299,8 @@
 
 	\include*{wireshark}
 
+\newpage
+
 	\include*{compression_of_data}
 
 	\include*{ip_rights_and_licenses}
@@ -541,6 +550,11 @@
 \bibitem{bib:uidesign} Shneiderman, Ben; Plaisant, Catherine. Designing the User Interface, fifth edition. 
 \bibitem{bib:observer} Observer pattern. Retrieved 2012-12-11 from http://en.wikipedia.org/wiki/Observer\_pattern
 \bibitem{bib:fui} Fluid UI. Retrieved 2012-09-23 from https://www.fluidui.com/
+\bibitem{bib:blackbox} Black-box testing. Retrieved 2012-11-09 from http://en.wikipedia.org/wiki/Black-box\_testing
+\bibitem{bib:bbfun} Black-box testing fundamentals. Retrieved 2012-11-09 from http://softwaretestingfundamentals.com/black-box-testing/
+\bibitem{bib:funtest} Functional testing. Retrieved 2012-11-10 from http://en.wikipedia.org/wiki/Functional\_testing
+\bibitem{bib:sus} System Usability Scale. Retrieved 2012-11-12 from http://en.wikipedia.org/wiki/System\_usability\_scale
+\bibitem{bib:useit} Jakob Nielsen. Retrieved 2012-11-12 from http://www.useit.com/alertbox/20000319.html
 \end{thebibliography}
 
 
@@ -548,37 +562,41 @@
 
 	\appendix
 
+	\include{test_cases_appendix}
+
+	\include{usability_tests}
+
 	\include{wireshark_results}
 
 	\include{user_manual}
 
 	\include{user_manaual}
-%	
-%	%\include{YYYY-MM-DD-Agenda-Advisor}
-%
-%	
-%	%\include{YYYY-MM-DD-Agenda-Customer}
-%
-%	
-%	%\include{YYYY-MM-DD-Agenda-Internal}
-%
-%	
-%	%\include{YYYY-MM-DD-WeeklyStatusReport-WeekWW}
-%
-%	
-%	%\include{YYYY-MM-DD-Minutes-Advisor}
-%
-%	
-%	%\include{YYYY-MM-DD-Minutes-Customer}
-%
-%	
-%	%\include{YYYY-MM-DD-Minutes-Internal}
-%
-	\include{templates}
+	
+	%\include{YYYY-MM-DD-Agenda-Advisor}
 
-	\include{agendas}
+	
+	%\include{YYYY-MM-DD-Agenda-Customer}
 
-	\include{minutes}
+	
+	%\include{YYYY-MM-DD-Agenda-Internal}
+
+	
+	%\include{YYYY-MM-DD-WeeklyStatusReport-WeekWW}
+
+	
+	%\include{YYYY-MM-DD-Minutes-Advisor}
+
+	
+	%\include{YYYY-MM-DD-Minutes-Customer}
+
+	
+	%\include{YYYY-MM-DD-Minutes-Internal}
+
+	%\include{templates}
+
+	%\include{agendas}
+
+	%\include{minutes}
 
 
 
