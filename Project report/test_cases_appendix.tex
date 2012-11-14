@@ -1,10 +1,10 @@
-\section{Functional tests}
+\chapter{Functional tests}\label{ch:funtest}
 		See table \ref{tab:case1} - \ref{tab:case28} at page \pageref{tab:case1} - \pageref{tab:case28} for test cases.
-		\begin{table}
+		\begin{table}[h!]
 			\begin{tabular}{l|p{10cm}}
 				Test case ID & 1 \\ \hline
 				Name & Login\\ \hline
-				Requirement & ? \\ \hline
+				Requirement & FR1\\ \hline
 				Description & Test the login functionality\\ \hline
 				Preconditions & The app has started\\ \hline
 				Flow of events & 
@@ -21,11 +21,11 @@
 			\caption{Test case 1} \label{tab:case1}
 		\end{table}
 
-		\begin{table}
+		\begin{table}[htb]
 			\begin{tabular}{l|p{10cm}}
 				Test case ID & 2 \\ \hline
 				Name & Send regular message\\ \hline
-				Requirement & 3.3\\ \hline
+				Requirement & FR2\\ \hline
 				Description & Test sending of message with default values\\ \hline
 				Preconditions & The user is logged in\\ \hline
 				Flow of events & 
@@ -45,11 +45,11 @@
 			\caption{Test case 2} \label{tab:case2}
 		\end{table}
 
-		\begin{table}
+		\begin{table}[htb]
 			\begin{tabular}{l|p{10cm}}
 				Test case ID & 3 \\ \hline
 				Name & Send message to contact from the address book\\ \hline
-				Requirement & 6.1\\ \hline
+				Requirement & FR2, FR5\\ \hline
 				Description & Test sending of message to a contact from the address book\\ \hline
 				Preconditions & The user is logged in\\ \hline
 				Flow of events & 
@@ -69,11 +69,11 @@
 			\caption{Test case 3} \label{tab:case3}
 		\end{table}
 
-		\begin{table}
+		\begin{table}[htb]
 			\begin{tabular}{l|p{10cm}}
 				Test case ID & 4 \\ \hline
 				Name & Send full message\\ \hline
-				Requirement & 3.3-5\\ \hline
+				Requirement & FR2, FR6\\ \hline
 				Description & Test sending of message with attributes set\\ \hline
 				Preconditions & The user is logged in\\ \hline
 				Flow of events & 
@@ -96,11 +96,11 @@
 			\caption{Test case 4} \label{tab:case4}
 		\end{table}
 
-		\begin{table}
+		\begin{table}[htb]
 			\begin{tabular}{l|p{10cm}}
 				Test case ID & 5 \\ \hline
 				Name & Sent messages folder\\ \hline
-				Requirement & ?\\ \hline
+				Requirement & FR4\\ \hline
 				Description & Test sent messages folder\\ \hline
 				Preconditions & The user is logged in and at least 3 message has been sent\\ \hline
 				Flow of events & 
@@ -117,11 +117,11 @@
 			\caption{Test case 5} \label{tab:case5}
 		\end{table}
 
-		\begin{table}
+		\begin{table}[htb]
 			\begin{tabular}{l|p{10cm}}
 				Test case ID & 6 \\ \hline
 				Name & Read and browse messages\\ \hline
-				Requirement & 3.3\\ \hline
+				Requirement & FR3\\ \hline
 				Description & Read and browse messages\\ \hline
 				Preconditions & The user is logged in and there are at least two message in the inbox folder\\ \hline
 				Flow of events & 
@@ -138,11 +138,11 @@
 			\caption{Test case 6} \label{tab:case6}
 		\end{table}
 
-		\begin{table}
+		\begin{table}[htb]
 			\begin{tabular}{l|p{10cm}}
 				Test case ID & 7 \\ \hline
 				Name & Send attachment (camera)\\ \hline
-				Requirement & 3.1-2\\ \hline
+				Requirement & FR7\\ \hline
 				Description & Test sending of image from camera\\ \hline
 				Preconditions & The user is logged in\\ \hline
 				Flow of events & 
@@ -164,11 +164,11 @@
 			\caption{Test case 7} \label{tab:case7}
 		\end{table}
 
-		\begin{table}
+		\begin{table}[htb]
 			\begin{tabular}{l|p{10cm}}
 				Test case ID & 8 \\ \hline
 				Name & Send attachment (gallery)\\ \hline
-				Requirement & 3.1-2\\ \hline
+				Requirement & FR7\\ \hline
 				Description & Test sending of image from gallery\\ \hline
 				Preconditions & The user is logged in and has at least one image in the gallery\\ \hline
 				Flow of events & 
@@ -190,11 +190,11 @@
 			\caption{Test case 8} \label{tab:case8}
 		\end{table}
 
-		\begin{table}
+		\begin{table}[htb]
 			\begin{tabular}{l|p{10cm}}
 				Test case ID & 9 \\ \hline
 				Name & Send attachment (GPS)\\ \hline
-				Requirement & 3.1-2\\ \hline
+				Requirement & FR7\\ \hline
 				Description & Test sending of GPS coordinates\\ \hline
 				Preconditions & The user is logged in\\ \hline
 				Flow of events & 
@@ -216,11 +216,11 @@
 			\caption{Test case 9} \label{tab:case9}
 		\end{table}
 
-		\begin{table}
+		\begin{table}[htb]
 			\begin{tabular}{l|p{10cm}}
 				Test case ID & 10 \\ \hline
 				Name & Attachments received\\ \hline
-				Requirement & 3.1-3\\ \hline
+				Requirement & FR7\\ \hline
 				Description & Test reading and opening of a message with attachments\\ \hline
 				Preconditions & The user is logged in and there is at least one message with attachements\\ \hline
 				Flow of events & 
@@ -238,11 +238,11 @@
 			\caption{Test case 10} \label{tab:case10}
 		\end{table}
 
-		\begin{table}
+		\begin{table}[htb]
 			\begin{tabular}{l|p{10cm}}
 				Test case ID & 11 \\ \hline
 				Name & Instant message settings\\ \hline
-				Requirement & 3.8\\ \hline
+				Requirement & FR9, FR10\\ \hline
 				Description & Test instant message settings\\ \hline
 				Preconditions & The user is logged in\\ \hline
 				Flow of events & 
@@ -262,11 +262,11 @@
 			\caption{Test case 11} \label{tab:case11}
 		\end{table}
 
-		\begin{table}
+		\begin{table}[htb]
 			\begin{tabular}{l|p{10cm}}
 				Test case ID & 12\\ \hline
 				Name & Message retrival strategy settings\\ \hline
-				Requirement & 4.3\\ \hline
+				Requirement & FR10\\ \hline
 				Description & Test settings for push/pull strategy\\ \hline
 				Preconditions & The user is logged in\\ \hline
 				Flow of events & 
@@ -283,11 +283,11 @@
 			\caption{Test case 12} \label{tab:case12}
 		\end{table}
 
-		\begin{table}
+		\begin{table}[htb]
 			\begin{tabular}{l|p{10cm}}
 				Test case ID & 13\\ \hline
 				Name & Security labels settings\\ \hline
-				Requirement & ?\\ \hline
+				Requirement & FR10\\ \hline
 				Description & Test settings for available security labels\\ \hline
 				Preconditions & The user is logged in\\ \hline
 				Flow of events & 
@@ -305,11 +305,11 @@
 			\caption{Test case 13} \label{tab:case13}
 		\end{table}
 
-		\begin{table}
+		\begin{table}[htb]
 			\begin{tabular}{l|p{10cm}}
 				Test case ID & 14 \\ \hline
 				Name & Send instant message\\ \hline
-				Requirement & 3.8\\ \hline
+				Requirement & FR9\\ \hline
 				Description & Test sending of an instant message\\ \hline
 				Preconditions & The user is logged in\\ \hline
 				Flow of events & 
@@ -326,11 +326,11 @@
 			\caption{Test case 14} \label{tab:case14}
 		\end{table}
 
-		\begin{table}
+		\begin{table}[htb]
 			\begin{tabular}{l|p{10cm}}
 				Test case ID & 15 \\ \hline
 				Name & Receive of an flash/override message\\ \hline
-				Requirement & 4.2\\ \hline
+				Requirement & TODO\\ \hline
 				Description & Test receiving of an high priority message\\ \hline
 				Preconditions & The user is logged in and someone has sent a high-priority message to the user\\ \hline
 				Flow of events & 
@@ -350,7 +350,7 @@
 			\begin{tabular}{l|p{10cm}}
 				Test case ID & 16 \\ \hline
 				Name & Send instant message with attachments\\ \hline
-				Requirement & 3.8\\ \hline
+				Requirement & FR9\\ \hline
 				Description & Test sending of instant message with attachments\\ \hline
 				Preconditions & The user is logged in and has at least one image in the gallery\\ \hline
 				Flow of events & 
@@ -375,7 +375,7 @@
 			\begin{tabular}{l|p{10cm}}
 				Test case ID & 17 \\ \hline
 				Name & Receive instant message outside the application\\ \hline
-				Requirement & 4.2\\ \hline
+				Requirement & TODO\\ \hline
 				Description & Test receiving of instant message outside the application\\ \hline
 				Preconditions & The user is logged in and the application is in the background\\ \hline
 				Flow of events & 
@@ -395,7 +395,7 @@
 			\begin{tabular}{l|p{10cm}}
 				Test case ID & 18 \\ \hline
 				Name & Widget for instant message\\ \hline
-				Requirement & 3.8\\ \hline
+				Requirement & FR9\\ \hline
 				Description & Test the widget for sending an instant message\\ \hline
 				Preconditions & The user is logged in and the widget is placed on the home screen\\ \hline
 				Flow of events & 
@@ -416,7 +416,7 @@
 			\begin{tabular}{l|p{10cm}}
 				Test case ID & 19 \\ \hline
 				Name & Reply\\ \hline
-				Requirement & 3.3\\ \hline
+				Requirement & FR8\\ \hline
 				Description & Test reply of a message\\ \hline
 				Preconditions & The user is logged in and has at least one message in the inbox\\ \hline
 				Flow of events & 
@@ -437,7 +437,7 @@
 			\begin{tabular}{l|p{10cm}}
 				Test case ID & 20 \\ \hline
 				Name & Forward\\ \hline
-				Requirement & 3.3\\ \hline
+				Requirement &FR8\\ \hline
 				Description & Test forwarding of a message\\ \hline
 				Preconditions & The user is logged in and has at least one message in the inbox\\ \hline
 				Flow of events & 
@@ -458,7 +458,7 @@
 			\begin{tabular}{l|p{10cm}}
 				Test case ID & 21 \\ \hline
 				Name & Delete\\ \hline
-				Requirement & 3.3\\ \hline
+				Requirement & FR8\\ \hline
 				Description & Test deleting of a message\\ \hline
 				Preconditions & The user is logged in and has at least one message in the inbox\\ \hline
 				Flow of events & 
@@ -480,7 +480,7 @@
 			\begin{tabular}{l|p{10cm}}
 				Test case ID & 22 \\ \hline
 				Name & Delivery report and receipt notification\\ \hline
-				Requirement & 3.6\\ \hline
+				Requirement & TODO\\ \hline
 				Description & Test sending of a message where one has requested delivery report and receipt notification\\ \hline
 				Preconditions & The user is logged in\\ \hline
 				Flow of events & 
@@ -505,7 +505,7 @@
 			\begin{tabular}{l|p{10cm}}
 				Test case ID & 23 \\ \hline
 				Name & Status of delivery report and receipt notification\\ \hline
-				Requirement & 3.7\\ \hline
+				Requirement &TODO\\ \hline
 				Description & Test checking status on a message where one has requested delivery report and receipt notification\\ \hline
 				Preconditions & The user is logged in and has at least one sent message that has a request for delivery report and receipt notification\\ \hline
 				Flow of events & 
@@ -526,7 +526,7 @@
 			\begin{tabular}{l|p{10cm}}
 				Test case ID & 24 \\ \hline
 				Name & Sort\\ \hline
-				Requirement & 3.6\\ \hline
+				Requirement & 3TODO\\ \hline
 				Description & Test sorting of messages in the inbox based on different criterias\\ \hline
 				Preconditions & The user is logged in and has at least 4 different messages in the inbox\\ \hline
 				Flow of events & 
@@ -546,7 +546,7 @@
 			\begin{tabular}{l|p{10cm}}
 				Test case ID & 25 \\ \hline
 				Name & Search\\ \hline
-				Requirement & 3.6\\ \hline
+				Requirement & TODO\\ \hline
 				Description & Test searching of messages in folders\\ \hline
 				Preconditions & The user is logged in and has at least 4 different messages in the inbox\\ \hline
 				Flow of events & 
@@ -566,7 +566,7 @@
 			\begin{tabular}{l|p{10cm}}
 				Test case ID & 26\\ \hline
 				Name & Login incorrect input\\ \hline
-				Requirement & ?\\ \hline
+				Requirement & FR1\\ \hline
 				Description&Test how the app reacts to incorrect login input\\ \hline
 				Preconditions&The app has started\\ \hline
 				Tasks&\begin{enumerate}
@@ -587,7 +587,7 @@
 			\begin{tabular}{l|p{10cm}}
 				Test case ID & 27\\ \hline
 				Name & Receiver incorrect input\\ \hline
-				Requirement & 3.1\\ \hline
+				Requirement & FR2\\ \hline
 				Description&Test how the app reacts to incorrect receiver input\\ \hline
 				Preconditions&The user is logged in and looks at the send message view\\ \hline
 				Tasks&\begin{enumerate}
@@ -606,7 +606,7 @@
 			\begin{tabular}{l|p{10cm}}
 				Test case ID & 28\\ \hline
 				Name &Security label incorrect input\\ \hline
-				Requirement & 3.5\\ \hline
+				Requirement & FR2\\ \hline
 				Description&Test how the app reacts to incorrect security label input\\ \hline
 				Preconditions&The user is logged in and looks at the send message view\\ \hline
 				Tasks&\begin{enumerate}

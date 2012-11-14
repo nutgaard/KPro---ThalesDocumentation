@@ -6,30 +6,7 @@
 \newline
 The classes that you serialize with \gls{xs} don't need to implement the Serializable interface, thanks to \gls{xs} handling all serializations. \gls{xs} is a serialization tool and not a data binding tool, which means that it doesn't perform class generation from an XML Schema Definition (\gls{xsd}) file \cite{bib:xstream} \cite{bib:ibm}.
 
-\newpage
-
 Another feature of XStream is that it has the capability to serialize to and from \gls{json} as well.
-
-\textbf{Features:}
-\begin{itemize}
-\item{}Ease of use: A high level facade is supplied that simplifies common use cases.
-\item{}No mappings required: Most objects can be serialized without a need for specifying mappings.
-\item{}Performance: Speed and low memory footprint are a crucial part of the design, making it suitable for large object graphs or systems with high message throughput.
-\item{}Clean \gls{xml}: No information is duplicated that can be obtained via reflection. This results in \gls{xml} that is easier to read for humans and more compact than native Java serialization.
-\item{}Requires no modifications to objects: Serializes internal fields, including private and final. Supports non-public and inner classes. Classes are not required to have default constructor.
-\item{}Full object graph support: Duplicate references encountered in the object-model will be maintained. Supports circular references.
-\item{}Integrates with other \gls{xml} \gls{api}s: By implementing an interface, XStream can serialize directly to/from any tree structure (not just \gls{xml}).
-\item{}Customizable conversion strategies: Strategies can be registered allowing customization of how particular types are represented as \gls{xml}.
-\item{}Error messages: When an exception occurs due to malformed \gls{xml}, detailed diagnostics are provided to help isolate and fix the problem.
-\item{}Alternative output format: The modular design allows other output formats. XStream ships currently with \gls{json} support and morphing.
-\end{itemize}
-
-\textbf{Limitations:}
-\begin{itemize}
-\item{}If using the enhanced mode, XStream can re-instantiate classes that do not have a default constructor. However, if using a different \gls{jvm} like an old \gls{jrock} version, a \gls{jdk} 1.4 or you have restrictions because of a SecurityManager, a default constructor is required.
-\item{}The enhanced mode is also necessary to restore final fields for any \gls{jdk} < 1.5. This implies deserialization of instances of an inner class.
-\item{}Auto-detection of annotations may cause race conditions. Preprocessing annotations is safe though.
-\end{itemize}
 
 \subsection{Markup languages conclusion}
 \gls{xml} is a widespread exchange format which has a lot of libraries that can be used to generate \gls{xml} data. Even though, it is known that \gls{xml} is primarily a document exchange format, where as \gls{json} is better suited for data exchange. This means that \gls{json} often is much more readable, as the mapping between objects in programming and \gls{json} representation is much more alike. As a result, the \gls{json} code is easier for machines to read and write. \gls{json} is becoming more and more common, and is now widely adopted by the computer industry. Still, the format is irrelevant for us, as we will be using a serializer and deserializer that ensures that syntax is correct, so we will use a \gls{xml}-serializer. 

@@ -16,8 +16,6 @@ Compression is mainly used to reduce data storage space and transmission capacit
 \subsection{Disadvantages}
 Because that the data is compressed when receiving it, it must be decoded before use. This decoding is often resource demanding. Decoding of text and images are not very expensive and is done pretty fast.  When it comes to compressing and decompressing of video it is a quite different story. To encode a video without losing data is a time consuming task which requires expensive hardware. If the process is to slow, it will not be possible to watch the movie while it is being decoded. It is important to note that the result of decoding a compressed video may or may not give a different result thant the original data. This is dependent of the compression method used.
 
-\newpage
-
 \subsection{Data compression approaches}
 There are two main ways to perform data compression. The two types are lossy and lossless data compression. \cite{bib:dataCompression}
 
@@ -36,6 +34,7 @@ JPEG (Joint Photographic Experts Group) is an image format that uses a lossy com
 The intention of Progressive Graphics File format was to improve and possibly replace the JPEG format. By using a wavelet-based image format, the compression is done with focus on speed over compression ratio. One of the benfits of compressing using PGF is that you can increase the compression ratio without using more time on the encoding. It also does not suffer from the compression artifacts that occurs in JPEG.
 \cite{bib:PGF}
 
+\pagebreak
 
 \paragraph{Lossy Compression techniques for Video}
 
@@ -43,8 +42,6 @@ The intention of Progressive Graphics File format was to improve and possibly re
 \newline
 This was a format developed by the leading producers of video recorders. DV uses a lossy compression of the video, while the audio is stored uncompressed. The compression is done intra-frame, which means that each frame in the video is processed individually, not considering the frames in the sequence. The compression is done by a discrete cosine transform.
 \cite{bib:DV}
-
-\newpage
 
 \subparagraph{MPEG} \hfill
 \newline
@@ -84,8 +81,6 @@ AAC was designed to be the successor of the MP3 format. It is a part of the MPEG
 Windows Media Audio is a proprietary compression technology developed by Microsoft. A WMA file is mostly within a container format which specifies how song name, track number, artist name, etc. are to be stored. It is in many ways similar to AAC, and its intent was also to replace the MP3 format.
 \cite{bib:WMA}
 
-\newpage
-
 \subsubsection{Lossless data compression}
 There will come, however, a point where lossy compression and decompression will have made the original data useless. Although the human eyes and ears may not catch small degradations of images and sounds, the decreased quality eventually will be apparent.
 \newline
@@ -108,12 +103,12 @@ Is a lossless compression and prediction algorithm that is among the very few su
 This is actually not an compression algorithm, but is often used on the data before it is compressed. The data amout after the transform is actually bigger, but it is transformed into a format that is more easily compressed by encoders. http://michael.dipperstein.com/bwt/index.html
 \cite{bib:burrowsWheelerTransform}
 
+\pagebreak
+
 \subparagraph{LZ77} \hfill
 \newline
 LZ77 compresses the data by looking for similar data occurences found earlier in the uncompressed data. The match is marked by saying how long the found occurence is from the data it matches. In this way, we dont't need to keep the same data later in the file, we just reference the location of the similar data. To keep the algorithm efficient, a sliding window defines the data we do matching on. If the sliding window is 32 kB, we only look back 32 kB to find a match.
 \cite{bib:LZ77}
-
-\newpage
 
 \paragraph{Lossless compression tecniques for images}
 \subparagraph{GIF} \hfill
@@ -172,6 +167,9 @@ Compression of video is one of the most resource demanding tasks that a phone ca
 \paragraph{Compressing Sound}\hfill
 \newline
 Compression of sound can be done with varying results. If you want to keep the original quality, lossless is the only alternative. There are a lot of alternatives for both lossy and lossless audio encoding. Some of them do not have licence fees, while others have. There exist some libraries that do what you want, but this of course depends on the format of the sound you are trying to send.
+
+\subsection{Compression of data conclusion}
+We have now gone through a lot of methods for both lossy and lossless compression and it is evident that there are many choices. The intention of this compression study was merely to give an overview of what exists. We have not listed all options, but just peeked into some of the most interesting methods. In order to give a qualified answer to what is the best algorithms, a more thorough study has to be done in order to find the requirements on compression time in relation with connection speed, what Android devices will be using the algorithms and what algorithms that have a working implementation for android.  
 
 
 

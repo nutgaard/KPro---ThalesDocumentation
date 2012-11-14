@@ -17,8 +17,6 @@ Another solution to avoid retyping of username and password is to create an onli
 \newline
 This solution also suffers from the fact that if the user is already logged in, an attacker could view all the information. One could solve this by implementing a timeout on the application (If the user does not perform an action after x minutes, the app is terminated and the user gets disconnected).
 
-\newpage
-
 \subsection{Symmetric encryption with retyping of username and password}
 Symmetric encryption is also a possible solution for securing the data. If we are going to use this type of encryption we can’t store the keys because of the lacking general purpose, system-level secure storage.
 \newline
@@ -27,5 +25,14 @@ A way to solve this is to derive the keys from a user-entered password. To make 
 \newline
 \newline
 This could be a suitable solution, at least for the parts of the application that does not need to happen instantaneously because the password never should be stored in plain text.
+
+\subsection{Secure storage conclusion}
+If we chose to create custom account types it would involve a lot of server side implementation that would be time consuming and problematic. So we should try to avoid this solution. The two other possibilities are both valid ones if we make certain assumptions.
+\newline
+\newline
+If we are going to implement the version where username and password is saved in the local storage we would need to assume that no unwanted physical access to the phone will occur. Given this assumption this would be the best and easiest solution to implement.
+\newline
+\newline
+To implement the secure storage with derived keys we need to assume there will be no problem for the user to log in every time he starts the application. This will make sure the information is secure even though the phone should get misplaced or stolen, but this is more complicated to implement than saving the credentials locally.
 
 
