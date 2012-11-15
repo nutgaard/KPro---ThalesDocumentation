@@ -20,7 +20,7 @@ Because that the data is compressed when receiving it, it must be decoded before
 There are two main ways to perform data compression. The two types are lossy and lossless data compression. \cite{bib:dataCompression}
 
 \subsubsection{Lossy data compression}
-Lossy compression means that data is lost during the compression procedure. When encoding the image, you do not get the original image out, because data is lost during the process. The purpose is to decrease the amount of data that must be sent or handled. Often the data, especially multimedia data, can be useful even though some of the data is lost, e.g. an image that will become coarser but still be very alike the full version. The compression algorithms often use well known properties of the human eye to remove details we cannot see. This makes it very hard to see the difference between a compressed and and uncompressed image. A well known usage of lossy compression is in streaming. There are two types of lossy compression approaches. \cite{bib:lossyCompression}
+Lossy compression means that data is lost during the compression procedure. When encoding the image, you do not get the original image out, because data is lost during the process. The purpose is to decrease the amount of data that must be sent or handled. Often the data, especially multimedia data, can be useful even though some of the data is lost, e.g. an image that will become coarser but still be very much like the full version. The compression algorithms often use well known properties of the human eye to remove details we cannot see. This makes it very hard to see the difference between a compressed and and uncompressed image. A well known usage of lossy compression is in streaming. There are two types of lossy compression approaches. \cite{bib:lossyCompression}
 
 \paragraph{Lossy compression techniques for Images}
 
@@ -107,7 +107,7 @@ This is actually not an compression algorithm, but is often used on the data bef
 
 \subparagraph{LZ77} \hfill
 \newline
-LZ77 compresses the data by looking for similar data occurences found earlier in the uncompressed data. The match is marked by saying how long the found occurence is from the data it matches. In this way, we dont't need to keep the same data later in the file, we just reference the location of the similar data. To keep the algorithm efficient, a sliding window defines the data we do matching on. If the sliding window is 32 kB, we only look back 32 kB to find a match.
+LZ77 compress the data by looking for similar data occurences found earlier in the uncompressed data. The match is marked by saying how long the found occurence is from the data it matches. In this way, we dont't need to keep the same data later in the file, we just reference the location of the similar data. To keep the algorithm efficient, a sliding window defines the data we do matching on. If the sliding window is 32 kB, we only look back 32 kB to find a match.
 \cite{bib:LZ77}
 
 \paragraph{Lossless compression tecniques for images}
@@ -148,7 +148,7 @@ As we can see, there are two main methods for compression. What we can see from 
 When choosing a compression algorithm, it is important to use a compression algorithm that gives good enough compression rate within the acceptable time frame. It is always good to compress data if the compression time is close to zero. This is seldom the case.
 \newline
 \newline
-Often we do not know how good XOXOmail's connection to the internet is. This can be calculated by taking the time it takes for data to be sent to / received from a server. If we then have some statistics on the compression time for, lets say 30 seconds of video, we can do some number crunching. If we know that with the current connection speed, the transfer of the compressed video will take 2 minutes to the mail server and 1 minute to get downloaded to the receiver (if assuming download rate is twice of upload, and that the receiver has the same connection as the sender) and it takes 20 seconds to check the connection speed, the total time used is then 3 minutes and 50 seconds. For the compression to be benefitial, the time used on compression and bandwith checking should be less than the time difference between sending and receiving the uncompressed and the compressed video.
+Often we do not know how good XOXOmail's connection to the internet is. This can be calculated by taking the time it takes for data to be sent to / received from a server. If we then have some statistics on the compression time for, lets say 30 seconds of video, we can do some number crunching. If we know that with the current connection speed, the transfer of the compressed video will take 2 minutes to the mail server and 1 minute to get downloaded to the receiver (if assuming download rate is twice of upload, and that the receiver has the same connection as the sender) and it takes 20 seconds to check the connection speed, the total time used is then 3 minutes and 50 seconds. For the compression to be beneficial, the time used on compression and bandwith checking should be less than the time difference between sending and receiving the uncompressed and the compressed video.
 
 \paragraph{Compressing Text} \hfill
 \newline
@@ -156,7 +156,7 @@ It is quite obvious that if we are to compress text sent via XOXO-mail, it has t
 
 \paragraph{Compressing Images} \hfill
 \newline
-Compression of images is in this setting more resource demanding than compression of text, and can with good algorithms be compressed to 20 per cent of original size, without too much degradation of the original content. Implementation of image compression methods are often compact and not so hard to implement. It is just a matter of finding the compression method which has the wanted end result.
+Compression of images is in this setting more resource demanding than compression of text, and can with good algorithms be compressed to 20 percent of original size, without too much degradation of the original content. Implementation of image compression methods are often compact and not so hard to implement. It is just a matter of finding the compression method which has the wanted end result.
 
 \newpage
 
