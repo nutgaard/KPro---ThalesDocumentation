@@ -47,7 +47,7 @@ The first and most obvious client for sending mail is the built in Android mail 
 
 \paragraph{GMail} \hfill
 \newline
-One of the most used email clients for phones is the GMail app. It is developed by Google, and is therefore seen as secure app with a streamlined design. Unfortunately, it stops there. Google has been neglecting all problems that it has, and new features are not emerging from complaints from existing users. Functions like sorting of mail is lacking and the app is not very reliable. Fortunately, there exists a fork of GMail, called K-9 Mail. GMail does not have \gls{emims} implemented on the phone version, but an extension for Firefox enables integrates reading and sending of encrypted mail directly into the Gmail interface \cite{bib:gmail}.
+One of the most used email clients for phones is the GMail app. It is developed by Google, and is therefore seen as secure app with a streamlined design. Unfortunately, it stops there. Google has been neglecting all problems that it has, and new features are not emerging from complaints stated by existing users. Functions like sorting of mail is lacking and the app is not very reliable. Fortunately, there exists a fork of GMail, called K-9 Mail. GMail does not have \gls{emims} implemented on the phone version, but an extension for Firefox enables integrates reading and sending of encrypted mail directly into the Gmail interface \cite{bib:gmail}.
 
 \paragraph{K-9 Mail} \hfill
 \newline
@@ -55,14 +55,14 @@ K-9 Mail has all the features the users wanted in GMail, and some extra. Most fe
 
 \paragraph{MailDroid} \hfill
 \newline
-It has many of the same functions as in K-9 mail, but also incorporates spell checking, changing font sizes and colors on text and coloring on email text. It is a solid email client that will meet the needs of most users. MailDroid currently costs 111,86 NOK, which is in the high end price range of apps. Good that there also is a free ad version available. As far as we can see, MailDroid does not come with \gls{emims}. 
+It has many of the same functions as in K-9 mail, but also incorporates spell checking, changing font sizes and colors on text and coloring on email text. It is a solid email client that will meet the needs of most users. MailDroid currently costs 111,86 NOK, which is in the high end price range of apps. A free ad version is available. As far as we can see, MailDroid does not come with \gls{emims}. 
 
 \paragraph{R2Mail2} \hfill
 \newline
 R2Mail2 is the result of further development of X509Tools. Here, the focus is more on taking the good parts of X509Tools and integrating it into a fully functional mail client. It uses the same security libraries as used in X509Tools, and does also include digital signatures and digital encryption and decryption based on personal Soft-Token keys \cite{bib:r2mail2}. It has the ability to store private keys and passwords in an encrypted database known as the Key-Store. This is encrypted by a master password. The certificated can be validated by \gls{ocsp} and \gls{ldap}. As it is built on top of X509Tools, it has full \gls{emims} support. This is a no nonsense email client which provides the ability to send encrypted and signed mails.
 
 \subsection{Similar solutions conclusion}
-It is very clear that a similar solution to XOXOmail is not available on the market, but there exist solutions that partially try to implement \gls{emims}, like \gls{k9m}. There also exist solutions that fully implement \gls{emims} for external clients like X509Tools. A problem with using \gls{x5}, is gives poor performance to apps that utilize this \gls{emims} capability, as the mail message will have to be stored to disk between the mail client and \gls{x5}. An alternative is therefore to use \gls{r2m2}, which gives all one can want regarding security.
+It is very clear that a similar solution to XOXOmail is not available on the market, but there exist solutions that partially try to implement \gls{emims}, like \gls{k9m}. There also exist solutions that fully implement \gls{emims} for external clients like X509Tools. A problem with using \gls{x5}, is that it gives poor performance to apps that utilize this \gls{emims} capability, as the mail message will have to be stored to disk between the mail client and \gls{x5}. An alternative is therefore to use \gls{r2m2}, which gives all one can want regarding security.
 \newline
 \newline
 As an aside, it is of interest to note that we have been in direct contact with on of the developers of \gls{x5} and \gls{r2m2}. His name was Stefan Selbitschka, and he was very interested in this project. If necessary, he could build us a separate version of the \gls{r2m2} library that incorporates e.g. header specific data that is unique to XOXOmail. This was mentioned at a meeting with Thales, but no discussion was further made on this topic. It seems that it is more important to investigate possible solutions than to brute force a fast solution to the prototype of XOXOmail.
