@@ -34,7 +34,7 @@ In order to accommodate the agile development plan used by the team, our early d
 Early in the first sprint we decided upon a set of basic interfaces, which neatly split up the project into manageable parts. We began early by writing up tests for future classes that implemented these interfaces, allowing low level testing of individual methods. At the time of writing these tests we had no idea how each method was going to be implemented. This enabled us to write generic black box tests.
 \newline
 \newline
-Later in the project this method level testing will augmented by white box and stress testing; essentially us deliberately trying to crash the system with strange inputs or action combinations. 
+Later in the project this method level testing will be augmented by white box and stress testing; essentially us deliberately trying to crash the system with strange inputs or action combinations. 
 
 \pagebreak
 
@@ -42,7 +42,7 @@ Later in the project this method level testing will augmented by white box and s
 The choice of tools was mainly based on previous experience inside the group, the framework provided by and the demands of the platform. 
 \newline
 \newline
-\gls{junit}t was chosen because of our previous experience and the fact that the Android instrumentation framework is based on \gls{junit}. Bundled with Mockito it also gives us the possibility to test otherwise Android dependent modules in a Java environment with the Android specifics mocked up. This can greatly reduce the build cycle time, since the tests no longer need to be pushed onto a device in order to run. Mockito also provides another benefit, in that you can test a component without testing its dependencies. This allows for highly specific testing of just one class, component or module.
+\gls{junit} was chosen because of our previous experience and the fact that the Android instrumentation framework is based on \gls{junit}. Bundled with Mockito it also gives us the possibility to test otherwise Android dependent modules in a Java environment with the Android specifics mocked up. This can greatly reduce the build cycle time, since the tests no longer need to be pushed onto a device in order to run. Mockito also provides another benefit, in that you can test a component without testing its dependencies. This allows for highly specific testing of just one class, component or module.
 \newline
 \newline
 Greenmail was chosen based on the need to test the message module in our project, ease of use and fast response time. If the code passes the Greenmail tests, the code is then tested against gmail’s mail server to ensure that functions with external servers as well. 
