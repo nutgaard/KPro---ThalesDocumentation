@@ -5,52 +5,52 @@
 \begin{enumerate}
 \item{} \textbf{General functional requirements}
 \begin{enumerate}
-\item{}The application is meant to offer a message service adapted to use on mobilr phones. The application must have a user interface that requires little to no training and is efficient to use.
-\item{}Intended users are people who need a reliable and secure communication channel to recieve and send more or less time-critical information. Users are assumed to have acess only to a tablet or phone.
-\item{}The applications functions similar to a normal email client, but with a user interface for small devices; sending short messages (at most 500 characters), support for domain-specific attributes, as well as reliability and safety modifications.
-\item{}The application must use common standards for Internet Mail to communicate with a XOmail SMTP Gateway. The gateway offers email services based om SMTP(RFC 5321) and SMTP Submit(RFC 4409), Internet Message Format(RFC 5322), SMTP MIXER X.400(RFC 2156), MMHS in Internet Mail(RFC 6477).
+\item{}The application should offer a message service adapted to use on mobile phones. The application must have a user interface that requires little or no training and is efficient to use.
+\item{}Intended users are people in need of a reliable and secure communication channel to receive and send more or less time-critical information. Users are assumed to have access only to a table or phone.
+\item{}The application's functions are similar to a regular email client, but with a user interface that is suited for small devices, sending of short messages (maxmimum 500 characters), support for domain-specific attributes, as well as reliability and safety modifications.
+\item{}The application should use common standards for Internet Mail to communicate with a XOmail SMTP Gateway. The gateway offers email services based on SMTP (RFC 5321) and SMTP Submit (RFC 4409), Internet Message Format (RFC 5322), X.400-SMTP MIXER (RFC 2156) and MMHS in Internet Mail (RFC 6477). 
 \end{enumerate}
 \item{}\textbf{Platform}
 \begin{enumerate}
-\item{}The application should work on an Android-based smartphone or tablet. The user interface should be adapted to the specific screen sizes for these devices, as well as for touch screen.
-\item{}The application should be able to work on any network with bandwidth 64kbps or more.
-\item{}The application should be able to communicate via IP networks with a XOmail SMTP Gateway(IMAP/POP3 and SMTP Server).
-\item{}The application must work with reduced functionality with a common mail server with IMAP/POP3/SMTP. Functionality that only works against XOmail must be documented.
+\item{}The application should work on an Android-based smartphone or tablet. The user interface should be adapted to the specific screen sizes of these devices, as well as for touch screens in general.
+\item{}The application should be able to work over any network with bandwidth 64kbps or more.
+\item{}The application should be able to communicate via IP networks towards a XOmail SMTP Gateway (IMAP/POP3 and SMTP).
+\item{}The application should work with reduced functionality towards a common mail server with IMAP/POP3/SMTP. Functionality that only works against XOmail must be documented.
 \end{enumerate}
 \item{}\textbf{Message operations}
 \begin{enumerate}
 \item{}The application should make it possible to communicate by messages. Messages are to consist of a combination of text, pictures and video.
 \item{}Attachments should be retrievable from files stored on the device, or through other applications. For example, it should be possible to take a picture and add it to the message.
-\item{}It should be possible to create, edit, send, reply, forward and delete messages. It should also be possible to browse and open received messages.
-\item{}The application should support these military attributes from RFC 6477: MMHS-Primary-Precedence, MMHS-Message-Type.
+\item{}It should be possible to create, edit, send, reply to, forward and delete messages. It should also be possible to browse and open received messages.
+\item{}The application should support the following military attributes from RFC 6477: MMHS-Primary-Precedence, MMHS-Message-Type.
 
 \newpage
 
-\item{}The application should support security labeling using the SIO-Label header. The application must support the safety labels below. All messages will have a classification, and it should be possible to configure a default rating.
+\item{}The application should support security labeling using the SIO-Label header. The application must support the security labels listed below. All messages must have a security label, but it should be possible to configure a default value.
 \begin{itemize}
-\item{}Norwegian: UGRADERT(ug), BEGRENSET(b), KONFIDENSIELT(k)
-\item{}English(generic): UNCLASSIFIED(u), RESTRICTED(r), CONFIDENTIAL(c)
-\item{}NATO: NATO UNCLASSIFIED(nu), NATO RESTRICTED(nr), NATO CONFIDENTIAL(nc)
+\item{}Norwegian: UGRADERT (ug), BEGRENSET (b), KONFIDENSIELT (k)
+\item{}English(generic): UNCLASSIFIED (u), RESTRICTED (r), CONFIDENTIAL (c)
+\item{}NATO: NATO UNCLASSIFIED (nu), NATO RESTRICTED (nr), NATO CONFIDENTIAL (nc)
 \end{itemize}
 \item{}It should be possible to ask for a delivery report and/or a receipt notification from the message reciever.
-\item{}It should be possible to see status of the messages where a delivery report or a receipt notification was asked for.
-\item{}It should be possible to send instant messages with a predefined classification and priority to a predefined list of recipients. These may consist of a pre-defined text, and/or information (i.e. a picture or current location GPS) from another application. To send an instant message, it should only be necessary to perform three GUI operations, for example: open application with seperate icon for instant message, select the text, and select the recipient.
+\item{}It should be possible to see status of the messages where a delivery report or a receipt notification was requested.
+\item{}It should be possible to send instant messages with a predefined classification and priority to a predefined list of recipients. These may consist of a predefined text, or information (i.e. a picture or current location GPS) from another application. To send an instant message, it should only be necessary to perform three or less GUI operations, for example: Open application with seperate icon for instant message, select the text, and select the recipient.
 \item{}It should be possible to send messages with content created by other applications on the same device.
 \end{enumerate}
 \item{}\textbf{Sending and receiving of messages}
 \begin{enumerate}
 \item{}If message sending fails, the user should be notified. The application should automatically attempt to resend the message, and the user should receive a warning.
-\item{}Upon receipt of a mesage with priority FLASH or OVERRIDE the user should be notified and the application given focus. The user should be able to see what the message is about(title and perhaps the top text from the attachments). The user should be able to open the message directly.
+\item{}Upon receipt of a mesage with priority FLASH or OVERRIDE the user should be notified and the application given focus. The user should be able to see what the message is about (title and perhaps the top text of the attachments). The user should be able to open the message directly.
 \item{}The application should support push messages from the server.
-\item{}There should not be used bandwidth when the applicatin is not sending or receiving new messages.
+\item{}There should not be used bandwidth when the application is not sending or receiving new messages.
 \item{}Messages to be sent should be sorted by priority.
-\item{}If the user sends a message with priority OVERRIDE, it should take precedence over all other messages. If a message is about to be sent, the transfer shall be canceled and high-priority messages are to be sent first.
+\item{}If the user sends a message with priority OVERRIDE, it should take precedence over all other messages. If a message is about to be sent, the transfer should be canceled and the high-priority message should be sent first.
 \end{enumerate}
 \item{}\textbf{Security}
 \begin{enumerate}
-\item{}Communication with the server is to be encrypted with SSL.
-\item{}Messages must be signed with S/MIME when sending.
-\item{}S/MIME-signed messages are to be verified upon receiption.
+\item{}Communication with the server should be encrypted with SSL.
+\item{}Messages should be signed with S/MIME when sending.
+\item{}S/MIME-signed messages should be verified upon receiption.
 \item{}Private keys for email signing should not be stored in clear text.
 \end{enumerate}
 
