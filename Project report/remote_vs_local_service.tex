@@ -2,7 +2,7 @@
 
 \section{Remote vs. local service}
 
-As the requirements document states the application should be able to receive messages even when the application is not running in foreground. Fortunately the Android platform facilitates this functionality in the form of a `Service` \cite{bib:service}. But in order to utilize this feature effectively, some key architectural decisions must be made. The biggest decision is if the Service should run in the same process as the application itself (local service), or if it should have its own process (remote service). Although the choice of can be made transparent to the rest of the application, there are some key differences that must be considered.
+As the requirements document states the application should be able to receive messages even when the application is not running in the foreground. Fortunately the Android platform facilitates this functionality in the form of a `Service` \cite{bib:service}. But in order to utilize this feature effectively, some key architectural decisions must be made. The biggest decision is if the Service should run in the same process as the application itself (local service), or if it should have its own process (remote service). Although the choice of can be made transparent to the rest of the application, there are some key differences that must be considered.
 
 \newpage
 

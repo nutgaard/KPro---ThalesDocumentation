@@ -1,10 +1,10 @@
 \section{Use Cases}
 
 \subsection{Actors}
-An actor specifies a role that are to be played by an external person interacting with our application. We have only one actor, and that is the regular user:  A person who don’t have much education in using our app, but who will use it regularly in his workday.
+An actor specifies a role that are to be played by an external person interacting with our application. We have only one actor, and that is the regular user: A person who don’t have much education in using our app, but who will use it regularly in his workday.
 
 \subsection{Use case diagrams}
-See figure \ref{fig:usecase} below.
+For a combined figure of all the use cases, see figure \ref{fig:usecase} below.
 
 \begin{figure}[h!]
 \begin{center}
@@ -24,6 +24,7 @@ Each of the use cases is described below, so that the use case diagram will be e
 \begin{tabular}{p{3cm}|p{12cm}}\hline
 \textbf{Element} & \textbf{Description} \\ \hline \hline
 Use case name & View messages \\
+Requirement & FR3, FR4 \\
 Goal & View received and sent messages \\
 Summary &The user would like to view received and sent messages \\
 Preconditions &
@@ -50,6 +51,7 @@ Exceptions & There are no existing messages.\\ \hline
 \begin{tabular}{p{3cm}|p{12cm}} \hline
 \textbf{Element} & \textbf{Description} \\ \hline \hline
 Use case name & Reply, forward and delete \\
+Requirement & FR8	 \\
 Goal & Reply, forward and delete messages\\
 Summary & The user would like to reply to a message, forward it or delete it. \\
 Preconditions &
@@ -77,6 +79,7 @@ Exceptions & There are no existing messages.\\ \hline
 \begin{tabular}{p{3cm}|p{12cm}} \hline
 \textbf{Element} & \textbf{Description} \\ \hline \hline
 Use case name & View message folders \\ \hline
+Requirement & FR3, FR4 \\
 Goal & View inbox and sent messages \\ \hline
 Summary &The user would like to view the inbox and a list of sent messages \\ \hline
 Preconditions &
@@ -103,6 +106,7 @@ Exceptions & There are no existing messages.\\ \hline
 \begin{tabular}{p{3cm}|p{12cm}} \hline
 \textbf{Element} & \textbf{Description} \\ \hline \hline
 Use case name & Create message \\
+Requirement & FR2, FR6 \\
 Goal & User creates and sends a complete message \\
 Summary &The user would like to create/send a message to a receiver with a subject and text. The user would also like to set the priority, security label and type of the message as well as being able to add an attachment from other applications. \\
 Preconditions &
@@ -131,6 +135,7 @@ Exceptions & The user does not set priority, security label and type and default
 \begin{tabular}{p{3cm}|p{12cm}} \hline
 \textbf{Element} & \textbf{Description} \\ \hline \hline
 Use case name & Send instant message \\
+Requirement & FR9 \\
 Goal & User sends an instant message \\
 Summary & The user sends an instant message with predefined content to predefined receivers \\
 Preconditions &
@@ -156,9 +161,10 @@ Exceptions & The predefined values have not been set.\\ \hline
 \end{center}
 \begin{tabular}{p{3cm}|p{12cm}} \hline
 Element & Description \\ \hline \hline
-Use case name & View instant message \\
-Goal & User views an instant message \\
-Summary & The user receives and viesw an instant message \\
+Use case name & View high priority message \\
+Requirement & FR12 \\
+Goal & User views a high priority message \\
+Summary & The user receives and views a high priority message \\
 Preconditions &
 \begin{enumerate}
 \item{}The application is running.
@@ -166,9 +172,9 @@ Preconditions &
 \end{enumerate} \\ \hline
 Flow of Events &
 \begin{enumerate}
-\item{}User receives an instant message.
+\item{}User receives a high priority message.
 \item{}A popup appear on the users screen.
-\item{}User presses the popup and views the instant message.
+\item{}User presses the popup and views the high priority message.
 \end{enumerate} \\ \hline
 \end{tabular}
 \end{center}
@@ -183,6 +189,7 @@ Flow of Events &
 \begin{tabular}{p{3cm}|p{12cm}} \hline
 \textbf{Element} & \textbf{Description} \\ \hline \hline
 Use case name & View and interact with address book \\
+Requirement & FR5 \\
 Goal & User can view and interact with the address book \\
 Summary &The user enters the address book and is able to view, add, edit and delete contacts. \\
 Preconditions &
@@ -209,6 +216,7 @@ Flow of Events &
 \begin{tabular}{p{3cm}|p{12cm}} \hline
 \textbf{Element} & \textbf{Description} \\ \hline \hline
 Use case name & Log in \\ 
+Requirement & FR1 \\
 Goal & User logs in with a username and password. \\
 Summary &The user is prompted with a login screen and must type in his username and password. \\
 Preconditions &
@@ -236,6 +244,7 @@ Exceptions & User types wrong username and password and is denied access.\\ \hli
 \begin{tabular}{p{3cm}|p{12cm}} \hline
 \textbf{Element} & \textbf{Description} \\ \hline \hline
 Use case name & Search \\
+Requirement & FR14 \\
 Goal & User receives search results for a given search text. \\
 Summary & The user search in the application for messages, contacts etc through a search field at the top of the screen. \\
 Preconditions &
@@ -262,6 +271,7 @@ Flow of Events &
 \begin{tabular}{p{3cm}|p{12cm}} \hline
 \textbf{Element} & \textbf{Description} \\ \hline \hline
 Use case name & Sort \\
+Requirement & FR13 \\
 Goal & User sorts the messages in his inbox. \\
 Summary & The user chosoes a value that he wishes the messages to be sorted by. \\
 Preconditions &
@@ -288,6 +298,7 @@ Flow of Events &
 \begin{tabular}{p{3cm}|p{12cm}} \hline
 \textbf{Element} & \textbf{Description} \\ \hline \hline
 Use case name & Settings \\ 
+Requirement & FR10 \\
 Goal & The user can alter settings. \\ 
 Summary & The user enters the settings menu and alter the settings to suit his own preferences. \\
 Preconditions &
