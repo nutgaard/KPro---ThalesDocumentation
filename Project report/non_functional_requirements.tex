@@ -5,7 +5,7 @@
 \paragraph{Usability}
 \subparagraph{U1 Ease of use}\hfill
 \newline
-The user should be able to use the program with very few mistakes, such as pressing the wrong button because button labels are ambiguous or too small. The scenario is described in table \ref{tab:easeofuse}.
+The user should be able to use the application with very few mistakes, such as pressing the wrong button because button labels are ambiguous or too small. The scenario is described in table \ref{tab:easeofuse}.
 \begin{table}[h!]
 \begin{center}
 \begin{tabularx}{\linewidth}{>{\setlength\hsize{.3\hsize}}X|>{\setlength\hsize{0.7\hsize}}X} \hline
@@ -23,7 +23,7 @@ Response measure & Maximum 5\% of user operations should be mistakes (another ac
 
 \subparagraph{U2 Efficent use}\hfill
 \newline
-The user should be able to use the main features of the program with as few clicks as possible. Streamlined design is therefore of great importance. The scenario is described in table \ref{tab:efficentuse}.
+The user should be able to use the main features of the application with as few screen interactions as possible. Streamlined design is therefore of great importance. The scenario is described in table \ref{tab:efficentuse}.
 \begin{table}[hbt]
 \begin{center}
 \begin{tabularx}{\linewidth}{>{\setlength\hsize{.6\hsize}}X|>{\setlength\hsize{1.4\hsize}}X} \hline
@@ -32,12 +32,14 @@ Source & End user \\ \hline
 Stimulus & Use system efficiently \\ \hline
 Artifact & System \\ \hline
 Environment & At run time \\ \hline
-Response & Organize application so that important functions are easy to reach from the main menu. \\ \hline
-Response measure & A user with only a quick (5 min) training course should never spend more than one minute finding what he looks for. \\ \hline
+Response & Organize application so that important functions are easy to reach from the main menu \\ \hline
+Response measure & A user with only a quick (5 min) training course should never spend more than one minute finding what he looks for \\ \hline
 \end{tabularx}
 \end{center}
 \caption{U2 Efficent use} \label{tab:efficentuse}
 \end{table}
+
+\newpage
 
 \paragraph{Performance}
 
@@ -54,76 +56,76 @@ Stimulus & Wants to open message \\ \hline
 Artifact & System \\ \hline
 Environment & Under normal operations \\ \hline
 Response & The operation is performed \\ \hline
-Response measure & With a latency of maximum 3 seconds, the user should be able to read the message after it is received. This is the latency when we subtract the download time of message, which is dependent of the network connection. \\ \hline
+Response measure & With a latency of maximum 3 seconds, the user should be able to read the message after it is received. This is the latency when we subtract the download time of message, which is dependent of the network connection \\ \hline
 \end{tabularx}
 \end{center}
 \caption{P1 Latency} \label{tab:performance}
 \end{table}
 
-\newpage
-
 \paragraph{Security}
 \subparagraph{S1 Data access}
 \hfill
 \newline
-Data should not be exposed to unauthorized users or other apps. The scenario is described in table \ref{tab:s1}.
+Data should not be exposed to unauthorized users or other application. The scenario is described in table \ref{tab:s1}.
 \begin{table}[h!]
 \begin{center}
 \begin{tabularx}{\linewidth}{>{\setlength\hsize{.6\hsize}}X|>{\setlength\hsize{1.4\hsize}}X} \hline
 \textbf{Portion of scenario} & \textbf{Values} \\ \hline \hline
-Source & Unauthorized user or app \\
-Stimulus & Wants to access data saved by our app \\
-Artifact & System \\
-Environment & Under normal operations \\
-Response & User is blocked from accessing data by the Android OS. \\
-Response measure & No data exposed to the user or app. \\ \hline
+Source & Unauthorized user or app \\ \hline
+Stimulus & Wants to access data saved by our application \\ \hline
+Artifact & System \\ \hline
+Environment & Under normal operations \\ \hline
+Response & User is blocked from accessing data by the Android OS \\ \hline
+Response measure & No data should be exposed to the unauthorized user or application \\ \hline
 \end{tabularx}
 \end{center}
-\caption{S1 Accessing locally stored data outside of app} \label{tab:s1}
+\caption{S1 Accessing locally stored data outside of application} \label{tab:s1}
 \end{table}
 
+\newpage
 
 \subparagraph{S2 Unprivileged use}
 \hfill
 \newline
-Users that try to use the app without the correct privileges should be denied. The scenario is described in table \ref{tab:s2}.
+Users that try to use the application without the correct privileges should be denied. The scenario is described in table \ref{tab:s2}.
 \begin{table}[h!]
 \begin{center}
 \begin{tabularx}{\linewidth}{>{\setlength\hsize{.6\hsize}}X|>{\setlength\hsize{1.4\hsize}}X}\hline
 \textbf{Portion of scenario} & \textbf{Values} \\ \hline \hline
-Source & Unauthorized user \\
-Stimulus & Wants to use app features \\
-Artifact & System \\
-Environment & Under normal operations \\
-Response & User is blocked from using functions \\
-Response measure & No features exposed to the user - stopped by login screen\\ \hline
+Source & Unauthorized user \\ \hline
+Stimulus & Wants to use application features \\ \hline
+Artifact & System \\ \hline
+Environment & Under normal operations \\ \hline
+Response & User is blocked from using functions \\ \hline
+Response measure & No features shoudl be exposed to the user, the user should be stopped by the login screen\\ \hline
 \end{tabularx}
 \end{center}
-\caption{S2 Trying to use app with wrong privileges} \label{tab:s2}
+\caption{S2 Trying to use application with wrong privileges} \label{tab:s2}
 \end{table}
 
-\newpage
 \subparagraph{S3 External data traffic}
 \hfill
 \newline
-External data traffic should not be exposed to unauthorized users or apps or someone else sniffing network packages. The scenario is described in table \ref{tab:s3}.
+External data traffic should not be exposed to unauthorized users or application or someone else sniffing network packages. The scenario is described in table \ref{tab:s3}.
 \begin{table}[h!]
 \begin{center}
 \begin{tabularx}{\linewidth}{>{\setlength\hsize{.6\hsize}}X|>{\setlength\hsize{1.4\hsize}}X}\hline
 \textbf{Portion of scenario} & \textbf{Values} \\ \hline \hline
-Source & Unauthorized user or app, or someone sniffing network packages \\
-Stimulus & Wants to access data stream \\
-Artifact & System \\
-Environment & Under normal operations \\
-Response & Is unable to get useful information because of SSL encryption \\
+Source & Unauthorized user or application, or someone sniffing network packages \\ \hline
+Stimulus & Wants to access data stream \\ \hline
+Artifact & System \\ \hline
+Environment & Under normal operations \\ \hline
+Response & Is unable to get useful information because of SSL encryption \\ \hline
 Response measure & No useful data exposed to the user\\ \hline
 \end{tabularx}
 \end{center}
-\caption{S3 Trying to access the apps external data traffic} \label{tab:s3}
+\caption{S3 Trying to access the application's external data traffic} \label{tab:s3}
 \end{table}
 
+\newpage
+
 \subsection{Component and technology related constraints}
-Vanilla Android is the platform of choice, compatible down to Android API 8
+Vanilla Android is the platform of choice, compatible down to Android API 8.
 
 \paragraph{Programming language} \hfill
 \newline
@@ -131,23 +133,23 @@ Developing for Android will in this project mean that code will be written in Ja
 
 \paragraph{Mobile devices} \hfill
 \newline
-Android is a mobile OS, so the program will run on cell phones and potentially tablets. 
+Android is a mobile OS, so the application will run on cell phones and potentially tablets. 
 
 \paragraph{Input methods} \hfill
 \newline
-Android phones have small screens and usually no keyboard. This means that the user interface must be designed to work with small touch screens as the only input method.
+Android phones have small screens and usually no keyboard. This means that the user interface must be designed to work with touch interactions as the only input method.
 
 \paragraph{Memory}\hfill
 \newline
-Phones have limited memory, typically 256-512 \gls{mb}. The program will probably never be close to breaking this limit, as the most memory consuming components are string based messages and potentially an attachment or two; very little of which has to remain in memory at the same time.
+Phones have limited memory, typically 256-512 \gls{mb}. The application will probably never be close to breaking this limit, as the most memory consuming components are string based messages and potentially an attachment or two; very little of which has to remain in memory at the same time.
 
 \paragraph{Screen resolution/aspect ratio} \hfill
 \newline
-As the program will support different Android devices, it also has to support different resolutions as well as aspect ratios. The \gls{gui} must be programmed to scale to different formats without degrading quality or proportions.
+As the application will support different Android devices, it also has to support different resolutions as well as aspect ratios. The \gls{gui} must be programmed to scale to different formats without degrading quality or proportions.
 
 \paragraph{Bandwidth} \hfill
 \newline
-Since the program is network based, it is important to pay attention to bandwidth usage. We want to be able to wait for incoming messages and receive them as soon as the server does without having to waste bandwidth with constant polling, especially as the program is expected to see some use outside of 3G net areas.
+Since the application is network based, it is important to pay attention to bandwidth usage. We want to be able to wait for incoming messages and receive them as soon as the server does without having to waste bandwidth with constant polling, especially as the application is expected to see some use outside of 3G net areas.
 
 \paragraph{Commercial off-the-shelf (\gls{cots})} \hfill
 \newline
@@ -158,38 +160,38 @@ For an overview of the stakeholders and what concerns these have in the project,
 
 \begin{table}
 \begin{tabular}{p{3.5cm}|p{11.5cm}} \hline
-\textbf{Stakeholder:} & \textbf{Concern} \\ \hline \hline
+\textbf{Stakeholder} & \textbf{Concern} \\ \hline \hline
 User & 
 \begin{itemize}
-\item{} Wants a program that works out of the box
-\item{} Easy to understand the flow of the app
-\item{} Installation should be easy, just download the app from Android market, and it’s ready to use.
-\item{} Familiar user interface
+\item{} Wants an application that works out of the box
+\item{} Easy to understand the flow of the application
+\item{} Installation should be easy
+\item{} User friendly user interface
 \end{itemize}\\ \hline
 Developers & 
 \begin{itemize}
-\item{}Easy to understand the goal of the app
-\item{}Easy to extend and change the app
+\item{}Easy to understand the goal of the application
+\item{}Easy to extend and change the application
 \item{}Want to use technology they are familiar with
 \item{}Easy to understand requirements and architectural description chapters.
 \end{itemize}\\ \hline
 Course advisor & 
 \begin{itemize}
-\item{}Effective and healthy communication with the group.
+\item{}Effective and healthy communication with the group
 \item{}Easy to read documentation
 \item{}Gets all deliveries on schedule
 \end{itemize}\\ \hline
 Customer & 
 \begin{itemize}
-\item{}Effective and healthy communication with the group.
-\item{}A working prototype that gives a possible solution to the requirements.
-\item{}Wants to see what is possible on the Android platform.
+\item{}Effective and healthy communication with the group
+\item{}A working prototype that gives a possible solution to the requirements
+\item{}Wants to see what is possible on the Android platform
 \item{}Understandable requirements and architectural description documents.
 \end{itemize}\\ \hline
 Graphic designers & 
 \begin{itemize}
-\item{}Understanding of how the \gls{gui} should be.
-\item{}Understand the limitation of graphics due to screen size.
+\item{}Understanding of how the \gls{gui} should be
+\item{}Understand the limitation of graphics due to screen size
 \end{itemize} \\ \hline
 \end{tabular}
 \caption{Stakeholders and their concerns} \label{tab:stakeholders}
