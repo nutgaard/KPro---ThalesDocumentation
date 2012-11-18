@@ -1,44 +1,43 @@
 \chapter{Project study}
 
-This Chapter will cover the preliminary studies carried out in this project and will provide an understanding of the problem to be solved, what solutions exist already and what solutions we have chosen.
+This chapter will cover all the preliminary studies carried out in this project and will provide an understanding of the problem to be solved, what solutions already exist and what solutions we have chosen. Section 5.1 describes the problem and the domain-specific features the application is supposed to have. Section 5.2 describes the current system, XOmail, and its functions. Section 5.3 outlines the planned solution. Section 5.4 investigates solutions similar to what is wanted from this project. Section 5.5 discuss different software development models and our choice. Section 5.6 lists the different programming langauge options as well as a reason behind our choice. Section 5.6 describes the parsers libraries and tools we want to use. Section 5.8 lists the different unit testing frameworks we will use. Section 5.10 describes the choice of an IDE and the reason behind the choice. Section 5.11 discuss the issue of creating a service locally or remotely. Section 5.12 describes the security assumptions we have to make about the hardware, environment and users of the application. Section 5.13 describes how a secure communication channel should be created. Section 5.14 give details about how secure storage may be carried out. Section 5.15 give an analysis of results of trying to monitor the bandwidth usage from the application with Whireshark. Section 5.16 gives details about the theory of compressing data as the customer requested a study of how this might be done in our application. Section 5.17 lists the different intellectual property rights and licenses we have used in the project. Finally, section 5.18 gives a summary of all the conclusions made in the different sections.
 
 \section{Problem description}
 
-\subsection{Thales}
-Thales wants us to develop a message service that is custom made for mobile users, with a user-interface that has good affordance and is easy and effective to use.
+This section will describe what the problem is and the domain-specific features that must be implemented in the application.
+
+\subsection{What Thales has requested}
+Thales have requested us to develop a message service that is custom made for use on mobile phones, with a user interface that has good affordance and is easy and effective to use.
 \newline
 \newline
-The users of this application are people who need a reliable and secure way of communicating with more or less time dependent information. Users are also expected to only have access to either tablets or mobile phones, not computers.
+The intended users of this application are people who need a reliable and secure way of communicating more or less time-critical information. Users are expected to only have access to either tablets or smartphones, not computers.
 
 \subsection{Functionality}
-The application's functionality should be similar to a normal email client, but with a user-interface that is custom-made for smaller screens, short messages, military domain specific  attributes, reliability adjustments for field use and security adjustments for handling classified information. The application should use the Simple Mail Transfer Protocol to communicate with Thales' XOmail \gls{smtp} gateway.
+The application's functionality should be similar to a regular email client, but with a user interface that is custom made for small screens, short messages, military domain-specific attributes, reliability adjustments for field usage and security adjustments for handling classified information. The application should use the Simple Mail Transfer Protocol to communicate with Thales' XOmail \gls{smtp} gateway.
 \newline
 \newline
-The application should not use bandwidth when it is not sending or receiving messages. The application should also be able to receive an updated address book from the server.
-
-\newpage
+The application should not use bandwidth when not sending or receiving messages. The application should also be able to retrieve updated address book information from the server.
 
 \subsection{The solution}
-As per the customer requirements, the solution is to be implemented on Android based smartphones or tablets (Requirement 1.1 and 1.2) and the user-interface should be fitted to the screen size of the given device (2.1). It should support bandwidths as small as 64 kbps (2.2) and communicate with a XOmail server through \gls{pami}/\gls{pop} and \gls{smtp}(1.4 and 2.3). The application should also work with normal mail servers, but with reduced functionality (2.4).
-\newline
-\newline
-The messages sent with our solution should be able to support text, pictures and video attachments (3.1). The media should be accessed from the local storage on the phone or from other applications (3.2). A user should be able to create, edit, send, answer, forward and delete messages as well as browse and open received and sent messages (3.3)
+As Thales has requested, the solution should be implemented on Android-based smartphones or tablets (Requirement 1.1 and 1.2 from chapter 4.5) and the user interface should be optimized to the screen size of the given device (2.1). The application should support bandwidths as small as 64 kbps (2.2) and communicate with a XOmail server throught \gls{pami}/\gls{pop} and \gls{smtp}(1.4 and 2.3). The application should also work towards normal email servers, but then with reduced functionality (2.4).
+
+\subsection{Messages and their content}
+The messages sent with our application should support text, pictures and video attachments (3.1). The media should be accessed from the local storage on the phone or from other applications (3.2). A user should be able to create, edit, send, answer to, forward and delete messages as well as browse and open received and sent messages (3.3).
 
 \subsection{Military attributes}
-The messages that a user sends should support certain military attributes, these include precedence, type and security label. Precedence indicates the level of urgency, and type indicates the type of the message. Security label on the other hand says something about the receiver of the message, and not the message itself. The security label states what security clearance the receiver must have to be able to open the message.
-\newline
-\newline
-One should also be able to ask for a delivery report and a receipt notification from the recipient of the message sent. The one who sends the message should be able to see the status on the delivery report and receipt notification.
+The messages sent with our application should support certain military attributes, including priority (3.4), type (3.4) and security label (3.5). Priority indicates the level of urgency, whereas type indicates the type of the message. Security label says something about the receiver of the message, as it states what security clearance the receiver need to have to be able to open the message.
+
+\subsection{Message status}
+It should also be possible to request a delivery report and a receipt notification from the recipient of the message (3.6). The one who sends the message should be able to monitor the status of the delivery report and receipt notification (3.7).
 
 \subsection{Instant messages}
-Another message functionality is the ability to send instant messages with predefined military attributes to a predefined receiver. The receiver can be a group or a single person. These can include predefined text or information from another application. It should also be possible to send messages with content that is created by other applications on the device.
-\newline
-\newline
-When a message that is sent from the application fails, the user should get a notification and the message should be sent again automatically. These messages should also be sorted by priority.
+A special feature of the application should be the ability to send an instant message, with predefined military attributes to a predefined receiver with at most three screen interactions (3.8). The receiver can be a single person or a group. The instant messages should have the ability to include predefined text or information from another application, such as GPS coordinates. It should also be possible to send messages with content that is created by other applications on the device.
+
+\subsection{Sending}
+When a message fails to be sent by the application, the user should get a notification and the message should be sent again automatically (4.1). The messages being sent should be sorted on priority, where the message with the highest priority should be sent first (4.5).
 
 \subsection{High priority messages}
-If a high priority message arrives on a given user’s phone, the application should alert the user in a convenient way and make it easy to access the newly arrived message. The application should stop the sending of all other messages when a user sends a message with high priority, and instead give the resources to the high priority message.  
+If a message with priority "FLASH" or "OVERRIDE" arrives, the application should alert the user in an undeniable way and make it easy to access the newly arrived message (4.2). The application should halt the sending of all other messages when the user sends a message with high priority, and instead give the resources to the high priority message (4.6).
 
 \subsection{Security}
-Security is also an important issue in the application. Communication with the server should be encrypted with \gls{ssl1}, messages should be signed with \gls{emims} when being sent, \gls{emims} signed messages should be verified on receive and private keys for
-signing mail should not be stored in cleartext.
+Security is an important issue in the application. Communication with the server should be encrypted with \gls{ssl1} (5.1), messages should be signed with \gls{emims} when being sent (5.2), \gls{emims} signed messages should be verified on reception (5.3) and private keys for signing mail should not be stored in clear text (5.4).

@@ -7,6 +7,3 @@
 The classes that you serialize with \gls{xs} don't need to implement the Serializable interface, thanks to \gls{xs} handling all serializations. \gls{xs} is a serialization tool and not a data binding tool, which means that it doesn't perform class generation from an XML Schema Definition (\gls{xsd}) file \cite{bib:xstream} \cite{bib:ibm}.
 
 Another feature of XStream is that it has the capability to serialize to and from \gls{json} as well.
-
-\subsection{Markup languages conclusion}
-\gls{xml} is a widespread exchange format which has a lot of libraries that can be used to generate \gls{xml} data. Even though, it is known that \gls{xml} is primarily a document exchange format, where as \gls{json} is better suited for data exchange. This means that \gls{json} often is much more readable, as the mapping between objects in programming and \gls{json} representation is much more alike. As a result, the \gls{json} code is easier for machines to read and write. \gls{json} is becoming more and more common, and is now widely adopted by the computer industry. Still, the format is irrelevant for us, as we will be using a serializer and deserializer that ensures that syntax is correct, so we will use a \gls{xml}-serializer. 
