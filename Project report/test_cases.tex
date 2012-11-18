@@ -5,287 +5,160 @@ Black-box testing \cite{bib:blackbox} \cite{bib:bbfun} is a software testing met
 \newline
 We chose to use two forms of functional testing, namely functional testing and usability testing. 
 
-		\subsection{Functional testing}\label{subsec:functionaltesting}
-			\paragraph{Method}\hfill
+\subsection{Functional testing}\label{subsec:functionaltesting}
+
+\paragraph{Method}\hfill
 \newline
-				Functional testing \cite{bib:funtest} is a type of black-box testing that is based on test cases derived from the specification of the software. One tests by providing input, as touch or keyboard gestures, and compare the actual to the expected result. 
+Functional testing \cite{bib:funtest} is a type of black-box testing that is based on test cases derived from the specification of the software. One tests by providing input, as touch or keyboard gestures, and compare the actual to the expected result. 
 
-\newpage
-
-			\paragraph{Template for functional testing}\hfill
+\paragraph{Template for functional testing}\hfill
 \newline		
-			The template for functional testing can be found in table \ref{tab:casetemp1} on page \pageref{tab:casetemp1}.	
-				\begin{table}[h!]
+The template for functional testing can be found in table \ref{tab:casetemp1} on page \pageref{tab:casetemp1}.	
+
+\begin{table}[h!]
 \begin{center}
-					\begin{tabular}{l|p{10cm}}\hline
+\begin{tabular}{l|p{10cm}}\hline
 \textbf{Item} & \textbf{Description} \\ \hline \hline
-						Test case ID & id \\ \hline
-						Name & Shortname for the test\\ \hline
-						Requirement & Requirement reference\\ \hline
-						Description & Description of test\\ \hline
-						Preconditions & The conditions of the application before the tests are started\\ \hline
-						Flow of events & The list of steps necessary to complete the test \\ \hline
-						Expected results & The end result if everything works as expected\\ \hline 
-						Actual results & The end result\\ \hline
-						Comments & What went wrong, what could be the cause\\ \hline
-						Status &OK (no errors), OK- (minor issues) and Failed (not working)\\ \hline
-					\end{tabular}
+Test case ID & id \\ \hline
+Name & Shortname for the test\\ \hline
+Requirement & Requirement reference\\ \hline
+Description & Description of test\\ \hline
+Preconditions & The conditions of the application before the tests are started\\ \hline
+Flow of events & The list of steps necessary to complete the test \\ \hline
+Expected results & The end result if everything works as expected\\ \hline 
+Actual results & The end result\\ \hline
+Comments & What went wrong, what could be the cause\\ \hline
+Status &OK (no errors), OK- (minor issues) and Failed (not working)\\ \hline
+\end{tabular}
 \end{center}
-				\caption{Test case template} \label{tab:casetemp1}
-			\end{table}
-			\paragraph{The tests}\hfill
-\newline
-				The test cases 1-25 are meant to verify that the app works correctly to normal use, whereas the test cases 26-28 are meant to that the app behaves well with incorrect input. The test cases can be found in appendix \ref{ch:funtest}.
-			\paragraph{Results}\hfill
-\newline
-				We tested the application continuously after implementing each functionality, but a summary of the test results from the end of the project can be found in table \ref{tab:caseresults} on page \pageref{tab:caseresults}.
-				\begin{table}[hbt]
-\begin{center}
-					\begin{tabular}{l|l|l}\hline
-						\textbf{Test case ID} & \textbf{Test name} & \textbf{Result} \\ \hline \hline
-						1&Login&OK\\
-						2&Send regular message&OK\\
-						3&Send message to contact from the address book&OK\\
-						4&Send full message&OK\\
-						5&Sent messages folder&OK\\
-						6&Read and browse messages&OK\\
-						7&Send attachments (camera)&OK\\
-						8&Send attachments (gallery)&OK\\
-						9&Send attachments (GPS)&OK\\
-						10&Attachments received&OK\\
-						11&Instant message settings&OK\\
-						12&Message retrieval strategy settings&Failed\\
-						13&Security labels settings&Failed\\
-						14&Send instant message&OK\\
-						15&Receive flash/override message&OK\\
-						16&Send instant message with attachments&GPS failed, images OK\\
-						17&Receive instant message outside the app&OK\\
-						18&Widget for instant message&OK\\
-						19&Reply&OK-\\
-						20&Forward&OK-\\
-						21&Delete&Failed\\
-						22&Delivery report and receipt notification&Failed\\
-						23&Status of delivery report and receipt notification&Failed\\
-						24&Sort messages&OK\\
-						25&Search in inbox&Failed\\	
-						26&Login incorrect input&OK\\
-						27&Receiver incorrect input&OK\\
-						28&Security label incorrect input&OK\\ \hline
-					\end{tabular}
-\end{center}
-\caption{Functional test result summary} \label{tab:caseresults}
+\caption{Test case template} \label{tab:casetemp1}
 \end{table}
-\paragraph{Discussion}\hfill
+\paragraph{The tests}\hfill
 \newline
-The results from the final functional testing showed that 19 out of the 28 test cases passed the test,  six failed and three almost passed. Out of the six that failed, three were due to not having time to start with the implementation and three were known bugs that we did not get the time to fix. The three that almost passed were issues that we know how to fix but had not seen until the test.
 
-
+The test cases 1-25 are meant to verify that the app works correctly to normal use, whereas the test cases 26-28 are meant to that the app behaves well with incorrect input. The test cases can be found in appendix \ref{ch:funtest}. The specific test should be carried out whenever a feature is finished, and all the tests should be carried out at the end of the project.
+			
 \subsection{Usability testing}\label{subsec:usabilitytesting}
 \paragraph{Method}\hfill
 \newline
 Usability testing is testing of the app on possible end-users. This is also a kind of black-box testing meant to observe how users use the app to find unknown errors and get an evaluation of the design and usability of the app. We created a test with six cases that mirrored the most important actions in the app. The test persons tried to solve the tasks while the test leaders measured the time spent on each task and noted problems/comments/thoughts. After the test the persons filled out a SUS form.
+
 \paragraph{SUS}\hfill
 \newline
 SUS is an abbreviation for System Usability Scale \cite{bib:sus} and is a simple Likert scale of ten questions where the test persons shall give a score from 1 to 5 where 1 is strongly disagree and 5 is strongly agree. The purpose is to obtain a global view of subjective evaluation of the usability of the software.
+\newline
+The SUS score is calculated in the following way:
+\begin{enumerate}
+\item{}Take the odd numbered questions and subtract 1 from these scores.
+\item{}Take the even numbered questions and subtract the score from 5.
+\item{}Add these scores together. 
+\item{}Take this sum and multiply by 2.5.
+\item{}Then you have a SUS score between 0 and 100.
+\end{enumerate}
 
-\newpage
+\paragraph{Usability goals}\hfill
+\newline
+Before conducting the usability tests, we have set some usability goals, to have something to assess the usability against.
+\begin{enumerate}
+\item{}The users should not spend more than 5 minutes on a task.
+\item{}The app should not crash during the usability tests.
+\item{}The users should not make more than 1 error during the tasks
+\item{}The users should solve task 6 faster than task 1 (memorability)
+\item{}The average SUS score should be above 70 FOOTNOTE?
+\end{enumerate}
 
-			The SUS score is calculated in the following way:
-				\begin{enumerate}
-					\item{}Take the odd numbered questions and subtract 1 from these scores.
-					\item{}Take the even numbered questions and subtract the score from 5.
-					\item{}Add these scores together. 
-					\item{}Take this sum and multiply by 2.5.
-					\item{}Then you have a SUS score between 0 and 100.
-				\end{enumerate}
-		\paragraph{Usability goals}\hfill
+\paragraph{Templates}\hfill
 \newline
-		Before conducting the usability tests, we set some usability goals, to have something to assess the usability against.
-		\begin{enumerate}
-			\item{}The users should not spend more than 5 minutes on a task.
-			\item{}The app should not crash during the usability tests.
-			\item{}The users should not make more than 1 error during the tasks
-			\item{}The users should solve task 6 faster than task 1 (memorability)
-			\item{}The average SUS score should be above 70 FOOTNOTE?
-		\end{enumerate}
-		\paragraph{Templates}\hfill
-\newline
-			SUS form can be found in \ref{ch:usatest}.
-			\newline\newline
-			Observation form can be found in \ref{ch:usatest}.
-		\paragraph{The tests}\hfill
-\newline
-			We had five persons perform the tests. The reason behind this number is the theory of Jakob Nielsen \cite{bib:useit}, who states that a test with five persons should discover about 85 \% of the usability problems. This approach suggested that we should test and redesign three times, but due to time constraints we did not conduct more than one iteration.  
-\newline
-\newline
-		The tests can be found in table \ref{tab:usabilitytask1} - \ref{tab:usabilitytask6} on page \pageref{tab:usabilitytask1} - \pageref{tab:usabilitytask6}.
-		\begin{table}[h!]
-\begin{center}
-			\begin{tabular}{>{\bfseries}l|l} \hline
-				Task no.&1\\ \hline
-				Task name&Log in\\ \hline
-				Description&Log in to the app with username and password\\ \hline
-				Input&Username="kprotesting" \\
-					&Password="kprotest"\\ \hline
-			\end{tabular}
-\end{center}
-			\caption{Usability test - task 1} \label{tab:usabilitytask1}
-		\end{table}
-		\begin{table}
-\begin{center}
-			\begin{tabular}{>{\bfseries}l|l}\hline
-				Task no.&2\\ \hline
-				Task name&Send message\\ \hline
-				Description&Send a regular message\\ \hline
-				Input&To="kprothales@gmail.com" \\
-					&Subject="Usability test"\\
-					&Security label="UNCLASSIFIED"\\ 
-					&Priority="Routine"\\
-					&Type="Operation"\\
-					&Message text=Enter your own text here\\ \hline
-			\end{tabular}
-\end{center}
-			\caption{Usability test - task 2} \label{tab:usabilitytask2}
-		\end{table}
-		\begin{table}
-\begin{center}
-			\begin{tabular}{>{\bfseries}l|l}\hline
-				Task no.&3\\ \hline
-				Task name&Settings\\ \hline
-				Description&Change the settings for predefined attributes for instant message\\ \hline
-				Input&Standard receiver="kprotesting@gmail.com" (yourself)\\
-					& Security label="RESTRICTED",\\
-					&Priority="Flash"\\
-					& Type="Drill"\\ \hline
-			\end{tabular}
-\end{center}
-			\caption{Usability - test task 3} \label{tab:usabilitytask3}
-		\end{table}
-		\begin{table}
-\begin{center}
-			\begin{tabular}{>{\bfseries}l|l}\hline
-				Task no.&4\\ \hline
-				Task name&Send instant message with attachments\\ \hline
-				Description&Send instant message with an image\\ \hline
-				Input &Image=Take one with the camera\\
-					&Message text=Enter you own text here\\ \hline
-			\end{tabular}
-\end{center}
-			\caption{Usability test - task 4} \label{tab:usabilitytask4}
-		\end{table}
-		\begin{table}
-\begin{center}
-			\begin{tabular}{>{\bfseries}l|l}\hline
-				Task no.&5\\ \hline
-				Task name&Read high-priority message with attachments\\ \hline
-				Description&Open a received high-priority message and view the attachments\\ \hline
-				Input&\\ \hline
-			\end{tabular}
-\end{center}
-			\caption{Usability test - task 5} \label{tab:usabilitytask5}
-		\end{table}
-		\begin{table}
-\begin{center}
-			\begin{tabular}{>{\bfseries}l|l}\hline
-				Task no.&6\\ \hline
-				Task name&Send message to a contact from the address book\\ \hline
-				Description&Send message to a contact by choosing from from the address book\\ \hline
-				Input&To="kprothales@gmail.com"\\
-					&Security label="UNCLASSIFIED"\\ \hline
-			\end{tabular}
-\end{center}
-			\caption{Usability test - task 6} \label{tab:usabilitytask6}
-		\end{table}
+SUS form can be found in \ref{ch:usatest}.
+\newline\newline
+Observation form can be found in \ref{ch:usatest}.
 
-\newpage
+\paragraph{The tests}\hfill
+\newline
+We will have five persons perform the tests. The reason behind this number is the theory of Jakob Nielsen \cite{bib:useit}, who states that a test with five persons should discover about 85 \% of the usability problems. This approach suggested that we should test and redesign three times, but due to time constraints we probably do not conduct more than one iteration.  
+\newline
 
-\paragraph{Results}\hfill
-\newline
-			The results from the tests can be found in table \ref{tab:usabilitytestresults} on page \pageref{tab:usabilitytestresults}.
-			\begin{table}[h!]
-\begin{center}
-			\begin{tabular}{l|l|p{8cm}}	\hline
-				\textbf{Goal}&\textbf{Status}&\textbf{Comment}\\ \hline \hline
-				1&OK&-\\ \hline
-				2&Failed&The app crashed in the settings task on almost all tests\\ \hline
-				3&OK&One user sent a regular message instead of an instant message\\ \hline
-				4&Failed&Two users spent the same amount of time, but this could also be due to the fact that the test leaders here just counted whole minutes\\ \hline
-				5&OK&The average SUS score was 78.5\\ \hline 
+The tests can be found in table \ref{tab:usabilitytask1} - \ref{tab:usabilitytask6} on page \pageref{tab:usabilitytask1} - \pageref{tab:usabilitytask6}.
 
-			\end{tabular}
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{>{\bfseries}l|l} \hline
+Task no.&1\\ \hline
+Task name&Log in\\ \hline
+Description&Log in to the app with username and password\\ \hline
+Input&Username="kprotesting" \\
+&Password="kprotest"\\ \hline
+\end{tabular}
 \end{center}
-			\caption{Usability test - Test results} \label{tab:usabilitytestresults}
-		\end{table}
+\caption{Usability test - task 1} \label{tab:usabilitytask1}
+\end{table}
 
-			\subparagraph{SUS scores}\hfill
-\newline
-			 	\begin{table}[h!]
+\begin{table}[h!]
 \begin{center}
-			\begin{tabular}{p{8cm}|l|l|l|l|l|l}	\hline
-				\textbf{Question/Test}&\textbf{1}&\textbf{2}&\textbf{3}&\textbf{4}&\textbf{5}\\ \hline \hline
-				1. I think that I would like to use this system frequently&3&3&4&4&3\\ \hline
-				2. I found the system unnecessarily complex&2&2&2&1&2\\ \hline
-				3. I thought the system was easy to use&4&4&4&5&4\\ \hline
-				4. I think that I would need the support of a technical person to be able to use this system&1&2&1&1&1\\ \hline
-				5. I found the various functions in this system were well integrated&3&3&3&5&5\\ \hline
-				6. I thought there was too much inconsistency in this system&2&2&2&3&1\\ \hline
-				7. I would imagine that most people would learn to use this system very quickly&4&3&4&4&4\\ \hline
-				8. I found the system very cumbersome to use&3&2&2&1&1\\ \hline
-				9. I felt very confident using the system&4&4&4&4&5\\ \hline
-				10. I needed to learn a lot of things before I could get going with this system&1&2&1&1&1\\ \hline \hline
-				\textbf{Score}&\textbf{72.5}&\textbf{67.5}&\textbf{77.5}&\textbf{87.5}&\textbf{87.5}\\ \hline 
-				
-			\end{tabular}
+\begin{tabular}{>{\bfseries}l|l}\hline
+Task no.&2\\ \hline
+Task name&Send message\\ \hline
+Description&Send a regular message\\ \hline
+Input&To="kprothales@gmail.com" \\
+&Subject="Usability test"\\
+&Security label="UNCLASSIFIED"\\ 
+&Priority="Routine"\\
+&Type="Operation"\\
+&Message text=Enter your own text here\\ \hline
+\end{tabular}
 \end{center}
-			\caption{Usability test - SUS scores} \label{tab:usabilitysusscore}
-		\end{table}
-			The SUS results are shown in table \ref{tab:usabilitysusscore} on page \pageref{tab:usabilitysusscore}.
-			\newline
-\newline
-			\subparagraph{Time spent}\hfill
-\newline
-				\begin{table}[h!]
+\caption{Usability test - task 2} \label{tab:usabilitytask2}
+\end{table}
+
+\begin{table}[h!]
 \begin{center}
-			\begin{tabular}{l|l|l|l|l|l|l|l}	\hline
-				\textbf{Task/Time}&\textbf{1}&\textbf{2}&\textbf{3}&\textbf{4}&\textbf{5}&\textbf{Average}\\ \hline \hline
-				1&1 min&1 min&1 min&1 min&1 min&\textbf{1 min}\\ \hline
-				2&3 min&3 min&2 min&2 min&2 min&\textbf{2.4 min}\\ \hline
-				3&3 min&4 min&4 min&5 min&5 min&\textbf{4.2 min}\\ \hline
-				4&1 min&5 min&2 min&3 min&4 min&\textbf{3 min}\\ \hline
-				5&1 min&1 min&0 min&2 min&3 min&\textbf{1.75 min}\\ \hline
-				6&1 min&2 min&1 min&2 min&2 min&\textbf{1.6 min}\\ \hline
-				\textbf{Sum}&\textbf{10 min}&\textbf{16 min}&\textbf{10 min}&\textbf{15 min}&\textbf{17 min}&\textbf{14 min}\\ \hline 
-				
-			\end{tabular}
+\begin{tabular}{>{\bfseries}l|l}\hline
+Task no.&3\\ \hline
+Task name&Settings\\ \hline
+Description&Change the settings for predefined attributes for instant message\\ \hline
+Input&Standard receiver="kprotesting@gmail.com" (yourself)\\
+& Security label="RESTRICTED",\\
+&Priority="Flash"\\
+& Type="Drill"\\ \hline
+\end{tabular}
 \end{center}
-			\caption{Usability test - Task times} \label{tab:usabilitytasktime}
-		\end{table}
-			A summary of the time spent on the different tasks is shown in table \ref{tab:usabilitytasktime} on page \pageref{tab:usabilitytasktime}.
-			\subparagraph{Observation forms \ref{ch:usatest}}\hfill
-\newline
-		\paragraph{Summary}\hfill
-\newline
-			There were many problems that reoccured in the test results. Below is a short summary of what were the problems:
-			\begin{itemize}
-				\item{}The testers were annoyed that the application does not remember login information
-				\item{}Some were confused by odd choice of words
-				\item{}The testers were annoyed that tilting of the phone sets you back to the inbox
-				\item{}Almost all complained that the instant message and settings tab icons were not intuitive and spent some time finding the right tab.
-				\item{}Some complained about small fonts and small toasts.
-				\item{}Many were annoyed that the text boxes behaved weird, e.g. that the letters were not capitalized after a period and the keyboard did not always close. 
-				\item{}The settings were unstable and the app stopped during the task that tested the settings.
-				\item{}Many of the testers complained about the lack of confirmation after actions in the app.
-				\item{}Some testers commented that the user interface was not pretty enough.
-			\end{itemize}
-		\paragraph{Discussion}\hfill
-\newline
-Even though we did not have the time to make major changes and improvements to the user interface and functionality, we learned a lot from these usability tests about how to better do things in later projects.
-		\paragraph{Redesign}\hfill
-\newline
-		We were able to do some minor changes in the user interface. The changes are listed below, although some of the screenshots other places may not be updated accordingly.
-		\begin{itemize}
-			\item{}Hopefully more intuitive icon for instant message. (kanskje de to bildene her?)
-			\item{}Implemented bigger difference between read and unread messages in the inbox folder.
-			\item{}Text fields give you capitalized first letter of sentences.
-			\item{}Rephrased some text, e.g. "username" instead of "email".
-		\end{itemize}
+\caption{Usability - test task 3} \label{tab:usabilitytask3}
+\end{table}
+
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{>{\bfseries}l|l}\hline
+Task no.&4\\ \hline
+Task name&Send instant message with attachments\\ \hline
+Description&Send instant message with an image\\ \hline
+Input &Image=Take one with the camera\\
+&Message text=Enter you own text here\\ \hline
+\end{tabular}
+\end{center}
+\caption{Usability test - task 4} \label{tab:usabilitytask4}
+\end{table}
+
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{>{\bfseries}l|l}\hline
+Task no.&5\\ \hline
+Task name&Read high-priority message with attachments\\ \hline
+Description&Open a received high-priority message and view the attachments\\ \hline
+Input&\\ \hline
+\end{tabular}
+\end{center}
+\caption{Usability test - task 5} \label{tab:usabilitytask5}
+\end{table}
+
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{>{\bfseries}l|l}\hline
+Task no.&6\\ \hline
+Task name&Send message to a contact from the address book\\ \hline
+Description&Send message to a contact by choosing from from the address book\\ \hline
+Input&To="kprothales@gmail.com"\\
+&Security label="UNCLASSIFIED"\\ \hline
+\end{tabular}
+\end{center}
+\caption{Usability test - task 6} \label{tab:usabilitytask6}
+\end{table}
