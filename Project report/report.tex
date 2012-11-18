@@ -76,6 +76,7 @@
 \newcommand{\JIRA}[1]{\\JIRA reference: #1}
 \newcommand{\JIRAS}[1]{(#1)}
 \newcommand{\SP}[1]{(#1 SP)}
+\newcommand{\highlight}[1]{\textsc{#1}}
 
 \makeglossaries
 \newglossaryentry{kds}{name=SDK, description={Software Development Kit}}
@@ -140,7 +141,7 @@
 \newglossaryentry{sha}{name=SHA256, description={Secure Hash Algorithm}}
 \newglossaryentry{css}{name=CSS, description={Cascading style sheets, RFC 2318}}
 \newglossaryentry{jpeg}{name=JPEG, description={Joint Photographic Experts Group}}
-\newglossaryentry{pbsha}{name=PBKDF 2-HMAC-SHA1, description={Password-Based key Derivation Function 2}}
+\newglossaryentry{pbsha}{name=PBKDF2 HMAC-SHA1, description={Password-Based key Derivation Function 2}}
 \newglossaryentry{netb}{name=NetBeans, description={An open-source software development project with an active community of collaborating users and developers}}
 \newglossaryentry{uml}{name=UML, description={Unified Modeling Language}}
 \newglossaryentry{essiv2}{name=ESSIV:SHA256, description={Encrypted sector|salt initial vector where sha256 is a hash algorithm}}
@@ -158,6 +159,8 @@
 \newglossaryentry{acid}{name=ACID, description={Atomicity, consistency, isolation, durability}}
 \newglossaryentry{bouncy}{name=BouncyCastle, description={Java Cryptography Library}}
 \newglossaryentry{spongy}{name=SpongyCastle, description={Repackage of \gls{bouncy} for Android}}
+\newglossaryentry{dpi}{name=dpi, description={Dots per inc, a measure of screen density}}
+\newglossaryentry{mmhs}{name=MMHS, description={Military Message Handling System, described by RFC6477}}
 \begin{document}
 \setlength{\parindent}{0in}
 
@@ -310,8 +313,9 @@
 %\chapter{Architectural description}
 	
 	\include{architecture}
-
-	 \include*{fulfillment_of_requirements}
+	\include*{fulfillment_of_requirements}
+	\LTXtable{\textwidth}{fulfillmentFunctionalLongTable.tex}
+	\include*{fulfillment_of_requirements_rest}
 
 \part{Scrum process}
 
