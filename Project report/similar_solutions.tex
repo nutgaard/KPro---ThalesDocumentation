@@ -8,6 +8,8 @@ This section will investigate the similar solutions to the application we are to
 
 A very important aspect of XOXOmail is the signing and verification part. This is an application that will be used to exchange important and classified information, and a message should therefore be verified. This section will start with a short theoretical study of signing and verification and then continue to investigate the available solutions. The study will start with an introduction to public key encryption as well as a short overview of \gls{emims} and the use of \gls{emims} in XOXOmail.
 
+\newpage
+
 \subsubsection{Public key encryption}
 Public key encryption is used when you want to secure data in such a way that only the intended receiver can open the message. It involves using two separate keys; one private key and one public key \cite{bib:pke}. We will here provide a practical example of how public key encryption is carried out.
 \newline
@@ -22,6 +24,8 @@ But what if a third person wants to deceive John, and sends him a message claimi
 
 \subsubsection{\gls{emims}}
 \gls{emims} is an abbreviation for Secure/Multipurpose Internet Mail Extensions. It is a standard for public key encryption and signing of \gls{mime} data \cite{bib:smime}. \gls{mime} content is text in character sets that differ from \gls{ascii}, non-text attachments, message bodies with multiple parts and non \gls{ascii} headers. It is just an extension of the well known mail format so that it is possible to send content other than plain text.
+
+\newpage
 
 \subsubsection{Available apps with signing functionality}
 An already existing app for sending signed messages is X509Tools.

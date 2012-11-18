@@ -1,8 +1,11 @@
 
 \section{Programming languages}
-We have decided to write the program in Java, and used \gls{xml} for creating parts of the supporting structure of our project. A summary of these choices are presented at the end of this subsection.
+We have decided to write the program in Java, and used \gls{xml} for creating parts of the supporting structure of our project. A summary of these choices are presented at the end of this section.
+
+\pagebreak
 
 \subsection{Java}
+
 Java is a programming language originally developed by James Gosling at Sun Microsystems \cite{bib:java}. It is a class based, object oriented language that incorporates concurrency and it is a general purpose language. The main reason Java was developed, was to create a programming language which had a simpler object model and provided fewer low-level facilities than C or C++. Even though, much of its syntax is derived from these languages.
 \newline
 \newline
@@ -13,8 +16,6 @@ One of the major benefits from writing a program in Java, is that it is compiled
 
 \subsection{Native code}
 It is possible to implement parts of the app using native-code languages such as C and C++ by using the Java Native Development Kit (\gls{jndk}) \cite{bib:andk}. This may be beneficial if there are good libraries written in these languages, or if we need the extra performance you get by not going through the Dalvik VM. We have chosen not to do this as as it is stated on the Android developer page for \gls{ndk}: “... you should understand that the \gls{ndk} will not benefit most apps.”
-
-\pagebreak
 
 \subsection{Scripting}
 By using the Scripting Layer for Android (\gls{sl}), it is possible to edit and execute scripts and interactive interpreters directly on the Android device \cite{bib:slfa}. By using the APIs available to the full-fledged Android application, it is indeed possible to run programs using scripting. Currently available programming languages are Locale, Python, Pers, JRuby, Lua, BeanShell, JavaScript, Tcl and shell. We are not using this method, as stated by Google: “SL4A is designed for developers and is alpha quality software.” We will probably be running in to a lot of problems that is not well enough documented.
