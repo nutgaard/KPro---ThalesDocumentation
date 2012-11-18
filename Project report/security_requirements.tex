@@ -2,6 +2,8 @@
 
 In order to make the XOXOmail application, we need to establish some assumptions about the underlying hardware and the environment the application is going to be used in. One can never be sure that a program is completely safe from attacks, so one has to assume that the surroundings are at least a bit safe. In this context, surroundings might mean a number of different things. It can mean the Android phone itself and other software installed on it, it can mean the user and his system administrator, and it can mean the network the messages travel over. This section will go through each of these situations in turn.
 
+\newpage
+
 \subsection{The phone}
 All modern operating systems focus at least somewhat on security, and the Android OS especially. Building on a Linux core, Android counts each application as a separate user. This means that, in principle, each app has a separate hard disk region, separate memory area, and no way of stealing data from the other applications’ areas. However, there are a number of ways to circumvent this.
 \newline
@@ -14,6 +16,8 @@ Second, we want the persistent storage to be encrypted. Both because it is a use
 \newline
 Third, we want a timeout lock on the phone, locking it down and encrypting whatever is currently not encrypted if the phone has not been used in a while. Exactly how often the encryption should be performed would depend on the sensitivity of the data that could conceivably be stored on the phone, and would be up to the system administrator.
 Last, we have to assume that the phone arrived to the user in an uncompromised state. This means that the phone was not compromised by the manufacturer, or during transport out to the user. Tampering during transport is generally easy to check, as most if not all manufacturers deliver their goods in a sealed state. Tampering by the manufacturer is harder to detect. The best one could do is to carefully choose manufacturers that the user can trust or, for more high security applications, manufacturers that the user can maintain careful oversight over.
+
+\pagebreak
 
 \subsection{The users}
 We have to make some assumptions about the users of the application. User error and social engineering remain the most common reasons for data leaks, so we need to know to what level we can trust the user.
@@ -29,8 +33,6 @@ The system administrator can also help by limiting the user’s ability to insta
 \newline
 \newline
 Having user courses in digital security could be beneficial, but we are hesitant to add it as a safety requirement as it would contradict our goal of producing a simple, intuitive system that can be quickly deployed without the need for a training course. 
-
-\newpage
 
 \subsection{The network}
 Any message that will be sent over the network is sent through an encrypted \gls{ssl1} tunnel directly to the military gateway (as per customer requirement 5.1), so listening to the messages would have very little benefit for the attacker. However, all such messages are sent through a server that we are not involved in the development of. If this server is not secure, we cannot guarantee anything. So we have to trust that our client, who is making the server and knows far more about security than us, is competent enough to make the server at least as difficult to penetrate as our software. This should generally be a safe assumption, but one we have to make
