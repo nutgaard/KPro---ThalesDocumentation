@@ -1,33 +1,35 @@
 \subsection{Limitations}
 
+In this section it will be described both the technical and non-technical limitations the group had to deal with in the project.
+
 \subsubsection{Technical limitations}
 
 \paragraph{Android}\hfill
 \newline
-Android is a quite new platform and none of us have been doing much programming in it before starting on this project. So the task of learning how Android works and to find technical tools that Android supports was a time consuming task. We wanted to develop our project in Android version 2.2 with \gls{api} level 8. The reason for choosing this version of Android was that we did not want to depend on features that only existed in the newer versions of Android, and 2.2 is a version that is very common.
+Android is a quite new platform and none of us have been doing much programming with this framework prior to this project. The task of learning how Android worked and to find technical tools that Android supports was going to be a time consuming task. We wanted to develop our project in Android version 2.2 with \gls{api} level 8. The reason behind choosing this version of Android was that we did not want to depend on features that only existed in newer versions of Android, and 2.2 is a version that is very common.
 
 \newpage
 
 \paragraph{Android security limitations}\hfill
 \newline
-There are a number of limitations that stem from our use of android as a platform. For one thing, we have a small and easy to lose device rather than a fixed installation. For another, we are relying on existing civilian network, rather than purpose built military communication channels.
+Using Android as our platform gives us a number of limitations when it came to security. Firstly, the device is small and easy to lose compared to a fixed installation such as a computer. Secondly, we need to rely on existing civilian network rather than purpose-built military communication channels.
 \newline
 \newline
-A major issue for our security considerations is the mobility of our application. Our small, easily stealable device could easily fall into the wrong hands, so security has to take this into account. We do this through, as a first step, encrypting the entire phone and requiring a login on system resume, with a short timer.
+A major issue for our security considerations is the mobility of our application. The small device could easily be lost or stolen and fall into the wrong hands, so we have to take this into account when developing for security. We therefore plan to encrypt the entire phone and require a login on system resume, with a short timer.
 \newline
 \newline
-An android based application is problematic in that it communicates over the internet. Thus it is conceivable that someone could listen in to our transmissions. We resolved this through the use of network layer encryption through \gls{ssl1}. 
+An Android-based application is problematic in that it communicates over the Internet, thus it is conceivable that someone could listen in to the transmissions from the application. We plan to resolve this through the use of network layer encryption through \gls{ssl1}. 
 
 \paragraph{Screen}\hfill
 \newline
-The mail client will be used on devices with relatively small touch screens which means that the application must be carefully designed to accommodate the limited size. In addition we needed to put a lot of thought into the design so that it became easy to use. The application must be designed to scale well with different screen resolutions.
+The mail client is going be used on devices with relatively small touch screens, which means that the application must be carefully designed to accommodate the limited size. In addition we need to put a lot of thought into the design so that it becomes easy to use. The application must be designed to scale well with different screen resolutions.
 
 \subsubsection{Non-technical limitations}
 
 \paragraph{Language}\hfill
 \newline
-The entire project was to be delivered in English, so we all had to write in our second language. This ment that the report work would take more time than writing in Norwegian. 
+The entire project is to be delivered in English, so we all have to write in our second language. This means that the report work would take more time than if we could write it in Norwegian. 
 
 \paragraph{Duration}\hfill
 \newline
-We had a set timeframe of 13 weeks with a delivery deadline that could not be changed. This gave us a set amount of effort which led to us dont having the time to implement all parts of the application. We had to focus on the parts we found most important. The specified timeframe gave us challenges when it came to planning and priorities of the different tasks.
+We have a set timeframe of 13 weeks with a delivery deadline that can not be changed. This gives us a set amount of effort and we probably do not have the time to implement all the desired parts of the application. We have to focus on the parts we find most important. The specified timeframe will likely give us challenges when it comes to planning and priorities of the different tasks.

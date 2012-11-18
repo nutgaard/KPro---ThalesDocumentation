@@ -1,33 +1,24 @@
 
 
 \section{Similar solutions}
-There are few, if any, solutions that give the same capabilities as what is expected of this application. There will be given an overview of existing applications that do fulfill some of the requirements of XOXOmail.
-\newline
-\newline
-A very important aspect of XOXOmail is the signing and verification part. This is an app that will be used by important people with security grading, and a message from such a person should be verified.
+
+This section will investigate the similar solutions to the application we are to implement and find out if we could get any help from these solutions. The result of the study was the realization that there are few, if any, solutions that give the capabilities that is expected of our application. However, we will give an overview of existing applications that do fulfill some of the requirements of XOXOmail, starting with discussing of signing and verification and available solutions that implement these features and continuing with a discussion of different email clients that are available and their capabilities.
 
 \subsection{Signing and verification}
-In order for this to be an informative in depth analysis, it is appropriate with a general overview first, which gives an introduction to public key encryption as well as a short overview of \gls{emims} and the use of \gls{emims} in XOXOmail.
+
+A very important aspect of XOXOmail is the signing and verification part. This is an application that will be used to exchange important and classified information, and a message should therefore be verified. This section will start with a short theoretical study of signing and verification and then continue to investigate the available solutions. The study will start with an introduction to public key encryption as well as a short overview of \gls{emims} and the use of \gls{emims} in XOXOmail.
 
 \subsubsection{Public key encryption}
-Public key encryption is used when you want to secure data in such a way that only the receiver can open the message. It involves using two separate keys; one private key and one public key \cite{bib:pke}.
+Public key encryption is used when you want to secure data in such a way that only the intended receiver can open the message. It involves using two separate keys; one private key and one public key \cite{bib:pke}. We will here provide a practical example of how public key encryption is carried out.
 \newline
 \newline
-If I want to send a message to, let's say John, I first have to get John's public key. His public key is available to everyone who wants it, because it is not a problem if an unwanted person gets it. This is the reason it is called public key. When he has given me his public key, I can then use it to encrypt the message. One might ask: What is the reason for using a
-public key? Does that give any security? The answer is yes. There is a mathematical relation between the private and public key. Even if you know the public key, it is nearly impossible or very expensive to calculate the private key. Therefore, by using John's public key to encrypt the message. I know that only he can open it, as it is only the private key of John that will be able to decrypt the message.
-\newline
-\newline
-Another concern would be: How does John know that I was the sender of the message? By just using the private-public key scheme as explained above, this is not possible. But by introducing digital signing, this is possible.
+If I want to send a message to e.g. John, I first have to get John's public key. His public key is available to everyone who wants it, and this is the reason why it is called a public key. I can use John's public key to encrypt the message I want to send him. How does this give any security? Yes, as there is a mathematical relation between the private and public key, only John can decrypt and read the message. It is nearly impossible or very expensive to calculate the private key, and we can therefore guarantee that only John will see the message.
 
-\subsubsection{Digital signing}
-Digital signing is just what it sounds like. It is a way of signing data so that the receiver of the document knows that the sender is who he says he is, and that the content has not been tampered with \cite{bib:ds}. In our example, this means that John wants a way of knowing that I am the sender. This is done by digital signing, which first consists of computing a message digest, which is just a hash of the message. This hash is then encrypted with my private key.
+\subsubsection{Digital signing and verification}
+John might not be sure that I was the sender of the message, and this is not possible by just using the private-public key scheme as explained above. But by introducting digital signing, this is possible. Digital signing is a way of signing data so that the receiver of the document knows that the sender is exactly who he says he is, and that the content has not been tampered with \cite{bib:ds}. By continuing our example, John wants a way of knowing for sure that I was the sender of the message. This is ensured by digital signing, which first is done by computing a message digest, which is just a hash of the message content. This hash is then encrypted with my private key. When John receives the message he will use my public key to decrypt the signature, and thereby receiving the hash value. If John creates a hash of the received document and it matches the hash of the signature, he knows that the message was from me and that the message has not been tampered with. 
 
-
-\subsubsection{Verification}
-When John receives the message he will use my public key to decrypt the signature, and thereby receiving the hash. If John then creates a hash of the received document and it matches the hash of the signature, he knows that the message is not tampered with. 
-\newline
-\newline
-But what if a third person wants to deceive us, and sends a message to John claiming to be me and giving him “my” public key? John knows that the message was sent by someone with my name, but is he sure that I was the sender? The solution to this is a Certificate Authority, also known as a \gls{ca}. The \gls{ca} creates a digital certificate for my public key, which ensures that it really is from me. To check that it really was the \gls{ca} that created the certificate, John can use the \gls{ca}'s public key to check the signature on my certificate. If it all checks out, John can now trust trust that the message was from me.
+\subsubsection{Digital certificates}
+But what if a third person wants to deceive John, and sends him a message claiming to be me and giving him "my" public key. John knows that the message was sent by someone with my name, but how can he be sure that I was the sender? The solution is a Certificate Authority, also known as a \gls{ca}. The \gls{ca} creates a digital certificate for my public key, which ensures that it really is from me. To check that it really was the \gls{ca} that created the certificate, John can use the \gls{ca}'s public key to check the signature on my certificate. If everything turns out correct, John can now trust trust that the message was from me.
 
 \subsubsection{\gls{emims}}
 \gls{emims} is an abbreviation for Secure/Multipurpose Internet Mail Extensions. It is a standard for public key encryption and signing of \gls{mime} data \cite{bib:smime}. \gls{mime} content is text in character sets that differ from \gls{ascii}, non-text attachments, message bodies with multiple parts and non \gls{ascii} headers. It is just an extension of the well known mail format so that it is possible to send content other than plain text.
@@ -39,34 +30,31 @@ An already existing app for sending signed messages is X509Tools.
 \newline
 X509Tools is an application that can send mail with \gls{emims} capabilities, but its main purpose is not sending mails. The main purpose is to give these capabilities to external mail clients via an interface. It also has a Certificate Store which can be used to check certificates already present on the phone. 
 
-\subsection{Sending mail}
-There are many applications available for sending mail from an Android phone. This section will first give a superficial overview of other programs, and then a short summary of what these provide, and what these are useful for.
+\subsection{Available email applications}
+There are many applications available for sending mail from an Android phone. This section will give a superficial overview of the applications as well as a short discussion of their advantages and disadvantages.
 
-\subsubsection{Built in client}
-The first and most obvious client for sending mail is the built in Android mail client which is what one can call abandonware. It is often outdated and lacks a lot of basic functions.
+\subsubsection{Built-in client}
+The first and most obvious client for sending email is the built-in Android email client which is what one can call abandonware. It is often outdated and lacks a lot of basic functions.
 
-\paragraph{GMail} \hfill
-\newline
-One of the most used email clients for phones is the GMail app. It is developed by Google, and is therefore seen as secure app with a streamlined design. Unfortunately, it stops there. Google has been neglecting all problems that it has, and new features are not emerging from complaints stated by existing users. Functions like sorting of mail is lacking and the app is not very reliable. Fortunately, there exists a fork of GMail, called K-9 Mail. GMail does not have \gls{emims} implemented on the phone version, but an extension for Firefox enables integrates reading and sending of encrypted mail directly into the Gmail interface \cite{bib:gmail}.
+\subsubsection{Gmail}
+One of the most used email clients for phones is the Gmail app. It is developed by Google, and is therefore seen as secure app with a streamlined design. Unfortunately, it stops there. Google has been neglecting all problems that it has, and new features are not emerging from complaints stated by existing users. Functions like sorting of mail is lacking and the app is not very reliable. Fortunately, there exists a fork of GMail, called K-9 Mail. GMail does not have \gls{emims} implemented on the phone version, but an extension for Firefox enables integrates reading and sending of encrypted mail directly into the Gmail interface \cite{bib:gmail}.
 
-\paragraph{K-9 Mail} \hfill
-\newline
-K-9 Mail has all the features the users wanted in GMail, and some extra. Most features are configurable. It is possible to edit app polling settings, show a short excerpt of the message text, and message selection checkboxes can be temporarily hidden. So can the starring of the messages and it is even possible to adjust font sizes and date formats. The clue here is configurability. K-9 Mail does not currently have an official \gls{emims} implementation, but there exist some hacks around that partially or fully manages to implement it. This is therefore not seen as a fully secure alternative. An upside is that K-9 Mail is free.
+\subsubsection{K-9 Mail}
+K-9 Mail has all the features the users wanted in Gmail, and some extra. Most features are configurable. It is possible to edit app polling settings, show a short excerpt of the message text, and message selection checkboxes can be temporarily hidden. So can the starring of the messages and it is even possible to adjust font sizes and date formats. The clue here is configurability. K-9 Mail does not currently have an official \gls{emims} implementation, but there exist some hacks around that partially or fully manages to implement it. This is therefore not seen as a fully secure alternative. An upside is that K-9 Mail is free.
 
-\paragraph{MailDroid} \hfill
-\newline
-It has many of the same functions as in K-9 mail, but also incorporates spell checking, changing font sizes and colors on text and coloring on email text. It is a solid email client that will meet the needs of most users. MailDroid currently costs 111,86 NOK, which is in the high end price range of apps. A free ad version is available. As far as we can see, MailDroid does not come with \gls{emims}. 
+\subsubsection{MailDroid}
+MailDroid has many of the same functions as in K-9 mail, but also incorporates spell checking, changing font sizes and colors on text and coloring on email text. It is a solid email client that will meet the needs of most users. MailDroid currently costs 111,86 NOK, which is in the high-end price range of apps. A free ad version is available. As far as we can see, MailDroid does not come with \gls{emims}. 
 
-\paragraph{R2Mail2} \hfill
-\newline
-R2Mail2 is the result of further development of X509Tools. Here, the focus is more on taking the good parts of X509Tools and integrating it into a fully functional mail client. It uses the same security libraries as used in X509Tools, and does also include digital signatures and digital encryption and decryption based on personal Soft-Token keys \cite{bib:r2mail2}. It has the ability to store private keys and passwords in an encrypted database known as the Key-Store. This is encrypted by a master password. The certificated can be validated by \gls{ocsp} and \gls{ldap}. As it is built on top of X509Tools, it has full \gls{emims} support. This is a no nonsense email client which provides the ability to send encrypted and signed mails.
+\subsubsection{R2Mail2}
+R2Mail2 is the result of further development of X509Tools. Here, the focus is more on taking the good parts of X509Tools and integrating it into a fully functional email client. It uses the same security libraries as used in X509Tools, and does also include digital signatures and digital encryption and decryption based on personal Soft-Token keys \cite{bib:r2mail2}. It has the ability to store private keys and passwords in an encrypted database known as the Key-Store. This is encrypted by a master password. The certificated can be validated by \gls{ocsp} and \gls{ldap}. As it is built on top of X509Tools, it has full \gls{emims} support. This is a no nonsense email client which provides the ability to send encrypted and signed mails.
+
 
 \subsection{Similar solutions conclusion}
-It is very clear that a similar solution to XOXOmail is not available on the market, but there exist solutions that partially try to implement \gls{emims}, like \gls{k9m}. There also exist solutions that fully implement \gls{emims} for external clients like X509Tools. A problem with using \gls{x5}, is that it gives poor performance to apps that utilize this \gls{emims} capability, as the mail message will have to be stored to disk between the mail client and \gls{x5}. An alternative is therefore to use \gls{r2m2}, which gives all one can want regarding security.
+It became very clear through these studies that a solution similar to what we want from XOXOmail is not available on the market, but there exist solutions that partially try to implement \gls{emims}, like \gls{k9m}. There also exist solutions that fully implement \gls{emims} for external clients, like X509Tools. A problem with using \gls{x5}, is that it gives poor performance to applications that utilize this \gls{emims} capability, as the mail message will have to be stored to disk between the mail client and \gls{x5}. An alternative is therefore to use \gls{r2m2}, which gives all one can want regarding security.
 \newline
 \newline
-As an aside, it is of interest to note that we have been in direct contact with on of the developers of \gls{x5} and \gls{r2m2}. His name was Stefan Selbitschka, and he was very interested in this project. If necessary, he could build us a separate version of the \gls{r2m2} library that incorporates e.g. header specific data that is unique to XOXOmail. This was mentioned at a meeting with Thales, but no discussion was further made on this topic. It seems that it is more important to investigate possible solutions than to brute force a fast solution to the prototype of XOXOmail.
+As an aside, it is of interest to note that we have been in direct contact with on of the developers of \gls{x5} and \gls{r2m2}. His name was Stefan Selbitschka, and he was very interested in this project. If necessary, he could build us a separate version of the \gls{r2m2} library that incorporates e.g. header specific data that is unique to XOXOmail. This was mentioned at a meeting with Thales, but no discussion was made further on this topic. It seems that it is more important to investigate possible solutions than to brute force a fast solution to the prototype of XOXOmail.
 \newline
 \newline
-Even though there exist email clients on the market where security is important, none of these have the special needs that XOXOmail will have to fulfill. This is mainly because XOXOmail is a specialized software created for a specific user group. A general purpose app will never be able to fulfill these requirements. It is therefore clear that XOXOmail has to be implemented ground up to get the capabilities we are looking for. We can still use a lot of knowledge regarding what works well and not so well in other mail applications in our product, as the basic functionality is quite similar.
+Even though there exist email clients on the market where security is important, none of these have the special needs that XOXOmail will have to fulfill. This is mainly because XOXOmail is a specialized software created for a specific user group. A general purpose app will never be able to fulfill these requirements. It is therefore clear that XOXOmail has to be implemented ground up to get the capabilities we are looking for. We can still use a lot of the knowledge regarding what works well and not so well in other mail applications in our product, as the basic functionality is quite similar.
 
