@@ -2,11 +2,11 @@
 
 \section{Similar solutions}
 
-This section will investigate the similar solutions to the application we are to implement and find out if we could get any help from these solutions. The result of the study was the realization that there are few, if any, solutions that give the capabilities that is expected of our application. However, we will give an overview of existing applications that do fulfill some of the requirements of XOXOmail, starting with discussing of signing and verification and available solutions that implement these features and continuing with a discussion of different email clients that are available and their capabilities.
+This section will investigate the similar solutions to the application we are to implement and find out if we could get any help from these solutions. The result of the study was the realization that there are few, if any, solutions that give the capabilities that are expected of our application. However, we will give an overview of existing applications that do fulfill some of the requirements of XOXOmail, starting with discussing of signing and verification and available solutions that implement these features and continuing with a discussion of different email clients that are available and their capabilities.
 
 \subsection{Signing and verification}
 
-A very important aspect of XOXOmail is the signing and verification part. This is an application that will be used to exchange important and classified information, and a message should therefore be verified. This section will start with a short theoretical study of signing and verification and then continue to investigate the available solutions. The study will start with an introduction to public key encryption as well as a short overview of \gls{emims} and the use of \gls{emims} in XOXOmail.
+A very important aspect of XOXOmail is the signing and verification part. This is an application that will be used to exchange important and classified information, and a message should therefore be verified. This section will start with a short theoretical study of signing and verification and then continue to investigate the available solutions. The study will start with an introduction to public key encryption as well as a short overview of \gls{emims} and the available applications that use \gls{emims}.
 
 \newpage
 
@@ -17,18 +17,18 @@ Public key encryption is used when you want to secure data in such a way that on
 If I want to send a message to e.g. John, I first have to get John's public key. His public key is available to everyone who wants it, and this is the reason why it is called a public key. I can use John's public key to encrypt the message I want to send him. How does this give any security? Yes, as there is a mathematical relation between the private and public key, only John can decrypt and read the message. It is nearly impossible or very expensive to calculate the private key, and we can therefore guarantee that only John will see the message.
 
 \subsubsection{Digital signing and verification}
-John might not be sure that I was the sender of the message, and this is not possible by just using the private-public key scheme as explained above. But by introducting digital signing, this is possible. Digital signing is a way of signing data so that the receiver of the document knows that the sender is exactly who he says he is, and that the content has not been tampered with \cite{bib:ds}. By continuing our example, John wants a way of knowing for sure that I was the sender of the message. This is ensured by digital signing, which first is done by computing a message digest, which is just a hash of the message content. This hash is then encrypted with my private key. When John receives the message he will use my public key to decrypt the signature, and thereby receiving the hash value. If John creates a hash of the received document and it matches the hash of the signature, he knows that the message was from me and that the message has not been tampered with. 
+John might not be sure that I was the sender of the message, and this is not possible by just using the private-public key scheme as explained above. But by introducting digital signing, this becomes possible. Digital signing is a way of signing data so that the receiver of the document knows that the sender is exactly who he says he is, and that the content has not been tampered with \cite{bib:ds}. By continuing our example, John wants a way of knowing for sure that I was the sender of the message. This is ensured by digital signing, which first is done by computing a message digest, which is just a hash of the message content. This hash is then encrypted with my private key. When John receives the message he will use my public key to decrypt the signature, and thereby receiving the hash value. If John creates a hash of the received document and it matches the hash of the signature, he knows that the message was from me and that the message has not been tampered with. 
 
 \subsubsection{Digital certificates}
-But what if a third person wants to deceive John, and sends him a message claiming to be me and giving him "my" public key. John knows that the message was sent by someone with my name, but how can he be sure that I was the sender? The solution is a Certificate Authority, also known as a \gls{ca}. The \gls{ca} creates a digital certificate for my public key, which ensures that it really is from me. To check that it really was the \gls{ca} that created the certificate, John can use the \gls{ca}'s public key to check the signature on my certificate. If everything turns out correct, John can now trust trust that the message was from me.
+But what if a third person wants to deceive John, and sends him a message claiming to be me and giving him "my" public key? John knows that the message was sent by someone with my name, but how can he be sure that I was the sender? The solution is a Certificate Authority, also known as a \gls{ca}. The \gls{ca} creates a digital certificate for my public key, which ensures that it really is from me. To check that it really was the \gls{ca} that created the certificate, John can use the \gls{ca}'s public key to check the signature on my certificate. If everything turns out correct, John can now trust that the message was from me.
 
 \subsubsection{\gls{emims}}
 \gls{emims} is an abbreviation for Secure/Multipurpose Internet Mail Extensions. It is a standard for public key encryption and signing of \gls{mime} data \cite{bib:smime}. \gls{mime} content is text in character sets that differ from \gls{ascii}, non-text attachments, message bodies with multiple parts and non \gls{ascii} headers. It is just an extension of the well known mail format so that it is possible to send content other than plain text.
 
 \newpage
 
-\subsubsection{Available apps with signing functionality}
-An already existing app for sending signed messages is X509Tools.
+\subsubsection{Available application with signing functionality}
+An already existing application for sending signed messages is X509Tools.
 
 \paragraph{X509Tools} \hfill
 \newline
@@ -54,7 +54,7 @@ R2Mail2 is the result of further development of X509Tools. Here, the focus is mo
 
 
 \subsection{Similar solutions conclusion}
-It became very clear through these studies that a solution similar to what we want from XOXOmail is not available on the market, but there exist solutions that partially try to implement \gls{emims}, like \gls{k9m}. There also exist solutions that fully implement \gls{emims} for external clients, like X509Tools. A problem with using \gls{x5}, is that it gives poor performance to applications that utilize this \gls{emims} capability, as the mail message will have to be stored to disk between the mail client and \gls{x5}. An alternative is therefore to use \gls{r2m2}, which gives all one can want regarding security.
+It became very clear through these studies that a solution similar to what we want from XOXOmail is not available on the market, but there exist solutions that partially try to implement \gls{emims}, like \gls{k9m}. There also exist solutions that fully implement \gls{emims} for external clients, like X509Tools. A problem with using \gls{x5}, is that it gives poor performance to applications that utilize this \gls{emims} capability, as the email message will have to be stored to disk between the mail client and \gls{x5}. An alternative is therefore to use \gls{r2m2}, which gives all one can want regarding security.
 \newline
 \newline
 As an aside, it is of interest to note that we have been in direct contact with on of the developers of \gls{x5} and \gls{r2m2}. His name was Stefan Selbitschka, and he was very interested in this project. If necessary, he could build us a separate version of the \gls{r2m2} library that incorporates e.g. header specific data that is unique to XOXOmail. This was mentioned at a meeting with Thales, but no discussion was made further on this topic. It seems that it is more important to investigate possible solutions than to brute force a fast solution to the prototype of XOXOmail.

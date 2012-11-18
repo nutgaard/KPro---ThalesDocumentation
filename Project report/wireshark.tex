@@ -1,4 +1,7 @@
+\newpage
+
 \section{Wireshark analysis}
+This section will describe a Whireshark analysis of the bandwidth usage from the application, as requested by Thales.
 
 \subsection{Wireshark}
 Wireshark is a tool used for network troubleshooting and analysis created by Gerald Combs in the late 90’s. It detects network traffic and displays it to the user through a graphical user interface, as opposed to tcpdump, its main competitor, which only has a textual view. Wireshark is cross-platform and the standard amongst many industries and educational institutions. 
@@ -14,7 +17,7 @@ In order to get an overview of how our application sends and receives messages i
 \item{}If there are any inconsistencies with regards to the way it should work
 \end{itemize}
 
-To monitor the traffic in our application we used an android virtual device with the network speed set to GSM (14.4 kbits/s in upload and 14.4 kbits/s in download). This device then generated a capture file that could be viewed and analyzed in Wireshark.
+To monitor the traffic in our application we used an Android virtual device with the network speed set to GSM (14.4 kbits/s in upload and 14.4 kbits/s in download). This device then generated a capture file that could be viewed and analyzed in Wireshark.
 \newline
 \newline
 We use TLS (Transport Layer Security) when sending and receiving messages and this is visible in the Wireshark capture. 
@@ -35,11 +38,11 @@ A simple TLS handshake looks like this:
 \item{}Server sends \textbf{Finished}
 \end{itemize}
 
-After the client sends his \textbf{ChangeCipherSpec} message, he starts to send the encrypted packages. Same goes for the server. 
+After the client sends his \textbf{ChangeCipherSpec} message, he starts to send the encrypted packages. The same goes for the server. 
 
 \subsection{Receiving a message}
 
-See \ref{fig:ws1} and \ref{fig:ws2} at page \pageref{fig:ws1} for two screenshots from Wireshark containing all the traffic going to and from our application when receiving a single message from a Gmail account.
+See figures \ref{fig:ws1} and \ref{fig:ws2} at page \pageref{fig:ws1} for two screenshots from Wireshark containing all the traffic going to and from our application when receiving a single message from a Gmail account.
 
 See table \ref{tab:summaryrecmes} below for a summary of the event of recieving a message.
 \begin{table}[h!]
@@ -59,12 +62,13 @@ Average Mbit per second & 0.013 \\ \hline
 \end{table}
 
 The figure \ref{fig:ws3} at page \pageref{fig:ws3} is a Wireshark screenshot that only includes the TLS packets sent to and from our application.
+\newline
 
-After investigating the Wireshark capture we could see that receiving a message acts according to the TLS protocol with one exception. The handshake between the client and the server is performed according to the rules of the protocol, except the \textbf{Finished}  message is never sent from either part, instead there appears to be an \textbf{Encrypted Alert}. This does not seem to be a problem as the application ends the IMAP connection shortly after and thus closing the connection. The encrypted alert could be a normal “close notify” message.
+After investigating the Wireshark capture we could see that receiving a message acts according to the TLS protocol with one exception. The handshake between the client and the server is performed according to the rules of the protocol, except the \textbf{Finished}  message is never sent from either part, instead there appears to be an \textbf{Encrypted Alert}. This does not seem to be a problem as the application ends the IMAP connection shortly after and thus closes the connection. The encrypted alert could be a normal “close notify” message.
 
 \pagebreak
 
-When considering the amount of data sent and the time it takes to send it, we can see that the data exchanged between the client and server is 8992 Bytes and that it takes 5.384 seconds to finish the session. This is not bad considering that the information was transferred over GSM bandwidth. The actual message itself was 990 bytes but the application data sent from the server was 2953 bytes. This increased the data transferred by 66.47\% During the receiving of this message there were only one duplicate packet.
+When considering the amount of data sent and the time it takes to send it, we can see that the data exchanged between the client and server is 8992 Bytes and that it takes 5.384 seconds to finish the session. This is not bad considering that the information was transferred over GSM bandwidth. The actual message itself was 990 bytes but the application data sent from the server was 2953 bytes. This increased the data transferred by 66.47\% During reception of this message there was only one duplicate packet.
 
 \subsection{Sending a message}
 
@@ -88,7 +92,7 @@ Average Mbit per second & 0.012 \\ \hline
 \end{table}
 
 For a Wireshark screenshot including the TLS packets sent to and from our application see figure \ref{fig:ws5} at page \pageref{fig:ws5}.
-
+\newline
 
 When sending a message from the application it acts in a similar manner to the receiving part. It follows the TLS protocol with the same \textbf{Encrypted Alert} message at the end instead of the server and client \textbf{Finished} message. 
 \newline
@@ -101,12 +105,11 @@ This is an increase of data by 42.7 \%. During this transmission there was only 
 \subsection{Wireshark conclusion}
 Sending and receiving messages with our application over GSM seems to work in a respectable manner. The time it takes to receive and send messages is pretty good considering this was done over 14.4 kbits/s. The TLS protocol also seems to be working as intended for both sending and receiving messages. The initial handshake is completed and the following data is encrypted as it should be. 
 \newline
-\newline
 
 The only problem we could find is that the amount of data sent when considering both the sending and receiving functionality appears to be much larger than the actual size of the message when you inspect it in clear text. The receiving part of the application had an increase of 66.47 \% whilst the sending part had an increase of 42.7 \%. 
 \newline
 \newline
-At first we thought this could be a result of the TLS encryption of the data, but if the encryption is working as intended the only part of the encryption that could create some overflow is the initial handshake. This was not included in the calculation, only the actual application data sent or received was included. The actual encrypted TLS packages are based on relatively efficient symmetric ciphers and should not take up a lot more space than unencrypted packages.  
+At first we thought this could be a result of the TLS encryption of the data, but if the encryption is working as intended the only part of the encryption that could create some overflow is the initial handshake. This was not included in the calculation, only the actual application data sent or received. The actual encrypted TLS packages are based on relatively efficient symmetric ciphers and should not take up a lot more space than unencrypted packages.  
 \newline
 \newline
 It is difficult to pinpoint the exact reason for this large increase in data transferred at this point, but it was sent in a reasonable time and according to protocol, and those are the most important attributes for our client.  
