@@ -3,26 +3,26 @@
 \section{Sprint 3 - Ordered sprint backlog}
 
 \begin{itemize}
-\item{}\textbf{Report work:} the report that is to be delivered at the end of the project needs a lot of work, and we have decided that we will use time on the report in every sprint.
-\item{}\textbf{Group Administration:}to administrate on behalf of the entire group, to book group rooms and send emails to the customer, the advisor and the team to call in for meetings.
-\item{}\textbf{Meetings:}arranging meetings and the time we use on meetings.
+\item{}\textbf{Report work:} The report that is to be delivered at the end of the project needs a lot of work, and we have decided that we will use time on the report in every sprint.
+\item{}\textbf{Group Administration:} Administrate on behalf of the entire group, to book group rooms and send emails to the customer, the advisor and the team to call in for meetings.
+\item{}\textbf{Meetings:} Arranging meetings and the time we use on meetings.
 \begin{itemize}
 \item{}\textbf{Meetings with Thales:} We have weekly meetings with our customer so that we can get rapid feedback on what we do. To know if they agree with our decisions and that we haven't misunderstood the task thay have given us.
 \item{}\textbf{Meetings with Mohnsen Anvaari:} We have regular meetings with our advisor so that he can give us feedback on how we are doing our work, and make sure that we do what are expected of us in the course.
 \item{}\textbf{Internal meetings:} Every time we meet we first have a status meeting were we share what we have done and how far we have come with our tasks.
-\item{}\textbf{Lectures:} there are some lectures during the semester, and we are adviced to paticipate in these. In this sprint there are 2 lectures and courses that we have decided to attend.
+\item{}\textbf{Lectures:} Tthere are some lectures during the semester, and we are adviced to paticipate in these. In this sprint there are 2 lectures and courses that we have decided to attend.
 \end{itemize}
-\item{}\textbf{Log in to app:}as a user I should be able to log in via the login screen so that I after this process am an authorized user inside the program.
+\item{}\textbf{Log in to app:} As a user I should be able to log in via the \textsc{Login} screen so that after this process, I am an authorized user inside the program.
 \begin{itemize}
-\item{}\textbf{Create basic GUI:} create a basic GUI for login. This means a GUI that has a username and password field, and a "Log in" button
-\item{}\textbf{Find solution for encrypting the login information:} figure out what solution we are going to use for save the login information. This means that we need to decide for an implementation based on Magnus' documentation. The best is if we can make a solution that is so good that we don’t need to revise it.
-\item{}\textbf{Persist and fetch login data:} implement the saving and fetching of the login data, making the login functionality complete.
+\item{}\textbf{Create basic GUI:} Create a basic GUI for login. This means a GUI that has a username and password field, and a \textsc{Log in} button
+\item{}\textbf{Find solution for encrypting the login information:} Figure out what solution we are going to use for save the login information. This means that we need to decide for an implementation. The best is if we can make a solution that is so good that we don’t need to revise it.
+\item{}\textbf{Persist and fetch login data:} Implement the saving and fetching of the login data, making the login functionality complete.
 \end{itemize}
-\item{}\textbf{Iteration network service:} as a programmer I should extend the communication implementation to support more features, so that we can have message priorities, message types, message classification, message status and notification of failed deliveries.
+\item{}\textbf{Iteration network service:} As a programmer I should extend the communication implementation to support more features, so that we can have message priorities, message types, message classification, message status and notification of failed deliveries.
 \begin{itemize}
-\item{}\textbf{Implement threaded SMTP queue:} Implement all SMTP related method to run in a separate thread other then the gui-thread, in order to ensure responsive user interface.
+\item{}\textbf{Implement threaded SMTP queue:} Implement all SMTP related method to run in a separate thread other then the GUI-thread, in order to ensure responsive user interface.
 \item{}\textbf{Implement stripping of message based on network connection:} Implement a pre-sending processing step for XOMessage which removes possible attachment based on the network connection at the current time. This should be done through the use of interfaces to ensure modifiability. 
-\item{}\textbf{Implement usage IMAP specific attributes:} Implement the usage of IMAP states into NetworkService so that the phone and server is in a consistent state. E.g SEEN flag ect. 
+\item{}\textbf{Implement usage IMAP specific attributes:} Implement the usage of IMAP states into NetworkService so that the phone and server is in a consistent state. E.g \textsc{seen} flag ect. 
 \item{}\textbf{Save messages downloaded from server:} Persist a number of the latest received messages locally on the device. The number of messages that are to be persisted should be determined by an option in the settings menu.
 \item{}\textbf{Update message IMAP message status:} Update flags on messages whenever the state changes, e.g. the messages is opened locally on the device and this change should be reflected on the server as well.
 \item{}\textbf{Implement pull strategy:} Implement a pull strategy for periodically pulling the mail server for new messages.
@@ -30,7 +30,7 @@
 \item{}\textbf{Implement handling for pre-send processing of messages:} Implement a pre-send processing of messages that handles template codes. e.g. \#GPS : will fetch the gps data and inject them into the message before sending. 
 \item{}\textbf{Implement handling for control-messages:} Implement a onReceive handler the stops control-messages of getting through to the user, and in addition responds to the control-message in the correct way.
 \end{itemize}
-\item{}\textbf{Sending message with attachments:} the user should be able to send a message containing different attachments.
+\item{}\textbf{Sending message with attachments:} The user should be able to send a message containing different attachments.
 \begin{itemize}
 \item{}\textbf{Study:} figure out how to fetch images, i.e. from the phone, or another app on the phone. How does it work on android?
 \item{}\textbf{Find what attachments we should support:} based on how difficult it is to get images, GPS coordinates etc, make a decision on what kind of attachments we should support. Maybe there are some things we should be careful about using, maybe it isn't. Find out!
