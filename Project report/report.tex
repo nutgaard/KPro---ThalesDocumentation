@@ -23,22 +23,16 @@
 \usepackage{subcaption}
 \usepackage[nonumberlist]{glossaries}
 \usepackage{float}
-%\usepackage{titlesec}
-
-
-%\titleformat*{\subsubsection}{0.4em}
-%\titleformat*{\subparagraph}{0.3em}
-
 
 \hypersetup{
     colorlinks=false,
     pdfborder={0 0 0},
 }
 \newcommand{\subtitle}[1]{%
-  \posttitle{%
+\posttitle{%
     \par\end{center}
     \begin{center}\large#1\end{center}
-    \vskip0.5em}%
+   \vskip0.5em}%
 }
 
 \makeatletter
@@ -77,6 +71,7 @@
 \newcommand{\JIRAS}[1]{(#1)}
 \newcommand{\SP}[1]{(#1 SP)}
 \newcommand{\highlight}[1]{\textsc{#1}}
+\newcommand{\indentitem}{\setlength\itemindent{25pt}}
 
 \makeglossaries
 \newglossaryentry{kds}{name=SDK, description={Software Development Kit}}
@@ -479,8 +474,9 @@
 \bibitem{bib:latex} LaTeX. Retrieved 2012-09-25 from http://www.latex-project.org/intro.html
 \bibitem{bib:atlassian} Jira overview. Retrieved 2012-09-25 from http://www.atlassian.com/software/jira/overview
 \bibitem{bib:jira} Jira. Retrieved 2012-09-25 from http://en.wikipedia.org/wiki/JIRA
-\bibitem{bib:green} Grennhopper. Retrieved 2012-09-25 from http://www.atlassian.com/software/greenhopper/overview
+\bibitem{bib:green} Greenhopper. Retrieved 2012-09-25 from http://www.atlassian.com/software/greenhopper/overview
 \bibitem{bib:netbeans} NetBeans. Retrieved 2012-09-25 from http://netbeans.org/features/index.html
+\bibitem{bib:eclipse} Eclipse. Retrieved 2012-11-19 from http://en.wikipedia.org/wiki/Eclipse(software)
 \bibitem{bib:ide} NetBeans IDE. Retrieved 2012-09-25 from http://en.wikipedia.org/wiki/NetBeans\#NetBeans\_IDE
 \bibitem{bib:service} Service. Retrieved 2012-09-08 from http://developer.android.com/reference/android/app/Service.html
 \bibitem{bib:} AIDL. Retrieved 2012-09-08 from http://developer.android.com/guide/components/aidl.html
@@ -561,7 +557,7 @@
 
 \part{Appendices}
 
-%	\appendix
+	\appendix
 
 	\include{wireshark_results}
 
@@ -571,33 +567,33 @@
 
 	\include{user_manual}
 
-	%\include{user_manaual}
+	\include{user_manaual}
 	
-	%\include{YYYY-MM-DD-Agenda-Advisor}
-
-	
-	%\include{YYYY-MM-DD-Agenda-Customer}
+	\include{YYYY-MM-DD-Agenda-Advisor}
 
 	
-	%\include{YYYY-MM-DD-Agenda-Internal}
+	\include{YYYY-MM-DD-Agenda-Customer}
 
 	
-	%\include{YYYY-MM-DD-WeeklyStatusReport-WeekWW}
+	\include{YYYY-MM-DD-Agenda-Internal}
 
 	
-	%\include{YYYY-MM-DD-Minutes-Advisor}
+	\include{YYYY-MM-DD-WeeklyStatusReport-WeekWW}
 
 	
-	%\include{YYYY-MM-DD-Minutes-Customer}
+	\include{YYYY-MM-DD-Minutes-Advisor}
 
 	
-	%\include{YYYY-MM-DD-Minutes-Internal}
+	\include{YYYY-MM-DD-Minutes-Customer}
 
-	%\include{templates}
+	
+	\include{YYYY-MM-DD-Minutes-Internal}
 
-	%\include{agendas}
+	\include{templates}
 
-	%\include{minutes}
+	\include{agendas}
+
+	\include{minutes}
 
 
 
