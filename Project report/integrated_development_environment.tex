@@ -1,16 +1,25 @@
 \section{Integrated development environment}
 
-The following section shows what integrated development environment we have used.
-
 \subsection{\gls{netb}}
 \gls{netb} refers to both a platform framework for Java desktop applications, and an integrated development environment (\gls{ide}) for developing with Java, JavaScript, PHP, Python, and others.
 The \gls{netb} \gls{ide} is written in Java and can run on Windows, \gls{osx}, Linux, Solaris and other platforms supporting a compatible \gls{jvm}. 
 \newline
 \newline
-The \gls{netb} platform allows applications to be developed from a set of modular software components called modules. Applications based on the \gls{netb} platform (including the \gls{netb} \gls{ide}) can easily be extended by third party developers \cite{bib:netbeans}.
+The \gls{netb} platform allows applications to be developed from a set of modular software components called modules. Applications based on the \gls{netb} platform (including the \gls{netb} \gls{ide}) can easily be extended by third party developers. \cite{bib:netbeans}
 \newline
 \newline
-\textbf{\gls{netb} \gls{ide}} is an open-source integrated development environment. The \gls{netb} \gls{ide} supports development of all Java application types. Among other features are an \gls{ant}-based project system, \gls{maven} support, refactorings, and version control \cite{bib:ide}.
+\gls{netb} \gls{ide} is an open-source integrated development environment. The \gls{netb} \gls{ide} supports development of all Java application types. Among other features are an \gls{ant}-based project system, \gls{maven} support, refactorings, and version control. \cite{bib:ide}
 \newline
 \newline
-\textbf{Modularity:} All the functions of the \gls{ide} are provided by modules. Each module provides a well defined function, such as support for the Java language, editing, or support for the \gls{cvs} versioning system, and \gls{svn}. \gls{netb} contains all the modules needed for Java development in a single download, allowing the user to start working immediately. Modules also allow \gls{netb} to be extended. New features, such as support for other programming languages, can be added by installing additional modules.
+All the functions of the \gls{ide} are provided by modules. Each module provides a well defined function, such as support for the Java language, editing, or support for the \gls{cvs} versioning system, and \gls{svn}. \gls{netb} contains all the modules needed for Java development in a single download, allowing the user to start working immediately. Modules also allow \gls{netb} to be extended. New features, such as support for other programming languages, can be added by installing additional modules.
+
+A choice on what development environment had to be made. The choice was between \gls{netb} and Eclipse.
+
+\subsection{Eclipse}
+Eclipse is a software development environment that can be used to develop in Java, amongst others. Even though it is meant for Java developers, users can customize Eclipse by using some of the various plugins that exist. \cite{bib:eclipse}.
+\newline
+\newline
+One of the benefits of using Eclipse is that it has good plugins for Android development. The aim of the plugins is to make it easier to start programming for Android.
+
+\subsection{Integrated development environment conclusion}
+We made an early choice to use Netbeans. The reason for this is that some of us have had a lot of problems with Eclipse. We decided that we all should use the same IDE to be sure that we would not get compatibility problems on the code generated. One of the features that is missing in  \gls{netb} is the ability to to Android GUI design directly in the IDE, but we did not find this feature important enough to choose Eclipse.
