@@ -1,11 +1,13 @@
 
-\section{Testing}
+
+\section{Testing}\label{con_testing}
+This section will start by looking at the results from the functional testing and discuss these results, and then move on to discussing the results from the usability testing and the improvements we made from the feedback we received from the usability testing.
 
 \subsection{Functional testing}
 
 \paragraph{Results}\hfill
 \newline
-As stated in chapter 6, we tested the application continuously after implementing each functionality. However, a summary of the test results from the end of the project can be found in table \ref{tab:caseresults} on page \pageref{tab:caseresults}.
+As stated in chapter \ref{chapter_test}, we tested the application continuously after implementing each functionality. However, a summary of the test results from the end of the project can be found in table \ref{tab:caseresults} on page \pageref{tab:caseresults}.
 \begin{table}[hbt]
 \begin{center}
 					\begin{tabular}{l|l|l}\hline
@@ -42,26 +44,27 @@ As stated in chapter 6, we tested the application continuously after implementin
 \end{center}
 \caption{Functional test result summary} \label{tab:caseresults}
 \end{table}
+
 \paragraph{Discussion}\hfill
 \newline
-The results from the final functional testing showed that 19 out of the 28 test cases passed the test,  six failed and three almost passed. Out of the six that failed, three were due to not having time to start with the implementation and three were known bugs that we did not get the time to fix. The three that almost passed were issues that we know how to fix but had not seen until the test.
+The results from the final functional testing showed that 19 out of the 28 test cases passed the test,  six failed and three almost passed. Out of the six that failed, three were due to not having time to start with the implementation (test cases 22, 23 and 25) and three were known bugs that we did not get the time to fix (12, 13, 21). The three that almost passed were issues that we know how to fix but had not seen until the testing was done (16, 19, 20).
 
 \newpage
 
 \subsection{Usability testing}
 \paragraph{Results}\hfill
 \newline
-The results from the tests can be found in table \ref{tab:usabilitytestresults} on page \pageref{tab:usabilitytestresults}.
+The results from the tests can be found in table \ref{tab:usabilitytestresults} on page \pageref{tab:usabilitytestresults}. These show that three of the goals were OK and two failed. One of the goals (4) that was not fullfilled probably happened because we did not count seconds on the tests, just whole minutes. Overall, we were happy with these results, even though we did not expect the application to crash as often as it did, as this did not happen when we tested it ourselves.
 
 \begin{table}[h!]
 \begin{center}
-\begin{tabular}{l|l|p{8cm}}	\hline
-\textbf{Goal}&\textbf{Status}&\textbf{Comment}\\ \hline \hline
-1&OK&-\\ \hline
-2&Failed&The app crashed in the settings task on almost all tests\\ \hline
-3&OK&One user sent a regular message instead of an instant message\\ \hline
-4&Failed&Two users spent the same amount of time, but this could also be due to the fact that the test leaders here just counted whole minutes\\ \hline
-5&OK&The average SUS score was 78.5\\ \hline 
+\begin{tabular}{l|p{6cm}|l|p{6cm}}	\hline
+\textbf{Goal}&\textbf{Description}&\textbf{Status}&\textbf{Comment}\\ \hline \hline
+1&The user should not spend more than 5 minutes on a task&OK&-\\ \hline
+2&The application should not crash during the usability tests&Failed&The app crashed in the settings task on almost all tests\\ \hline
+3&The users should not make more than 1 error during the tasks&OK&One user sent a regular message instead of an instant message\\ \hline
+4&The users should solve task 6 faster than task 1&Failed&Two users spent the same amount of time, but this could also be due to the fact that the test leaders here just counted whole minutes\\ \hline
+5&The average SUS score should be more than 70&OK&The average SUS score was 78.5\\ \hline 
 \end{tabular}
 \end{center}
 \caption{Usability test - Test results} \label{tab:usabilitytestresults}
@@ -89,14 +92,13 @@ The results from the tests can be found in table \ref{tab:usabilitytestresults} 
 \end{center}
 \caption{Usability test - SUS scores} \label{tab:usabilitysusscore}
 \end{table}
-The SUS results are shown in table \ref{tab:usabilitysusscore} on page \pageref{tab:usabilitysusscore}.
+The SUS results are shown in table \ref{tab:usabilitysusscore} on page \pageref{tab:usabilitysusscore}. The average SUS score was 78.5.
 \newline
 \newline
 			
 \newpage
 
-\subparagraph{Time spent}\hfill
-\newline
+
 \begin{table}[h!]
 \begin{center}
 \begin{tabular}{l|l|l|l|l|l|l|l}	\hline
@@ -114,10 +116,12 @@ The SUS results are shown in table \ref{tab:usabilitysusscore} on page \pageref{
 \caption{Usability test - Task times} \label{tab:usabilitytasktime}
 \end{table}
 
-A summary of the time spent on the different tasks is shown in table \ref{tab:usabilitytasktime} on page \pageref{tab:usabilitytasktime}.
-			\subparagraph{Observation forms \ref{ch:usatest}}\hfill
+\subparagraph{Time spent}\hfill
 \newline
-The filled out observation forms can be found in APPENDIX. 
+A summary of the time spent on the different tasks is shown in table \ref{tab:usabilitytasktime} on page \pageref{tab:usabilitytasktime}.
+			\subparagraph{Observation forms}\hfill
+\newline
+The filled out observation forms can be found in appendix \ref{ch:usatest}. 
 
 \newpage
 
@@ -128,12 +132,12 @@ The filled out observation forms can be found in APPENDIX.
 				\item{}The testers were annoyed that the application does not remember login information
 				\item{}Some were confused by odd choice of words
 				\item{}The testers were annoyed that tilting of the phone sets you back to the inbox
-				\item{}Almost all complained that the instant message and settings tab icons were not intuitive and spent some time finding the right tab.
-				\item{}Some complained about small fonts and small toasts.
-				\item{}Many were annoyed that the text boxes behaved weird, e.g. that the letters were not capitalized after a period and the keyboard did not always close. 
-				\item{}The settings were unstable and the app stopped during the task that tested the settings.
-				\item{}Many of the testers complained about the lack of confirmation after actions in the app.
-				\item{}Some testers commented that the user interface was not pretty enough.
+				\item{}Almost all complained that the instant message and settings tab icons were not intuitive and spent some time finding the right tab
+				\item{}Some complained about small fonts and small toasts
+				\item{}Many were annoyed that the text boxes behaved weird, e.g. that the letters were not capitalized after a period and the keyboard did not always close.
+				\item{}The settings were unstable and the app stopped during the task that tested the settings
+				\item{}Many of the testers complained about the lack of confirmation after actions in the app
+				\item{}Some testers commented that the user interface was not pretty enough
 			\end{itemize}
 		\paragraph{Discussion}\hfill
 \newline
@@ -143,10 +147,10 @@ Even though we did not have the time to make major changes and improvements to t
 \newline
 		We were able to do some minor changes in the user interface. The changes are listed below, although some of the screenshots other places may not be updated accordingly.
 		\begin{itemize}
-			\item{}Hopefully more intuitive icon for instant message. (kanskje de to bildene her?)
-			\item{}Implemented bigger difference between read and unread messages in the inbox folder.
-			\item{}Text fields give you capitalized first letter of sentences.
-			\item{}Rephrased some text, e.g. "username" instead of "email".
+			\item{}Hopefully more intuitive icon for instant message
+			\item{}Implemented bigger difference between read and unread messages in the inbox folder
+			\item{}Text fields give you capitalized first letter of sentences
+			\item{}Rephrased some text, e.g. "username" instead of "email" and "Take picture" instead of "Image from camera"
 		\end{itemize}
 
 
