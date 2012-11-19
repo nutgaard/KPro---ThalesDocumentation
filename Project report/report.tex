@@ -23,22 +23,16 @@
 \usepackage{subcaption}
 \usepackage[nonumberlist]{glossaries}
 \usepackage{float}
-%\usepackage{titlesec}
-
-
-%\titleformat*{\subsubsection}{0.4em}
-%\titleformat*{\subparagraph}{0.3em}
-
 
 \hypersetup{
     colorlinks=false,
     pdfborder={0 0 0},
 }
 \newcommand{\subtitle}[1]{%
-  \posttitle{%
+\posttitle{%
     \par\end{center}
     \begin{center}\large#1\end{center}
-    \vskip0.5em}%
+   \vskip0.5em}%
 }
 
 \makeatletter
@@ -77,6 +71,7 @@
 \newcommand{\JIRAS}[1]{(#1)}
 \newcommand{\SP}[1]{(#1 SP)}
 \newcommand{\highlight}[1]{\textsc{#1}}
+\newcommand{\indentitem}{\setlength\itemindent{25pt}}
 
 \makeglossaries
 \newglossaryentry{kds}{name=SDK, description={Software Development Kit}}
@@ -277,10 +272,6 @@
 
 \newpage
 
-	\include*{unit_testing_frameworks}
-
-	\include*{user_documentation_tools}
-
 	\include*{integrated_development_environment}
 
 	\include*{remote_vs_local_service}
@@ -479,8 +470,9 @@
 \bibitem{bib:latex} LaTeX. Retrieved 2012-09-25 from http://www.latex-project.org/intro.html
 \bibitem{bib:atlassian} Jira overview. Retrieved 2012-09-25 from http://www.atlassian.com/software/jira/overview
 \bibitem{bib:jira} Jira. Retrieved 2012-09-25 from http://en.wikipedia.org/wiki/JIRA
-\bibitem{bib:green} Grennhopper. Retrieved 2012-09-25 from http://www.atlassian.com/software/greenhopper/overview
+\bibitem{bib:green} Greenhopper. Retrieved 2012-09-25 from http://www.atlassian.com/software/greenhopper/overview
 \bibitem{bib:netbeans} NetBeans. Retrieved 2012-09-25 from http://netbeans.org/features/index.html
+\bibitem{bib:eclipse} Eclipse. Retrieved 2012-11-19 from http://en.wikipedia.org/wiki/Eclipse(software)
 \bibitem{bib:ide} NetBeans IDE. Retrieved 2012-09-25 from http://en.wikipedia.org/wiki/NetBeans\#NetBeans\_IDE
 \bibitem{bib:service} Service. Retrieved 2012-09-08 from http://developer.android.com/reference/android/app/Service.html
 \bibitem{bib:aidl} AIDL. Retrieved 2012-09-08 from http://developer.android.com/guide/components/aidl.html
@@ -541,6 +533,7 @@
 \bibitem{bib:gifsicle} GifSicle. Retreived 2012-11-02 from http://www.lcdf.org/gifsicle/
 \bibitem{bib:PNG} PNG. Retreived 2012-11-03 from http://no.wikipedia.org/wiki/Portable\_Network\_Graphics
 \bibitem{bib:corePNG} corePNG. Retreived 2012-11-03 from http://de.wikipedia.org/wiki/CorePNG
+\bibitem{bib:animationcodec} Animation Codec. Retreived 2012-11-19 from http://en.wikipedia.org/wiki/Animation\_codec
 \bibitem{bib:FLAC} FLAC. Retrieved 2012-11-3 from \url 2012-11-03 http://en.wikipedia.org/wiki/MPEG-4\_SLS
 \bibitem{bib:MPEGSLS} MPEG-4 SLS. Retrieved 2012-11-03 from http://en.wikipedia.org/wiki/Free\_Lossless\_Audio\_Codec
 \bibitem{bib:violet} Violet. Retrieved 2012-11-07 from http://alexdp.free.fr/violetumleditor/page.php
@@ -556,20 +549,23 @@
 \bibitem{bib:funtest} Functional testing. Retrieved 2012-11-10 from http://en.wikipedia.org/wiki/Functional\_testing
 \bibitem{bib:sus} System Usability Scale. Retrieved 2012-11-12 from http://en.wikipedia.org/wiki/System\_usability\_scale
 \bibitem{bib:useit} Jakob Nielsen. Retrieved 2012-11-12 from http://www.useit.com/alertbox/20000319.html
+\bibitem{bib:cobertura} Cobertura. Retrieved 2012-11-19 from http://cobertura.sourceforge.net/
 \end{thebibliography}
 
 
 \part{Appendices}
 
+
 	\appendix
 
-	\include{wireshark_results}
 
-	\include{test_cases_appendix}
+	%\include{wireshark_results}
 
-	\include{usability_tests}
+	%\include{test_cases_appendix}
 
-	\include{user_manual}
+	%\include{usability_tests}
+
+	%\include{user_manual}
 
 	\include{user_manaual}
 

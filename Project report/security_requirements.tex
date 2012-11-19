@@ -1,25 +1,27 @@
-\section{Security requirements}
+\section{Security studies}
+
+This section will describe the security studies carried out in the project. The section will start by stating what assumptions we needed to establish in order to make the XOXOmail application. The section will then continue with describing how secure communication can be done. Then it concludes by looking at how to store information securely. Each of these topics will have a conclusion to sum up what were the most important points learned from the study.
+
+\subsection{Security requirements}
 
 In order to make the XOXOmail application, we need to establish some assumptions about the underlying hardware and the environment the application is going to be used in. One can never be sure that a program is completely safe from attacks, so one has to assume that the surroundings are at least a bit safe. In this context, surroundings might mean a number of different things. It can mean the Android phone itself and other software installed on it, it can mean the user and his system administrator, and it can mean the network the messages travel over. This section will go through each of these situations in turn.
 
 \newpage
 
-\subsection{The phone}
-All modern operating systems focus at least somewhat on security, and the Android OS especially. Building on a Linux core, Android counts each application as a separate user. This means that, in principle, each app has a separate hard disk region, separate memory area, and no way of stealing data from the other applications’ areas. However, there are a number of ways to circumvent this.
+\subsubsection{The phone}
+All modern operating systems focus at least somewhat on security, and the Android OS especially. Building on a Linux core, Android counts each application as a separate user. This means that, in principle, each application has a separate hard disk region, separate memory area, and no way of stealing data from the other applications’ areas. However, there are a number of ways to circumvent this.
 \newline
 \newline
 First of all, if one has root access to the device there is virtually no security. A user with root access can do whatever he wants with the phone. So in order to have any security we have to assume that the phone is not rooted.
 \newline
 \newline
-Second, we want the persistent storage to be encrypted. Both because it is a useful security precaution and because it fulfills a customer requirement (5.4). This is an optional feature of the Android OS, and should be possible for the client to implement. The hard drive blocks are decrypted block by block on demand. The encryption key is encrypted with a user password. The only problem is that Android uses the cryptographic hash function \gls{sha}, which may be adequate for most purposes today, but may not remain secure for longer than a few more years. This might be the case because of the continuous improvement of hardware and the development of increasingly more efficient attacks. So a stolen phone could still be broken in time, but with a timescale of years rather than minutes the information is outdated. 
+Secondly, we want the persistent storage to be encrypted. Both because it is a useful security precaution and because it fulfills a customer requirement (5.4). This is an optional feature of the Android OS, and should be possible for us to implement. The hard drive blocks are decrypted block by block on demand. The encryption key is derived from the user password. The only problem is that Android uses the cryptographic hash function \gls{sha}, which may be adequate for most purposes today, but may not remain secure for longer than a few more years. This might be the case because of the continuous improvement of hardware and the development of increasingly more efficient attacks. So a stolen phone could still be broken in time, but with a timescale of years rather than minutes the information is outdated. 
 \newline
 \newline
-Third, we want a timeout lock on the phone, locking it down and encrypting whatever is currently not encrypted if the phone has not been used in a while. Exactly how often the encryption should be performed would depend on the sensitivity of the data that could conceivably be stored on the phone, and would be up to the system administrator.
+Thirdly, we want a timeout lock on the phone, locking it down and encrypting whatever is currently not encrypted if the phone has not been used in a while. Exactly how often the encryption should be performed would depend on the sensitivity of the data that could conceivably be stored on the phone, and would be up to the system administrator.
 Last, we have to assume that the phone arrived to the user in an uncompromised state. This means that the phone was not compromised by the manufacturer, or during transport out to the user. Tampering during transport is generally easy to check, as most if not all manufacturers deliver their goods in a sealed state. Tampering by the manufacturer is harder to detect. The best one could do is to carefully choose manufacturers that the user can trust or, for more high security applications, manufacturers that the user can maintain careful oversight over.
 
-\pagebreak
-
-\subsection{The users}
+\subsubsection{The users}
 We have to make some assumptions about the users of the application. User error and social engineering remain the most common reasons for data leaks, so we need to know to what level we can trust the user.
 \newline
 \newline
@@ -34,8 +36,8 @@ The system administrator can also help by limiting the user’s ability to insta
 \newline
 Having user courses in digital security could be beneficial, but we are hesitant to add it as a safety requirement as it would contradict our goal of producing a simple, intuitive system that can be quickly deployed without the need for a training course. 
 
-\subsection{The network}
+\subsubsection{The network}
 Any message that will be sent over the network is sent through an encrypted \gls{ssl1} tunnel directly to the military gateway (as per customer requirement 5.1), so listening to the messages would have very little benefit for the attacker. However, all such messages are sent through a server that we are not involved in the development of. If this server is not secure, we cannot guarantee anything. So we have to trust that our client, who is making the server and knows far more about security than us, is competent enough to make the server at least as difficult to penetrate as our software. This should generally be a safe assumption, but one we have to make
 
-\subsection{Security requirements conclusion}
+\subsubsection{Security requirements conclusion}
 In order to be able to make assumptions on what is secure and insecure on a phone, we had to make assumptions about the underlying hardware and environment. This was something we had to do before we could continue to assesments about what is secure and not. This is something we now have done for the phone, the users and the network.
