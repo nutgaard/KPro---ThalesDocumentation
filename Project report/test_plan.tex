@@ -19,20 +19,24 @@ Changes in the user interface should also be tested, though if there is no autom
 
 
 \section{Test tools}
-This section will describe the different test tools we plan to use and sums up with why these tools were selected.
-\subsubsection{JUnit}
-JUnit is the industry standard for test driven development. It works by creating a separate test method for each method in the class that is to be tested. In this way one can test large portions of code independent of the other code sections. For us, it provides many benefits, especially that most of us have dealt with it before and are familiar with the concept.
+Unit testing is a method where individual units of source code are tested to determine if they are fit for use. These units consist of sets of one or more computer program modules together with their associated control data, usage procedures, and operating procedures \cite{bib:kolawa}. This section will describe the different unit testing frameworks we will use.
+
+\subsection{JUnit}
+JUnit is the industry standrad for test driven development. It works by creating a separate test method for each method in the class that is to be tested. In this way one can test larger portions of the code independent of the other code sections. \cite{bib:junit}
 
 \subsection{Cobertura}
-Cobertura is a tool for calculating the code covered by our tests, and generate a report based on this. While all other testing tools are automatically run at each build cycle, this is not the case with
-Cobertura, which need to be invoked by a seperate command. 
+Cobertura is a tool for calculation the code covere by our tess, and generate a report based on this. While all other testing tools are automatically run at each build cycle, this is not the case with Cobertura, which needs to by invoked by a separate command.\cite{bib:cobertura}
 
 \subsection{Mockito}
-Mockito is a simple and elegant \gls{api} for mocking classes. With a few lines of code an unimplemented class can be instructed to provide a valid output, allowing other parts of the code to be tested without concerns.
+Mockito is an open source testing framework for Java that allows creation of Test Double objects called “Mock Objects”. Mock Objects are simulated objects that mimic the behavior of real objects in a controlled way \cite{bib:mock}.
+\newline
+\newline
+Mockito distinguishes itself from other mocking frameworks by allowing developers to verify the behavior of the system under test (SUT), without establishing any expectations beforehand \cite{bib:mockito}.
+One of the criticisms of mock objects are that there is a tight coupling of the test code to the system under test \cite{bib:mocks}.
 
 \subsection{Greenmail}
-Greenmail is an open source mail server package for testing in Java. It provides all the server side software needed to test simple sending and receiving of mail without having an actual server. 
-It does, however, not support the \gls{pami} IDLE, which in turn forced us to test this feature manually.
+Green is an open source mail server package for testing in Java. It provides all the server side software needed to test sending and receiving of mail without having an actual server. It does, however not support the \gls{pami} IDLE command.\cite{bib:greenmail}
+
 
 
 \subsection{Why we selected these test tools}
