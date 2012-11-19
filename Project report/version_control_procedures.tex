@@ -17,33 +17,36 @@ All procedures assume the use of a terminal similar to Bash, and that the curren
 \newline
 []: optional arguments \& <>: argument
 
-\paragraph{Setup}
+\textit{Setup}
 \begin{description}
-\item[Description:] Setup of project (usually just once)
-\item[Command:] git clone <git remote repository address>
+	{\indentitem \item[Description:] Setup of project (usually just once)}
+	{\indentitem \item[Command:] \hfill \\
+	\hspace*{3em} git clone <git remote repository address>}
 \end{description}
 
-\paragraph{On programming session start}
+\textit{On programming session start}
 \begin{description}
-\item[Description:] Whenever a developer starts programming
-\item[Command:] git pull [<remote repository> <branch>]
+	{\indentitem \item[Description:] Whenever a developer starts programming}
+	{\indentitem \item[Command:] \hfill \\
+		\hspace*{3em} git pull [<remote repository> <branch>]}
 \end{description}
 
-\paragraph{On change}
+\textit{On change}
 \begin{description}
-\item[Description:] Whenever a developer changes some small functionality, feature or structure.
-\item[Command:] git add <file> \#Repeat for all changed files \\
-\hspace*{3em} git commit -m "<commit message describing the changes made>"\\
-\hspace*{3em} [git pull \&\& git push] \#should only be done for if project builds
+	{\indentitem \item[Description:] Whenever a developer complete a change in functionality.}
+	{\indentitem \item[Command:] \hfill \\
+	\hspace*{3em} git add <file> \#Repeat for all changed files \\
+	\hspace*{3em} git commit -m "<commit message describing the changes made>"\\
+	\hspace*{3em} [git pull \&\& git push] \#should only be done for if project builds}
 \end{description}
 
-\paragraph{On complete}
+\textit{On complete}
 \begin{description}
-\item[Description:]  Whenever a developer finishes with some functionality, feature,  structure or changes 
-\hspace*{4em}which influence any of the above.
-\item[Command:]  git pull [<remote repository> <branch>] \\ 
+{\indentitem \item[Description:]  Whenever a developer finishes a change in functionality.}
+{\indentitem \item[Command:] \hfill \\
+\hspace*{3em} git pull [<remote repository> <branch>] \\ 
 \hspace*{3em} \#Fix any merge conflicts \\
-\hspace*{3.5em}git push [<remote repository> <branch>]
+\hspace*{3em} git push [<remote repository> <branch>] }
 \end{description}
 
 \subsubsection{Version control for report documents}
