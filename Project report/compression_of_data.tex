@@ -25,71 +25,22 @@ Because that the data is compressed when receiving it, it must be decoded before
 There are two main ways to perform data compression. The two types are lossy and lossless data compression \cite{bib:dataCompression}. First we will describe lossy data compression as well as techniques for this method, then continue to do the same for lossless data compression.
 
 \subsubsection{Lossy data compression}
-Lossy compression means that data is lost during the compression procedure. When encoding the image, you do not get the original image out, because data is lost during the process. The purpose is to decrease the amount of data that must be sent or handled. Often the data, especially multimedia data, can be useful even though some of the data is lost, e.g. an image that will become coarser but still be very much like the full version. The compression algorithms often use well known properties of the human eye to remove details we cannot see. This makes it very hard to see the difference between a compressed and and uncompressed image. A well known usage of lossy compression is in streaming. There are two types of lossy compression approaches. \cite{bib:lossyCompression}
+Lossy compression means that data is lost during the compression procedure. When encoding the image, you do not get the original image out, because data is lost during the process. The purpose is to decrease the amount of data that must be sent or handled. Often the data, especially multimedia data, can be useful even though some of the data is lost, e.g. an image that will become coarser but still be very much like the full version. The compression algorithms often use well known properties of the human eye to remove details we cannot see. This makes it very hard to see the difference between a compressed and and uncompressed image. A well known usage of lossy compression is in streaming.  \cite{bib:lossyCompression}
 
-\paragraph{Lossy compression techniques for images}
+\paragraph{Lossy compression techniques for images} \hfill \newline
 
-\subparagraph{JPEG} \hfill
-\newline
-JPEG (Joint Photographic Experts Group) is an image format that uses a lossy compression method. The files usually get much smaller than when using image formats that use lossless compression methods. This format is often used for storing digital photos, especially photos for use on the Internet, because of the high compression rate. \cite{bib:JPEG}
+Lossy copression of images is done by using various algorithms that removes information from the original file. A range of different alternatives exist here, and the results are varying. Some of the algorithms do compression with different ratios, and still uses the same time to compress. Examples of lossy compression standards for images are JPEG and PGF  \cite{bib:JPEG} \cite{bib:PGF}.  
 
+\paragraph{Lossy compression techniques for video} \hfill \newline
 
-\subparagraph{PGF} \hfill
-\newline
-The intention of Progressive Graphics File format was to improve and possibly replace the JPEG format. By using a wavelet-based image format, the compression is done with focus on speed over compression ratio. One of the benfits of compressing using PGF is that you can increase the compression ratio without using more time on the encoding. It also does not suffer from the compression artifacts that occurs in JPEG.
-\cite{bib:PGF}
-
-\paragraph{Lossy compression techniques for video}
-
-\subparagraph{DV} \hfill
-\newline
-This was a format developed by the leading producers of video recorders. DV uses a lossy compression of the video, while the audio is stored uncompressed. The compression is done intra-frame, which means that each frame in the video is processed individually, not considering the frames in the sequence. The compression is done by a discrete cosine transform.
-\cite{bib:DV}
-
-\pagebreak
-
-\subparagraph{MPEG} \hfill
-\newline
-The MPEG (Moving Picture Experts Group) compression is a bit more complicated than the DV scheme. Here, the frames are divided into I-, P- and B-frames. The I-frames are intra coded like in DV. The P-frames are forward predicted from the last I-frame or P-frame. They cannot be reconstructed alone. The B-frames are forward and backward predicted from one I-frame and one P-frame. B-frames and P-frames are therefore inter coded frames. The order of these frames are not sequential in the video, but the encoder ensures that the decoder gets the frames in the order required. After receival and processing, the frames need to be reordered before the video can be shown.
-\cite{bib:MPEG}
+Compression of video can be divided into two main groups: Inter and intra frame. The difference is in how we find out how we can compress. In inter frame encoding we look at a given set of frames in a special order and compress based on similarities between them, while we in intra frame encoding only look at one image at the time, which will be the same as image compression.\cite{bib:DV} \cite{bib:DV} \cite{bib:Dirac} \cite{bib:VC-1} 
 
 
-\subparagraph{Dirac} \hfill
-\newline
-Dirac uses wavelet compression, just like PGF. It can be used with constant and variable bit rate, and when the low delay syntax is used, the bit rate will be constant for each area. This ensures constant latency. This makes it ideal for streaming.
-\cite{bib:Dirac}
-
-
-\subparagraph{VC-1} \hfill
-\newline
-VC-1 was initially developed by Microsoft, and is characterized as an alternative to the latest MPEG video encoding standard (H.264/MPEG-4 AVC). It contains tools for compression making it ideal for broadcast and video industry professionals. This, because of the ability to compress interlaced videos without first converting it to progressive.
-\cite{bib:VC-1}
-
-
-\paragraph{Lossy compression techniques for audio}
-
-
-\subparagraph{MP3} \hfill
-\newline
-MP3 is shorthand for Moving Picture Experts Group, Audio Layer III, and is a compression method which is the common standard for most digital audio players. The encoding standard is a part of the MPEG-1 specification, and is vaguely defined. It is mostlly bitrate and sampling rate that is specified. The implementers can themself implement algorithms for removing parts of the information from the audio. It is only the decoder that is strictly specified.
-\cite{bib:MP3}
-
-
-\subparagraph{AAC}\hfill
-\newline
-AAC was designed to be the successor of the MP3 format. It is a part of the MPEG-2 and MPEG-4 standard. It will at the same bitrate as MP3 give better sound quality. The improvements are many, and some of them are variable bit-rates, more channels  and much better handling of audio frequencies above 16kHz.
-\cite{bib:AAC}
-
-
-\subparagraph{WMA} \hfill
-\newline
-Windows Media Audio is a proprietary compression technology developed by Microsoft. A WMA file is mostly within a container format which specifies how song name, track number, artist name, etc. are to be stored. It is in many ways similar to AAC, and its intent was also to replace the MP3 format.
-\cite{bib:WMA}
-
-\pagebreak
+\paragraph{Lossy compression techniques for audio}  \hfill \newline
+Lossless compression of audio is done by removing frequencies not audible for the human ear. This reduces the data size a lot. We often compress audio more than this to make the audio files so small that they can fit without problems on portable devices like mobile phones and laptops. The most common file formats here are MP3, AAC and WMA.\cite{bib:MP3} \cite{bib:AAC} \cite{bib:WMA}
 
 \subsubsection{Lossless data compression}
-There will come, however, a point where lossy compression and decompression will have made the original data useless. Although the human eyes and ears may not catch small degradations of images and sounds, the decreased quality eventually will be apparent.
+There will come a point where lossy compression will have made the original data useless. Although the human eyes and ears may not catch small degradations of images and sounds, the decreased quality eventually will be apparent.
 \newline
 \newline
 To have lossless compression means that the reconstruction of the compressed data is identical to the original data. A well-known example is the ZIP file format. Lossless compression is used when it is important that the original and decompressed data is identical, e.g. text or source code. The common way of doing lossless compression is to first generate a statistical model for the input data and secondly use this model to map input data to bit sequences. There are two ways of constructing statistical models. The first is to use static models, where data is analyzed and a model constructed, then the model is stored with the compressed data. This method is simple and modular, but the model can be expensive to store and the method may not perform well on files with heterogeneous data, as all data will have the same mode. The second method is to use an adaptive model. Here the model is dynamically updated as the data is compressed. The model is trivial at first but improves rapidly.
@@ -99,53 +50,20 @@ The most used encoding algorithms for producing bit sequences are Huffman coding
 A list of some common techniques and formats for lossless encodings will follow. \cite{bib:losslessCompression}
 
 
-\paragraph{Lossless compression tecniques for text}
+\paragraph{Lossless compression tecniques for text} \hfill \newline
 
-\subparagraph{Context tree weighting} \hfill
-\newline
-Is a lossless compression and prediction algorithm that is among the very few such algorithms that offer both theoretical guarantees and good practical performance. It uses variable order Markov models mixed together to make a context tree describing the data. \cite{bib:contextTreeWeighting} \cite{bib:contextTreeWeightingResearch}
+Lossless compression of text is tricky. It has to have good performance and guarantee that the result of converting it back to the original data gives the correct result. Context tree weighting and LZ77 are examples of compression algorithms often used  \cite{bib:contextTreeWeightingResearch}. It is often advantageous to transform data to a format that compression algorithms will run better on. An example of such an algorithm is the Burrows-Wheeler transform \cite{bib:burrowsWheelerTransform}. 
 
-\subparagraph{Burrows-Wheeler transform } \hfill
-\newline
-This is actually not an compression algorithm, but is often used on the data before it is compressed. The data amout after the transform is actually bigger, but it is transformed into a format that is more easily compressed by encoders. http://michael.dipperstein.com/bwt/index.html
-\cite{bib:burrowsWheelerTransform}
+\paragraph{Lossless compression tecniques for images}  \hfill \newline
+When we are doing lossless compression of images, we must find data in the image that is redundant and find a better way of representing it. This is why lossless compression of images works best on images with large areas of identical color. Examples of image formats often used are GIF and PNG. \cite{bib:GIF} \cite{bib:gifsicle} \cite{bib:PNG}
 
-\pagebreak
+\paragraph{Lossless compression tecniques for video}  \hfill \newline
+The same principle holds for lossless video compression as for image compression; a lot of area with similar coloring is necessary for good performance. If a inter frame compression algorithm is used, we will get much better compression ratio compared to intra frame, but it requires a lot of processing power. Examples of algorithms are CorePNG and Animation Codec \cite{bib:corePNG} \cite{bib:animationcodec}
 
-\subparagraph{LZ77} \hfill
-\newline
-LZ77 compress the data by looking for similar data occurences found earlier in the uncompressed data. The match is marked by saying how long the found occurence is from the data it matches. In this way, we dont't need to keep the same data later in the file, we just reference the location of the similar data. To keep the algorithm efficient, a sliding window defines the data we do matching on. If the sliding window is 32 kB, we only look back 32 kB to find a match.
-\cite{bib:LZ77}
-
-\paragraph{Lossless compression tecniques for images}
-\subparagraph{GIF} \hfill
-\newline
-GIF ( Graphics Interchange Format) is an 8-bit-per-pikselbitmap-picture format used to store images. The format uses a palette of up to 256 colors from 24-bit RGB color space and are used extensively on the World Wide Web because the format is widely supported and easy to port. The format supports animation and allows separate palette of 256 colors for each frame. A GIF uses lossless compression so that the file size of an image can be reduced without changing the visual quality, as long as the image can be displayed with a maximum of 256 colors. \cite{bib:GIF} \cite{bib:gifSicle}
-
-\subparagraph{PNG} \hfill
-\newline
-PNG (Portable Network Graphics) format has similarities with the GIF format, but contrary to GIF, the PNG-format is not limited to 256 colors for each frame. Each pixel in a PNG image may contain degrees of transparency. PNG format is best for images with large areas of identical color. \cite{bib:PNG}
-
-\paragraph{Lossless compression tecniques for video}
-
-\subparagraph{CorePNG} \hfill
-\newline
-Is a video compression codec, based on the PNG image compression format. Each frame is compressed as a PNG. The codec has the ability to write P-frames (prediction frames), thus saving the difference information from one image to the previous one. This significantly increases the compression, but requires more processing power and more memory for encoding and decoding. CorePNG is ideal for graphic videos, such as animation and CGI videos or desktop recordings, and for alpha channel video, so especially for films with relatively flat areas of color. \cite{bib:corePNG}
-
-\subparagraph{Animation codec} \hfill
-\newline
-Animation codec is a QuickTimeCodec which is ideal for playback without expensive hardware.  This makes it very good for for example mobile devices. The Animation codec is very good on animation videos / videos where color changes are minor from frame to frame.
- \cite{bib:animationCodec}
 
 \paragraph{Lossless compression techniques for sound}
+The most common formats used for lossless compression of sound is FLAC and MPEG-4 SLS. They both are able to compress the data with 50-60\% . The biggest problem of compressing using these standards, is that they are often not supported on portable devices.  \cite{bib:FLAC}
 
-\subparagraph{FLAC}\hfill
-\newline
-FLAC (Free Lossless Audio Codec) is a codec that has the ability to compress the audio signal with 50-60\%, depending on the content. This is an open format that has free licensing. The problem with compressing audio to flac format is that it is few portable devices that support the format. \cite{bib:FLAC}
-
-\subparagraph{MPEG-4 SLS}\hfill
-\newline
-This is an extension to the MPEG-4 standard which enables lossless encoding of audio. The compression reached here is about 60\%. Licencing fees apply to using this codec, so it is not free to use like FLAC. \cite{bib:MPEGSLS}
 
 \subsection{Discussion}
 As we can see, there are two main methods for compression. What we can see from the previous sections, is that there exist a lot of methods for doing both lossy and lossless compression. Some of these methods are not so heavy, while others require a lot of processing power. The heaviest compression algorithms, processing wise, are those that operate on video streams. It is not trivial to compress images and text, but it is often very fast.
