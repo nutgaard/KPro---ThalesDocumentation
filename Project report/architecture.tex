@@ -41,10 +41,10 @@ A common way to represent this view is with a class diagram that shows a set of 
 	\label{fig:logicalpackview}
 \end{figure}
 
-Figure \ref{fig:logicalpackview} shown at page \pageref{fig:logicalpackview}, shows a package overview over the project backend. Though rather rudimentary, it shows the basic structure of the architecture and the most common communication paths between packages. On thing to note, is that in order to add a new service to the architecture, one would need to implement three different objects, a factory for creating the service, an interface describing the service, and the service implementation itself.
+Figure \ref{fig:logicalpackview}, shown on page \pageref{fig:logicalpackview}, shows a package overview over the project backend. Though rather rudimentary, it shows the basic structure of the architecture and the most common communication paths between packages. On thing to note, is that in order to add a new service to the architecture, one would need to implement three different objects, a factory for creating the service, an interface describing the service, and the service implementation itself.
 \newline
 \newline
-In the case of XOXOmail, we planned out four different services, the \highlight{NetworkService}~(Fig.~\ref{fig:logicalnetworkpackview}~p.~\pageref{fig:logicalnetworkpackview}), \highlight{PersistenceService}~(Fig.~\ref{fig:logicalpersistencepackview}~p.~\pageref{fig:logicalpersistencepackview}), \highlight{HALService} and \highlight{SecurityService}. The two latter was though never used, and their diagrams are therefore omitted here, alongside the diagram for our \textsc{Utilities} package. The structure of our models can be seen in figure~\ref{fig:logicalmodelpackview} at page \pageref{fig:logicalmodelpackview}
+In the case of XOXOmail, we planned out four different services, the \highlight{NetworkService}~(Fig.~\ref{fig:logicalnetworkpackview}~p.~\pageref{fig:logicalnetworkpackview}), \highlight{PersistenceService}~(Fig.~\ref{fig:logicalpersistencepackview}~p.~\pageref{fig:logicalpersistencepackview}), \highlight{HALService} and \highlight{SecurityService}. The two latter was though never used, and their diagrams are therefore omitted here, alongside the diagram for our \textsc{Utilities} package. The structure of our models can be seen in figure~\ref{fig:logicalmodelpackview} on page \pageref{fig:logicalmodelpackview}
 
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{NetworkService.png}
@@ -209,7 +209,7 @@ Figure \ref{fig:logicalGUIview} at page \pageref{fig:logicalGUIview} shows the f
 \section{Architectural tactics}
 	This section will in general be a discussion about and around tactics found in 'Software Architecture in Practice'\cite{bib:archi}. 
 	\subsection{Security}
-		Tactics for ensuring the security of an application and its data is of often divided into three seperate ways of operating, resisting attacks, detecting attacks and recovering from an attack. 
+		Tactics for ensuring the security of an application and its data is often divided into three seperate ways of operating, resisting attacks, detecting attacks and recovering from an attack. 
 		In the case of XOXOmail, resisting attacks will be the main focus. As seen in figure~\ref{fig:securityview} on page~\pageref{fig:securityview}, we have opted for a layered security architecture in order to best secure the application data. In terms of what is listed in 'Software Architecture in Practice'\cite[p. 119]{bib:archi}, XOXOmail will in one way or another touch upon all of the six tactics listed. 
 
 		\begin{description}
@@ -236,8 +236,8 @@ Figure \ref{fig:logicalGUIview} at page \pageref{fig:logicalGUIview} shows the f
 		In most cases making a good user interfaces requires several iterations with designing and testing. Hence a easily modifiable user interface is preferred, this can be achived by separating the user interface from the rest of the application. This separation can be achived by numerous tactics, most known is perhaps the Model-View-Controller pattern. Though not directly applicable to the Android platform, it carries some general principles which can be used in order to achive the general notion of a MVC architecture. 
 		
 	\subsection{Modifiability}
-		Even though modifiability was not one of the choosen quality attributes, it has had a significant impact on the overall architecture and is therefore included here. From 'Software Architecture in Practice'\cite[p. 111]{bib:archi} it is listed three main areas for modifiability tactics, which each has several tactics. The ones used by XOXOmail are listed below.
-		
+		Even though modifiability was not one of the choosen quality attributes, it has had a significant impact on the overall architecture and is therefore included here. In 'Software Architecture in Practice'\cite[p. 111]{bib:archi} there are three main areas for modifiability tactics listed, which each has several tactics. The ones used by XOXOmail are listed below.
+	
 			\begin{description}
 				\item[Localize change] In an attempt to maximize the systems functional cohesion several tactics where utilized. The services in XOXOmail utilizes a tactic known as \textsc{Generalize Module} as it uses dependency injection instead of multiple fairly similar functions. This allows for a more general use of the module by changing the input parameters to it, instead of the module itself. Another tactic used is \textsc{abstract common services}, which can be seen on both the frontend and backend part of the application. Frontend, all activities inherit from a wrapper class which manages the connection to the backendservice. Backend, all services inherit from an abstract service which manages all commonalities between each service. 
 				\item[Prevention of ripple effect] The prevention is done by the use of interfaces, supplemented by a factory pattern for easy creating of services. 
@@ -246,7 +246,7 @@ Figure \ref{fig:logicalGUIview} at page \pageref{fig:logicalGUIview} shows the f
 		
 		
 	\subsection{Testability}
-		One of the problem with testing when creating an Android application is the Android dependent code and long build-test-cycle time, which in many cases discourages testing. As a biproduct of the tactics mentioned in the previous sections, both these problems were handled. By keeping the modules as close to pure Java as possible it is possible to run tests locally on your computer, without the need of compiling the complete application and deploying it to the phone, which in turn greatly reduces the build-test-cycle time. This was of course made possible through very generalized modules, were most dependency were injected into the module. 
+		One of the problems with testing when creating an Android application is the Android dependent code and long build-test-cycle time, which in many cases discourages testing. As a biproduct of the tactics mentioned in the previous sections, both these problems were handled. By keeping the modules as close to pure Java as possible it is possible to run tests locally on your computer, without the need of compiling the complete application and deploying it to the phone, which in turn greatly reduces the build-test-cycle time. This was of course made possible through very generalized modules, were most dependency were injected into the module. 
 		
 \section{Architectural patterns}
 	XOXOmail is built up of several architectural pattern working together to create the best possible experience for every stakeholder involved in this project. The most prominent being our own derivation of the Model-View-Controller pattern, where the whole frontend has taken the part of being a view-controller, and the backend service a pure controller. A great amount of modifiability is achived with this pattern, and by using interfaces to describe modules and their respective callbacks. 
@@ -266,7 +266,7 @@ Figure \ref{fig:logicalGUIview} at page \pageref{fig:logicalGUIview} shows the f
 \newpage
 	
 \subsection{The send message sequence}
-	In this sequence diagram you see the general flow when sending a message. One thing to note is the \highlight{reportMessage}s in the diagram, these are implemented as callback functions in XOXOmail. The reasoning for this is that every time consuming task run in a separate thread, hence a introducing the need for asynchronous callbacks. These callbacks follows the \highlight{Observable pattern}\cite{bib:observer}, which allows for multiple observers. 
+	In this sequence diagram you see the general flow when sending a message. One thing to note is the \highlight{reportMessage}s in the diagram, these are implemented as callback functions in XOXOmail. The reasoning for this is that every time a consuming task is run in a separate thread, there is a need for asynchronous callbacks. These callbacks follows the \highlight{Observable pattern}\cite{bib:observer}, which allows for multiple observers. 
 	\begin{figure}[H]
 		\includegraphics[width=\textwidth]{SendSequence}
 		\caption{The send message sequence}
@@ -276,7 +276,7 @@ Figure \ref{fig:logicalGUIview} at page \pageref{fig:logicalGUIview} shows the f
 \newpage
 
 \subsection{The retrieve message sequence}
-	The sequence diagram for retrieving messages show the general setup of the \gls{imapi} strategy. The thing to notice here is the loop structure within the sequence diagram, this is to illustrate the continuality of the idle command issued to the server. 
+	The sequence diagram for retrieving messages shows the general setup of the \gls{imapi} strategy. The thing to notice here is the loop structure within the sequence diagram, this is to illustrate the continuality of the idle command issued to the server. 
 	\begin{figure}[H]
 		\includegraphics[width=\textwidth]{IMAPPushSequence}
 		\caption{The imap push sequence}
