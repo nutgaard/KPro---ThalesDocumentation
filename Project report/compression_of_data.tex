@@ -66,18 +66,18 @@ The most common formats used for lossless compression of sound is FLAC and MPEG-
 
 
 \subsection{Discussion}
-As we can see, there are two main methods for compression. What we can see from the previous sections, is that there exist a lot of methods for doing both lossy and lossless compression. Some of these methods are not so heavy, while others require a lot of processing power. The heaviest compression algorithms, processing wise, are those that operate on video streams. It is not trivial to compress images and text, but it is often very fast.
+As we can see, there are two main methods for compression. What we can see from the previous sections, is that there exist a lot of methods for doing both lossy and lossless compression. Some of these methods are not so computational heavy, while others require a lot of processing power. The heaviest compression algorithms, processing wise, are those that operate on video streams. It is not trivial to compress images and text, but it is often very fast.
 
 \paragraph{Choice of algorithms}\hfill
 \newline
-When choosing a compression algorithm, it is important to use a compression algorithm that gives good enough compression rate within the acceptable time frame. It is always good to compress data if the compression time is close to zero. This is seldom the case.
+When choosing a compression algorithm, it is important to use a compression algorithm that gives good enough compression rate within the acceptable time frame. It is always good to compress data if the compression time is close to zero. This is however seldom the case.
 \newline
 \newline
 Often we do not know how good XOXOmail's connection to the Internet is. This can be calculated by taking the time it takes for data to be sent to / received from a server. If we then have some statistics on the compression time for, lets say 30 seconds of video, we can do some number crunching. If we know that with the current connection speed, the transfer of the compressed video will take 2 minutes to the mail server and 1 minute to get downloaded to the receiver (if assuming download rate is twice of upload, and that the receiver has the same connection as the sender) and it takes 20 seconds to check the connection speed, the total time used is then 3 minutes and 50 seconds. For the compression to be beneficial, the time used on compression and bandwith checking should be less than the time difference between sending and receiving the uncompressed and the compressed video.
 
 \paragraph{Compressing text} \hfill
 \newline
-It is quite obvious that if we are to compress text sent via XOXO-mail, it has to be lossless. If we loose data on the way, the message received will look completely different than the one sent. This is not a result that we are interested in. One important thing to notice, is that the text size on the message sent via XOXOmail is often trivial. The sender often wants to convey a few sentences, together with the current coordinates and maybe an image. The text size compared to the image is negligble, so the effort of compressing the text is often not worth it. Of course, if we were to send large text files, then it would be another story.
+It is quite obvious that if we are to compress text sent via XOXO-mail, it has to be lossless. If we loose data on the way, the message received will look completely different than the one sent. This is not a result that we are interested in. One important thing to notice, is that the text size on the message sent via XOXOmail is often trivial. The sender often wants to convey a few sentences, together with the current coordinates and maybe an image. The text size compared to the image is negligble, so the effort of compressing the text is often not worth it. %Of course, if we were to send large text files, then it would be another story.
 
 \paragraph{Compressing images} \hfill
 \newline

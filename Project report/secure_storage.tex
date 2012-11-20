@@ -5,10 +5,10 @@ The application we are developing will need to store some information that is pr
 A feature that would be nice for XOXOmail to have is to not have to retype your username and password every time the application is started.
 \newline
 \newline
-A a way to do this is to store the username and password locally on the phone. In Android applications this is usually done in Shared Preferences. Shared Preferences is sandboxed and thus prevents other applications from accessing the values stored there. If you also encrypt the credentials instead of just storing them as clear text it would add even more security.
+A way to do this is to store the username and password locally on the phone. In Android applications this is usually done through SharedPreferences. Though SharedPreferences is sandboxed and thus prevents other applications from accessing the data. If you also encrypt the credentials instead of just storing them as clear text it would add even more security.
 \newline
 \newline
-The problem with this solution is that if an attacker should in some way gain physical access to your phone he may still be able to get the data. If you are already logged in, the perpetrator could just open up the app and view the data he wants. Even if you weren’t logged in the attacker could root the phone and gain access to the values saved in Shared Preferences. The values could be encrypted but it would not help, because an attacker that has access to the values in SharedPreferences is also likely to have access to the application’s binary, and thus the keys to decrypt the password.
+The problem with this solution is that if an attacker should in some way gain physical access to your phone he may still be able to get the data. If you are already logged in, the perpetrator could just open up the application and view the data he wants. Even if you weren’t logged in the attacker could root the phone and gain access to the values saved in Shared Preferences. The values could be encrypted but it would not help, because an attacker that has access to the values in SharedPreferences is also likely to have access to the application’s binary, and thus the keys to decrypt the password.
 
 
 \subsubsection{Creating a custom account type and server side authentication}
@@ -21,7 +21,7 @@ This solution also suffers from the fact that if the user is already logged in, 
 Symmetric encryption is also a possible solution for securing the data. If we are going to use this type of encryption we can’t store the keys because of the lacking general purpose, system-level secure storage.
 \newline
 \newline
-A way to solve this is to derive the keys from a user-entered password. To make sure the keys derived is random and hard to brute-force we need to use a standard \gls{pbe} key derivation method. For Android applications this is called PBKDF2WithHmacSHA1.
+A way to solve this is to derive the keys from a user-entered password. To make sure the keys derived is random and hard to brute-force we need to use a standard \gls{pbe} key derivation method. A common way of doing this is with PBKDF2.
 \newline
 \newline
 This could be a suitable solution, at least for the parts of the application that does not need to happen instantaneously because the password never should be stored in plain text.
