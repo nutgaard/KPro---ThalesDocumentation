@@ -1,5 +1,6 @@
 \section{Use Cases}
 
+
 \subsection{Actors}
 An actor specifies a role to be played by internal or external persons interacting with the application. In our case, we have only one actor, namely the end-user. The user is a person who does not necessarily have much education in using XOXOmail, but will use it regularly in his workday. 
 
@@ -15,6 +16,34 @@ For a combined figure of all the use cases, see figure \ref{fig:usecase} below.
 
 \subsection{Textual use cases}
 Each of the use cases is described below, so that the use case diagram will be easier to understand. See table \ref{tab:viewmessages} - \ref{tab:settings} from page \pageref{tab:viewmessages} to \pageref{tab:settings} for a more detailed explanation of the use cases.
+
+\begin{table}
+\begin{center}
+\begin{center}
+\includegraphics[width=\textwidth]{login}
+\end{center}
+\begin{tabular}{p{3cm}|p{12cm}} \hline
+\textbf{Element} & \textbf{Description} \\ \hline \hline
+Use case name & Log in \\ 
+Requirement & FR1 \\
+Goal & User logs in with a username and password \\ \hline
+Summary &The user is prompted with a login screen and must type in his username and password \\hline
+Preconditions &
+\begin{enumerate}
+\item{}The application is running
+\end{enumerate} \\ \hline
+Flow of Events &
+\begin{enumerate}
+\item{}User starts application
+\item{}User is prompted with username and password
+\item{}User types in username and password and presses the login button
+\item{}User gains access to the application data and functionality
+\end{enumerate} \\ \hline
+Exceptions & User types wrong username and password and is denied access \\ \hline
+\end{tabular}
+\end{center}
+\caption{Textual use case - Log in} \label{tab:login}
+\end{table}
 
 \begin{table}
 \begin{center}
@@ -41,34 +70,6 @@ Exceptions & There are no existing messages\\ \hline
 \end{tabular}
 \end{center}
 \caption{Textual use case - View messages} \label{tab:viewmessages}
-\end{table}
-
-\begin{table}
-\begin{center}
-\begin{center}
-\includegraphics[width=\textwidth]{reply_forward_delete}
-\end{center}
-\begin{tabular}{p{3cm}|p{12cm}} \hline
-\textbf{Element} & \textbf{Description} \\ \hline \hline
-Use case name & Reply, forward and delete \\
-Requirement & FR8	 \\
-Goal & Reply, forward and delete messages\\
-Summary & The user would like to reply to a message, forward it or delete it \\ \hline
-Preconditions &
-\begin{enumerate}
-\item{}The application is running
-\item{}The user is logged in
-\end{enumerate} \\ \hline
-Flow of Events &
-\begin{enumerate}
-\item{}The user selects a message from either the sent or inbox messages
-\item{}Message is showed to user
-\item{}User chooses to reply, forward or delete the message
-\end{enumerate} \\ \hline
-Exceptions & There are no existing messages\\ \hline
-\end{tabular}
-\end{center}
-\caption{Textual use case - Reply, forward and delete message} \label{tab:reply}
 \end{table}
 
 \begin{table}
@@ -130,6 +131,61 @@ Exceptions & The user does not set priority, security label and type and default
 \begin{table}
 \begin{center}
 \begin{center}
+\includegraphics[width=\textwidth]{view_address_book}
+\end{center}
+\begin{tabular}{p{3cm}|p{12cm}} \hline
+\textbf{Element} & \textbf{Description} \\ \hline \hline
+Use case name & View the address book \\
+Requirement & FR5 \\
+Goal & User can view and interact with the address book \\
+Summary &The user enters the address book and is able to view  contacts \\ \hline
+Preconditions &
+\begin{enumerate}
+\item{}The application is running
+\item{}The user is logged in
+\end{enumerate} \\ \hline
+Flow of Events &
+\begin{enumerate}
+\item{}User selects address book
+\item{}User selects a contact to send a message to
+\end{enumerate} \\ \hline
+Exceptions & - \\ \hline
+\end{tabular}
+\end{center}
+\caption{Textual use case - View the address book} \label{tab:viewandinteract}
+\end{table}
+
+\begin{table}
+\begin{center}
+\begin{center}
+\includegraphics[width=\textwidth]{reply_forward_delete}
+\end{center}
+\begin{tabular}{p{3cm}|p{12cm}} \hline
+\textbf{Element} & \textbf{Description} \\ \hline \hline
+Use case name & Reply, forward and delete \\
+Requirement & FR8	 \\
+Goal & Reply, forward and delete messages\\
+Summary & The user would like to reply to a message, forward it or delete it \\ \hline
+Preconditions &
+\begin{enumerate}
+\item{}The application is running
+\item{}The user is logged in
+\end{enumerate} \\ \hline
+Flow of Events &
+\begin{enumerate}
+\item{}The user selects a message from either the sent or inbox messages
+\item{}Message is showed to user
+\item{}User chooses to reply, forward or delete the message
+\end{enumerate} \\ \hline
+Exceptions & There are no existing messages\\ \hline
+\end{tabular}
+\end{center}
+\caption{Textual use case - Reply, forward and delete message} \label{tab:reply}
+\end{table}
+
+\begin{table}
+\begin{center}
+\begin{center}
 \includegraphics[width=\textwidth]{send_instant_message}
 \end{center}
 \begin{tabular}{p{3cm}|p{12cm}} \hline
@@ -182,60 +238,9 @@ Exceptions & - \\ \hline
 \caption{Textual use case - View instant message} \label{tab:createmessage}
 \end{table}
 
-\begin{table}
-\begin{center}
-\begin{center}
-\includegraphics[width=\textwidth]{view_address_book}
-\end{center}
-\begin{tabular}{p{3cm}|p{12cm}} \hline
-\textbf{Element} & \textbf{Description} \\ \hline \hline
-Use case name & View the address book \\
-Requirement & FR5 \\
-Goal & User can view and interact with the address book \\
-Summary &The user enters the address book and is able to view  contacts \\ \hline
-Preconditions &
-\begin{enumerate}
-\item{}The application is running
-\item{}The user is logged in
-\end{enumerate} \\ \hline
-Flow of Events &
-\begin{enumerate}
-\item{}User selects address book
-\item{}User selects a contact to send a message to
-\end{enumerate} \\ \hline
-Exceptions & - \\ \hline
-\end{tabular}
-\end{center}
-\caption{Textual use case - View the address book} \label{tab:viewandinteract}
-\end{table}
 
-\begin{table}
-\begin{center}
-\begin{center}
-\includegraphics[width=\textwidth]{login}
-\end{center}
-\begin{tabular}{p{3cm}|p{12cm}} \hline
-\textbf{Element} & \textbf{Description} \\ \hline \hline
-Use case name & Log in \\ 
-Requirement & FR1 \\
-Goal & User logs in with a username and password \\ \hline
-Summary &The user is prompted with a login screen and must type in his username and password \\hline
-Preconditions &
-\begin{enumerate}
-\item{}The application is running
-\end{enumerate} \\ \hline
-Flow of Events &
-\begin{enumerate}
-\item{}User starts application
-\item{}User is prompted with username and password
-\item{}User types in username and password and presses the login button
-\item{}User gains access to the application data and functionality
-\end{enumerate} \\ \hline
-Exceptions & User types wrong username and password and is denied access \\ \hline
-\end{tabular}
-\end{center}
-\caption{Textual use case - Log in} \label{tab:login}
-\end{table}
+
+
 
 \begin{table}
 \begin{center}
