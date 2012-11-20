@@ -1,9 +1,15 @@
 \section{Non-functional requirements}
+This section will explain the requirements for the application that do not add specific functionality to the product.
 
 \subsection{Quality requirements}
+The requirements for quality attributes will be listed and explained below.
 
-\paragraph{Usability}
-\subparagraph{U1 Ease of use}\hfill
+\paragraph{Usability}\hfill
+\newline
+Usability explains how we made our application effective to learn and use.
+\newline
+\newline
+\textit{\textbf{U1 Ease of use}}
 \newline
 The user should be able to use the application with very few mistakes, such as pressing the wrong button because button labels are ambiguous or too small. The scenario is described in table \ref{tab:easeofuse}.
 \begin{table}[h!]
@@ -21,7 +27,7 @@ Response measure & Maximum 5\% of user operations should be mistakes (another ac
 \caption{U1 Ease of use} \label{tab:easeofuse}
 \end{table}
 
-\subparagraph{U2 Efficent use}\hfill
+\textit{\textbf{U2 Efficent use}}
 \newline
 The user should be able to use the main features of the application with as few screen interactions as possible. Streamlined design is therefore of great importance. The scenario is described in table \ref{tab:efficentuse}.
 \begin{table}[hbt]
@@ -43,8 +49,7 @@ Response measure & A user with only a quick (5 min) training course should never
 
 \paragraph{Performance}
 
-\subparagraph{P1 Latency}
-\hfill
+\textit{\textbf{P1 Latency}}
 \newline
 The user should be able to read the message quickly after receival of a new message. The scenario is described in table \ref{tab:performance}.
 \begin{table}[h!]
@@ -63,8 +68,7 @@ Response measure & With a latency of maximum 3 seconds, the user should be able 
 \end{table}
 
 \paragraph{Security}
-\subparagraph{S1 Data access}
-\hfill
+\textit{\textbf{S1 Data access}}
 \newline
 Data should not be exposed to unauthorized users or other application. The scenario is described in table \ref{tab:s1}.
 \begin{table}[h!]
@@ -84,8 +88,7 @@ Response measure & No data should be exposed to the unauthorized user or applica
 
 \newpage
 
-\subparagraph{S2 Unprivileged use}
-\hfill
+\textit{\textbf{S2 Unprivileged use}}
 \newline
 Users that try to use the application without the correct privileges should be denied. The scenario is described in table \ref{tab:s2}.
 \begin{table}[h!]
@@ -103,8 +106,7 @@ Response measure & No features shoudl be exposed to the user, the user should be
 \caption{S2 Trying to use application with wrong privileges} \label{tab:s2}
 \end{table}
 
-\subparagraph{S3 External data traffic}
-\hfill
+\textit{\textbf{S3 External data traffic}}
 \newline
 External data traffic should not be exposed to unauthorized users or application or someone else sniffing network packages. The scenario is described in table \ref{tab:s3}.
 \begin{table}[h!]

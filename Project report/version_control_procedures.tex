@@ -9,29 +9,27 @@ For source code management there are several viable options on the market, the p
 \newline
 In addition to technical differences between \gls{git} and \gls{svn}, it was the experiences of the developer team that finally made the decision to use \gls{git} for this project. To learn how to use \gls{git} check out the Git Book at \cite{bib:gitbook}.
 
-\newpage
-
 \subsubsection{Version control procedure}
 All procedures assume the use of a terminal similar to Bash, and that the current directory is the workspace of your \gls{ide}.
 \newline
 \newline
 []: optional arguments \& <>: argument
 
-\textit{Setup}
+\textit{\textbf{Setup}}
 \begin{description}
 	{\indentitem \item[Description:] Setup of project (usually just once)}
 	{\indentitem \item[Command:] \hfill \\
 	\hspace*{3em} git clone <git remote repository address>}
 \end{description}
 
-\textit{On programming session start}
+\textit{\textbf{On programming session start}}
 \begin{description}
 	{\indentitem \item[Description:] Whenever a developer starts programming}
 	{\indentitem \item[Command:] \hfill \\
 		\hspace*{3em} git pull [<remote repository> <branch>]}
 \end{description}
 
-\textit{On change}
+\textit{\textbf{On change}}
 \begin{description}
 	{\indentitem \item[Description:] Whenever a developer complete a change in functionality.}
 	{\indentitem \item[Command:] \hfill \\
@@ -40,7 +38,7 @@ All procedures assume the use of a terminal similar to Bash, and that the curren
 	\hspace*{3em} [git pull \&\& git push] \#should only be done for if project builds}
 \end{description}
 
-\textit{On complete}
+\textit{\textbf{On complete}}
 \begin{description}
 {\indentitem \item[Description:]  Whenever a developer finishes a change in functionality.}
 {\indentitem \item[Command:] \hfill \\
