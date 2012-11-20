@@ -2,13 +2,13 @@
 The application we are developing will need to store some information that is private and should not be easy to access. In order to do this we need to make the users log in with a username and a password. The password is used to encrypt the private information and make it unavailable to unwanted eyes.  
 
 \subsubsection{No retyping of username and password}
-A feature that would be nice for XOXOmail to have is to not have to retype your username and password every time the application is started.
+A feature that would be nice for XOXOmail to have is to not be required to retype your username and password every time the application is started.
 \newline
 \newline
 A way to do this is to store the username and password locally on the phone. In Android applications this is usually done through SharedPreferences. Though SharedPreferences is sandboxed and thus prevents other applications from accessing the data. If you also encrypt the credentials instead of just storing them as clear text it would add even more security.
 \newline
 \newline
-The problem with this solution is that if an attacker should in some way gain physical access to your phone he may still be able to get the data. If you are already logged in, the perpetrator could just open up the application and view the data he wants. Even if you weren’t logged in the attacker could root the phone and gain access to the values saved in Shared Preferences. The values could be encrypted but it would not help, because an attacker that has access to the values in SharedPreferences is also likely to have access to the application’s binary, and thus the keys to decrypt the password.
+The problem with this solution is that if an attacker should in some way gain physical access to your phone he may still be able to get the data. If you are already logged in, the perpetrator could just open up the application and view the data he wants. Even if you were not logged in the attacker could root the phone and gain access to the values saved in Shared Preferences. The values could be encrypted but it would not help, because an attacker that has access to the values in SharedPreferences is also likely to have access to the application’s binary, and thus the keys to decrypt the password.
 
 
 \subsubsection{Creating a custom account type and server side authentication}
