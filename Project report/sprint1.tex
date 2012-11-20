@@ -39,10 +39,10 @@ Our goal was a to have a demo ready that we could show the client, that could se
 \end{itemize}
 \item{}\textbf{General setup of tools:} general setup of different tools we use.
 \item{}\textbf{Meeting and agenda document writing:} to write all the minutes and agendas using the right template.
-\item{}\textbf{Starting App:} making our program good enough so that it is possible to start the program and begin browsing all features of the program.
+\item{}\textbf{Starting Application:} making our program good enough so that it is possible to start the program and begin browsing all features of the program.
 \begin{itemize}
 \item{}\textbf{Create Main menu:} make a simple main menu with a header showing the name of the program and a list containing all views it is possible reach from the menu.
-\item{}\textbf{Create a basic android app skeleton:} make an Android app project so that we have a running application with nothing in it.
+\item{}\textbf{Create a basic android application skeleton:} make an Android application project so that we have a running application with nothing in it.
 \item{}\textbf{Learn how Android MVC works:} find out how Android MVC works and get a general feeling of how the layout of the Android project will be.
 \end{itemize}
 \item{}\textbf{Sending a message:} the user should be able to click the “New message” button, be brought to the new message page, create a message and send it pressing the “Send” button.
@@ -51,22 +51,22 @@ Our goal was a to have a demo ready that we could show the client, that could se
 \item{}\textbf{Make connection between “Send Message” button and backend:} make the GUI communicate with the backend responsible for sending the actual message.
 \item{}\textbf{Implement a Network class for sending e-mail through gmail’s smtp-server:} implementation of Network SErvice Interface so that a mail can get send from an account.
 \item{}\textbf{Create the new message view:} make it able for the user to get a view showing all fields relevant to creating a message by clicking “New message”.
-\item{}\textbf{Implement receiving mail from gmail’s imap-service:} make the app able to receive the mail automatically from gmail’s Imap, as soon as a message is received at the account. This must be done via push to client, not pull..
+\item{}\textbf{Implement receiving mail from gmail’s imap-service:} make the application able to receive the mail automatically from gmail’s Imap, as soon as a message is received at the account. This must be done via push to client, not pull..
 \item{}\textbf{Create core bridge:} does the connection from GUI to core and returns value from implemented interface on core side.
 \end{itemize}
-\item{}\textbf{Persisting data to phone:} Implement persistence, so that the app is able to save data and retrieve it whenever it wants.
+\item{}\textbf{Persisting data to phone:} Implement persistence, so that the application is able to save data and retrieve it whenever it wants.
 \begin{itemize}
-\item{}\textbf{Research on structure for saving and reading data}: find a structure for saving data to the phone. What is the best way of organizing data with respect to files created by app, file settings and other files?
+\item{}\textbf{Research on structure for saving and reading data}: find a structure for saving data to the phone. What is the best way of organizing data with respect to files created by application, file settings and other files?
 \item{}\textbf{Save data to phone storage:} ensure proper saving of data to phone.
 \item{}\textbf{Read data from phone:} ensure proper saving of data to phone.
 \end{itemize}
 \end{itemize}
 
 \section{System design}
-At the end of the first sprint, the the system worked thusly: The user opens an App (XOXOmail) on his phone. He is taken directly to a menu, though the final product would begin with a login screen. In the first sprint the menu was rudimentary; designed more for ease of demonstration than for actual application use. An updated version was under development but had not yet been integrated with the application at the end of the first sprint. The menu, in this iteration, had three options: Inbox, Sent, and SendMail.
+At the end of the first sprint, the the system worked thusly: The user opens an Application (XOXOmail) on his phone. He is taken directly to a menu, though the final product would begin with a login screen. In the first sprint the menu was rudimentary; designed more for ease of demonstration than for actual application use. An updated version was under development but had not yet been integrated with the application at the end of the first sprint. The menu, in this iteration, had three options: Inbox, Sent, and SendMail.
 \newline
 \newline
-Clicking inbox would bring the user to a simple list of the emails received while the app was active (persistent storage had yet to be connected to the rest of the system at the end of the first sprint). Each email was click able, leading to a detailed view with the message text as well as further clearance and sender info. The GUI here sat on top of a Activity which held references to the models as well as keeping in contact with the network adapter which listened to a server for new emails. Clicking Sent would similarly bring the user to a list of sent emails, which sat on its own Activity.
+Clicking inbox would bring the user to a simple list of the emails received while the application was active (persistent storage had yet to be connected to the rest of the system at the end of the first sprint). Each email was click able, leading to a detailed view with the message text as well as further clearance and sender info. The GUI here sat on top of a Activity which held references to the models as well as keeping in contact with the network adapter which listened to a server for new emails. Clicking Sent would similarly bring the user to a list of sent emails, which sat on its own Activity.
 \newline
 \newline
 SendMail would bring the user to a simple form for sending messages to the server. Details like subject, receiver, security level and priority could be specified and a text message written. The demo was capable of sending to an arbitrary email address.
@@ -75,7 +75,7 @@ SendMail would bring the user to a simple form for sending messages to the serve
 The system consisted of four main components. The XML coded GUI was displayed and controlled by a number of activities; together forming the main GUI layer. The GUI layer communicated with a service core (which at the time only had the network system), with in turn created instances of methods in the modeling layer to refer around the system.
 
 \section{Sprint effort}
-See tabel \ref{tab:effortweekss1} at page \pageref{tab:effortweekss1}
+See tabel \ref{tab:effortweekss1} on page \pageref{tab:effortweekss1}
 \begin{table}
 \begin{tabularx}{\linewidth}{>{\setlength\hsize{.625\hsize}}X|>{\setlength\hsize{0.3\hsize}}X|>{\setlength\hsize{0.5\hsize}}X|>{\setlength\hsize{0.5\hsize}}X|>{\setlength\hsize{0.5\hsize}}X|>{\setlength\hsize{.3\hsize}}X}
 Group no: 15 Date: 27/08-16/09  \\ \hline

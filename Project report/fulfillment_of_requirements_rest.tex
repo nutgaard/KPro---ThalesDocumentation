@@ -1,15 +1,15 @@
 \subsection{Non-functional quality requirements}
 
 \subsubsection{Usability}
-In order to insure that our app was simple to use, we worked closely with Thales when designing our GUI. The design went through several iterations based on their comments and concerns. Towards the end of the development cycle, when most of the required back end components were in place, we tested the usability of the app by letting friends try their hands at it and noting down their comments. This gave us a lot of data on how we could make further adjustments to fit with our goals.
+In order to insure that our application was simple to use, we worked closely with Thales when designing our GUI. The design went through several iterations based on their comments and concerns. Towards the end of the development cycle, when most of the required back end components were in place, we tested the usability of the application by letting friends try their hands at it and noting down their comments. This gave us a lot of data on how we could make further adjustments to fit with our goals.
 
 \newpage
 
 \subsubsection{Security}
 
-\paragraph{Accessing locally stored data outside of app}\hfill
+\paragraph{Accessing locally stored data outside of application}\hfill
 \newline
-“No data exposed to the user or app, as long as the user do not have root access.” S1 - Quality requirements
+“No data exposed to the user or application, as long as the user do not have root access.” S1 - Quality requirements
 \newline
 \newline
 This requirement is fulfilled by the service implementing the PersistenceService interface, see section \ref{ch:logicalview} on page \pageref{ch:logicalview}, which keeps track of all the models currently in use in the application, in the case of XOXOmail these models will mainly consist of messages sent and received in the application, but also the users themself have a model representation. If the malicious user or application does not have root access, then the data will be secure just by using Android provided features like sandboxing processes and private storage. We can not however guarantee that this will always be the case, and another layer of security is therefore needed. 
@@ -19,12 +19,12 @@ There are three possible scenarios when looking at this requirement. First off, 
 Secondly, a malicious user/application find an unlocked device, but the owner is not logged into the XOXOmail. Under normal circumstances, without an additional layer of security, the malicious user could gain access to the application and application data, circumventing the Android private storage access control due to the users root privileges. In order to mitigate this, all XOXOmail specific data will be encrypted before stored into the private storage section. 
 Thirdly, a malicious user/application find an unlocked device, where the owner is logged into the XOXOmail application and the application is open. In this case the malicious user is given some possible ways of exploiting the application by sending predefined instant messages. But it would still require the malicious user to type in the owner password in order to browse any other messages. 
 
-\paragraph{Trying to use app with wrong privileges} \hfill
+\paragraph{Trying to use application with wrong privileges} \hfill
 \newline
 “No features exposed to the user - stopped by login screen” S2 - Quality requirements
 \newline
 \newline
-This requirement is fulfilled by the ServiceProvider along with the graphical user interface. There are two possible scenarios when looking at this requirement. First off, the service backend is not started and a user starts the app. In this case no privileges will be given until the user types in the correct username and password. In fact, the application itself does not have the possibility to decrypt any data without this information.
+This requirement is fulfilled by the ServiceProvider along with the graphical user interface. There are two possible scenarios when looking at this requirement. First off, the service backend is not started and a user starts the application. In this case no privileges will be given until the user types in the correct username and password. In fact, the application itself does not have the possibility to decrypt any data without this information.
 Second, the service is started, but not open. In this case a malicious user could send predefined flash messages, but not view any messages, or get access to the system as a whole. 
 
 \paragraph{Trying to access the apps external data trafic}\hfill

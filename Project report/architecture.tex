@@ -21,7 +21,7 @@ The development view focuses on software modules and subsystems. These subsystem
 ``The complete development architecture can only be described when all the elements of the software have been identified. It is, however, possible to list the rules that govern the development architecture: partitioning, grouping, visibility'' \cite{bib:vm}. 
 \newline
 \newline
-Figure \ref{fig:developmentview} at page \pageref{fig:developmentview} shows the Backend Service Connects to all parts of our app. The main focus of this view is to show that it is also the connector to the external parts of the app, which in our case is just a mail gateway. The final goal will be to connect to Thales' gateway, but as long as the gateway comply with the standards of \gls{smtp} and \gls{pami} there should be no problem.
+Figure \ref{fig:developmentview} on page \pageref{fig:developmentview} shows the Backend Service Connects to all parts of our application. The main focus of this view is to show that it is also the connector to the external parts of the application, which in our case is just a mail gateway. The final goal will be to connect to Thales' gateway, but as long as the gateway comply with the standards of \gls{smtp} and \gls{pami} there should be no problem.
 
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{developmentview.png}
@@ -77,7 +77,7 @@ The intended purpose of each of the different services is somewhat given by thei
 	
 \subsection{Process view}
 The process view is concerned with how different tasks bind together to form one executable unit. More specifically, the communication between threads/processes and on which thread/process a task is executed. We will differentiate between major and minor tasks, where major tasks are architectural elements open through a public interface, and minor tasks being tasks introduced in order to implement some functionality in one class or module.
-In figure \ref{fig:processview} at page \pageref{fig:processview}, you can differentiate between minor and major tasks by looking at the \highlight{smtp} branch of \highlight{NetworkService}, here \highlight{SMTPSender} is a minor task, while both \highlight{SMTP} and \highlight{NetworkService} is considered major tasks. 
+In figure \ref{fig:processview} on page \pageref{fig:processview}, you can differentiate between minor and major tasks by looking at the \highlight{smtp} branch of \highlight{NetworkService}, here \highlight{SMTPSender} is a minor task, while both \highlight{SMTP} and \highlight{NetworkService} is considered major tasks. 
 
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{processview.png}
@@ -91,7 +91,7 @@ One thing to note about the communications paths is that almost all communicatio
 
 \subsection{Security view}
 The security view is concerned with how the system as a whole is secured. This involves intercommunication, storage and communication with external sources. The view is not however concerned about implementation, just the layers of security.
-See figure \ref{fig:securityview} at page \pageref{fig:securityview}.
+See figure \ref{fig:securityview} on page \pageref{fig:securityview}.
 
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{securityview.png}
@@ -122,7 +122,7 @@ Regarding communication with external resources as a mail server, it will be don
 
 \subsection{Introduction}
 The section will describe the process of creating the user interface, the Android guidelines for creating an application, out take on these guidelines, and how the user interface turned out including the rationale behind the decision made.
-%This section will describe the process of creating the user interface, how the Android framework has specified implementing an app and what elements we conformed to in this specification, and how the %user interface looks like and why.
+%This section will describe the process of creating the user interface, how the Android framework has specified implementing an application and what elements we conformed to in this specification, and how the %user interface looks like and why.
 
 \subsection{The design process}
 This section will outline the design process from requirements and prototyping to implementation and testing.
@@ -177,7 +177,7 @@ An activity is always in one of four possible states \cite{bib:aas}:
 \item{}If an activity is paused or stopped, it is likely that the system asks the activity to finish or just kill its process, hence drops it from memory. It then has to be restarted completely.
 \end{itemize}
 
-The life cycle of an activity can be seen in figure \ref{fig:lifecycle} at page \pageref{fig:lifecycle}.
+The life cycle of an activity can be seen in figure \ref{fig:lifecycle} on page \pageref{fig:lifecycle}.
 \begin{figure}
 	\includegraphics[width=\textwidth]{activity_lifecycle}
 	\caption{Activity life cycle \cite{bib:alc}}
@@ -200,7 +200,7 @@ By conforming to using external resources on can easily build applications that 
 
 \subsubsection{Activities and flow between them}
 
-Figure \ref{fig:logicalGUIview} at page \pageref{fig:logicalGUIview} shows the flow in XOXOmail. The entry point for XOXOmail is shown at the upper left corner at "Start app". The first activity you see is the \textsc{Login Activity}. The user is granted access if a correct username and matching password is entered. He is then sent directly to the main menu, where he can choose to either see messages, send a new message or alter settings. Which messages are shown are based on if you choose \highlight{Sent} or \highlight{Inbox}. By pressing \highlight{Sort} he can choose to alter the way the messages are shown. Choosing to send a message can either be done by going into the regular send message view, or the instant message view. Either way, for a message to be sent, it has to be validated. When all fields are valid, the message is sent to the correct recipient. By pressing return button when inside application we are minimizing the application, it will however still be running in the background.
+Figure \ref{fig:logicalGUIview} on page \pageref{fig:logicalGUIview} shows the flow in XOXOmail. The entry point for XOXOmail is shown at the upper left corner at "Start application". The first activity you see is the \textsc{Login Activity}. The user is granted access if a correct username and matching password is entered. He is then sent directly to the main menu, where he can choose to either see messages, send a new message or alter settings. Which messages are shown are based on if you choose \highlight{Sent} or \highlight{Inbox}. By pressing \highlight{Sort} he can choose to alter the way the messages are shown. Choosing to send a message can either be done by going into the regular send message view, or the instant message view. Either way, for a message to be sent, it has to be validated. When all fields are valid, the message is sent to the correct recipient. By pressing return button when inside application we are minimizing the application, it will however still be running in the background.
 
 \begin{figure}[h!]
 	\includegraphics[width=\textwidth]{activities_flowchart3}
