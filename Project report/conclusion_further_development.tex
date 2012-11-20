@@ -1,1 +1,15 @@
-\section{Further development}
+\section{Further development}\label{con_further}
+
+Our XOXOmail application is, even though it contains a lot of the functional requirements stated in chapter \ref{ch:requirements}, just a prototype and can hardly be called complete. Most of the advanced security features are lacking, or at best partly implemented. We managed to fix the most critical bugs, but the application can still be a bit unstable. There are of course a number of things we would have improved if we had more time with this project. 
+
+\subsection{Functionality}
+The obvious way to go with the further development would be to start with the lacking features. Thales wanted the application to be able to fetch updated address books from their server, and here one would have to implement support for management messages and distinguish these from regular messages. Video attachment turned out to be more complex than image, but should in theory be doable. Deleting of messages was worked on, but due to some problems with the Android file system we did not have the time to complete this feature. Message status (delivery report and receipt notification) was not even started on, as we anticipated this to be a task too complex with the time resources we had available. This would include using IMAP attributes for synchronizing between our application and the server. Search functionality should in theory be straightforward to implement, but this was not prioritized.
+
+\subsection{Graphical user interface}
+We would have wished to improve the user interface further and make a more "fancy" and pretty application. In hinsight we realize that our expectations of what we would be able to create were a bit high. After these weeks with the Android framework we have just learned the basics and only in the last few weeks 	starting to realize how to customize components and layouts to make them more pretty than the Android default style. Functions that could highly improve the look and feel of the application, like being able to "swipe" between messages instead of pushing buttons, were planned, but due to the time constraints these were not implemented. If we could have started over, we might have chosen to use a higher Android version, as there are many components that exist only from version 3 or 4 that we could have needed.
+
+\subsection{Signing and verification}
+The biggest problem on the security side right now is that we have no support for signing or verification of the identity of the mail sender. The code for doing so has been written, but has not been integrated or tested. For a company that already has experience with security programming, this should not be significantly complicated, but ended up being a lot more time consuming than we anticipated.
+
+\subsection{Encryption and decryption}
+The current version of the app has encryption in the form of a hash function for storing of the passwords and SSL/TLS encryption on the network channel. We had originally planned to do disk encryption of the application's private storage as mentioned in chapter \ref{chapter_architecture}, but unfortunately we ran short on time here. 

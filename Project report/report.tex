@@ -24,6 +24,11 @@
 \usepackage[nonumberlist]{glossaries}
 \usepackage{float}
 
+%Lagt til av Kristin - topptekst
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+%\fancyhead[CO, CE]{---XOXOmail---}
+\renewcommand{\headrulewidth}{0.0pt}
 
 \hypersetup{
     colorlinks=false,
@@ -421,11 +426,11 @@
 
 \part{Conclusion \& reflection}
 
-	%\*include{conclusion_system_overview}
-
-	%\*include{conclusion_further_development}
+	\include*{conclusion_system_overview}
 
 	\include*{conclusion}
+
+	\include*{conclusion_further_development}
 
 	\include*{fulfillment_of_requirements}
 
@@ -433,7 +438,7 @@
 
 	\include*{fulfillment_of_requirements_rest}
 
-	%\*include{conclusion_summary}
+	\include*{conclusion_summary}
 
 %\chapter{Reflection}
 
