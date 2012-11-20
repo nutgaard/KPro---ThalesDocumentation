@@ -1,5 +1,5 @@
 \section{Use Cases}
-
+This section starts by discussing the different actors that will use our system. Then it continues to show a full use case diagram derived from the functional requirements. Finally, it lists the textual use cases to detail the use case diagram.
 
 \subsection{Actors}
 An actor specifies a role to be played by internal or external persons interacting with the application. In our case, we have only one actor, namely the end-user. The user is a person who does not necessarily have much education in using XOXOmail, but will use it regularly in his workday. 
@@ -15,9 +15,9 @@ For a combined figure of all the use cases, see figure \ref{fig:usecase} below.
 \end{figure}
 
 \subsection{Textual use cases}
-Each of the use cases is described below, so that the use case diagram will be easier to understand. See table \ref{tab:viewmessages} - \ref{tab:settings} from page \pageref{tab:viewmessages} to \pageref{tab:settings} for a more detailed explanation of the use cases.
+Each of the use cases is described below, so that the use case diagram will be easier to understand. See table \ref{tab:login} - \ref{tab:search} starting below to page \pageref{tab:search} for a more detailed explanation of the use cases.
 
-\begin{table}
+\begin{table}[h!]
 \begin{center}
 \begin{center}
 \includegraphics[width=\textwidth]{login}
@@ -98,6 +98,7 @@ Exceptions & There are no existing messages\\ \hline
 \end{center}
 \caption{Textual use case - View message} \label{tab:viewmessagefolders}
 \end{table}
+
 
 \begin{table}
 \begin{center}
@@ -213,6 +214,34 @@ Exceptions & The predefined values have not been set\\ \hline
 \begin{table}
 \begin{center}
 \begin{center}
+\includegraphics[width=\textwidth]{settings}
+\end{center}
+\begin{tabular}{p{3cm}|p{12cm}} \hline
+\textbf{Element} & \textbf{Description} \\ \hline \hline
+Use case name & Settings \\ 
+Requirement & FR10 \\
+Goal & The user can alter settings \\ \hline
+Summary & The user enters the settings menu and alter the settings to suit his own preferences \\ \hline
+Preconditions &
+\begin{enumerate}
+\item{}The application is running
+\item{}The user is logged in
+\end{enumerate} \\ \hline
+Flow of Events &
+\begin{enumerate}
+\item{}User presses the settings button
+\item{}User alters the settings he wishes to
+\item{}Application saves the alterations
+\end{enumerate} \\ \hline
+Exceptions & - \\ \hline
+\end{tabular}
+\end{center}
+\caption{Textual use case - View and edit settings} \label{tab:settings}
+\end{table}
+
+\begin{table}
+\begin{center}
+\begin{center}
 \includegraphics[width=\textwidth]{view_instant_message}
 \end{center}
 \begin{tabular}{p{3cm}|p{12cm}} \hline
@@ -236,38 +265,6 @@ Exceptions & - \\ \hline
 \end{tabular}
 \end{center}
 \caption{Textual use case - View instant message} \label{tab:createmessage}
-\end{table}
-
-
-
-
-
-\begin{table}
-\begin{center}
-\begin{center}
-\includegraphics[width=\textwidth]{search}
-\end{center}
-\begin{tabular}{p{3cm}|p{12cm}} \hline
-\textbf{Element} & \textbf{Description} \\ \hline \hline
-Use case name & Search \\
-Requirement & FR14 \\
-Goal & User receives search results for a given search text \\ \hline
-Summary & The user search in the application for messages, contacts etc through a search field at the top of the screen \\ \hline
-Preconditions &
-\begin{enumerate}
-\item{}The application is running
-\item{}The user is logged in
-\end{enumerate} \\ \hline
-Flow of Events &
-\begin{enumerate}
-\item{}User highlights search field and inserts his the text he wants to search for
-\item{}User presses the search button
-\item{}Application shows search results to the user
-\end{enumerate}\\ \hline
-Exceptions & - \\ \hline
-\end{tabular}
-\end{center}
-\caption{Textual use case - Search} \label{tab:search}
 \end{table}
 
 \begin{table}
@@ -301,14 +298,14 @@ Exceptions & - \\ \hline
 \begin{table}
 \begin{center}
 \begin{center}
-\includegraphics[width=\textwidth]{settings}
+\includegraphics[width=\textwidth]{search}
 \end{center}
 \begin{tabular}{p{3cm}|p{12cm}} \hline
 \textbf{Element} & \textbf{Description} \\ \hline \hline
-Use case name & Settings \\ 
-Requirement & FR10 \\
-Goal & The user can alter settings \\ \hline
-Summary & The user enters the settings menu and alter the settings to suit his own preferences \\ \hline
+Use case name & Search \\
+Requirement & FR14 \\
+Goal & User receives search results for a given search text \\ \hline
+Summary & The user search in the application for messages, contacts etc through a search field at the top of the screen \\ \hline
 Preconditions &
 \begin{enumerate}
 \item{}The application is running
@@ -316,12 +313,12 @@ Preconditions &
 \end{enumerate} \\ \hline
 Flow of Events &
 \begin{enumerate}
-\item{}User presses the settings button
-\item{}User alters the settings he wishes to
-\item{}Application saves the alterations
-\end{enumerate} \\ \hline
+\item{}User highlights search field and inserts his the text he wants to search for
+\item{}User presses the search button
+\item{}Application shows search results to the user
+\end{enumerate}\\ \hline
 Exceptions & - \\ \hline
 \end{tabular}
 \end{center}
-\caption{Textual use case - View and edit settings} \label{tab:settings}
+\caption{Textual use case - Search} \label{tab:search}
 \end{table}

@@ -4,8 +4,6 @@
 
 As the requirements document states the application should be able to receive messages even when the application is not running in the foreground. Fortunately, the Android platform facilitates this functionality in the form of a `Service` \cite{bib:service}. But in order to utilize this feature effectively, some key architectural decisions must be made. The biggest decision is if the Service should run in the same process as the application itself (local service), or if it should have its own process (remote service). Although the choice of can be made transparent to the rest of the application, there are some key differences that must be considered.
 
-\newpage
-
 \subsection{Resource footprint}
 As stated above, a remote service will run in its own process. This means that the application will allocate two processes worth of memory in order to run. It will also require more from the \gls{cpu} since any call to the service will require the \gls{cpu} to switch to another process. These two drawbacks are mitigated by the use of a local service, where the service runs in the same process as the application. 
 
