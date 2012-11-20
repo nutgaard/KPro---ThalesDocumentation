@@ -9,7 +9,7 @@ By using dependency injection and Mockito, we will also be able to test top leve
 \newline
 \newline
 The overall goal for the test plan is that every part of our code related to the backend service is tested thoroughly, both for valid and invalid input. Though the same would be good for the frontend,
-it is harder to do this automaticly, and therefore it will only be tested whether or the functionality works or not. The optimal goal would be 100\% code coverage, but this is rarely feasible, hence
+it is harder to do this automatically, and therefore it will only be tested whether or the functionality works or not. The optimal goal would be 100\% code coverage, but this is rarely feasible, hence
 we will settle for anything between 60-80\%. 
 \newline
 \newline
@@ -25,7 +25,7 @@ Unit testing is a method where individual units of source code are tested to det
 JUnit is the industry standrad for test driven development. It works by creating a separate test method for each method in the class that is to be tested. In this way one can test larger portions of the code independent of the other code sections. \cite{bib:junit}
 
 \subsection{Cobertura}
-Cobertura is a tool for calculation the code covere by our tess, and generate a report based on this. While all other testing tools are automatically run at each build cycle, this is not the case with Cobertura, which needs to by invoked by a separate command.\cite{bib:cobertura}
+Cobertura is a tool for calculating the code covered by our tests, and generate a report based on this. While all other testing tools are automatically run at each build cycle, this is not the case with Cobertura, which needs to by invoked by a separate command.\cite{bib:cobertura}
 
 \subsection{Mockito}
 Mockito is an open source testing framework for Java that allows creation of Test Double objects called “Mock Objects”. Mock Objects are simulated objects that mimic the behavior of real objects in a controlled way \cite{bib:mock}.
@@ -37,7 +37,7 @@ One of the criticisms of mock objects are that there is a tight coupling of the 
 \subsection{Greenmail}
 Green is an open source mail server package for testing in Java. It provides all the server side software needed to test sending and receiving of mail without having an actual server. It does, however not support the \gls{pami} IDLE command.\cite{bib:greenmail}
 
-
+\newpage
 
 \subsection{Why we selected these test tools}
 The choice of tools was mainly based on previous experience inside the group, the framework provided by and the demands of the platform. 

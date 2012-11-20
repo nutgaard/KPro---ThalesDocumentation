@@ -39,5 +39,5 @@ When a message fails to be sent by the application, the user should get a notifi
 If a message with priority "FLASH" or "OVERRIDE" arrives, the application should alert the user in an undeniable way and make it easy to access the newly arrived message \req{4b}. The application should halt the sending of all other messages when the user sends a message with high priority, and instead give the resources to the high priority message \req{4f}.
 
 \subsection{Security}
-Security is an important issue in the application. Communication with the server should be encrypted with \gls{ssl1} (5a), messages should be signed with \gls{emims} when being sent \req{5b}, \gls{emims} signed messages should be verified on reception \req{5c} and private keys for signing mail should not be stored in clear text \req{5d}.
+Security is an important issue in the application. Communication with the server should be encrypted with \gls{ssl1} \req{5a}, messages should be signed with \gls{emims} when being sent \req{5b}, \gls{emims} signed messages should be verified on reception \req{5c} and private keys for signing mail should not be stored in clear text \req{5d}.
 

@@ -14,7 +14,7 @@ Source coding, better known as data compression, is a way of reducing resource u
 \end{figure}
 
 \subsection{Benefits}
-Compression is mainly used to reduce data storage space and transmission capacity. For the XOXOmail application both these features are important reasons to use data compression, but the most important is the one evolving transmission capacity. Since the users of the XOXOmail should be able to send pictures and videos as well as text, it is crucial to make the attachments as small as possible so that sending of a message with such attachments is possible, also in networks with poor bandwidth.
+Compression is mainly used to reduce data storage space and increase transmission capacity. For the XOXOmail application both these features are important reasons to use data compression, but the most important is the one involving transmission capacity. Since the users of the XOXOmail should be able to send pictures and videos as well as text, it is crucial to make the attachments as small as possible so that sending of a message with such attachments is possible, also in networks with poor bandwidth.
 
 \subsection{Disadvantages}
 Because that the data is compressed when receiving it, it must be decoded before use. This decoding is often resource demanding. Decoding of text and images are not very expensive and is done pretty fast.  When it comes to compressing and decompressing of video it is a quite different story. To encode a video without losing data is a time consuming task which requires expensive hardware. If the process is to slow, it will not be possible to watch the movie while it is being decoded. It is important to note that the result of decoding a compressed video may or may not give a different result thant the original data. This is dependent of the compression method used.
@@ -39,6 +39,8 @@ Compression of video can be divided into two main groups: Inter and intra frame.
 \paragraph{Lossy compression techniques for audio}  \hfill \newline
 Lossless compression of audio is done by removing frequencies not audible for the human ear. This reduces the data size a lot. We often compress audio more than this to make the audio files so small that they can fit without problems on portable devices like mobile phones and laptops. The most common file formats here are MP3, AAC and WMA.\cite{bib:MP3} \cite{bib:AAC} \cite{bib:WMA}
 
+\newpage
+
 \subsubsection{Lossless data compression}
 There will come a point where lossy compression will have made the original data useless. Although the human eyes and ears may not catch small degradations of images and sounds, the decreased quality eventually will be apparent.
 \newline
@@ -60,13 +62,14 @@ When we are doing lossless compression of images, we must find data in the image
 \paragraph{Lossless compression tecniques for video}  \hfill \newline
 The same principle holds for lossless video compression as for image compression; a lot of area with similar coloring is necessary for good performance. If a inter frame compression algorithm is used, we will get much better compression ratio compared to intra frame, but it requires a lot of processing power. Examples of algorithms are CorePNG and Animation Codec \cite{bib:corePNG} \cite{bib:animationcodec}
 
+\newpage
 
 \paragraph{Lossless compression techniques for sound}
 The most common formats used for lossless compression of sound is FLAC and MPEG-4 SLS. They both are able to compress the data with 50-60\% . The biggest problem of compressing using these standards, is that they are often not supported on portable devices.  \cite{bib:FLAC}
 
 
 \subsection{Discussion}
-As we can see, there are two main methods for compression. What we can see from the previous sections, is that there exist a lot of methods for doing both lossy and lossless compression. Some of these methods are not so computational heavy, while others require a lot of processing power. The heaviest compression algorithms, processing wise, are those that operate on video streams. It is not trivial to compress images and text, but it is often very fast.
+As we can see, there are two main types of compression. What we can see from the previous sections, is that there exist a lot of methods for doing both lossy and lossless compression. Some of these methods are not so computational heavy, while others require a lot of processing power. The heaviest compression algorithms, processing wise, are those that operate on video streams. It is not trivial to compress images and text, but it is often very fast.
 
 \paragraph{Choice of algorithms}\hfill
 \newline
@@ -77,7 +80,7 @@ Often we do not know how good XOXOmail's connection to the Internet is. This can
 
 \paragraph{Compressing text} \hfill
 \newline
-It is quite obvious that if we are to compress text sent via XOXO-mail, it has to be lossless. If we loose data on the way, the message received will look completely different than the one sent. This is not a result that we are interested in. One important thing to notice, is that the text size on the message sent via XOXOmail is often trivial. The sender often wants to convey a few sentences, together with the current coordinates and maybe an image. The text size compared to the image is negligble, so the effort of compressing the text is often not worth it. %Of course, if we were to send large text files, then it would be another story.
+It is quite obvious that if we are to compress text sent via XOXO-mail, it has to be lossless. If we loose data on the way, the message received will look completely different than the one sent. This is not a result that we are interested in. One important thing to notice, is that the text size on the message sent via XOXOmail is often trivial. The sender often wants to convey a few sentences, together with the current coordinates and maybe an image. The text size compared to the image is negligble, so the effort of compressing the text is often not worth it.
 
 \paragraph{Compressing images} \hfill
 \newline

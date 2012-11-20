@@ -1,9 +1,15 @@
 \section{Non-functional requirements}
+This section will explain the requirements for the application that do not add specific functionality to the product.
 
 \subsection{Quality requirements}
+The requirements for quality attributes will be listed and explained below.
 
-\paragraph{Usability}
-\subparagraph{U1 Ease of use}\hfill
+\paragraph{Usability}\hfill
+\newline
+Usability explains how we made our application effective to learn and use.
+\newline
+\newline
+\textit{\textbf{U1 Ease of use}}
 \newline
 The user should be able to use the application with very few mistakes, such as pressing the wrong button because button labels are ambiguous or too small. The scenario is described in table \ref{tab:easeofuse}.
 \begin{table}[h!]
@@ -21,7 +27,7 @@ Response measure & Maximum 5\% of user operations should be mistakes (another ac
 \caption{U1 Ease of use} \label{tab:easeofuse}
 \end{table}
 
-\subparagraph{U2 Efficent use}\hfill
+\textit{\textbf{U2 Efficent use}}
 \newline
 The user should be able to use the main features of the application with as few screen interactions as possible. Streamlined design is therefore of great importance. The scenario is described in table \ref{tab:efficentuse}.
 \begin{table}[hbt]
@@ -43,8 +49,7 @@ Response measure & A user with only a quick (5 min) training course should never
 
 \paragraph{Performance}
 
-\subparagraph{P1 Latency}
-\hfill
+\textit{\textbf{P1 Latency}}
 \newline
 The user should be able to read the message quickly after receival of a new message. The scenario is described in table \ref{tab:performance}.
 \begin{table}[h!]
@@ -63,8 +68,7 @@ Response measure & With a latency of maximum 3 seconds, the user should be able 
 \end{table}
 
 \paragraph{Security}
-\subparagraph{S1 Data access}
-\hfill
+\textit{\textbf{S1 Data access}}
 \newline
 Data should not be exposed to unauthorized users or other application. The scenario is described in table \ref{tab:s1}.
 \begin{table}[h!]
@@ -84,8 +88,7 @@ Response measure & No data should be exposed to the unauthorized user or applica
 
 \newpage
 
-\subparagraph{S2 Unprivileged use}
-\hfill
+\textit{\textbf{S2 Unprivileged use}}
 \newline
 Users that try to use the application without the correct privileges should be denied. The scenario is described in table \ref{tab:s2}.
 \begin{table}[h!]
@@ -97,14 +100,13 @@ Stimulus & Wants to use application features \\ \hline
 Artifact & System \\ \hline
 Environment & Under normal operations \\ \hline
 Response & User is blocked from using functions \\ \hline
-Response measure & No features shoudl be exposed to the user, the user should be stopped by the login screen\\ \hline
+Response measure & No features should be exposed to the user, the user should be stopped by the login screen\\ \hline
 \end{tabularx}
 \end{center}
 \caption{S2 Trying to use application with wrong privileges} \label{tab:s2}
 \end{table}
 
-\subparagraph{S3 External data traffic}
-\hfill
+\textit{\textbf{S3 External data traffic}}
 \newline
 External data traffic should not be exposed to unauthorized users or application or someone else sniffing network packages. The scenario is described in table \ref{tab:s3}.
 \begin{table}[h!]
@@ -129,7 +131,7 @@ Vanilla Android is the platform of choice, compatible down to Android API 8.
 
 \paragraph{Programming language} \hfill
 \newline
-Developing for Android will in this project mean that code will be written in Java for the Dalvik Virtual Machine. This means that there is no support for multiple inheritance, and this limits design choices to some degree. It prevents us from playing with some more complicated architectures and inheritance schemes.
+Developing for Android will in this project means that code will be written in Java for the Dalvik Virtual Machine. This means that there is no support for multiple inheritance, and this limits design choices to some degree. It prevents us from playing with some more complicated architectures and inheritance schemes.
 
 \paragraph{Mobile devices} \hfill
 \newline
@@ -155,15 +157,16 @@ Since the application is network based, it is important to pay attention to band
 \newline
 This project has security requirements that require special consideration with regards to \gls{cots}. We have to be able to trust the underlying software if it ever touches unencrypted data or has access to a memory partition (either legitimately or not) that contains unencrypted data. This means some care has to be taken in regards to what \gls{cots} solutions we can use and where we can use them. 
 
-\section{Stakeholders and their concerns}
-For an overview of the stakeholders and what concerns these have in the project, see table \ref{tab:stakeholders} at page \pageref{tab:stakeholders}.
+\newpage
 
-\begin{table}
+\section{Stakeholders and their concerns}
+For an overview of the stakeholders and what concerns these have in the project, see table \ref{tab:stakeholders}.
+
+\begin{table}[h!]
 \begin{tabular}{p{3.5cm}|p{11.5cm}} \hline
 \textbf{Stakeholder} & \textbf{Concern} \\ \hline \hline
 User & 
 \begin{itemize}
-\item{} Wants an application that works out of the box
 \item{} Easy to understand the flow of the application
 \item{} Installation should be easy
 \item{} User friendly user interface
@@ -173,7 +176,7 @@ Developers &
 \item{}Easy to understand the goal of the application
 \item{}Easy to extend and change the application
 \item{}Want to use technology they are familiar with
-\item{}Easy to understand requirements and architectural description chapters.
+\item{}Easy to understand the requirements.
 \end{itemize}\\ \hline
 Course advisor & 
 \begin{itemize}
